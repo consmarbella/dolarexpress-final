@@ -5,11 +5,11 @@ import path from 'path';
 
 async function pushToGitHub() {
   const dir = process.cwd();
-  const token = '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';
+  const token = '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';
   const repoUrl = 'https://github.com/consmarbella/dolarexpress-final.git';
 
   try {
-    console.log('Iniciando proceso de push a GitHub...');
+    console.log('Iniciando proceso de push a GitHub con nuevo token...');
 
     // Inicializar repo si no existe
     if (!fs.existsSync(path.join(dir, '.git'))) {
