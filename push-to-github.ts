@@ -66,6 +66,18 @@ async function pushToGitHub() {
     });
     console.log(`Commit creado: ${sha}`);
 
+    // Asegurar que estamos en la rama main
+    try {
+      await git.branch({
+        fs,
+        dir,
+        ref: 'main',
+        checkout: true
+      });
+    } catch (e) {
+      // Si ya existe o hay error, intentamos continuar
+    }
+
     // Push
     const pushResult = await git.push({
       fs,
