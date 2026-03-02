@@ -1,0 +1,57 @@
+/* Pure CSS Styles for DolarExpress */
+:root {
+  --color-primary: #1a1a1a;
+  --color-secondary: #C8A045;
+  --color-accent: #7a7a7a;
+  --color-background: #ffffff;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes pulse-custom {
+  0% { box-shadow: 0 0 0 0 rgba(200, 160, 69, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(200, 160, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(200, 160, 69, 0); }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 2s infinite;
+}
+
+/* Utility Classes (Basic) */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.text-center { text-align: center; }
+.font-bold { font-weight: 700; }
+.min-h-screen { min-height: 100vh; }
+
+/* Details/Summary Reset */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}

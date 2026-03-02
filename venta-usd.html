@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procesar Venta | DolarExpress</title>
+    <meta name="description" content="Procesa tu venta de cupo en dólares de forma segura y rápida." />
+    <meta name="msvalidate.01" content="5FA314B20BB93FD6E5357FBFF4B76C39" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1a1a1a',
+              secondary: '#C8A045',
+              accent: '#7a7a7a',
+              background: '#ffffff',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'pulse-custom': 'pulse-custom 2s infinite',
+            },
+            keyframes: {
+              'pulse-custom': {
+                '0%': { boxShadow: '0 0 0 0 rgba(200, 160, 69, 0.7)' },
+                '70%': { boxShadow: '0 0 0 15px rgba(200, 160, 69, 0)' },
+                '100%': { boxShadow: '0 0 0 0 rgba(200, 160, 69, 0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --color-primary: #1a1a1a;
+        --color-secondary: #C8A045;
+        --color-accent: #7a7a7a;
+        --color-background: #ffffff;
+        --font-sans: 'Inter', sans-serif;
+      }
+      body {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+        font-family: var(--font-sans);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#1a1a1a] flex flex-col font-sans">
+      <!-- Navbar Minimal -->
+      <nav class="p-6 text-center flex flex-col items-center gap-4">
+        <div class="relative">
+            <!-- Logo Inverted -->
+            <svg class="h-16 w-auto object-contain brightness-0 invert" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="5" y="38" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#1a1a1a">
+                Dolar<tspan fill="#C8A045">Express</tspan>
+              </text>
+              <circle cx="220" cy="30" r="18" fill="#C8A045"/>
+              <text x="213" y="38" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#ffffff">$</text>
+            </svg>
+        </div>
+        <a href="index.html" class="text-white font-bold text-sm opacity-80 hover:opacity-100 transition-opacity">
+          ← Volver al Inicio
+        </a>
+      </nav>
+      
+      <div class="flex-1 flex flex-col items-center justify-center p-4">
+        <h1 class="text-white text-3xl font-bold mb-2 text-center">Procesa tu Venta</h1>
+        <p class="text-gray-300 mb-8 text-center max-w-md">
+          Completa los datos en el formulario seguro a continuación.
+        </p>
+        
+        <!-- Container for Widget -->
+        <div class="w-full max-w-2xl bg-[#f4f7f6] rounded-xl shadow-2xl overflow-hidden border border-white/10">
+          <div class="w-full h-[600px] relative bg-gray-50">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                style="border: none; display: block;" 
+                allow="camera; payment; clipboard-write" 
+                referrerpolicy="origin"
+                src="https://widget.changelly.com?from=usd&to=btc&amount=500&address=&fromDefault=usd&toDefault=btc&merchant_id=O_zbRc229eHGJZj1&payment_id=&v=3&type=no-rev-share&color=5f41ff&headerId=1&logo=hide&buyButtonTextId=1">
+                Can't load widget
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- Fallback button in case iframe is blocked by environment -->
+        <div class="mt-4 text-center">
+             <a href="https://widget.changelly.com?from=usd&to=btc&amount=500&address=&fromDefault=usd&toDefault=btc&merchant_id=O_zbRc229eHGJZj1&payment_id=&v=3&type=no-rev-share&color=5f41ff&headerId=1&logo=hide&buyButtonTextId=1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-[#C8A045] hover:text-white text-sm underline opacity-80 hover:opacity-100 transition-all">
+                ¿No ves el formulario? Haz clic aquí para abrirlo en una nueva ventana
+             </a>
+        </div>
+        
+        <div class="mt-8 text-white/50 text-sm flex items-center gap-2">
+          <span>🔒</span> Conexión Encriptada 256-bit SSL
+        </div>
+      </div>
+  </body>
+</html>
