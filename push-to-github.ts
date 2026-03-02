@@ -9,7 +9,7 @@ async function pushToGitHub() {
   const repoUrl = 'https://github.com/consmarbella/dolarexpress-final.git';
 
   try {
-    console.log('Sincronizando cambios finales con GitHub...');
+    console.log('Sincronizando cambios finales con GitHub (Fix index.html)...');
 
     if (!fs.existsSync(path.join(dir, '.git'))) {
       await git.init({ fs, dir });
@@ -31,7 +31,7 @@ async function pushToGitHub() {
     const sha = await git.commit({
       fs,
       dir,
-      message: 'Despliegue final: pSEO optimizado, Sitemap y URLs limpias',
+      message: 'Fix: index.html root div and SPA routing',
       author: { name: 'DolarExpress Bot', email: 'bot@dolarexpress.cl' }
     });
     console.log(`Commit: ${sha}`);
