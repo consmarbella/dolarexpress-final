@@ -149,7 +149,7 @@ const Home: React.FC = () => {
                 <h3 className="font-bold text-[#C8A045] text-lg mb-2">2. Verificación Segura</h3>
                 <p className="text-sm">Validamos la operación mediante una pasarela segura para proteger tu identidad y prevenir fraudes.</p>
               </div>
-              <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <h3 className="font-bold text-[#C8A045] text-lg mb-2">3. Recibe tus Pesos</h3>
                 <p className="text-sm">Transferimos el dinero a tu cuenta bancaria (RUT, Corriente, Vista) en menos de 15 minutos.</p>
               </div>
@@ -167,7 +167,7 @@ const Home: React.FC = () => {
             </ul>
 
             <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6 mt-16">Seguridad en la Venta de Cupo</h2>
-            <p class="mb-6">
+            <p className="mb-6">
               Entendemos que la seguridad es fundamental. Al realizar la <strong>venta de tu cupo en dólares</strong> con nosotros, operas bajo un modelo transparente y legal. Utilizamos tecnología SSL de 256 bits y nunca almacenamos los códigos de seguridad de tu tarjeta. Evita riesgos informales y opera con expertos en transacciones digitales.
             </p>
           </article>
