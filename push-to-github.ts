@@ -8,11 +8,6 @@ async function pushToGitHub() {
   const token = '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';
   const repoUrl = 'https://github.com/consmarbella/dolarexpress-final.git';
 
-  if (!token) {
-    console.error('Error: GITHUB_TOKEN no está configurado en las variables de entorno.');
-    process.exit(1);
-  }
-
   try {
     console.log('Iniciando proceso de push a GitHub...');
 
@@ -85,7 +80,7 @@ async function pushToGitHub() {
       dir,
       remote: 'origin',
       ref: 'main',
-      force: true, // Usamos force para asegurar que el repo final tenga exactamente lo que construimos
+      force: true,
       onAuth: () => ({ username: token, password: '' }),
     });
 
