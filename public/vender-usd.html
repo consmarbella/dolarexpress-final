@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Vender USD en Chile | DolarExpress</title>
+  <meta name="description" content="Vende tus dólares (USD) y recibe pesos chilenos por transferencia inmediata con Dolarexpress. Tasas competitivas, proceso rápido y seguro.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://dolarexpress.cl/vender-usd">
+  <style>
+    :root {
+      --bg: #050608;
+      --card: #0b0f19;
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.18);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+      --danger: #ef4444;
+      --success: #22c55e;
+      --wa: #25D366;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid rgba(31,41,55,0.9);
+      backdrop-filter: blur(14px);
+      background: radial-gradient(circle at top left, rgba(212,175,55,0.08), transparent 55%),
+                  linear-gradient(to right, rgba(15,23,42,0.96), rgba(3,7,18,0.98));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #facc15, #d4af37 40%, #854d0e 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 16px 40px rgba(0,0,0,0.8);
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+    }
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.25);
+    }
+    main {
+      flex: 1;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 32px 16px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+      gap: 28px;
+    }
+    @media (max-width: 800px) {
+      main { grid-template-columns: minmax(0, 1fr); }
+      header { position: static; }
+    }
+    .card {
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.12), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15,23,42,0.96), rgba(2,6,23,0.98));
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 22px 60px rgba(2,6,23,0.85), 0 0 0 1px rgba(15,23,42,0.9);
+      padding: 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at top, rgba(212,175,55,0.2), transparent 60%);
+      opacity: 0.8;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+    }
+    .card-inner { position: relative; z-index: 1; }
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .eyebrow-line {
+      width: 22px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148,163,184,0.8));
+    }
+    h1 {
+      font-size: clamp(24px, 3vw, 30px);
+      margin: 0 0 8px;
+      letter-spacing: -0.03em;
+    }
+    .highlight { color: var(--accent); }
+    .lead {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      max-width: 460px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(3,7,18,0.95));
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .pill strong { color: var(--text); font-weight: 600; }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 22px;
+      font-size: 12px;
+    }
+    .metric-item {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(3,7,18,0.98));
+      min-width: 140px;
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 2px;
+    }
+    .metric-value {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .metric-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--wa), #128C7E);
+      color: #f9fafb;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(5,150,105,0.65), 0 0 0 1px rgba(6,95,70,0.7);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-wa span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #16a34a;
+      font-size: 13px;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.9);
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.96), rgba(3,7,18,0.98));
+      color: var(--muted);
+      font-size: 12px;
+      text-decoration: none;
+    }
+    .cta-note {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .list li + li { margin-top: 4px; }
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin: 22px 0 6px;
+    }
+    .faq {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    .faq dt {
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 8px;
+      margin-bottom: 2px;
+    }
+    .faq dd {
+      margin: 0 0 6px;
+    }
+    .side-card {
+      background: radial-gradient(circle at top right, rgba(212,175,55,0.16), transparent 60%),
+                  linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(3,7,18,0.98));
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.3);
+      padding: 18px 16px;
+      box-shadow: 0 18px 50px rgba(2,6,23,0.95), 0 0 0 1px rgba(15,23,42,0.9);
+      position: sticky;
+      top: 68px;
+      align-self: flex-start;
+    }
+    .side-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .side-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .side-list {
+      margin: 0 0 10px;
+      padding: 0;
+      list-style: none;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .side-list li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .side-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
+    }
+    footer {
+      border-top: 1px solid rgba(31,41,55,0.9);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(2,6,23,0.98));
+      padding: 14px 16px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="/" class="logo">
+        <span class="logo-mark">$</span>
+        <span>
+          DolarExpress
+          <div class="logo-sub">Cambio de cupo en dólares a pesos chilenos</div>
+        </span>
+      </a>
+      <div class="nav-links">
+        <span class="badge">
+          <span class="badge-dot"></span>
+          Transferencia inmediata en Chile
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="card-inner">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          Servicio especializado
+        </div>
+        <h1>Vende tu <span class="highlight">cupo en dólares (USD)</span> y recibe pesos chilenos al instante</h1>
+        <p class="lead">
+          Si tienes un cupo en dólares disponible en tu tarjeta de crédito o quieres vender dólares
+          que ya tienes, en DolarExpress los convertimos en pesos chilenos con una operación simple
+          y acompañada paso a paso por WhatsApp.
+        </p>
+
+        <div class="pill-row">
+          <span class="pill"><strong>✔</strong> Sin trámites bancarios complicados</span>
+          <span class="pill"><strong>✔</strong> Transferencia a tu cuenta en Chile</span>
+          <span class="pill"><strong>✔</strong> Acompañamiento 1 a 1 por WhatsApp</span>
+        </div>
+
+        <div class="metrics">
+          <div class="metric-item">
+            <div class="metric-label">Velocidad referencial</div>
+            <div class="metric-value">Aprobación en minutos</div>
+            <div class="metric-sub">Dependiendo del banco y monto</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-label">Montos orientativos</div>
+            <div class="metric-value">Desde USD 300</div>
+            <div class="metric-sub">Casos mayores se evalúan por chat</div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a
+            class="btn-wa"
+            href="https://wa.me/56967658939?text=Hola%20quiero%20cotizar%20una%20venta%20de%20cupo%20en%20d%C3%B3lares"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="icon">✆</span>
+            <span>Quiero vender mi cupo</span>
+          </a>
+          <a href="/" class="btn-outline">Volver al inicio</a>
+        </div>
+
+        <p class="cta-note">
+          Te explicamos todo el proceso antes de avanzar, sin compromiso. Solo necesitas tener cupo
+          disponible en dólares en tu tarjeta de crédito o saldo en USD.
+        </p>
+
+        <h2 class="section-title">Cómo funciona en la práctica</h2>
+        <ol class="list">
+          <li>Nos escribes por WhatsApp y nos indicas el monto aproximado que quieres vender en USD.</li>
+          <li>Te mostramos la tasa de referencia vigente y el monto estimado en pesos chilenos.</li>
+          <li>Coordinamos la operación (cargo internacional o venta de dólares, según el caso).</li>
+          <li>Al confirmarse la operación, recibes una transferencia a tu cuenta chilena.</li>
+        </ol>
+
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <dl class="faq">
+          <dt>¿Necesito tener experiencia previa usando dólares o criptomonedas?</dt>
+          <dd>No. Te acompañamos paso a paso y te explicamos cada parte del proceso antes de avanzar.</dd>
+
+          <dt>¿Qué bancos se pueden usar para esta operación?</dt>
+          <dd>En general trabajamos con los principales bancos chilenos que permiten compras internacionales con cupo en dólares. Confírmanos tu banco por WhatsApp y revisamos tu caso puntual.</dd>
+
+          <dt>¿En cuánto tiempo veo los pesos en mi cuenta?</dt>
+          <dd>Depende del banco y del monto, pero normalmente el proceso se coordina en una sola sesión y la transferencia se realiza una vez confirmada la operación.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <aside class="side-card">
+      <h2 class="side-title">¿Listo para vender tu cupo en dólares?</h2>
+      <p class="side-sub">
+        Escríbenos por WhatsApp, cuéntanos tu monto estimado en USD y te guiamos paso a paso.
+      </p>
+      <ul class="side-list">
+        <li><span class="side-dot"></span> Atención personalizada</li>
+        <li><span class="side-dot"></span> Explicamos cada paso antes de avanzar</li>
+        <li><span class="side-dot"></span> Operación pensada para personas en Chile</li>
+      </ul>
+      <a
+        class="btn-wa"
+        href="https://wa.me/56967658939?text=Hola%20quiero%20vender%20mi%20cupo%20en%20d%C3%B3lares"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="icon">✆</span>
+        <span>Hablar por WhatsApp</span>
+      </a>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>DolarExpress · Cambio de cupo en dólares a pesos chilenos</span>
+      <div class="footer-links">
+        <a href="/privacidad">Política de privacidad</a>
+        <a href="/terminos">Términos y condiciones</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
