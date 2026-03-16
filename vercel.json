@@ -1,5 +1,11 @@
 {
   "rewrites": [
+    { "source": "/vender-usd", "destination": "/vender-usd.html" },
+    { "source": "/servicios-cupo-dolar", "destination": "/servicios-cupo-dolar.html" },
+    { "source": "/privacidad", "destination": "/privacidad.html" },
+    { "source": "/terminos", "destination": "/terminos.html" },
+    { "source": "/avance-efectivo", "destination": "/avance-efectivo.html" },
+    { "source": "/contacto", "destination": "/contacto.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
