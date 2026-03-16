@@ -1,11 +1,272 @@
 {
   "rewrites": [
-    { "source": "/vender-usd", "destination": "/vender-usd.html" },
-    { "source": "/servicios-cupo-dolar", "destination": "/servicios-cupo-dolar.html" },
-    { "source": "/privacidad", "destination": "/privacidad.html" },
-    { "source": "/terminos", "destination": "/terminos.html" },
-    { "source": "/avance-efectivo", "destination": "/avance-efectivo.html" },
-    { "source": "/contacto", "destination": "/contacto.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/vender-usd",
+      "destination": "/vender-usd.html"
+    },
+    {
+      "source": "/servicios-cupo-dolar",
+      "destination": "/servicios-cupo-dolar.html"
+    },
+    {
+      "source": "/privacidad",
+      "destination": "/privacidad.html"
+    },
+    {
+      "source": "/terminos",
+      "destination": "/terminos.html"
+    },
+    {
+      "source": "/avance-efectivo",
+      "destination": "/avance-efectivo.html"
+    },
+    {
+      "source": "/contacto",
+      "destination": "/contacto.html"
+    },
+    {
+      "source": "/vender-cupo-dolar",
+      "destination": "/vender-cupo-dolar.html"
+    },
+    {
+      "source": "/convertir-cupo-dolar-pesos",
+      "destination": "/convertir-cupo-dolar-pesos.html"
+    },
+    {
+      "source": "/cambiar-cupo-dolares-chile",
+      "destination": "/cambiar-cupo-dolares-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-a-pesos",
+      "destination": "/cupo-dolar-a-pesos.html"
+    },
+    {
+      "source": "/liquidar-cupo-dolar",
+      "destination": "/liquidar-cupo-dolar.html"
+    },
+    {
+      "source": "/vender-dolares-tarjeta-credito",
+      "destination": "/vender-dolares-tarjeta-credito.html"
+    },
+    {
+      "source": "/cupo-dolar-rapido",
+      "destination": "/cupo-dolar-rapido.html"
+    },
+    {
+      "source": "/vender-cupo-dolar-online",
+      "destination": "/vender-cupo-dolar-online.html"
+    },
+    {
+      "source": "/vender-cupo-dolar-transferencia",
+      "destination": "/vender-cupo-dolar-transferencia.html"
+    },
+    {
+      "source": "/necesito-pesos-tengo-dolares",
+      "destination": "/necesito-pesos-tengo-dolares.html"
+    },
+    {
+      "source": "/cupo-dolar-urgente",
+      "destination": "/cupo-dolar-urgente.html"
+    },
+    {
+      "source": "/cupo-dolar-hoy-chile",
+      "destination": "/cupo-dolar-hoy-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile",
+      "destination": "/cupo-dolar-banco-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-santander",
+      "destination": "/cupo-dolar-santander.html"
+    },
+    {
+      "source": "/cupo-dolar-bci",
+      "destination": "/cupo-dolar-bci.html"
+    },
+    {
+      "source": "/cupo-dolar-falabella",
+      "destination": "/cupo-dolar-falabella.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank",
+      "destination": "/cupo-dolar-scotiabank.html"
+    },
+    {
+      "source": "/cupo-dolar-itau",
+      "destination": "/cupo-dolar-itau.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-estado",
+      "destination": "/cupo-dolar-banco-estado.html"
+    },
+    {
+      "source": "/cupo-dolar-bice",
+      "destination": "/cupo-dolar-bice.html"
+    },
+    {
+      "source": "/cupo-dolar-security",
+      "destination": "/cupo-dolar-security.html"
+    },
+    {
+      "source": "/como-vender-cupo-dolar",
+      "destination": "/como-vender-cupo-dolar.html"
+    },
+    {
+      "source": "/que-es-cupo-dolar",
+      "destination": "/que-es-cupo-dolar.html"
+    },
+    {
+      "source": "/es-legal-vender-cupo-dolar",
+      "destination": "/es-legal-vender-cupo-dolar.html"
+    },
+    {
+      "source": "/cupo-dolar-como-funciona",
+      "destination": "/cupo-dolar-como-funciona.html"
+    },
+    {
+      "source": "/cupo-dolar-requisitos",
+      "destination": "/cupo-dolar-requisitos.html"
+    },
+    {
+      "source": "/cupo-dolar-tiempo",
+      "destination": "/cupo-dolar-tiempo.html"
+    },
+    {
+      "source": "/cupo-dolar-monto-minimo",
+      "destination": "/cupo-dolar-monto-minimo.html"
+    },
+    {
+      "source": "/cupo-dolar-conviene",
+      "destination": "/cupo-dolar-conviene.html"
+    },
+    {
+      "source": "/riesgos-vender-cupo-dolar",
+      "destination": "/riesgos-vender-cupo-dolar.html"
+    },
+    {
+      "source": "/mejor-tasa-cupo-dolar",
+      "destination": "/mejor-tasa-cupo-dolar.html"
+    },
+    {
+      "source": "/cupo-dolar-visa",
+      "destination": "/cupo-dolar-visa.html"
+    },
+    {
+      "source": "/cupo-dolar-mastercard",
+      "destination": "/cupo-dolar-mastercard.html"
+    },
+    {
+      "source": "/tarjeta-credito-cupo-dolar",
+      "destination": "/tarjeta-credito-cupo-dolar.html"
+    },
+    {
+      "source": "/cupo-dolar-ripley",
+      "destination": "/cupo-dolar-ripley.html"
+    },
+    {
+      "source": "/cupo-dolar-cmr",
+      "destination": "/cupo-dolar-cmr.html"
+    },
+    {
+      "source": "/cupo-dolar-internacional",
+      "destination": "/cupo-dolar-internacional.html"
+    },
+    {
+      "source": "/avance-cupo-dolares",
+      "destination": "/avance-cupo-dolares.html"
+    },
+    {
+      "source": "/avance-efectivo-dolares",
+      "destination": "/avance-efectivo-dolares.html"
+    },
+    {
+      "source": "/avance-tarjeta-dolares",
+      "destination": "/avance-tarjeta-dolares.html"
+    },
+    {
+      "source": "/liquidez-cupo-dolar",
+      "destination": "/liquidez-cupo-dolar.html"
+    },
+    {
+      "source": "/efectivo-cupo-dolar",
+      "destination": "/efectivo-cupo-dolar.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-usar",
+      "destination": "/cupo-dolar-sin-usar.html"
+    },
+    {
+      "source": "/cupo-dolar-disponible",
+      "destination": "/cupo-dolar-disponible.html"
+    },
+    {
+      "source": "/cupo-dolar-primera-vez",
+      "destination": "/cupo-dolar-primera-vez.html"
+    },
+    {
+      "source": "/cupo-dolar-seguro",
+      "destination": "/cupo-dolar-seguro.html"
+    },
+    {
+      "source": "/cupo-dolar-confiable",
+      "destination": "/cupo-dolar-confiable.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-estafa",
+      "destination": "/cupo-dolar-sin-estafa.html"
+    },
+    {
+      "source": "/vender-usd-chile",
+      "destination": "/vender-usd-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-persona-natural",
+      "destination": "/cupo-dolar-persona-natural.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-complicaciones",
+      "destination": "/cupo-dolar-sin-complicaciones.html"
+    },
+    {
+      "source": "/cupo-dolar-whatsapp",
+      "destination": "/cupo-dolar-whatsapp.html"
+    },
+    {
+      "source": "/cupo-dolar-recomendado",
+      "destination": "/cupo-dolar-recomendado.html"
+    },
+    {
+      "source": "/cupo-dolar-fin-de-mes",
+      "destination": "/cupo-dolar-fin-de-mes.html"
+    },
+    {
+      "source": "/cupo-usd-a-clp",
+      "destination": "/cupo-usd-a-clp.html"
+    },
+    {
+      "source": "/girar-cupo-dolares",
+      "destination": "/girar-cupo-dolares.html"
+    },
+    {
+      "source": "/sacar-cupo-dolares",
+      "destination": "/sacar-cupo-dolares.html"
+    },
+    {
+      "source": "/cupo-internacional-tarjeta",
+      "destination": "/cupo-internacional-tarjeta.html"
+    },
+    {
+      "source": "/pagar-con-cupo-dolar",
+      "destination": "/pagar-con-cupo-dolar.html"
+    },
+    {
+      "source": "/cupo-dolar-regiones-chile",
+      "destination": "/cupo-dolar-regiones-chile.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
