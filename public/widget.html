@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --brand:    #5f41ff;
       --brand-lt: #7f67ff;
@@ -18,220 +17,47 @@
       --muted:    #7a739e;
       --glow:     rgba(95,65,255,0.35);
     }
-
-    html, body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    /* ── background mesh ── */
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; }
     body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 55% at 15% 10%,  rgba(95,65,255,.18) 0%, transparent 60%),
-        radial-gradient(ellipse 55% 45% at 85% 80%,  rgba(127,103,255,.12) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 35% at 60% 30%,  rgba(95,65,255,.06) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
+      content: ''; position: fixed; inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 15% 10%, rgba(95,65,255,.18) 0%, transparent 60%),
+                  radial-gradient(ellipse 55% 45% at 85% 80%, rgba(127,103,255,.12) 0%, transparent 60%),
+                  radial-gradient(ellipse 40% 35% at 60% 30%, rgba(95,65,255,.06) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
     }
-
-    /* ── grid texture ── */
     body::after {
-      content: '';
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(rgba(95,65,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(95,65,255,.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(95,65,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(95,65,255,.04) 1px, transparent 1px);
+      background-size: 40px 40px; pointer-events: none; z-index: 0;
     }
-
-    /* ── layout ── */
-    .page {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    /* ── header ── */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.4rem 2.5rem;
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: .65rem;
-      text-decoration: none;
-    }
-
-    .logo-icon {
-      width: 38px; height: 38px;
-      background: var(--brand);
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1rem;
-      color: #fff;
-      letter-spacing: -.02em;
-      box-shadow: 0 0 18px var(--glow);
-    }
-
-    .logo-text {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -.01em;
-    }
-
+    .page { position: relative; z-index: 1; min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 2.5rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
+    .logo { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+    .logo-icon { width: 38px; height: 38px; background: var(--brand); border-radius: 10px; display: grid; place-items: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: #fff; box-shadow: 0 0 18px var(--glow); }
+    .logo-text { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--text); letter-spacing: -.01em; }
     .logo-text span { color: var(--brand-lt); }
-
-    .badge {
-      font-size: .7rem;
-      font-weight: 500;
-      color: var(--brand-lt);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: .25rem .7rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
-
-    /* ── main ── */
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-      gap: 2rem;
-    }
-
-    .hero {
-      text-align: center;
-      max-width: 540px;
-    }
-
-    .eyebrow {
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--brand-lt);
-      margin-bottom: .8rem;
-      opacity: .85;
-    }
-
-    h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -.03em;
-      color: var(--text);
-      margin-bottom: .9rem;
-    }
-
-    h1 span {
-      background: linear-gradient(135deg, var(--brand-lt), #c4b8ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .subtitle {
-      font-size: .95rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── widget card ── */
-    .widget-card {
-      width: 100%;
-      max-width: 420px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 6px;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.04) inset,
-        0 30px 80px -20px rgba(0,0,0,.6),
-        0 0 60px -10px var(--glow);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-6px); }
-    }
-
-    .widget-card iframe {
-      border-radius: 14px;
-      display: block;
-      width: 100%;
-      height: 560px;
-    }
-
-    /* ── trust strip ── */
-    .trust {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: .45rem;
-      font-size: .78rem;
-      color: var(--muted);
-    }
-
-    .trust-item svg {
-      color: var(--brand-lt);
-      flex-shrink: 0;
-    }
-
-    /* ── footer ── */
-    footer {
-      text-align: center;
-      padding: 1.4rem 2rem;
-      border-top: 1px solid var(--border);
-      font-size: .75rem;
-      color: var(--muted);
-    }
-
+    .badge { font-size: .7rem; font-weight: 500; color: var(--brand-lt); border: 1px solid var(--border); border-radius: 20px; padding: .25rem .7rem; letter-spacing: .04em; text-transform: uppercase; }
+    main { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 1.5rem; gap: 2rem; }
+    .hero { text-align: center; max-width: 540px; }
+    .eyebrow { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--brand-lt); margin-bottom: .8rem; opacity: .85; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.1; letter-spacing: -.03em; color: var(--text); margin-bottom: .9rem; }
+    h1 span { background: linear-gradient(135deg, var(--brand-lt), #c4b8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .subtitle { font-size: .95rem; color: var(--muted); line-height: 1.6; }
+    .widget-card { width: 100%; max-width: 420px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 6px; box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset, 0 30px 80px -20px rgba(0,0,0,.6), 0 0 60px -10px var(--glow); animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .widget-card iframe { border-radius: 14px; display: block; width: 100%; height: 560px; }
+    .trust { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .trust-item { display: flex; align-items: center; gap: .45rem; font-size: .78rem; color: var(--muted); }
+    .trust-item svg { color: var(--brand-lt); flex-shrink: 0; }
+    footer { text-align: center; padding: 1.4rem 2rem; border-top: 1px solid var(--border); font-size: .75rem; color: var(--muted); }
     footer a { color: var(--brand-lt); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-
-    /* ── responsive ── */
-    @media (max-width: 480px) {
-      header { padding: 1rem 1.25rem; }
-      .logo-text { display: none; }
-      .badge { display: none; }
-      .widget-card iframe { height: 480px; }
-    }
+    @media (max-width: 480px) { header { padding: 1rem 1.25rem; } .logo-text { display: none; } .badge { display: none; } .widget-card iframe { height: 480px; } }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- Header -->
   <header>
     <a href="https://www.dolarexpress.cl" class="logo">
       <div class="logo-icon">DE</div>
@@ -240,7 +66,6 @@
     <div class="badge">USD → CLP</div>
   </header>
 
-  <!-- Main -->
   <main>
     <div class="hero">
       <p class="eyebrow">Powered by Changelly</p>
@@ -248,19 +73,10 @@
       <p class="subtitle">Transacciones seguras, rápidas y al mejor tipo de cambio del mercado.</p>
     </div>
 
-    <!-- Widget -->
     <div class="widget-card">
-      <iframe
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allow="camera"
-        src="https://widget.changelly.com?from=usd&to=usdt20&amount=0.1&address=0x90de0ca2156a9386367f1ae69b8da8db042cc40a&fromDefault=usd&toDefault=usdt20&merchant_id=ba0077107b89&payment_id=&v=3"
-        title="Widget de cambio Changelly"
-      >No se puede cargar el widget</iframe>
+      <iframe width="100%" height="100%" frameborder="none" allow="camera" src="https://widget.changelly.com?from=usd&to=usdt20&amount=0.1&address=0x90de0ca2156a9386367f1ae69b8da8db042cc40a&fromDefault=usd&toDefault=usdt20&merchant_id=ba0077107b89&payment_id=&v=3">Can't load widget</iframe>
     </div>
 
-    <!-- Trust signals -->
     <div class="trust">
       <div class="trust-item">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -283,7 +99,6 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     © 2026 <a href="https://www.dolarexpress.cl">www.dolarexpress.cl</a> — Todos los derechos reservados.
   </footer>
