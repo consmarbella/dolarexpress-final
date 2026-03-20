@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carla Fischer Producciones — Banquetería & Decoración de Eventos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:      #c9a84c;
+      --gold-lt:   #e8d5a3;
+      --gold-dk:   #9e7a2a;
+      --blush:     #f5ece8;
+      --blush2:    #f0ddd7;
+      --black:     #1a1512;
+      --dark:      #2c2318;
+      --white:     #fffdf9;
+      --grey:      #7a6e68;
+      --border:    rgba(201,168,76,0.3);
+      --ff-head:   'Playfair Display', Georgia, serif;
+      --ff-body:   'Lato', sans-serif;
+      --ease:      cubic-bezier(0.4,0,0.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── SCROLLBAR ─────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 5%;
+      background: rgba(26,21,18,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.4s var(--ease), background 0.4s;
+    }
+    nav.scrolled { padding: 0.9rem 5%; }
+    .nav-logo {
+      font-family: var(--ff-head);
+      font-size: 1.35rem;
+      color: var(--gold-lt);
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+    }
+    .nav-logo span {
+      display: block;
+      font-size: 0.62rem;
+      font-family: var(--ff-body);
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex; gap: 2.4rem; list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--ff-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-4px; left:0; right:0;
+      height:1px; background:var(--gold); transform:scaleX(0);
+      transform-origin:left; transition:transform 0.3s var(--ease);
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+    .nav-links a:hover::after { transform:scaleX(1); }
+    .nav-cta {
+      font-size: 0.74rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--black) !important;
+      background: var(--gold); padding: 0.55rem 1.4rem;
+      transition: background 0.3s, transform 0.2s !important;
+    }
+    .nav-cta::after { display:none !important; }
+    .nav-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+    .hamburger span { width:26px; height:1.5px; background:var(--gold-lt); transition:0.3s; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(201,168,76,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(201,168,76,0.07) 0%, transparent 55%),
+        linear-gradient(160deg, #1a1512 0%, #0e0b09 100%);
+    }
+    /* Decorative lines */
+    .hero-lines {
+      position: absolute; inset: 0; pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-lines::before, .hero-lines::after {
+      content:''; position:absolute;
+      border: 1px solid rgba(201,168,76,0.12);
+    }
+    .hero-lines::before {
+      top:8%; left:6%; right:6%; bottom:8%;
+    }
+    .hero-lines::after {
+      top:10%; left:8%; right:8%; bottom:10%;
+    }
+    /* Corner ornaments */
+    .corner { position:absolute; width:60px; height:60px; }
+    .corner::before, .corner::after { content:''; position:absolute; background:var(--gold); }
+    .corner::before { width:1px; height:100%; }
+    .corner::after  { width:100%; height:1px; }
+    .c-tl { top:8%; left:6%; }
+    .c-tr { top:8%; right:6%; transform:scaleX(-1); }
+    .c-bl { bottom:8%; left:6%; transform:scaleY(-1); }
+    .c-br { bottom:8%; right:6%; transform:scale(-1); }
+
+    .hero-content {
+      position: relative; z-index:2;
+      text-align: center;
+      max-width: 820px;
+      padding: 2rem;
+      animation: heroFade 1.4s var(--ease) both;
+    }
+    @keyframes heroFade {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 0.45rem 1.4rem;
+      margin-bottom: 2.2rem;
+      animation: heroFade 1.2s 0.2s var(--ease) both;
+    }
+    .hero h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--white);
+      margin-bottom: 1.6rem;
+      animation: heroFade 1.2s 0.4s var(--ease) both;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+      display: block;
+    }
+    .hero-divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 1.6rem;
+      animation: heroFade 1.2s 0.6s var(--ease) both;
+    }
+    .hero-sub {
+      font-size: 1.05rem; font-weight: 300;
+      line-height: 1.8; color: rgba(255,255,255,0.62);
+      letter-spacing: 0.04em;
+      max-width: 520px; margin: 0 auto 2.8rem;
+      animation: heroFade 1.2s 0.7s var(--ease) both;
+    }
+    .hero-btns {
+      display: flex; gap: 1.2rem; justify-content:center; flex-wrap:wrap;
+      animation: heroFade 1.2s 0.9s var(--ease) both;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--ff-body);
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 1rem 2.4rem;
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-lt); border-color:var(--gold-lt); transform:translateY(-2px); }
+    .btn-ghost {
+      background: transparent; color: var(--white);
+      font-family: var(--ff-body);
+      font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 1rem 2.4rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: border-color 0.3s, color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color:var(--gold-lt); color:var(--gold-lt); transform:translateY(-2px); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left:50%; transform:translateX(-50%);
+      display: flex; flex-direction:column; align-items:center; gap: 0.6rem;
+      animation: heroFade 1.2s 1.2s var(--ease) both;
+    }
+    .hero-scroll span {
+      font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase;
+      color:rgba(255,255,255,0.35); font-weight:300;
+    }
+    .scroll-line {
+      width:1px; height:40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity:0.3; transform:scaleY(1); }
+      50%      { opacity:1;   transform:scaleY(0.7); }
+    }
+
+    /* ─── STATS BAND ─────────────────────────────────────────────── */
+    .stats-band {
+      background: var(--gold);
+      padding: 1.8rem 5%;
+      display: flex; justify-content:center;
+      gap: clamp(2rem, 6vw, 6rem);
+      flex-wrap: wrap;
+    }
+    .stat { text-align:center; }
+    .stat-num {
+      font-family: var(--ff-head);
+      font-size: 2.2rem; font-weight:700;
+      color: var(--black);
+      line-height:1;
+    }
+    .stat-lbl {
+      font-size:0.68rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase;
+      color: rgba(26,21,18,0.65);
+      margin-top:0.35rem;
+    }
+
+    /* ─── SECTION COMMONS ────────────────────────────────────────── */
+    section { padding: 6.5rem 5%; }
+    .section-label {
+      font-size:0.66rem; font-weight:700;
+      letter-spacing:0.3em; text-transform:uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--ff-head);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400; line-height:1.2;
+      color: var(--dark);
+      margin-bottom: 1.2rem;
+    }
+    .section-title em { font-style:italic; color:var(--gold-dk); }
+    .section-divider {
+      width:50px; height:1px;
+      background: var(--gold);
+      margin-bottom: 1.8rem;
+    }
+    .centered { text-align:center; }
+    .centered .section-divider { margin-left:auto; margin-right:auto; }
+    .section-lead {
+      font-size:1.05rem; font-weight:300;
+      line-height:1.85; color:var(--grey);
+      max-width:620px;
+    }
+    .centered .section-lead { margin:0 auto; }
+
+    /* ─── SERVICIOS ──────────────────────────────────────────────── */
+    #servicios { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin-top: 4rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2.8rem 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .service-card::before {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+      opacity:0; transition:opacity 0.35s;
+    }
+    .service-card:hover { transform:translateY(-6px); box-shadow: 0 20px 50px rgba(201,168,76,0.12); }
+    .service-card:hover::before { opacity:1; }
+    .service-icon {
+      width:52px; height:52px;
+      border: 1px solid var(--border);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:1.6rem;
+      font-size:1.4rem;
+      color:var(--gold);
+      transition:background 0.35s;
+    }
+    .service-card:hover .service-icon { background:var(--gold); color:var(--black); }
+    .service-num {
+      position:absolute; top:1.4rem; right:1.8rem;
+      font-family:var(--ff-head); font-size:4rem; font-weight:700;
+      color:rgba(201,168,76,0.07); line-height:1;
+      transition:color 0.35s;
+    }
+    .service-card:hover .service-num { color:rgba(201,168,76,0.12); }
+    .service-card h3 {
+      font-family: var(--ff-head);
+      font-size:1.25rem; font-weight:500;
+      margin-bottom:0.85rem; color:var(--dark);
+    }
+    .service-card p {
+      font-size:0.9rem; line-height:1.75;
+      color:var(--grey); font-weight:300;
+    }
+    .service-tag {
+      display:inline-block; margin-top:1.2rem;
+      font-size:0.63rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:var(--gold); border-bottom:1px solid var(--gold);
+      padding-bottom:2px;
+    }
+
+    /* ─── HISTORIA ───────────────────────────────────────────────── */
+    #historia {
+      background: var(--black);
+      padding: 7rem 5%;
+    }
+    .historia-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .historia-visual {
+      position:relative;
+    }
+    .historia-img-main {
+      width:100%; aspect-ratio:3/4;
+      background: linear-gradient(145deg, #2c2318 0%, #1a1512 50%, rgba(201,168,76,0.15) 100%);
+      position:relative; overflow:hidden;
+    }
+    .historia-img-main::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,0.18) 0%, transparent 70%);
+    }
+    .historia-img-main::after {
+      content:'✦'; position:absolute;
+      top:50%; left:50%; transform:translate(-50%,-50%);
+      font-size:3.5rem; color:rgba(201,168,76,0.25);
+      font-family:serif;
+    }
+    .historia-img-float {
+      position:absolute; bottom:-2.5rem; right:-2.5rem;
+      width:55%; aspect-ratio:1/1;
+      background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05));
+      border: 1px solid rgba(201,168,76,0.3);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .historia-year {
+      font-family:var(--ff-head); font-size:3.5rem;
+      font-weight:700; color:var(--gold); line-height:1;
+    }
+    .historia-year span {
+      display:block; font-size:0.7rem; font-weight:300;
+      letter-spacing:0.22em; text-transform:uppercase;
+      color:rgba(201,168,76,0.6); margin-top:0.3rem;
+    }
+    .historia-border {
+      position:absolute; top:-1.5rem; left:-1.5rem;
+      width:50%; aspect-ratio:1/1;
+      border: 1px solid rgba(201,168,76,0.2);
+      pointer-events:none;
+    }
+    /* text side */
+    #historia .section-label { color:var(--gold); }
+    #historia .section-title { color:var(--white); }
+    .historia-text p {
+      font-size:0.95rem; line-height:1.9;
+      color:rgba(255,255,255,0.55); font-weight:300;
+      margin-bottom:1.2rem;
+    }
+    .historia-text p strong {
+      color:var(--gold-lt); font-weight:400;
+    }
+    .historia-quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 1.4rem;
+      margin: 2rem 0;
+    }
+    .historia-quote p {
+      font-family:var(--ff-head);
+      font-size:1.15rem; font-style:italic;
+      color:rgba(255,255,255,0.75) !important;
+      line-height:1.65;
+    }
+    .historia-timeline {
+      display:flex; gap:2rem; margin-top:2.5rem;
+      flex-wrap:wrap;
+    }
+    .tl-item { text-align:center; }
+    .tl-dot {
+      width:8px; height:8px; background:var(--gold);
+      border-radius:50%; margin:0 auto 0.5rem;
+    }
+    .tl-year {
+      font-family:var(--ff-head); font-size:1.1rem;
+      color:var(--gold-lt); font-weight:500;
+    }
+    .tl-desc {
+      font-size:0.72rem; color:rgba(255,255,255,0.4);
+      letter-spacing:0.1em; margin-top:0.2rem;
+    }
+
+    /* ─── PROPUESTA ──────────────────────────────────────────────── */
+    #propuesta {
+      background: var(--blush);
+      padding: 6.5rem 5%;
+    }
+    .prop-inner {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:5rem; align-items:center;
+      max-width:1200px; margin:0 auto;
+    }
+    .prop-features {
+      display:flex; flex-direction:column; gap:1.8rem;
+    }
+    .prop-item {
+      display:flex; gap:1.4rem; align-items:flex-start;
+    }
+    .prop-icon-wrap {
+      flex-shrink:0; width:44px; height:44px;
+      border: 1px solid var(--gold);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.1rem; color:var(--gold);
+      background: white;
+    }
+    .prop-item h4 {
+      font-family:var(--ff-head); font-size:1.05rem;
+      margin-bottom:0.4rem; color:var(--dark);
+    }
+    .prop-item p {
+      font-size:0.88rem; line-height:1.7;
+      color:var(--grey); font-weight:300;
+    }
+    .prop-note {
+      margin-top:2.5rem;
+      background: var(--gold);
+      padding: 1.6rem 2rem;
+      display:flex; gap:1.2rem; align-items:center;
+    }
+    .prop-note-icon { font-size:1.6rem; flex-shrink:0; }
+    .prop-note p {
+      font-size:0.88rem; line-height:1.65; color:var(--black);
+      font-weight:400;
+    }
+    .prop-note strong { font-weight:700; }
+
+    /* ─── GALERÍA ────────────────────────────────────────────────── */
+    #galeria { background: var(--dark); padding:6.5rem 5%; }
+    #galeria .section-title { color:var(--white); }
+    #galeria .section-lead { color:rgba(255,255,255,0.5); }
+    .gallery-grid {
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(3, 220px);
+      gap:12px;
+      margin-top:3.5rem;
+    }
+    .gallery-item {
+      position:relative; overflow:hidden;
+      cursor:pointer;
+    }
+    .gallery-item::before {
+      content:''; position:absolute; inset:0;
+      background: inherit;
+      transition: transform 0.6s var(--ease);
+    }
+    .gallery-item:hover::before { transform:scale(1.06); }
+    .gallery-item::after {
+      content:'Ver más'; position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.2em;
+      text-transform:uppercase; color:var(--gold-lt);
+      background:rgba(0,0,0,0.45);
+      opacity:0; transition:opacity 0.35s;
+    }
+    .gallery-item:hover::after { opacity:1; }
+    .g1 { grid-column:1/6; grid-row:1/3; background:linear-gradient(135deg,#2c2318,#3d2f1e,rgba(201,168,76,0.2)); }
+    .g2 { grid-column:6/9; grid-row:1/2; background:linear-gradient(160deg,#1a1512,rgba(201,168,76,0.15)); }
+    .g3 { grid-column:9/13; grid-row:1/2; background:linear-gradient(120deg,#2c2318,rgba(245,236,232,0.1)); }
+    .g4 { grid-column:6/9; grid-row:2/3; background:linear-gradient(200deg,rgba(201,168,76,0.25),#1a1512); }
+    .g5 { grid-column:9/13; grid-row:2/3; background:linear-gradient(45deg,#3d2f1e,rgba(201,168,76,0.18)); }
+    .g6 { grid-column:1/5; grid-row:3/4; background:linear-gradient(170deg,rgba(201,168,76,0.12),#1a1512); }
+    .g7 { grid-column:5/9; grid-row:3/4; background:linear-gradient(100deg,#2c2318,rgba(201,168,76,0.22)); }
+    .g8 { grid-column:9/13; grid-row:3/4; background:linear-gradient(220deg,rgba(201,168,76,0.3),#1a1512); }
+    .gallery-label {
+      position:absolute; bottom:1rem; left:1.2rem;
+      font-size:0.62rem; font-weight:700; letter-spacing:0.2em;
+      text-transform:uppercase; color:rgba(255,255,255,0.4);
+    }
+    /* decorative ornament on main item */
+    .g1 .gallery-label { color:rgba(201,168,76,0.5); font-size:0.65rem; }
+    .gallery-cta {
+      text-align:center; margin-top:3rem;
+    }
+
+    /* ─── CASONA ─────────────────────────────────────────────────── */
+    #casona {
+      background: var(--white);
+      padding:6rem 5%;
+    }
+    .casona-inner {
+      max-width:1100px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1.2fr;
+      gap:4rem; align-items:center;
+    }
+    .casona-img {
+      aspect-ratio:4/3;
+      background: linear-gradient(135deg,
+        rgba(245,236,232,1) 0%,
+        rgba(201,168,76,0.15) 50%,
+        rgba(240,221,215,1) 100%);
+      position:relative; overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .casona-img::after {
+      content:'🏡'; font-size:5rem; opacity:0.18;
+    }
+    .casona-badge {
+      position:absolute; bottom:1.5rem; right:1.5rem;
+      background:var(--gold); padding:0.8rem 1.2rem;
+      text-align:center;
+    }
+    .casona-badge p {
+      font-size:0.65rem; font-weight:700;
+      letter-spacing:0.15em; text-transform:uppercase;
+      color:var(--black);
+    }
+    .casona-badge strong {
+      display:block; font-family:var(--ff-head);
+      font-size:1.3rem; font-weight:600; color:var(--black);
+    }
+    .casona-text p {
+      font-size:0.95rem; line-height:1.85;
+      color:var(--grey); font-weight:300;
+      margin-bottom:1rem;
+    }
+    .casona-text .btn-primary { margin-top:1rem; }
+
+    /* ─── CONTACTO ───────────────────────────────────────────────── */
+    #contacto {
+      background: var(--black);
+      padding:7rem 5%;
+    }
+    .contacto-inner {
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:5rem;
+    }
+    #contacto .section-title { color:var(--white); }
+    #contacto .section-lead { color:rgba(255,255,255,0.5); }
+    #contacto .section-divider { background:var(--gold); }
+    .contact-items { margin-top:3rem; display:flex; flex-direction:column; gap:1.6rem; }
+    .contact-item {
+      display:flex; gap:1.2rem; align-items:flex-start;
+    }
+    .contact-icon {
+      width:42px; height:42px; flex-shrink:0;
+      border:1px solid rgba(201,168,76,0.4);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1rem; color:var(--gold);
+    }
+    .contact-item h4 {
+      font-size:0.68rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:0.35rem;
+    }
+    .contact-item p, .contact-item a {
+      font-size:0.92rem; color:rgba(255,255,255,0.65);
+      font-weight:300; line-height:1.6;
+      transition:color 0.3s;
+    }
+    .contact-item a:hover { color:var(--gold-lt); }
+    /* Form side */
+    .contact-form-wrap {
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(201,168,76,0.2);
+      padding:3rem;
+    }
+    .contact-form-wrap h3 {
+      font-family:var(--ff-head);
+      font-size:1.4rem; color:var(--white);
+      margin-bottom:2rem;
+    }
+    .form-group { margin-bottom:1.4rem; }
+    .form-group label {
+      display:block; font-size:0.65rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:rgba(255,255,255,0.4); margin-bottom:0.5rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width:100%; background:rgba(255,255,255,0.05);
+      border:1px solid rgba(201,168,76,0.2);
+      padding:0.85rem 1rem;
+      font-family:var(--ff-body); font-size:0.9rem;
+      color:rgba(255,255,255,0.8); outline:none;
+      transition:border-color 0.3s;
+      appearance:none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color:var(--gold);
+    }
+    .form-group select option { background:var(--dark); color:var(--white); }
+    .form-group textarea { resize:vertical; min-height:120px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-submit {
+      width:100%;
+      background:var(--gold); color:var(--black);
+      font-family:var(--ff-body); font-size:0.78rem;
+      font-weight:700; letter-spacing:0.18em; text-transform:uppercase;
+      padding:1.1rem; border:none; cursor:pointer;
+      transition:background 0.3s, transform 0.2s;
+      margin-top:0.5rem;
+    }
+    .form-submit:hover { background:var(--gold-lt); transform:translateY(-1px); }
+    .social-strip {
+      display:flex; gap:1rem; margin-top:2.5rem; flex-wrap:wrap;
+    }
+    .social-pill {
+      display:flex; align-items:center; gap:0.6rem;
+      border:1px solid rgba(201,168,76,0.3);
+      padding:0.55rem 1.1rem;
+      font-size:0.72rem; letter-spacing:0.1em;
+      color:rgba(255,255,255,0.5); text-transform:uppercase;
+      font-weight:700; transition:all 0.3s;
+    }
+    .social-pill:hover {
+      border-color:var(--gold); color:var(--gold-lt);
+      background:rgba(201,168,76,0.06);
+    }
+    .social-pill span { font-size:1rem; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: #0e0b09;
+      padding:3rem 5%;
+      border-top:1px solid rgba(201,168,76,0.12);
+    }
+    .footer-inner {
+      max-width:1200px; margin:0 auto;
+      display:flex; align-items:center;
+      justify-content:space-between; flex-wrap:wrap; gap:1.5rem;
+    }
+    .footer-logo { font-family:var(--ff-head); font-size:1.15rem; color:var(--gold-lt); }
+    .footer-logo span {
+      display:block; font-family:var(--ff-body); font-size:0.6rem;
+      letter-spacing:0.22em; color:rgba(201,168,76,0.4);
+      text-transform:uppercase; margin-top:3px;
+    }
+    .footer-copy {
+      font-size:0.73rem; color:rgba(255,255,255,0.25);
+      letter-spacing:0.08em; text-align:center;
+    }
+    .footer-links {
+      display:flex; gap:1.8rem;
+    }
+    .footer-links a {
+      font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;
+      color:rgba(255,255,255,0.3); font-weight:400;
+      transition:color 0.3s;
+    }
+    .footer-links a:hover { color:var(--gold); }
+
+    /* ─── FLOATING WA ────────────────────────────────────────────── */
+    .wa-float {
+      position:fixed; bottom:2rem; right:2rem; z-index:200;
+      width:58px; height:58px; border-radius:50%;
+      background:#25D366; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 20px rgba(37,211,102,0.4);
+      font-size:1.5rem; color:white;
+      animation:waPulse 2.5s ease-in-out infinite;
+      text-decoration:none;
+      transition:transform 0.25s, box-shadow 0.25s;
+    }
+    .wa-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,0.55); }
+    @keyframes waPulse {
+      0%,100% { box-shadow:0 4px 20px rgba(37,211,102,0.4); }
+      50%      { box-shadow:0 4px 28px rgba(37,211,102,0.65), 0 0 0 10px rgba(37,211,102,0.08); }
+    }
+
+    /* ─── ANIMATIONS (scroll reveal) ─────────────────────────────── */
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-delay-1 { transition-delay:0.15s; }
+    .reveal-delay-2 { transition-delay:0.3s; }
+    .reveal-delay-3 { transition-delay:0.45s; }
+    .reveal-delay-4 { transition-delay:0.6s; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media(max-width:900px){
+      .nav-links { display:none; flex-direction:column; position:absolute;
+        top:100%; left:0; right:0; background:rgba(14,11,9,0.98);
+        padding:2rem 5%; gap:1.5rem; border-bottom:1px solid var(--border); }
+      .nav-links.open { display:flex; }
+      .hamburger { display:flex; }
+      .historia-inner, .prop-inner, .casona-inner, .contacto-inner { grid-template-columns:1fr; gap:3rem; }
+      .historia-img-float { right:-1rem; bottom:-1rem; width:45%; }
+      .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+      .g1,.g2,.g3,.g4,.g5,.g6,.g7,.g8 { grid-column:auto; grid-row:auto; aspect-ratio:4/3; }
+      .form-row { grid-template-columns:1fr; }
+      .footer-inner { flex-direction:column; text-align:center; }
+      .footer-links { justify-content:center; }
+    }
+    @media(max-width:600px){
+      section { padding:4.5rem 5%; }
+      .gallery-grid { grid-template-columns:1fr; }
+      .stats-band { gap:1.5rem; }
+      .historia-img-float { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <div class="nav-logo">
+      Carla Fischer
+      <span>Producciones Ltda.</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#historia">Historia</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#casona">Espacios</a></li>
+      <li><a href="#contacto" class="nav-cta">Cotizar</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="corner c-tl"></div>
+    <div class="corner c-tr"></div>
+    <div class="corner c-bl"></div>
+    <div class="corner c-br"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Banquetería Integral & Decoración · Desde 1999</div>
+      <h1>
+        Todo lo que necesitan,
+        <em>en el mismo lugar.</em>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">
+        Producción completa de matrimonios y eventos corporativos. Coordinamos cada detalle para que vivan su día con absoluta tranquilidad.
+      </p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-primary">Cotizar mi evento</a>
+        <a href="#servicios" class="btn-ghost">Conocer servicios</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Explorar</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-band">
+    <div class="stat reveal">
+      <div class="stat-num">+25</div>
+      <div class="stat-lbl">Años de experiencia</div>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <div class="stat-num">140+</div>
+      <div class="stat-lbl">Invitados mínimo</div>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <div class="stat-num">7.6K</div>
+      <div class="stat-lbl">Seguidores Instagram</div>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <div class="stat-num">100%</div>
+      <div class="stat-lbl">Servicio integral</div>
+    </div>
+  </div>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div style="text-align:center; max-width:680px; margin:0 auto;">
+      <div class="section-label reveal">Lo que ofrecemos</div>
+      <h2 class="section-title reveal reveal-delay-1">Nuestros <em>Servicios</em></h2>
+      <div class="section-divider" style="margin:0 auto 1.8rem; width:50px; height:1px; background:var(--gold);"></div>
+      <p class="section-lead reveal reveal-delay-2">
+        Somos la solución completa para tu matrimonio o evento. Un solo equipo coordinado, una sola llamada, cero estrés.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">🍽️</div>
+        <h3>Banquetería Completa</h3>
+        <p>Menús a medida, cocina en vivo, servicio de mesa y todos los detalles gastronómicos para sorprender a tus invitados.</p>
+        <span class="service-tag">Gastronomía</span>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-icon">🌸</div>
+        <h3>Decoración Integral</h3>
+        <p>Diseño de ambientes únicos, arreglos florales, iluminación escénica y cada elemento visual que hace memorable el día.</p>
+        <span class="service-tag">Diseño & Estética</span>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-icon">💍</div>
+        <h3>Producción de Matrimonios</h3>
+        <p>Coordinación completa del evento: protocolo, timing, proveedores, música y la dirección en terreno el día de tu boda.</p>
+        <span class="service-tag">Coordinación</span>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">04</div>
+        <div class="service-icon">🏢</div>
+        <h3>Eventos Corporativos</h3>
+        <p>Cenas de gala, lanzamientos y eventos empresariales con el mismo nivel de excelencia y atención al detalle.</p>
+        <span class="service-tag">Corporativo</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <div class="service-icon">📋</div>
+        <h3>Logística & Proveedores</h3>
+        <p>Coordinamos fotógrafo, video, música, transporte y todos los proveedores. Tú solo apareces y disfrutas.</p>
+        <span class="service-tag">Producción</span>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">06</div>
+        <div class="service-icon">✨</div>
+        <h3>Servicio Personalizado</h3>
+        <p>Cada evento es único. Te acompañamos desde la primera reunión hasta el último baile, adaptando todo a tu visión.</p>
+        <span class="service-tag">A Tu Medida</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section id="historia">
+    <div class="historia-inner">
+      <div class="historia-visual reveal">
+        <div class="historia-border"></div>
+        <div class="historia-img-main"></div>
+        <div class="historia-img-float">
+          <div class="historia-year">
+            1999
+            <span>Año de fundación</span>
+          </div>
+        </div>
+      </div>
+      <div class="historia-text">
+        <div class="section-label reveal">Nuestra historia</div>
+        <h2 class="section-title reveal reveal-delay-1">Una idea, <em>un sueño,</em> 25 años de bodas perfectas.</h2>
+        <div class="section-divider reveal reveal-delay-2"></div>
+        <div class="reveal reveal-delay-2">
+          <p>En 1999, <strong>Carla Fischer</strong>, Comunicadora Audiovisual egresada de UNIACC, junto a compañeras de universidad, fundó Carla Fischer Producciones con una visión clara: que los novios pudieran encontrar <strong>todo lo que necesitan en el mismo lugar.</strong></p>
+          <p>Lo que comenzó como una respuesta a una necesidad real del mercado, se convirtió en una de las empresas de banquetería y producción de eventos más reconocidas de Santiago. Con los años, fueron sumando servicios y construyendo un equipo altamente coordinado.</p>
+        </div>
+        <div class="historia-quote reveal reveal-delay-3">
+          <p>"Donde los novios encuentran todo en el mismo lugar."</p>
+        </div>
+        <div class="historia-timeline reveal reveal-delay-3">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">1999</div>
+            <div class="tl-desc">Fundación</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2000s</div>
+            <div class="tl-desc">Expansión</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">Hoy</div>
+            <div class="tl-desc">+25 años</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPUESTA DE VALOR -->
+  <section id="propuesta">
+    <div class="prop-inner">
+      <div>
+        <div class="section-label reveal">¿Por qué elegirnos?</div>
+        <h2 class="section-title reveal reveal-delay-1">La <em>tranquilidad</em> que se merecen los novios.</h2>
+        <div class="section-divider reveal reveal-delay-2"></div>
+        <p class="section-lead reveal reveal-delay-2">Más de dos décadas nos avalan. Nuestro mayor orgullo es que los novios puedan vivir su día sin preocupaciones.</p>
+      </div>
+      <div class="prop-features">
+        <div class="prop-item reveal">
+          <div class="prop-icon-wrap">🎯</div>
+          <div>
+            <h4>Todo en un solo lugar</h4>
+            <p>Sin coordinar múltiples proveedores. Banquetería, decoración, logística y producción bajo un mismo equipo.</p>
+          </div>
+        </div>
+        <div class="prop-item reveal reveal-delay-1">
+          <div class="prop-icon-wrap">🤝</div>
+          <div>
+            <h4>25 años de experiencia</h4>
+            <p>Hemos vivido miles de momentos únicos. Sabemos anticipar y resolver cada detalle antes de que sea un problema.</p>
+          </div>
+        </div>
+        <div class="prop-item reveal reveal-delay-2">
+          <div class="prop-icon-wrap">👁️</div>
+          <div>
+            <h4>Atención personalizada</h4>
+            <p>Desde la primera reunión hasta el cierre del evento, tienes un equipo dedicado a tu matrimonio.</p>
+          </div>
+        </div>
+        <div class="prop-item reveal reveal-delay-3">
+          <div class="prop-icon-wrap">🏆</div>
+          <div>
+            <h4>Calidad garantizada</h4>
+            <p>Más de 7.600 familias nos siguen en Instagram. Nuestra reputación se construye evento a evento.</p>
+          </div>
+        </div>
+        <div class="prop-note reveal">
+          <span class="prop-note-icon">ℹ️</span>
+          <p><strong>Nota importante:</strong> Nuestros servicios están disponibles para eventos con un <strong>mínimo de 140 invitados.</strong> Trabajamos tanto con matrimonios como con empresas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="centered">
+      <div class="section-label reveal">Nuestro trabajo</div>
+      <h2 class="section-title reveal reveal-delay-1">Una <em>galería</em> de momentos únicos</h2>
+      <div class="section-divider" style="margin:0 auto 1.2rem;width:50px;height:1px;background:var(--gold);"></div>
+      <p class="section-lead reveal reveal-delay-2">Cada evento tiene su propia historia. Aquí algunos destellos de lo que creamos.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item g1"><span class="gallery-label">Matrimonio — Santiago</span></div>
+      <div class="gallery-item g2"><span class="gallery-label">Decoración floral</span></div>
+      <div class="gallery-item g3"><span class="gallery-label">Mesa banquete</span></div>
+      <div class="gallery-item g4"><span class="gallery-label">Iluminación</span></div>
+      <div class="gallery-item g5"><span class="gallery-label">Evento corporativo</span></div>
+      <div class="gallery-item g6"><span class="gallery-label">Casona Cañaveral</span></div>
+      <div class="gallery-item g7"><span class="gallery-label">Ambientación</span></div>
+      <div class="gallery-item g8"><span class="gallery-label">Recepción</span></div>
+    </div>
+    <div class="gallery-cta reveal">
+      <a href="https://www.instagram.com/carlafischer.cl" target="_blank" class="btn-ghost" style="border-color:rgba(201,168,76,0.4);color:var(--gold-lt);">
+        Ver más en Instagram → @carlafischer.cl
+      </a>
+    </div>
+  </section>
+
+  <!-- CASONA CAÑAVERAL -->
+  <section id="casona">
+    <div class="casona-inner">
+      <div class="casona-img reveal">
+        <div class="casona-badge">
+          <p>A solo</p>
+          <strong>Km 5</strong>
+          <p>Farellones · Los Andes</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="section-label">Espacio destacado</div>
+        <h2 class="section-title">Casona <em>Cañaveral</em></h2>
+        <div class="section-divider"></div>
+        <div class="casona-text">
+          <p>Uno de nuestros espacios más especiales: la <strong>Casona Cañaveral</strong>, ubicada en el kilómetro 5 del camino a Farellones, en Los Andes. Un entorno de naturaleza y exclusividad para matrimonios y celebraciones únicas.</p>
+          <p>Rodeada de montañas y vegetación exuberante, la casona ofrece el escenario perfecto para quienes sueñan con una boda fuera de la ciudad, sin renunciar a la elegancia y el servicio integral que caracteriza a Carla Fischer Producciones.</p>
+          <a href="#contacto" class="btn-primary">Consultar disponibilidad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contacto-inner">
+      <div>
+        <div class="section-label reveal">Conversemos</div>
+        <h2 class="section-title reveal reveal-delay-1">Hagamos realidad <em>tu evento</em></h2>
+        <div class="section-divider reveal reveal-delay-2"></div>
+        <p class="section-lead reveal reveal-delay-2">Estamos listos para acompañarte en cada detalle. Contáctanos y cotiza sin compromiso.</p>
+
+        <div class="contact-items">
+          <div class="contact-item reveal">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Dirección</h4>
+              <p>Arz Casanova 18, Providencia<br>Santiago, Región Metropolitana</p>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-1">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Teléfonos</h4>
+              <a href="tel:+56222384175">+562 2238 4175</a><br>
+              <a href="tel:+56222380853">+562 2238 0853</a>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-2">
+            <div class="contact-icon">📱</div>
+            <div>
+              <h4>Celular / WhatsApp</h4>
+              <a href="https://wa.me/56991612957">+569 9161 2957</a><br>
+              <a href="https://wa.me/56934986530">+569 9349 8653</a>
+            </div>
+          </div>
+          <div class="contact-item reveal reveal-delay-3">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:producciones@carlafischer.cl">producciones@carlafischer.cl</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-strip reveal">
+          <a href="https://www.instagram.com/carlafischer.cl" target="_blank" class="social-pill">
+            <span>📷</span> Instagram
+          </a>
+          <a href="https://www.facebook.com/Carlafischerbanqueteria" target="_blank" class="social-pill">
+            <span>📘</span> Facebook
+          </a>
+          <a href="https://www.linkedin.com/in/carlafischer" target="_blank" class="social-pill">
+            <span>💼</span> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <h3>Solicitar cotización</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" placeholder="Tu apellido" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="correo@ejemplo.cl" />
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" placeholder="+569 ..." />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tipo de evento</label>
+            <select>
+              <option>Matrimonio</option>
+              <option>Evento corporativo</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>N° de invitados</label>
+            <select>
+              <option>140 – 200</option>
+              <option>200 – 300</option>
+              <option>300 – 500</option>
+              <option>+500</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Fecha estimada</label>
+          <input type="date" />
+        </div>
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="Cuéntanos sobre tu evento, espacio deseado, servicios que necesitas…"></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit()">Enviar solicitud →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        Carla Fischer
+        <span>Producciones Ltda. · Las Condes, Santiago · Desde 1999</span>
+      </div>
+      <div class="footer-copy">
+        © 2025 Carla Fischer Producciones Ltda. Todos los derechos reservados.
+      </div>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#historia">Historia</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/56991612957?text=Hola,%20me%20interesa%20cotizar%20un%20evento%20con%20Carla%20Fischer%20Producciones." 
+     class="wa-float" target="_blank" title="Escríbenos por WhatsApp">
+    💬
+  </a>
+
+  <script>
+    // ── NAV scroll shrink ──
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Mobile nav toggle ──
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    // Close nav on link click
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Form submit ──
+    function handleSubmit() {
+      const btn = document.querySelector('.form-submit');
+      btn.textContent = '✓ Solicitud enviada — te contactaremos pronto';
+      btn.style.background = 'var(--gold-dk)';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
