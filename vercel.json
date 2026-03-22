@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.dolarexpress.cl"
-        }
-      ],
-      "destination": "https://dolarexpress.cl/:path*",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/vender-usd",
@@ -276,18 +263,6 @@
     {
       "source": "/cupo-dolar-regiones-chile",
       "destination": "/cupo-dolar-regiones-chile.html"
-    },
-    {
-      "source": "/vender-cupo-banco-chile",
-      "destination": "/vender-cupo-banco-chile.html"
-    },
-    {
-      "source": "/vender-cupo-cmr-falabella",
-      "destination": "/vender-cupo-cmr-falabella.html"
-    },
-    {
-      "source": "/vender-cupo-internacional",
-      "destination": "/vender-cupo-internacional.html"
     },
     {
       "source": "/vender-cupo-dolar-tarjeta-credito",
