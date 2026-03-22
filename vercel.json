@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.dolarexpress.cl"
+        }
+      ],
+      "destination": "https://dolarexpress.cl/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/vender-usd",
@@ -263,6 +276,202 @@
     {
       "source": "/cupo-dolar-regiones-chile",
       "destination": "/cupo-dolar-regiones-chile.html"
+    },
+    {
+      "source": "/vender-cupo-banco-chile",
+      "destination": "/vender-cupo-banco-chile.html"
+    },
+    {
+      "source": "/vender-cupo-cmr-falabella",
+      "destination": "/vender-cupo-cmr-falabella.html"
+    },
+    {
+      "source": "/vender-cupo-internacional",
+      "destination": "/vender-cupo-internacional.html"
+    },
+    {
+      "source": "/vender-cupo-dolar-tarjeta-credito",
+      "destination": "/vender-cupo-dolar-tarjeta-credito.html"
+    },
+    {
+      "source": "/cambiar-cupo-dolar",
+      "destination": "/cambiar-cupo-dolar.html"
+    },
+    {
+      "source": "/cambio-cupo-dolar",
+      "destination": "/cambio-cupo-dolar.html"
+    },
+    {
+      "source": "/compro-cupo-dolar",
+      "destination": "/compro-cupo-dolar.html"
+    },
+    {
+      "source": "/comprar-cupo-dolar",
+      "destination": "/comprar-cupo-dolar.html"
+    },
+    {
+      "source": "/cambiar-dolares-tarjeta",
+      "destination": "/cambiar-dolares-tarjeta.html"
+    },
+    {
+      "source": "/cambio-dolares-tarjeta-credito",
+      "destination": "/cambio-dolares-tarjeta-credito.html"
+    },
+    {
+      "source": "/cupo-dolares-tarjeta-credito",
+      "destination": "/cupo-dolares-tarjeta-credito.html"
+    },
+    {
+      "source": "/cupo-en-dolares",
+      "destination": "/cupo-en-dolares.html"
+    },
+    {
+      "source": "/venta-cupo-dolares",
+      "destination": "/venta-cupo-dolares.html"
+    },
+    {
+      "source": "/compra-cupo-dolares",
+      "destination": "/compra-cupo-dolares.html"
+    },
+    {
+      "source": "/girar-dolares-tarjeta",
+      "destination": "/girar-dolares-tarjeta.html"
+    },
+    {
+      "source": "/cupo-dolar-santiago",
+      "destination": "/cupo-dolar-santiago.html"
+    },
+    {
+      "source": "/cupo-dolar-providencia",
+      "destination": "/cupo-dolar-providencia.html"
+    },
+    {
+      "source": "/cupo-dolar-las-condes",
+      "destination": "/cupo-dolar-las-condes.html"
+    },
+    {
+      "source": "/cupo-dolar-valparaiso",
+      "destination": "/cupo-dolar-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-concepcion",
+      "destination": "/cupo-dolar-concepcion.html"
+    },
+    {
+      "source": "/cupo-dolar-temuco",
+      "destination": "/cupo-dolar-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-antofagasta",
+      "destination": "/cupo-dolar-antofagasta.html"
+    },
+    {
+      "source": "/cupo-dolar-vina-del-mar",
+      "destination": "/cupo-dolar-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-la-serena",
+      "destination": "/cupo-dolar-la-serena.html"
+    },
+    {
+      "source": "/cupo-dolar-rancagua",
+      "destination": "/cupo-dolar-rancagua.html"
+    },
+    {
+      "source": "/cupo-dolar-talca",
+      "destination": "/cupo-dolar-talca.html"
+    },
+    {
+      "source": "/cupo-dolar-iquique",
+      "destination": "/cupo-dolar-iquique.html"
+    },
+    {
+      "source": "/cupo-dolar-puerto-montt",
+      "destination": "/cupo-dolar-puerto-montt.html"
+    },
+    {
+      "source": "/cupo-dolar-arica",
+      "destination": "/cupo-dolar-arica.html"
+    },
+    {
+      "source": "/cupo-dolar-osorno",
+      "destination": "/cupo-dolar-osorno.html"
+    },
+    {
+      "source": "/cupo-dolar-valdivia",
+      "destination": "/cupo-dolar-valdivia.html"
+    },
+    {
+      "source": "/cupo-dolar-copiapo",
+      "destination": "/cupo-dolar-copiapo.html"
+    },
+    {
+      "source": "/cupo-dolar-calama",
+      "destination": "/cupo-dolar-calama.html"
+    },
+    {
+      "source": "/cupo-dolar-punta-arenas",
+      "destination": "/cupo-dolar-punta-arenas.html"
+    },
+    {
+      "source": "/cupo-dolar-chillan",
+      "destination": "/cupo-dolar-chillan.html"
+    },
+    {
+      "source": "/cupo-dolar-american-express",
+      "destination": "/cupo-dolar-american-express.html"
+    },
+    {
+      "source": "/vender-cupo-scotiabank",
+      "destination": "/vender-cupo-scotiabank.html"
+    },
+    {
+      "source": "/vender-cupo-santander",
+      "destination": "/vender-cupo-santander.html"
+    },
+    {
+      "source": "/vender-cupo-bci",
+      "destination": "/vender-cupo-bci.html"
+    },
+    {
+      "source": "/vender-cupo-itau",
+      "destination": "/vender-cupo-itau.html"
+    },
+    {
+      "source": "/vender-cupo-banco-estado",
+      "destination": "/vender-cupo-banco-estado.html"
+    },
+    {
+      "source": "/cupo-dolar-online",
+      "destination": "/cupo-dolar-online.html"
+    },
+    {
+      "source": "/cupo-dolar-altos-montos",
+      "destination": "/cupo-dolar-altos-montos.html"
+    },
+    {
+      "source": "/cupo-dolar-empresas",
+      "destination": "/cupo-dolar-empresas.html"
+    },
+    {
+      "source": "/cupo-dolar-500-usd",
+      "destination": "/cupo-dolar-500-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-1000-usd",
+      "destination": "/cupo-dolar-1000-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-monto-minimo",
+      "destination": "/cupo-dolar-sin-monto-minimo.html"
+    },
+    {
+      "source": "/cupo-dolar-15-minutos",
+      "destination": "/cupo-dolar-15-minutos.html"
+    },
+    {
+      "source": "/cupo-dolar-transferencia-inmediata",
+      "destination": "/cupo-dolar-transferencia-inmediata.html"
     },
     {
       "source": "/(.*)",
