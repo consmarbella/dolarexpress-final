@@ -1,6 +1,8 @@
 {
+  "buildCommand": "",
+  "outputDirectory": "public",
   "routes": [
-    { "src": "/(.*)", "dest": "/$1.html" },
-    { "src": "/", "dest": "/index.html" }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/([^.]+)", "dest": "/$1.html" }
   ]
 }
