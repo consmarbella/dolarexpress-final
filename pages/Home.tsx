@@ -73,13 +73,13 @@ const Home: React.FC = () => {
       />
       
       {/* Navbar */}
-      <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+      <nav className="fixed w-full z-50 bg-[#1a1a1a] shadow-sm border-b border-[#333]">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl">
           <Link to="/" className="flex items-center gap-2" aria-label="Volver al inicio">
             <Logo className="h-16 w-auto object-contain" />
           </Link>
           <div className="flex gap-4 items-center">
-            <Link to="/" className="font-medium text-gray-600 hover:text-[#C8A045] transition-colors hidden md:block">
+            <Link to="/" className="font-medium text-white hover:text-[#C8A045] transition-colors hidden md:block">
               Inicio
             </Link>
             <Link
