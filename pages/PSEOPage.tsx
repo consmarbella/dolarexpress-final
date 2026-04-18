@@ -51,13 +51,13 @@ const PSEOPage: React.FC = () => {
       />
       
       {/* Navbar */}
-      <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+      <nav className="fixed w-full z-50 bg-[#1a1a1a] shadow-sm border-b border-[#333]">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl">
           <Link to="/" className="flex items-center gap-2">
             <Logo className="h-16 w-auto object-contain" />
           </Link>
           <div className="flex gap-4 items-center">
-            <Link to="/" className="font-medium text-gray-600 hover:text-[#C8A045] hidden md:block">Inicio</Link>
+            <Link to="/" className="font-medium text-white hover:text-[#C8A045] hidden md:block">Inicio</Link>
             <Link to="/venta-usd" className="bg-[#C8A045] text-white px-5 py-2 rounded-lg font-bold">Vender Cupo</Link>
           </div>
         </div>
