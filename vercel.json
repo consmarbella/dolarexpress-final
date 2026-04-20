@@ -1,16 +1,4 @@
 {
-  "routes": [
-    {
-      "src": "/(.*)\\.html",
-      "dest": "/public/$1.html"
-    },
-    {
-      "src": "/(.*)/",
-      "dest": "/public/$1.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1.html"
-    }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
