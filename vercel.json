@@ -1,10 +1,12 @@
 {
-  "buildCommand": "",
-  "outputDirectory": "public",
-  "trailingSlash": false,
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/([^./]+)\\.html$", "dest": "/$1.html" },
-    { "src": "/([^./]+)/?$", "dest": "/$1.html" }
+  "rewrites": [
+    {
+      "source": "/:path*/",
+      "destination": "/:path*.html"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/:path*.html"
+    }
   ]
 }
