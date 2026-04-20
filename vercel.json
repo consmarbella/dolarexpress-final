@@ -1,12 +1,20 @@
 {
   "rewrites": [
     {
+      "source": "/public/:path*",
+      "destination": "/public/:path*"
+    },
+    {
+      "source": "/:path*.html",
+      "destination": "/public/:path*.html"
+    },
+    {
       "source": "/:path*/",
-      "destination": "/:path*.html"
+      "destination": "/public/:path*.html"
     },
     {
       "source": "/:path*",
-      "destination": "/:path*.html"
+      "destination": "/public/:path*.html"
     }
   ]
 }
