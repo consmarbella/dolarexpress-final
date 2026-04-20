@@ -1,20 +1,16 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/public/:path*",
-      "destination": "/public/:path*"
+      "src": "/(.*)\\.html",
+      "dest": "/public/$1.html"
     },
     {
-      "source": "/:path*.html",
-      "destination": "/public/:path*.html"
+      "src": "/(.*)/",
+      "dest": "/public/$1.html"
     },
     {
-      "source": "/:path*/",
-      "destination": "/public/:path*.html"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/public/:path*.html"
+      "src": "/(.*)",
+      "dest": "/public/$1.html"
     }
   ]
 }
