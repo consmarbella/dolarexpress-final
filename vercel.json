@@ -3,5 +3,5 @@
   "installCommand": "",
   "outputDirectory": "public",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": true
 }
