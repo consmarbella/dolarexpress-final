@@ -12,17 +12,31 @@ if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
-// Copy all HTML files from public to dist
-const files = fs.readdirSync(publicDir);
-let copied = 0;
+// Recursively copy all HTML and XML files from public to dist
+function copyFilesRecursive(src, dest) {
+  let copied = 0;
 
-files.forEach(file => {
-  if (file.endsWith('.html') || file.endsWith('.xml')) {
-    const src = path.join(publicDir, file);
-    const dest = path.join(distDir, file);
-    fs.copyFileSync(src, dest);
-    copied++;
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
   }
-});
 
+  const files = fs.readdirSync(src);
+
+  files.forEach(file => {
+    const srcPath = path.join(src, file);
+    const destPath = path.join(dest, file);
+    const stat = fs.statSync(srcPath);
+
+    if (stat.isDirectory()) {
+      copied += copyFilesRecursive(srcPath, destPath);
+    } else if (file.endsWith('.html') || file.endsWith('.xml')) {
+      fs.copyFileSync(srcPath, destPath);
+      copied++;
+    }
+  });
+
+  return copied;
+}
+
+const copied = copyFilesRecursive(publicDir, distDir);
 console.log(`✅ Copied ${copied} static files to dist/`);
