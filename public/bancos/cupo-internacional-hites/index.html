@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cupo Hites | Pesos en 15 Min</title>
+  <meta name="description" content="Hites cupo dolar a pesos. Conversion simple y rapida.">
+  <meta name="keywords" content="cupo hites, tarjeta hites dolares, hites conversion">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://dolarexpress.cl/bancos/cupo-internacional-hites/" />
+  <style>
+    :root {
+      --accent: #d4af37;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --wa: #25D366;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid rgba(31,41,55,0.9);
+      backdrop-filter: blur(14px);
+      background: radial-gradient(circle at top left, rgba(212,175,55,0.08), transparent 55%),
+                  linear-gradient(to right, rgba(15,23,42,0.96), rgba(3,7,18,0.98));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #facc15, #d4af37 40%, #854d0e 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 16px 40px rgba(0,0,0,0.8);
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+    main {
+      flex: 1;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 32px 16px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+      gap: 28px;
+    }
+    @media (max-width: 800px) {
+      main { grid-template-columns: minmax(0, 1fr); }
+      header { position: static; }
+    }
+    .card {
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.12), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15,23,42,0.96), rgba(2,6,23,0.98));
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 22px 60px rgba(2,6,23,0.85);
+      padding: 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at top, rgba(212,175,55,0.2), transparent 60%);
+      opacity: 0.8;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+    }
+    .card-inner { position: relative; z-index: 1; }
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .eyebrow-line {
+      width: 22px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148,163,184,0.8));
+    }
+    h1 {
+      font-size: clamp(24px, 3vw, 30px);
+      margin: 0 0 8px;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px;
+      color: var(--text);
+    }
+    .highlight { color: var(--accent); }
+    .lead {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      max-width: 460px;
+    }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .metric-item {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(3,7,18,0.98));
+      min-width: 140px;
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 2px;
+    }
+    .metric-value {
+      font-size: 15px;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--wa), #128C7E);
+      color: #f9fafb;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(5,150,105,0.65), 0 0 0 1px rgba(6,95,70,0.7);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-wa:hover { text-decoration: none; opacity: 0.9; }
+    footer {
+      border-top: 1px solid rgba(31,41,55,0.9);
+      background: linear-gradient(to right, rgba(15,23,42,0.96), rgba(3,7,18,0.98));
+      padding: 20px 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .content {
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .content p { margin: 12px 0; }
+    .sidebar { display: flex; flex-direction: column; gap: 16px; }
+    ul, ol { margin: 12px 0; padding-left: 24px; }
+    li { margin: 6px 0; }
+    .faq {
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(3,7,18,0.98));
+      border: 1px solid rgba(148,163,184,0.15);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 14px 0;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .faq-a {
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    script[type="application/ld+json"] { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="https://dolarexpress.cl" class="logo">
+        <div class="logo-mark">D</div>
+        <div><div>DolarExpress</div><div class="logo-sub">Cupo a Pesos</div></div>
+      </a>
+    </div>
+  </header>
+  <main>
+    <article class="card">
+      <div class="card-inner">
+        <div class="eyebrow"><span class="eyebrow-line"></span> Solucion rapida</div>
+        <h1>Cupo Hites <span class="highlight">Simple</span></h1>
+        <p class="lead">Cupo Hites a pesos en 15 minutos sin complicaciones.</p>
+        <div class="metrics"><div class="metric-item"><div class="metric-label">Tienda</div><div class="metric-value">Hites</div></div><div class="metric-item"><div class="metric-label">Proceso</div><div class="metric-value">Simple</div></div></div>
+        <div class="cta-row">
+          <a href="https://wa.me/56967658939?text=Hites Rapido" class="btn-wa">💬 Hites Rapido</a>
+        </div>
+      </div>
+    </article>
+    <aside class="sidebar">
+      <div class="card">
+        <div class="card-inner">
+          <h2 style="margin-top: 0;">Verificacion</h2>
+          <p><strong>Hites Checklist</strong></p><ul><li>Cupo disponible</li><li>Tarjeta valida</li><li>Cuenta bancaria</li></ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <main style="padding: 0 16px 40px; display: block;">
+    <article class="card">
+      <div class="card-inner">
+        <div class="content"><h2>Hites: La Tienda Mas Rapida</h2><p>Hites es conocida por velocidad. Su tarjeta de credito es de las mas rapidas en aprobar. Su cupo en dolares? Tambien lo procesamos rapido (obvio).</p><h2>Por Que Elegir Hites</h2><p>Si es por rapidez, Hites es la opcion. No porque su cupo sea diferente, sino porque esta alineado con su filosofia: acelerar las cosas.</p><h2>Tu Cupo, Tu Dinero</h2><p>Ya sea en Hites o cualquier tienda, tu cupo es tuyo. Nosotros solo los convertimos a pesos rapidamente.</p></div>
+      </div>
+    </article>
+  </main>
+  <footer>
+    <p>DolarExpress - Convierte tu cupo dolar a pesos en 15 minutos. Licencia AFIANZADORA. (c) 2024</p>
+  </footer>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hites es segura?","acceptedAnswer":{"@type":"Answer","text":"Si. Es una empresa grande, regulada por la CMF. Su cupo es seguro y verifiable."}}]}</script>
+</body>
+</html>

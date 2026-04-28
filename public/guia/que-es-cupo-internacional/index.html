@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>¿Qué es Cupo Internacional? | Explicación Completa - DolarExpress</title>
+  <meta name="description" content="¿Qué es cupo internacional? Explicación clara sobre límites en dólares en tarjetas chilenas. Para qué sirve y cómo usarlo.">
+  <meta name="keywords" content="que es cupo internacional, limite internacional tarjeta, cupo dolar explicacion">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://dolarexpress.cl/guia/que-es-cupo-internacional/" />
+  <style>
+    :root {
+      --accent: #d4af37;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --wa: #25D366;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      border-bottom: 1px solid rgba(31,41,55,0.9);
+      backdrop-filter: blur(14px);
+      background: radial-gradient(circle at top left, rgba(212,175,55,0.08), transparent 55%),
+                  linear-gradient(to right, rgba(15,23,42,0.96), rgba(3,7,18,0.98));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #facc15, #d4af37 40%, #854d0e 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.6), 0 16px 40px rgba(0,0,0,0.8);
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+    main {
+      flex: 1;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 32px 16px 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+      gap: 28px;
+    }
+    @media (max-width: 800px) {
+      main { grid-template-columns: minmax(0, 1fr); }
+      header { position: static; }
+    }
+    .card {
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.12), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15,23,42,0.96), rgba(2,6,23,0.98));
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 22px 60px rgba(2,6,23,0.85);
+      padding: 22px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at top, rgba(212,175,55,0.2), transparent 60%);
+      opacity: 0.8;
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+    }
+    .card-inner { position: relative; z-index: 1; }
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .eyebrow-line {
+      width: 22px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(148,163,184,0.8));
+    }
+    h1 {
+      font-size: clamp(24px, 3vw, 30px);
+      margin: 0 0 8px;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 20px 0 12px;
+      color: var(--text);
+    }
+    .highlight { color: var(--accent); }
+    .lead {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      max-width: 460px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(3,7,18,0.95));
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .pill strong { color: var(--text); font-weight: 600; }
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .metric-item {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(3,7,18,0.98));
+      min-width: 140px;
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 2px;
+    }
+    .metric-value { font-size: 15px; color: var(--text); font-weight: 600; }
+    .metric-sub { font-size: 11px; color: var(--muted); }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--wa), #128C7E);
+      color: #f9fafb;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(5,150,105,0.65), 0 0 0 1px rgba(6,95,70,0.7);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-wa:hover { text-decoration: none; opacity: 0.9; }
+    footer {
+      border-top: 1px solid rgba(31,41,55,0.9);
+      background: linear-gradient(to right, rgba(15,23,42,0.96), rgba(3,7,18,0.98));
+      padding: 20px 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .content {
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .content p {
+      margin: 12px 0;
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    ul, ol {
+      margin: 12px 0;
+      padding-left: 24px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid rgba(148,163,184,0.2);
+    }
+    th {
+      background: rgba(212,175,55,0.1);
+      color: var(--accent);
+    }
+    details {
+      margin: 12px 0;
+      padding: 12px;
+      background: rgba(15,23,42,0.5);
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,0.2);
+    }
+    summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: 600;
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "\u00bfC\u00f3mo funciona?", "acceptedAnswer": {"@type": "Answer", "text": "Env\u00edas foto de tu cupo d\u00f3lar, cotizamos, aceptas, y recibes pesos en tu cuenta."}}, {"@type": "Question", "name": "\u00bfCu\u00e1nto dura el proceso?", "acceptedAnswer": {"@type": "Answer", "text": "M\u00e1ximo 15 minutos desde confirmaci\u00f3n."}}, {"@type": "Question", "name": "\u00bfCu\u00e1l es el costo?", "acceptedAnswer": {"@type": "Answer", "text": "Solo el cambio del d\u00eda, sin comisiones extras."}}, {"@type": "Question", "name": "\u00bfNecesito documentos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Solo foto de tu cupo y n\u00famero de cuenta bancaria."}}
+  ]
+}
+  </script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a href="/" class="logo">
+        <span class="logo-mark">$</span>
+        <span>
+          DolarExpress
+          <div class="logo-sub">Cupo a Pesos</div>
+        </span>
+      </a>
+      <a href="https://wa.me/56967658939" class="btn-wa">
+        Cotizar
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="card-inner">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          CUPO DÓLAR
+        </div>
+        <h1>¿Qué es <span class='highlight'>Cupo Internacional</span>?</h1>
+        <p class="lead">Cupo internacional es dinero que tu banco te da para usar en el extranjero. En dólares. Puedes traerlo a pesos con DolarExpress.</p>
+        <div class="metrics">
+          <div class="metric-item"><div class="metric-label">Tipo</div><div class="metric-value">Crédito</div></div><div class="metric-item"><div class="metric-label">Moneda</div><div class="metric-value">USD</div></div>
+        </div>
+        <div class="cta-row">
+          <a href="https://wa.me/56967658939" class="btn-wa">
+            Entender Cupo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="card">
+        <div class="card-inner">
+          <h2 style="margin-top: 0;">Información Rápida</h2>
+          <p style="font-size: 13px; margin: 0;"><strong>Concepto explicado simple</strong></p><p style="font-size: 12px; color: var(--muted); margin: 8px 0 0;">Sin tecnicismos. En lenguaje real.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div style="max-width: 960px; margin: 0 auto; padding: 40px 16px;">
+    <div class="content">
+      <h2>Definición Básica</h2><p>Cupo internacional es un límite de crédito que tu banco te da específicamente para gastos en el exterior o en dólares. Funciona así:</p><p><strong>Cupo en Pesos (local):</strong> USD 0 → Te lo dan para gastar en Chile en pesos<br><strong>Cupo en Dólares (internacional):</strong> USD $5.000 → Te lo dan para gastar en el exterior en dólares</p><h2>¿De Dónde Viene Este Cupo?</h2><p>Tu banco evalúa tu perfil (ingreso, historial crediticio, etc.) y decide: "Este cliente puede gastar hasta USD $5.000 en el extranjero sin problemas". Es un crédito automático que se activa cuando viajas o compras online en dólares.</p><h2>¿Es Dinero Real o Solo Un Límite?</h2><p>Es un límite de crédito. Significa que tu banco te permitirá cargar (endeudarte) hasta ese monto en dólares. Una vez que usas ese dinero, debes devolverlo en tu resumen de tarjeta.</p><h2>Ejemplos Prácticos</h2><p><strong>Ejemplo 1: Compra en Internet</strong><br>Ves un producto en Amazon (USD $200). Tu cupo internacional es $5.000. Compras. Tu cupo baja a $4.800. El USD $200 aparece en tu resumen. Lo pagas.</p><p><strong>Ejemplo 2: Viaje al Extranjero</strong><br>Viajas a Miami. Llevas tarjeta. Gastar USD $1.500 en hoteles y restaurantes. Tu cupo internacional cubre esto. El USD $1.500 aparece en resumen. Lo pagas.</p><p><strong>Ejemplo 3: Con DolarExpress</strong><br>No viajas, no compras online. Pero necesitas pesos HOY. Usas tu cupo dólar de USD $5.000 con DolarExpress. Recibes CLP $4.300.000 (aprox). No es un viaje. No es una compra. Es una conversión de moneda.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 DolarExpress Chile. Todos los derechos reservados. | <a href="/" style="color: var(--accent);">Inicio</a></p>
+  </footer>
+</body>
+</html>
