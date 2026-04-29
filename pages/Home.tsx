@@ -14,6 +14,11 @@ const Home: React.FC = () => {
       meta.name = 'description';
       meta.content = description;
       document.head.appendChild(meta);
+
+                  const bingMeta = document.createElement('meta');
+                  bingMeta.name = 'msvalidate.01';
+                  bingMeta.content = '48D05AE35E1829A92FF3852D903F02A';
+                  document.head.appendChild(bingMeta);
     }
   }, []);
 
