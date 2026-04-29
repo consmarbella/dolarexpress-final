@@ -29,7 +29,7 @@ function copyFilesRecursive(src, dest) {
 
     if (stat.isDirectory()) {
       copied += copyFilesRecursive(srcPath, destPath);
-    } else if (file.endsWith('.html') || file.endsWith('.xml')) {
+    } else if ((file.endsWith('.html') || file.endsWith('.xml')) && file !== 'index.html') {
       fs.copyFileSync(srcPath, destPath);
       copied++;
     }
