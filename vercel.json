@@ -5,12 +5,6 @@
       "has": [{"type": "host", "value": "dolarexpress.cl"}],
       "destination": "https://www.dolarexpress.cl/:path*",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{"type": "host", "value": "http://www.dolarexpress.cl"}],
-      "destination": "https://www.dolarexpress.cl/:path*",
-      "permanent": true
     }
   ]
 }
