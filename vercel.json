@@ -12,6 +12,5 @@
       "destination": "https://www.dolarexpress.cl/:path*",
       "permanent": true
     }
-  ],
-  "trailingSlash": true
+  ]
 }
