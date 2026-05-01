@@ -1,41 +1,17 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "outputDirectory": "dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
+  "redirects": [
     {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
-        }
-      ]
+      "source": "/:path*",
+      "has": [{"type": "host", "value": "dolarexpress.cl"}],
+      "destination": "https://www.dolarexpress.cl/:path*",
+      "permanent": true
     },
     {
       "source": "/:path*",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=3600"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        }
-      ]
+      "has": [{"type": "host", "value": "http://www.dolarexpress.cl"}],
+      "destination": "https://www.dolarexpress.cl/:path*",
+      "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/(?!.*\\.(?:html|json|xml|css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$).*",
-      "destination": "/index.html"
-    }
-  ]
+  "trailingSlash": true
 }
