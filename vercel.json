@@ -1,10 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{"type": "host", "value": "dolarexpress.cl"}],
-      "destination": "https://www.dolarexpress.cl/:path*",
-      "permanent": true
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "out"
 }
