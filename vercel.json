@@ -1,9 +1,1 @@
-{
-  "redirects": [
-    {
-      "source": "/:path((?!www).*)?",
-      "destination": "https://www.dolarexpress.cl/:path*",
-      "permanent": true
-    }
-  ]
-}
+{}
