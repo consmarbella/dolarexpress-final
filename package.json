@@ -7,8 +7,13 @@
     "dev": "vite",
     "build": "vite build && node copy-html-files.js",
     "preview": "vite preview",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "seo:sitemap": "node generate-sitemap.js",
+    "seo:interlinking": "python add_interlinking.py",
+    "seo:all": "node generate-sitemap.js && python add_interlinking.py",
+    "deploy": "npm run seo:all && npm run build"
   },
+
   "dependencies": {
     "@octokit/rest": "^22.0.1",
     "glob": "^13.0.6",

@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /widget
+Disallow: /changenow-widget
+
 Sitemap: https://dolarexpress.cl/sitemap.xml
+
+# Crawl budget optimization
+Crawl-Delay: 1

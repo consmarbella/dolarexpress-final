@@ -20,16 +20,15 @@ function copyFilesRecursive(src, dest) {
     fs.mkdirSync(dest, { recursive: true });
   }
 
-  const files = fs.readdirSync(src);
+  const entries = fs.readdirSync(src, { withFileTypes: true });
 
-  files.forEach(file => {
-    const srcPath = path.join(src, file);
-    const destPath = path.join(dest, file);
-    const stat = fs.statSync(srcPath);
+  entries.forEach(entry => {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
 
-    if (stat.isDirectory()) {
+    if (entry.isDirectory()) {
       copied += copyFilesRecursive(srcPath, destPath);
-    } else if ((file.endsWith('.html') || file.endsWith('.xml')) && file !== 'index.html') {
+    } else if (entry.name.endsWith('.html') || entry.name.endsWith('.xml')) {
       fs.copyFileSync(srcPath, destPath);
       copied++;
     }

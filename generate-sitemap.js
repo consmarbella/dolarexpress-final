@@ -1,22 +1,58 @@
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const baseUrl = 'https://dolarexpress.cl';
+const publicDir = path.join(__dirname, 'public');
 
-// ─── 1. Páginas PSEO dinámicas (tarjeta × ciudad) ───
-const cards = ["CMR Falabella", "Cencosud", "Ripley", "Lider Bci"];
-const cities = [
-  "Santiago", "Valparaíso", "Concepción", "La Serena", "Antofagasta", 
-  "Temuco", "Iquique", "Rancagua", "Puerto Montt", "Talca", 
-  "Arica", "Chillán", "Copiapó", "Quillota", "Valdivia", 
-  "Osorno", "Los Ángeles", "Calama", "Punta Arenas", "Viña del Mar"
-];
-
+// ─── 1. Páginas principales ───
 const urls = [
   { loc: `${baseUrl}/`, priority: '1.0', changefreq: 'weekly' },
   { loc: `${baseUrl}/venta-usd`, priority: '0.9', changefreq: 'weekly' },
+  { loc: `${baseUrl}/directorio-general`, priority: '0.8', changefreq: 'weekly' },
+  { loc: `${baseUrl}/contacto`, priority: '0.7', changefreq: 'monthly' },
+  { loc: `${baseUrl}/privacidad`, priority: '0.3', changefreq: 'yearly' },
+  { loc: `${baseUrl}/terminos`, priority: '0.3', changefreq: 'yearly' },
 ];
 
-// Páginas PSEO dinámicas
+// ─── 2. Escanear recursivamente public/ para HTML files ───
+function scanHtmlFiles(dir, basePath = '') {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const results = [];
+
+  entries.forEach(entry => {
+    if (entry.name.startsWith('.')) return; // skip hidden files
+    const fullPath = path.join(dir, entry.name);
+    const relPath = basePath ? `${basePath}/${entry.name}` : entry.name;
+
+    if (entry.isDirectory()) {
+      results.push(...scanHtmlFiles(fullPath, relPath));
+    } else if (entry.name.endsWith('.html') && entry.name !== 'index.html') {
+      const slug = relPath.replace(/\.html$/, '');
+      results.push({
+        loc: `${baseUrl}/${slug}`,
+        priority: '0.7',
+        changefreq: 'monthly'
+      });
+    }
+  });
+
+  return results;
+}
+
+const staticPages = scanHtmlFiles(publicDir);
+urls.push(...staticPages);
+
+// ─── 3. Páginas PSEO dinámicas (tarjeta x ciudad) ───
+const cards = ["CMR Falabella", "Cencosud", "Ripley", "Lider Bci"];
+const cities = [
+  "Santiago", "Valparaiso", "Concepcion", "La Serena", "Antofagasta", 
+  "Temuco", "Iquique", "Rancagua", "Puerto Montt", "Talca", 
+  "Arica", "Chillan", "Copiapo", "Quillota", "Valdivia", 
+  "Osorno", "Los Angeles", "Calama", "Punta Arenas", "Vina del Mar"
+];
+
 cards.forEach(card => {
   cities.forEach(city => {
     const cardSlug = card.toLowerCase().replace(/\s+/g, '-');
@@ -29,309 +65,7 @@ cards.forEach(card => {
   });
 });
 
-// ─── 2. Páginas HTML estáticas de public/ ───
-const publicPages = [
-  "avance-abc-visa",
-  "avance-cmr-sin-avance-habilitado",
-  "avance-cupo-dolares",
-  "avance-efectivo-dolares",
-  "avance-efectivo-sin-avance-habilitado",
-  "avance-efectivo-tarjeta-abc",
-  "avance-efectivo-tarjeta-cmr",
-  "avance-efectivo-tarjeta-hites",
-  "avance-efectivo-tarjeta-la-polar",
-  "avance-efectivo-tarjeta-lider",
-  "avance-efectivo-tarjeta-paris",
-  "avance-efectivo-tarjeta-ripley",
-  "avance-efectivo-tarjetas-grandes-tiendas-chile",
-  "avance-efectivo",
-  "avance-la-polar-cuotas",
-  "avance-lider-bci-online",
-  "avance-ripley-cuotas",
-  "avance-ripley-sin-tener-avance",
-  "avance-tarjeta-dolares",
-  "avance-tarjeta-easy",
-  "avance-tarjeta-johnson",
-  "cambiar-cupo-dolar",
-  "cambiar-cupo-dolares-chile",
-  "cambiar-dolares-tarjeta",
-  "cambio-cupo-dolar",
-  "cambio-dolares-tarjeta-credito",
-  "cmr-efectivo-rapido",
-  "como-obtener-liquidez-con-tarjeta-retail",
-  "como-sacar-plata-si-no-tengo-avance",
-  "como-usar-el-cupo-de-mi-tarjeta-sin-avance",
-  "como-vender-cupo-dolar",
-  "compra-cupo-dolares",
-  "comprar-cupo-dolar",
-  "compro-cupo-dolar",
-  "contacto",
-  "convertir-cupo-dolar-pesos",
-  "convertir-cupo-en-efectivo-chile",
-  "convertir-cupo-internacional-pesos",
-  "cuanto-me-dan-de-avance-tarjeta-lider",
-  "cuanto-presta-la-cmr",
-  "cuanto-presta-tarjeta-paris",
-  "cuanto-presta-tarjeta-ripley",
-  "cupo-compras-a-efectivo-cmr",
-  "cupo-compras-a-efectivo-lider",
-  "cupo-compras-a-efectivo-ripley",
-  "cupo-compras-efectivo-abcdin",
-  "cupo-compras-efectivo-hites",
-  "cupo-compras-efectivo-la-polar",
-  "cupo-compras-efectivo-paris",
-  "cupo-disponible-tarjeta-a-pesos",
-  "cupo-dolar-1000-usd",
-  "cupo-dolar-15-minutos",
-  "cupo-dolar-200-usd",
-  "cupo-dolar-2000-usd",
-  "cupo-dolar-3000-usd",
-  "cupo-dolar-500-usd",
-  "cupo-dolar-5000-usd",
-  "cupo-dolar-7000-usd",
-  "cupo-dolar-a-pesos",
-  "cupo-dolar-altos-montos",
-  "cupo-dolar-american-express",
-  "cupo-dolar-amex",
-  "cupo-dolar-antofagasta",
-  "cupo-dolar-arica",
-  "cupo-dolar-banco-chile-amex",
-  "cupo-dolar-banco-chile-antofagasta",
-  "cupo-dolar-banco-chile-concepcion",
-  "cupo-dolar-banco-chile-iquique",
-  "cupo-dolar-banco-chile-la-serena",
-  "cupo-dolar-banco-chile-mastercard-black",
-  "cupo-dolar-banco-chile-mastercard-gold",
-  "cupo-dolar-banco-chile-mastercard-platinum",
-  "cupo-dolar-banco-chile-puerto-montt",
-  "cupo-dolar-banco-chile-rancagua",
-  "cupo-dolar-banco-chile-santiago",
-  "cupo-dolar-banco-chile-temuco",
-  "cupo-dolar-banco-chile-valparaiso",
-  "cupo-dolar-banco-chile-vina-del-mar",
-  "cupo-dolar-banco-chile-visa-gold",
-  "cupo-dolar-banco-chile-visa-platinum",
-  "cupo-dolar-banco-chile-visa-signature",
-  "cupo-dolar-banco-chile",
-  "cupo-dolar-banco-estado",
-  "cupo-dolar-bancoestado-amex",
-  "cupo-dolar-bancoestado-antofagasta",
-  "cupo-dolar-bancoestado-concepcion",
-  "cupo-dolar-bancoestado-iquique",
-  "cupo-dolar-bancoestado-la-serena",
-  "cupo-dolar-bancoestado-mastercard-black",
-  "cupo-dolar-bancoestado-mastercard-gold",
-  "cupo-dolar-bancoestado-mastercard-platinum",
-  "cupo-dolar-bancoestado-puerto-montt",
-  "cupo-dolar-bancoestado-rancagua",
-  "cupo-dolar-bancoestado-santiago",
-  "cupo-dolar-bancoestado-temuco",
-  "cupo-dolar-bancoestado-valparaiso",
-  "cupo-dolar-bancoestado-vina-del-mar",
-  "cupo-dolar-bancoestado-visa-gold",
-  "cupo-dolar-bancoestado-visa-platinum",
-  "cupo-dolar-bancoestado-visa-signature",
-  "cupo-dolar-bancoestado",
-  "cupo-dolar-bci-amex",
-  "cupo-dolar-bci-antofagasta",
-  "cupo-dolar-bci-concepcion",
-  "cupo-dolar-bci-iquique",
-  "cupo-dolar-bci-la-serena",
-  "cupo-dolar-bci-mastercard-black",
-  "cupo-dolar-bci-mastercard-gold",
-  "cupo-dolar-bci-mastercard-platinum",
-  "cupo-dolar-bci-puerto-montt",
-  "cupo-dolar-bci-rancagua",
-  "cupo-dolar-bci-santiago",
-  "cupo-dolar-bci-temuco",
-  "cupo-dolar-bci-valparaiso",
-  "cupo-dolar-bci-vina-del-mar",
-  "cupo-dolar-bci-visa-gold",
-  "cupo-dolar-bci-visa-platinum",
-  "cupo-dolar-bci-visa-signature",
-  "cupo-dolar-bci",
-  "cupo-dolar-bice",
-  "cupo-dolar-calama",
-  "cupo-dolar-chillan",
-  "cupo-dolar-cmr",
-  "cupo-dolar-como-funciona",
-  "cupo-dolar-concepcion",
-  "cupo-dolar-confiable",
-  "cupo-dolar-conviene",
-  "cupo-dolar-copiapo",
-  "cupo-dolar-disponible",
-  "cupo-dolar-empresas",
-  "cupo-dolar-falabella",
-  "cupo-dolar-fin-de-mes",
-  "cupo-dolar-hoy-chile",
-  "cupo-dolar-internacional",
-  "cupo-dolar-iquique",
-  "cupo-dolar-itau",
-  "cupo-dolar-la-serena",
-  "cupo-dolar-las-condes",
-  "cupo-dolar-mastercard",
-  "cupo-dolar-monto-minimo",
-  "cupo-dolar-online",
-  "cupo-dolar-osorno",
-  "cupo-dolar-persona-natural",
-  "cupo-dolar-primera-vez",
-  "cupo-dolar-providencia",
-  "cupo-dolar-puerto-montt",
-  "cupo-dolar-punta-arenas",
-  "cupo-dolar-rancagua",
-  "cupo-dolar-rapido",
-  "cupo-dolar-recomendado",
-  "cupo-dolar-regiones-chile",
-  "cupo-dolar-requisitos",
-  "cupo-dolar-ripley",
-  "cupo-dolar-santander",
-  "cupo-dolar-santiago",
-  "cupo-dolar-scotiabank-temuco",
-  "cupo-dolar-scotiabank-valparaiso",
-  "cupo-dolar-scotiabank-vina-del-mar",
-  "cupo-dolar-scotiabank-visa-gold",
-  "cupo-dolar-scotiabank-visa-platinum",
-  "cupo-dolar-scotiabank-visa-signature",
-  "cupo-dolar-scotiabank",
-  "cupo-dolar-security-amex",
-  "cupo-dolar-security-antofagasta",
-  "cupo-dolar-security-concepcion",
-  "cupo-dolar-security-iquique",
-  "cupo-dolar-security-la-serena",
-  "cupo-dolar-security-mastercard-black",
-  "cupo-dolar-security-mastercard-gold",
-  "cupo-dolar-security-mastercard-platinum",
-  "cupo-dolar-security-puerto-montt",
-  "cupo-dolar-security-rancagua",
-  "cupo-dolar-security-santiago",
-  "cupo-dolar-security-temuco",
-  "cupo-dolar-security-valparaiso",
-  "cupo-dolar-security-vina-del-mar",
-  "cupo-dolar-security-visa-gold",
-  "cupo-dolar-security-visa-platinum",
-  "cupo-dolar-security-visa-signature",
-  "cupo-dolar-security",
-  "cupo-dolar-seguro",
-  "cupo-dolar-sin-complicaciones",
-  "cupo-dolar-sin-cuenta-bancaria",
-  "cupo-dolar-sin-estafa",
-  "cupo-dolar-sin-monto-minimo",
-  "cupo-dolar-sin-usar",
-  "cupo-dolar-talca",
-  "cupo-dolar-tarjeta-bloqueada",
-  "cupo-dolar-tarjeta-empresas",
-  "cupo-dolar-temuco",
-  "cupo-dolar-tiempo",
-  "cupo-dolar-transferencia-inmediata",
-  "cupo-dolar-urgente",
-  "cupo-dolar-valdivia",
-  "cupo-dolar-valparaiso",
-  "cupo-dolar-vina-del-mar",
-  "cupo-dolar-visa-gold",
-  "cupo-dolar-visa-platinum",
-  "cupo-dolar-visa-signature",
-  "cupo-dolar-visa",
-  "cupo-dolar-whatsapp",
-  "cupo-dolares-tarjeta-credito",
-  "cupo-en-dolares",
-  "cupo-internacional-a-pesos",
-  "cupo-internacional-banco-chile",
-  "cupo-internacional-bancoestado",
-  "cupo-internacional-bci",
-  "cupo-internacional-santander",
-  "cupo-internacional-tarjeta-credito",
-  "cupo-internacional-tarjeta",
-  "cupo-para-compras-a-efectivo-chile",
-  "cupo-tarjeta-a-transferencia",
-  "cupo-usd-a-clp",
-  "directorio-general",
-  "efectivo-cupo-dolar",
-  "es-legal-vender-cupo-dolar",
-  "girar-cupo-dolares",
-  "girar-dolares-tarjeta",
-  "hites-plata-rapido",
-  "liquidar-cupo-dolar",
-  "liquidez-cupo-dolar",
-  "mejor-tasa-cupo-dolar",
-  "necesito-pesos-tengo-dolares",
-  "necesito-plata-y-tengo-cupo-en-tarjeta",
-  "pagar-con-cupo-dolar",
-  "page1",
-  "pasar-cupo-de-compras-a-efectivo",
-  "plata-rapida-con-tarjeta-retail-chile",
-  "privacidad",
-  "que-es-cupo-dolar",
-  "riesgos-vender-cupo-dolar",
-  "ripley-plata-al-tiro",
-  "sacar-cupo-dolares",
-  "sacar-dinero-tarjeta-abc-din",
-  "sacar-dinero-tarjeta-casa-comercial",
-  "sacar-dinero-tarjeta-cmr-falabella",
-  "sacar-dinero-tarjeta-hites",
-  "sacar-dinero-tarjeta-jumbo",
-  "sacar-dinero-tarjeta-la-polar",
-  "sacar-dinero-tarjeta-lider",
-  "sacar-dinero-tarjeta-paris",
-  "sacar-dinero-tarjeta-ripley",
-  "sacar-plata-cmr",
-  "sacar-plata-de-tarjeta-de-tienda",
-  "sacar-plata-ripley",
-  "sacar-plata-tarjeta-abcdin",
-  "sacar-plata-tarjeta-cencosud",
-  "sacar-plata-tarjeta-hites",
-  "sacar-plata-tarjeta-lider",
-  "sacar-plata-tarjeta-polar",
-  "servicios-cupo-dolar",
-  "superavance-cmr-falabella",
-  "superavance-tarjeta-lider",
-  "superavance-tarjeta-paris-cencosud",
-  "tarjeta-abc-din-efectivo-rapido",
-  "tarjeta-abc-sin-avance",
-  "tarjeta-cmr-sin-avance",
-  "tarjeta-credito-cupo-dolar",
-  "tarjeta-hites-sin-avance",
-  "tarjeta-la-polar-sin-avance",
-  "tarjeta-lider-bci-efectivo-rapido",
-  "tarjeta-lider-con-cupo-y-sin-avance",
-  "tarjeta-lider-sin-avance",
-  "tarjeta-paris-plata-rapido",
-  "tarjeta-paris-sin-avance",
-  "tarjeta-retail-efectivo-mismo-dia",
-  "tarjeta-ripley-efectivo-inmediato",
-  "tarjeta-ripley-sin-avance",
-  "tarjeta-sin-avance-habilitado-chile",
-  "terminos",
-  "transferir-cupo-cmr-a-cuenta",
-  "vender-cupo-banco-chile",
-  "vender-cupo-banco-estado",
-  "vender-cupo-bci",
-  "vender-cupo-cmr-falabella",
-  "vender-cupo-dolar-online",
-  "vender-cupo-dolar-tarjeta-credito",
-  "vender-cupo-dolar-transferencia",
-  "vender-cupo-dolar",
-  "vender-cupo-internacional",
-  "vender-cupo-itau",
-  "vender-cupo-santander",
-  "vender-cupo-scotiabank",
-  "vender-dolares-tarjeta-credito",
-  "vender-usd-chile",
-  "vender-usd",
-  "vendor-cupo-cmr-falabella",
-  "venta-cupo-dolares",
-  "widget"
-];
-
-// Agregar todas las páginas estáticas al sitemap
-publicPages.forEach(page => {
-  urls.push({
-    loc: `${baseUrl}/${page}`,
-    priority: '0.7',
-    changefreq: 'monthly'
-  });
-});
-
-// ─── 3. Generar sitemap.xml ───
+// ─── 4. Generar sitemap.xml ───
 const today = new Date().toISOString().split('T')[0];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -344,6 +78,20 @@ ${urls.map(u => `  <url>
   </url>`).join('\n')}
 </urlset>`;
 
-const outputPath = 'C:\\Users\\matte\\Desktop\\dolarexpress-final\\public\\sitemap.xml';
-fs.writeFileSync(outputPath, sitemap);
-console.log(`✅ Sitemap generado exitosamente con ${urls.length} URLs en ${outputPath}!`);
+// Escribir en public/ y también en dist/ si existe
+const outputPaths = [
+  path.join(publicDir, 'sitemap.xml'),
+  path.join(__dirname, 'dist', 'sitemap.xml'),
+];
+
+outputPaths.forEach(outputPath => {
+  const dir = path.dirname(outputPath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  fs.writeFileSync(outputPath, sitemap);
+});
+
+console.log(`✅ Sitemap generado exitosamente con ${urls.length} URLs!`);
+console.log(`   - ${staticPages.length} paginas estaticas escaneadas de public/`);
+console.log(`   - ${cards.length * cities.length} paginas PSEO dinamicas`);

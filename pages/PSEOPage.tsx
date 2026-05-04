@@ -70,10 +70,41 @@ const PSEOPage: React.FC = () => {
           </Link>
           <div className="flex gap-4 items-center">
             <Link to="/" className="font-medium text-white hover:text-[#C8A045] hidden md:block">Inicio</Link>
+            <Link to="/directorio-general" className="font-medium text-white hover:text-[#C8A045] hidden md:block">Directorio</Link>
             <Link to="/venta-usd" className="bg-[#C8A045] text-white px-5 py-2 rounded-lg font-bold">Vender Cupo</Link>
           </div>
         </div>
       </nav>
+      
+      {/* Breadcrumbs */}
+      <nav className="pt-24 pb-2 bg-[#1a1a1a] text-gray-400 text-sm" aria-label="Breadcrumb">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex flex-wrap gap-1">
+            <li><Link to="/" className="hover:text-[#C8A045]">Inicio</Link></li>
+            <li className="mx-1">/</li>
+            <li className="text-white truncate max-w-[300px]" aria-current="page">
+              {pageData ? pageData.title.replace(' | DolarExpress', '') : 'Pagina'}
+            </li>
+          </ol>
+        </div>
+      </nav>
+      
+      {/* Schema.org BreadcrumbList */}
+      {pageData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://dolarexpress.cl/" },
+                { "@type": "ListItem", "position": 2, "name": pageData.title.replace(' | DolarExpress', ''), "item": `https://dolarexpress.cl/${pageData.slug}` }
+              ]
+            })
+          }}
+        />
+      )}
       
       {/* Hero Section */}
       <header className="pt-36 pb-24 bg-[#1a1a1a] text-white relative overflow-hidden">
