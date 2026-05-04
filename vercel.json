@@ -1,1 +1,1323 @@
-{"buildCommand":"vite build && node copy-html-files.js","outputDirectory":"dist","rewrites":[{"source":"/(.*)","destination":"/index.html"}]}
+{
+  "buildCommand": "vite build && node copy-html-files.js",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1/",
+      "permanent": true
+    },
+    {
+      "source": "/avance-abc-visa",
+      "destination": "/avance-abc-visa.html"
+    },
+    {
+      "source": "/avance-cmr-sin-avance-habilitado",
+      "destination": "/avance-cmr-sin-avance-habilitado.html"
+    },
+    {
+      "source": "/avance-cupo-dolares",
+      "destination": "/avance-cupo-dolares.html"
+    },
+    {
+      "source": "/avance-efectivo-dolares",
+      "destination": "/avance-efectivo-dolares.html"
+    },
+    {
+      "source": "/avance-efectivo-sin-avance-habilitado",
+      "destination": "/avance-efectivo-sin-avance-habilitado.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-abc",
+      "destination": "/avance-efectivo-tarjeta-abc.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-cmr",
+      "destination": "/avance-efectivo-tarjeta-cmr.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-hites",
+      "destination": "/avance-efectivo-tarjeta-hites.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-la-polar",
+      "destination": "/avance-efectivo-tarjeta-la-polar.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-lider",
+      "destination": "/avance-efectivo-tarjeta-lider.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-paris",
+      "destination": "/avance-efectivo-tarjeta-paris.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-ripley",
+      "destination": "/avance-efectivo-tarjeta-ripley.html"
+    },
+    {
+      "source": "/avance-efectivo-tarjetas-grandes-tiendas-chile",
+      "destination": "/avance-efectivo-tarjetas-grandes-tiendas-chile.html"
+    },
+    {
+      "source": "/avance-efectivo",
+      "destination": "/avance-efectivo.html"
+    },
+    {
+      "source": "/avance-la-polar-cuotas",
+      "destination": "/avance-la-polar-cuotas.html"
+    },
+    {
+      "source": "/avance-lider-bci-online",
+      "destination": "/avance-lider-bci-online.html"
+    },
+    {
+      "source": "/avance-ripley-cuotas",
+      "destination": "/avance-ripley-cuotas.html"
+    },
+    {
+      "source": "/avance-ripley-sin-tener-avance",
+      "destination": "/avance-ripley-sin-tener-avance.html"
+    },
+    {
+      "source": "/avance-tarjeta-dolares",
+      "destination": "/avance-tarjeta-dolares.html"
+    },
+    {
+      "source": "/avance-tarjeta-easy",
+      "destination": "/avance-tarjeta-easy.html"
+    },
+    {
+      "source": "/avance-tarjeta-johnson",
+      "destination": "/avance-tarjeta-johnson.html"
+    },
+    {
+      "source": "/cambiar-cupo-dolar",
+      "destination": "/cambiar-cupo-dolar.html"
+    },
+    {
+      "source": "/cambiar-cupo-dolares-chile",
+      "destination": "/cambiar-cupo-dolares-chile.html"
+    },
+    {
+      "source": "/cambiar-dolares-tarjeta",
+      "destination": "/cambiar-dolares-tarjeta.html"
+    },
+    {
+      "source": "/cambio-cupo-dolar",
+      "destination": "/cambio-cupo-dolar.html"
+    },
+    {
+      "source": "/cambio-dolar-tarjeta",
+      "destination": "/cambio-dolar-tarjeta.html"
+    },
+    {
+      "source": "/cambio-dolares-tarjeta-credito",
+      "destination": "/cambio-dolares-tarjeta-credito.html"
+    },
+    {
+      "source": "/changenow-widget (2)",
+      "destination": "/changenow-widget (2).html"
+    },
+    {
+      "source": "/changenow-widget",
+      "destination": "/changenow-widget.html"
+    },
+    {
+      "source": "/cmr-efectivo-rapido",
+      "destination": "/cmr-efectivo-rapido.html"
+    },
+    {
+      "source": "/como-obtener-liquidez-con-tarjeta-retail",
+      "destination": "/como-obtener-liquidez-con-tarjeta-retail.html"
+    },
+    {
+      "source": "/como-sacar-plata-si-no-tengo-avance",
+      "destination": "/como-sacar-plata-si-no-tengo-avance.html"
+    },
+    {
+      "source": "/como-usar-el-cupo-de-mi-tarjeta-sin-avance",
+      "destination": "/como-usar-el-cupo-de-mi-tarjeta-sin-avance.html"
+    },
+    {
+      "source": "/como-vender-cupo-dolar",
+      "destination": "/como-vender-cupo-dolar.html"
+    },
+    {
+      "source": "/compra-cupo-dolares",
+      "destination": "/compra-cupo-dolares.html"
+    },
+    {
+      "source": "/compra-usdc",
+      "destination": "/compra-usdc.html"
+    },
+    {
+      "source": "/comprar-cupo-dolar",
+      "destination": "/comprar-cupo-dolar.html"
+    },
+    {
+      "source": "/compro-cupo-dolar",
+      "destination": "/compro-cupo-dolar.html"
+    },
+    {
+      "source": "/contacto",
+      "destination": "/contacto.html"
+    },
+    {
+      "source": "/convertir-cupo-cmr-pesos-hoy",
+      "destination": "/convertir-cupo-cmr-pesos-hoy.html"
+    },
+    {
+      "source": "/convertir-cupo-dolar-pesos",
+      "destination": "/convertir-cupo-dolar-pesos.html"
+    },
+    {
+      "source": "/convertir-cupo-en-efectivo-chile",
+      "destination": "/convertir-cupo-en-efectivo-chile.html"
+    },
+    {
+      "source": "/convertir-cupo-internacional-pesos",
+      "destination": "/convertir-cupo-internacional-pesos.html"
+    },
+    {
+      "source": "/convertir-cupo-ripley-efectivo-rapido",
+      "destination": "/convertir-cupo-ripley-efectivo-rapido.html"
+    },
+    {
+      "source": "/cuanto-me-dan-de-avance-tarjeta-lider",
+      "destination": "/cuanto-me-dan-de-avance-tarjeta-lider.html"
+    },
+    {
+      "source": "/cuanto-presta-la-cmr",
+      "destination": "/cuanto-presta-la-cmr.html"
+    },
+    {
+      "source": "/cuanto-presta-tarjeta-paris",
+      "destination": "/cuanto-presta-tarjeta-paris.html"
+    },
+    {
+      "source": "/cuanto-presta-tarjeta-ripley",
+      "destination": "/cuanto-presta-tarjeta-ripley.html"
+    },
+    {
+      "source": "/cupo-compras-a-efectivo-cmr",
+      "destination": "/cupo-compras-a-efectivo-cmr.html"
+    },
+    {
+      "source": "/cupo-compras-a-efectivo-lider",
+      "destination": "/cupo-compras-a-efectivo-lider.html"
+    },
+    {
+      "source": "/cupo-compras-a-efectivo-ripley",
+      "destination": "/cupo-compras-a-efectivo-ripley.html"
+    },
+    {
+      "source": "/cupo-compras-efectivo-abcdin",
+      "destination": "/cupo-compras-efectivo-abcdin.html"
+    },
+    {
+      "source": "/cupo-compras-efectivo-hites",
+      "destination": "/cupo-compras-efectivo-hites.html"
+    },
+    {
+      "source": "/cupo-compras-efectivo-la-polar",
+      "destination": "/cupo-compras-efectivo-la-polar.html"
+    },
+    {
+      "source": "/cupo-compras-efectivo-paris",
+      "destination": "/cupo-compras-efectivo-paris.html"
+    },
+    {
+      "source": "/cupo-disponible-tarjeta-a-pesos",
+      "destination": "/cupo-disponible-tarjeta-a-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-1000-usd",
+      "destination": "/cupo-dolar-1000-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-15-minutos",
+      "destination": "/cupo-dolar-15-minutos.html"
+    },
+    {
+      "source": "/cupo-dolar-200-usd",
+      "destination": "/cupo-dolar-200-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-2000-usd",
+      "destination": "/cupo-dolar-2000-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-3000-usd",
+      "destination": "/cupo-dolar-3000-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-500-usd",
+      "destination": "/cupo-dolar-500-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-5000-usd",
+      "destination": "/cupo-dolar-5000-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-7000-usd",
+      "destination": "/cupo-dolar-7000-usd.html"
+    },
+    {
+      "source": "/cupo-dolar-a-pesos",
+      "destination": "/cupo-dolar-a-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-altos-montos",
+      "destination": "/cupo-dolar-altos-montos.html"
+    },
+    {
+      "source": "/cupo-dolar-american-express",
+      "destination": "/cupo-dolar-american-express.html"
+    },
+    {
+      "source": "/cupo-dolar-amex",
+      "destination": "/cupo-dolar-amex.html"
+    },
+    {
+      "source": "/cupo-dolar-antofagasta",
+      "destination": "/cupo-dolar-antofagasta.html"
+    },
+    {
+      "source": "/cupo-dolar-arica",
+      "destination": "/cupo-dolar-arica.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-amex",
+      "destination": "/cupo-dolar-banco-chile-amex.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-antofagasta",
+      "destination": "/cupo-dolar-banco-chile-antofagasta.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-concepcion",
+      "destination": "/cupo-dolar-banco-chile-concepcion.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-iquique",
+      "destination": "/cupo-dolar-banco-chile-iquique.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-la-serena",
+      "destination": "/cupo-dolar-banco-chile-la-serena.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-mastercard-black",
+      "destination": "/cupo-dolar-banco-chile-mastercard-black.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-mastercard-gold",
+      "destination": "/cupo-dolar-banco-chile-mastercard-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-mastercard-platinum",
+      "destination": "/cupo-dolar-banco-chile-mastercard-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-puerto-montt",
+      "destination": "/cupo-dolar-banco-chile-puerto-montt.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-rancagua",
+      "destination": "/cupo-dolar-banco-chile-rancagua.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-santiago",
+      "destination": "/cupo-dolar-banco-chile-santiago.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-temuco",
+      "destination": "/cupo-dolar-banco-chile-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-valparaiso",
+      "destination": "/cupo-dolar-banco-chile-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-vina-del-mar",
+      "destination": "/cupo-dolar-banco-chile-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-visa-gold",
+      "destination": "/cupo-dolar-banco-chile-visa-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-visa-platinum",
+      "destination": "/cupo-dolar-banco-chile-visa-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile-visa-signature",
+      "destination": "/cupo-dolar-banco-chile-visa-signature.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-chile",
+      "destination": "/cupo-dolar-banco-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-banco-estado",
+      "destination": "/cupo-dolar-banco-estado.html"
+    },
+    {
+      "source": "/cupo-dolar-bancochile-pesos",
+      "destination": "/cupo-dolar-bancochile-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-amex",
+      "destination": "/cupo-dolar-bancoestado-amex.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-antofagasta",
+      "destination": "/cupo-dolar-bancoestado-antofagasta.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-concepcion",
+      "destination": "/cupo-dolar-bancoestado-concepcion.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-iquique",
+      "destination": "/cupo-dolar-bancoestado-iquique.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-la-serena",
+      "destination": "/cupo-dolar-bancoestado-la-serena.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-mastercard-black",
+      "destination": "/cupo-dolar-bancoestado-mastercard-black.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-mastercard-gold",
+      "destination": "/cupo-dolar-bancoestado-mastercard-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-mastercard-platinum",
+      "destination": "/cupo-dolar-bancoestado-mastercard-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-puerto-montt",
+      "destination": "/cupo-dolar-bancoestado-puerto-montt.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-rancagua",
+      "destination": "/cupo-dolar-bancoestado-rancagua.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-santiago",
+      "destination": "/cupo-dolar-bancoestado-santiago.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-temuco",
+      "destination": "/cupo-dolar-bancoestado-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-valparaiso",
+      "destination": "/cupo-dolar-bancoestado-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-vina-del-mar",
+      "destination": "/cupo-dolar-bancoestado-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-visa-gold",
+      "destination": "/cupo-dolar-bancoestado-visa-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-visa-platinum",
+      "destination": "/cupo-dolar-bancoestado-visa-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado-visa-signature",
+      "destination": "/cupo-dolar-bancoestado-visa-signature.html"
+    },
+    {
+      "source": "/cupo-dolar-bancoestado",
+      "destination": "/cupo-dolar-bancoestado.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-amex",
+      "destination": "/cupo-dolar-bci-amex.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-antofagasta",
+      "destination": "/cupo-dolar-bci-antofagasta.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-concepcion",
+      "destination": "/cupo-dolar-bci-concepcion.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-iquique",
+      "destination": "/cupo-dolar-bci-iquique.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-la-serena",
+      "destination": "/cupo-dolar-bci-la-serena.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-mastercard-black",
+      "destination": "/cupo-dolar-bci-mastercard-black.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-mastercard-gold",
+      "destination": "/cupo-dolar-bci-mastercard-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-mastercard-platinum",
+      "destination": "/cupo-dolar-bci-mastercard-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-pesos",
+      "destination": "/cupo-dolar-bci-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-puerto-montt",
+      "destination": "/cupo-dolar-bci-puerto-montt.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-rancagua",
+      "destination": "/cupo-dolar-bci-rancagua.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-santiago",
+      "destination": "/cupo-dolar-bci-santiago.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-temuco",
+      "destination": "/cupo-dolar-bci-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-valparaiso",
+      "destination": "/cupo-dolar-bci-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-vina-del-mar",
+      "destination": "/cupo-dolar-bci-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-visa-gold",
+      "destination": "/cupo-dolar-bci-visa-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-visa-platinum",
+      "destination": "/cupo-dolar-bci-visa-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-bci-visa-signature",
+      "destination": "/cupo-dolar-bci-visa-signature.html"
+    },
+    {
+      "source": "/cupo-dolar-bci",
+      "destination": "/cupo-dolar-bci.html"
+    },
+    {
+      "source": "/cupo-dolar-bice",
+      "destination": "/cupo-dolar-bice.html"
+    },
+    {
+      "source": "/cupo-dolar-calama",
+      "destination": "/cupo-dolar-calama.html"
+    },
+    {
+      "source": "/cupo-dolar-cencosud-pesos",
+      "destination": "/cupo-dolar-cencosud-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-chillan",
+      "destination": "/cupo-dolar-chillan.html"
+    },
+    {
+      "source": "/cupo-dolar-cmr-pesos",
+      "destination": "/cupo-dolar-cmr-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-cmr",
+      "destination": "/cupo-dolar-cmr.html"
+    },
+    {
+      "source": "/cupo-dolar-como-funciona",
+      "destination": "/cupo-dolar-como-funciona.html"
+    },
+    {
+      "source": "/cupo-dolar-concepcion",
+      "destination": "/cupo-dolar-concepcion.html"
+    },
+    {
+      "source": "/cupo-dolar-confiable",
+      "destination": "/cupo-dolar-confiable.html"
+    },
+    {
+      "source": "/cupo-dolar-conviene",
+      "destination": "/cupo-dolar-conviene.html"
+    },
+    {
+      "source": "/cupo-dolar-copiapo",
+      "destination": "/cupo-dolar-copiapo.html"
+    },
+    {
+      "source": "/cupo-dolar-disponible",
+      "destination": "/cupo-dolar-disponible.html"
+    },
+    {
+      "source": "/cupo-dolar-empresas",
+      "destination": "/cupo-dolar-empresas.html"
+    },
+    {
+      "source": "/cupo-dolar-falabella",
+      "destination": "/cupo-dolar-falabella.html"
+    },
+    {
+      "source": "/cupo-dolar-fin-de-mes",
+      "destination": "/cupo-dolar-fin-de-mes.html"
+    },
+    {
+      "source": "/cupo-dolar-hoy-chile",
+      "destination": "/cupo-dolar-hoy-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-internacional",
+      "destination": "/cupo-dolar-internacional.html"
+    },
+    {
+      "source": "/cupo-dolar-iquique",
+      "destination": "/cupo-dolar-iquique.html"
+    },
+    {
+      "source": "/cupo-dolar-itau",
+      "destination": "/cupo-dolar-itau.html"
+    },
+    {
+      "source": "/cupo-dolar-la-serena",
+      "destination": "/cupo-dolar-la-serena.html"
+    },
+    {
+      "source": "/cupo-dolar-las-condes",
+      "destination": "/cupo-dolar-las-condes.html"
+    },
+    {
+      "source": "/cupo-dolar-mastercard",
+      "destination": "/cupo-dolar-mastercard.html"
+    },
+    {
+      "source": "/cupo-dolar-monto-minimo",
+      "destination": "/cupo-dolar-monto-minimo.html"
+    },
+    {
+      "source": "/cupo-dolar-online",
+      "destination": "/cupo-dolar-online.html"
+    },
+    {
+      "source": "/cupo-dolar-osorno",
+      "destination": "/cupo-dolar-osorno.html"
+    },
+    {
+      "source": "/cupo-dolar-persona-natural",
+      "destination": "/cupo-dolar-persona-natural.html"
+    },
+    {
+      "source": "/cupo-dolar-primera-vez",
+      "destination": "/cupo-dolar-primera-vez.html"
+    },
+    {
+      "source": "/cupo-dolar-providencia",
+      "destination": "/cupo-dolar-providencia.html"
+    },
+    {
+      "source": "/cupo-dolar-puerto-montt",
+      "destination": "/cupo-dolar-puerto-montt.html"
+    },
+    {
+      "source": "/cupo-dolar-punta-arenas",
+      "destination": "/cupo-dolar-punta-arenas.html"
+    },
+    {
+      "source": "/cupo-dolar-rancagua",
+      "destination": "/cupo-dolar-rancagua.html"
+    },
+    {
+      "source": "/cupo-dolar-rapido",
+      "destination": "/cupo-dolar-rapido.html"
+    },
+    {
+      "source": "/cupo-dolar-recomendado",
+      "destination": "/cupo-dolar-recomendado.html"
+    },
+    {
+      "source": "/cupo-dolar-regiones-chile",
+      "destination": "/cupo-dolar-regiones-chile.html"
+    },
+    {
+      "source": "/cupo-dolar-requisitos",
+      "destination": "/cupo-dolar-requisitos.html"
+    },
+    {
+      "source": "/cupo-dolar-ripley-pesos",
+      "destination": "/cupo-dolar-ripley-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-ripley",
+      "destination": "/cupo-dolar-ripley.html"
+    },
+    {
+      "source": "/cupo-dolar-santander-pesos",
+      "destination": "/cupo-dolar-santander-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-santander",
+      "destination": "/cupo-dolar-santander.html"
+    },
+    {
+      "source": "/cupo-dolar-santiago",
+      "destination": "/cupo-dolar-santiago.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-pesos",
+      "destination": "/cupo-dolar-scotiabank-pesos.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-temuco",
+      "destination": "/cupo-dolar-scotiabank-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-valparaiso",
+      "destination": "/cupo-dolar-scotiabank-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-vina-del-mar",
+      "destination": "/cupo-dolar-scotiabank-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-visa-gold",
+      "destination": "/cupo-dolar-scotiabank-visa-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-visa-platinum",
+      "destination": "/cupo-dolar-scotiabank-visa-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-visa-signature",
+      "destination": "/cupo-dolar-scotiabank-visa-signature.html"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank",
+      "destination": "/cupo-dolar-scotiabank.html"
+    },
+    {
+      "source": "/cupo-dolar-security-amex",
+      "destination": "/cupo-dolar-security-amex.html"
+    },
+    {
+      "source": "/cupo-dolar-security-antofagasta",
+      "destination": "/cupo-dolar-security-antofagasta.html"
+    },
+    {
+      "source": "/cupo-dolar-security-concepcion",
+      "destination": "/cupo-dolar-security-concepcion.html"
+    },
+    {
+      "source": "/cupo-dolar-security-iquique",
+      "destination": "/cupo-dolar-security-iquique.html"
+    },
+    {
+      "source": "/cupo-dolar-security-la-serena",
+      "destination": "/cupo-dolar-security-la-serena.html"
+    },
+    {
+      "source": "/cupo-dolar-security-mastercard-black",
+      "destination": "/cupo-dolar-security-mastercard-black.html"
+    },
+    {
+      "source": "/cupo-dolar-security-mastercard-gold",
+      "destination": "/cupo-dolar-security-mastercard-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-security-mastercard-platinum",
+      "destination": "/cupo-dolar-security-mastercard-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-security-puerto-montt",
+      "destination": "/cupo-dolar-security-puerto-montt.html"
+    },
+    {
+      "source": "/cupo-dolar-security-rancagua",
+      "destination": "/cupo-dolar-security-rancagua.html"
+    },
+    {
+      "source": "/cupo-dolar-security-santiago",
+      "destination": "/cupo-dolar-security-santiago.html"
+    },
+    {
+      "source": "/cupo-dolar-security-temuco",
+      "destination": "/cupo-dolar-security-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-security-valparaiso",
+      "destination": "/cupo-dolar-security-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-security-vina-del-mar",
+      "destination": "/cupo-dolar-security-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-security-visa-gold",
+      "destination": "/cupo-dolar-security-visa-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-security-visa-platinum",
+      "destination": "/cupo-dolar-security-visa-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-security-visa-signature",
+      "destination": "/cupo-dolar-security-visa-signature.html"
+    },
+    {
+      "source": "/cupo-dolar-security",
+      "destination": "/cupo-dolar-security.html"
+    },
+    {
+      "source": "/cupo-dolar-seguro",
+      "destination": "/cupo-dolar-seguro.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-complicaciones",
+      "destination": "/cupo-dolar-sin-complicaciones.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-cuenta-bancaria",
+      "destination": "/cupo-dolar-sin-cuenta-bancaria.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-estafa",
+      "destination": "/cupo-dolar-sin-estafa.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-monto-minimo",
+      "destination": "/cupo-dolar-sin-monto-minimo.html"
+    },
+    {
+      "source": "/cupo-dolar-sin-usar",
+      "destination": "/cupo-dolar-sin-usar.html"
+    },
+    {
+      "source": "/cupo-dolar-talca",
+      "destination": "/cupo-dolar-talca.html"
+    },
+    {
+      "source": "/cupo-dolar-tarjeta-bloqueada",
+      "destination": "/cupo-dolar-tarjeta-bloqueada.html"
+    },
+    {
+      "source": "/cupo-dolar-tarjeta-empresas",
+      "destination": "/cupo-dolar-tarjeta-empresas.html"
+    },
+    {
+      "source": "/cupo-dolar-temuco",
+      "destination": "/cupo-dolar-temuco.html"
+    },
+    {
+      "source": "/cupo-dolar-tiempo",
+      "destination": "/cupo-dolar-tiempo.html"
+    },
+    {
+      "source": "/cupo-dolar-transferencia-inmediata",
+      "destination": "/cupo-dolar-transferencia-inmediata.html"
+    },
+    {
+      "source": "/cupo-dolar-urgente",
+      "destination": "/cupo-dolar-urgente.html"
+    },
+    {
+      "source": "/cupo-dolar-valdivia",
+      "destination": "/cupo-dolar-valdivia.html"
+    },
+    {
+      "source": "/cupo-dolar-valparaiso",
+      "destination": "/cupo-dolar-valparaiso.html"
+    },
+    {
+      "source": "/cupo-dolar-vina-del-mar",
+      "destination": "/cupo-dolar-vina-del-mar.html"
+    },
+    {
+      "source": "/cupo-dolar-visa-gold",
+      "destination": "/cupo-dolar-visa-gold.html"
+    },
+    {
+      "source": "/cupo-dolar-visa-platinum",
+      "destination": "/cupo-dolar-visa-platinum.html"
+    },
+    {
+      "source": "/cupo-dolar-visa-signature",
+      "destination": "/cupo-dolar-visa-signature.html"
+    },
+    {
+      "source": "/cupo-dolar-visa",
+      "destination": "/cupo-dolar-visa.html"
+    },
+    {
+      "source": "/cupo-dolar-whatsapp",
+      "destination": "/cupo-dolar-whatsapp.html"
+    },
+    {
+      "source": "/cupo-dolares-tarjeta-credito",
+      "destination": "/cupo-dolares-tarjeta-credito.html"
+    },
+    {
+      "source": "/cupo-en-dolares",
+      "destination": "/cupo-en-dolares.html"
+    },
+    {
+      "source": "/cupo-internacional-a-pesos",
+      "destination": "/cupo-internacional-a-pesos.html"
+    },
+    {
+      "source": "/cupo-internacional-banco-chile",
+      "destination": "/cupo-internacional-banco-chile.html"
+    },
+    {
+      "source": "/cupo-internacional-bancoestado",
+      "destination": "/cupo-internacional-bancoestado.html"
+    },
+    {
+      "source": "/cupo-internacional-bci",
+      "destination": "/cupo-internacional-bci.html"
+    },
+    {
+      "source": "/cupo-internacional-pesos",
+      "destination": "/cupo-internacional-pesos.html"
+    },
+    {
+      "source": "/cupo-internacional-santander",
+      "destination": "/cupo-internacional-santander.html"
+    },
+    {
+      "source": "/cupo-internacional-tarjeta-credito",
+      "destination": "/cupo-internacional-tarjeta-credito.html"
+    },
+    {
+      "source": "/cupo-internacional-tarjeta",
+      "destination": "/cupo-internacional-tarjeta.html"
+    },
+    {
+      "source": "/cupo-mastercard-pesos",
+      "destination": "/cupo-mastercard-pesos.html"
+    },
+    {
+      "source": "/cupo-para-compras-a-efectivo-chile",
+      "destination": "/cupo-para-compras-a-efectivo-chile.html"
+    },
+    {
+      "source": "/cupo-tarjeta-a-transferencia",
+      "destination": "/cupo-tarjeta-a-transferencia.html"
+    },
+    {
+      "source": "/cupo-usd-a-clp",
+      "destination": "/cupo-usd-a-clp.html"
+    },
+    {
+      "source": "/directorio-general",
+      "destination": "/directorio-general.html"
+    },
+    {
+      "source": "/dolar-tarjeta-pesos",
+      "destination": "/dolar-tarjeta-pesos.html"
+    },
+    {
+      "source": "/efectivo-cupo-dolar",
+      "destination": "/efectivo-cupo-dolar.html"
+    },
+    {
+      "source": "/efectivo-rapido-cupo-cmr",
+      "destination": "/efectivo-rapido-cupo-cmr.html"
+    },
+    {
+      "source": "/efectivo-rapido-cupo-ripley",
+      "destination": "/efectivo-rapido-cupo-ripley.html"
+    },
+    {
+      "source": "/es-legal-vender-cupo-dolar",
+      "destination": "/es-legal-vender-cupo-dolar.html"
+    },
+    {
+      "source": "/girar-cupo-dolares",
+      "destination": "/girar-cupo-dolares.html"
+    },
+    {
+      "source": "/girar-dolares-tarjeta",
+      "destination": "/girar-dolares-tarjeta.html"
+    },
+    {
+      "source": "/hites-plata-rapido",
+      "destination": "/hites-plata-rapido.html"
+    },
+    {
+      "source": "/liquidar-cupo-abcdin-online",
+      "destination": "/liquidar-cupo-abcdin-online.html"
+    },
+    {
+      "source": "/liquidar-cupo-casa-comercial",
+      "destination": "/liquidar-cupo-casa-comercial.html"
+    },
+    {
+      "source": "/liquidar-cupo-cmr-efectivo",
+      "destination": "/liquidar-cupo-cmr-efectivo.html"
+    },
+    {
+      "source": "/liquidar-cupo-dolar",
+      "destination": "/liquidar-cupo-dolar.html"
+    },
+    {
+      "source": "/liquidar-cupo-hites-transferencia",
+      "destination": "/liquidar-cupo-hites-transferencia.html"
+    },
+    {
+      "source": "/liquidar-cupo-internacional",
+      "destination": "/liquidar-cupo-internacional.html"
+    },
+    {
+      "source": "/liquidar-cupo-lider-hoy",
+      "destination": "/liquidar-cupo-lider-hoy.html"
+    },
+    {
+      "source": "/liquidar-cupo-paris-pesos",
+      "destination": "/liquidar-cupo-paris-pesos.html"
+    },
+    {
+      "source": "/liquidar-cupo-ripley-rapido",
+      "destination": "/liquidar-cupo-ripley-rapido.html"
+    },
+    {
+      "source": "/liquidar-cupo-tarjeta-retail",
+      "destination": "/liquidar-cupo-tarjeta-retail.html"
+    },
+    {
+      "source": "/liquidez-cupo-dolar",
+      "destination": "/liquidez-cupo-dolar.html"
+    },
+    {
+      "source": "/mejor-tasa-cupo-dolar",
+      "destination": "/mejor-tasa-cupo-dolar.html"
+    },
+    {
+      "source": "/necesito-pesos-tengo-dolares",
+      "destination": "/necesito-pesos-tengo-dolares.html"
+    },
+    {
+      "source": "/necesito-plata-tengo-cupo-cmr",
+      "destination": "/necesito-plata-tengo-cupo-cmr.html"
+    },
+    {
+      "source": "/necesito-plata-tengo-cupo-ripley",
+      "destination": "/necesito-plata-tengo-cupo-ripley.html"
+    },
+    {
+      "source": "/necesito-plata-y-tengo-cupo-en-tarjeta",
+      "destination": "/necesito-plata-y-tengo-cupo-en-tarjeta.html"
+    },
+    {
+      "source": "/pagar-con-cupo-dolar",
+      "destination": "/pagar-con-cupo-dolar.html"
+    },
+    {
+      "source": "/page1",
+      "destination": "/page1.html"
+    },
+    {
+      "source": "/pasar-cupo-de-compras-a-efectivo",
+      "destination": "/pasar-cupo-de-compras-a-efectivo.html"
+    },
+    {
+      "source": "/pasar-cupo-dolar-cuenta",
+      "destination": "/pasar-cupo-dolar-cuenta.html"
+    },
+    {
+      "source": "/plata-rapida-con-tarjeta-retail-chile",
+      "destination": "/plata-rapida-con-tarjeta-retail-chile.html"
+    },
+    {
+      "source": "/que-es-cupo-dolar",
+      "destination": "/que-es-cupo-dolar.html"
+    },
+    {
+      "source": "/riesgos-vender-cupo-dolar",
+      "destination": "/riesgos-vender-cupo-dolar.html"
+    },
+    {
+      "source": "/ripley-plata-al-tiro",
+      "destination": "/ripley-plata-al-tiro.html"
+    },
+    {
+      "source": "/sacar-cupo-dolares",
+      "destination": "/sacar-cupo-dolares.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-abc-din",
+      "destination": "/sacar-dinero-tarjeta-abc-din.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-casa-comercial",
+      "destination": "/sacar-dinero-tarjeta-casa-comercial.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-cmr-falabella",
+      "destination": "/sacar-dinero-tarjeta-cmr-falabella.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-hites",
+      "destination": "/sacar-dinero-tarjeta-hites.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-jumbo",
+      "destination": "/sacar-dinero-tarjeta-jumbo.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-la-polar",
+      "destination": "/sacar-dinero-tarjeta-la-polar.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-lider",
+      "destination": "/sacar-dinero-tarjeta-lider.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-paris",
+      "destination": "/sacar-dinero-tarjeta-paris.html"
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-ripley",
+      "destination": "/sacar-dinero-tarjeta-ripley.html"
+    },
+    {
+      "source": "/sacar-plata-cmr",
+      "destination": "/sacar-plata-cmr.html"
+    },
+    {
+      "source": "/sacar-plata-de-tarjeta-de-tienda",
+      "destination": "/sacar-plata-de-tarjeta-de-tienda.html"
+    },
+    {
+      "source": "/sacar-plata-ripley",
+      "destination": "/sacar-plata-ripley.html"
+    },
+    {
+      "source": "/sacar-plata-tarjeta-abcdin",
+      "destination": "/sacar-plata-tarjeta-abcdin.html"
+    },
+    {
+      "source": "/sacar-plata-tarjeta-cencosud",
+      "destination": "/sacar-plata-tarjeta-cencosud.html"
+    },
+    {
+      "source": "/sacar-plata-tarjeta-hites",
+      "destination": "/sacar-plata-tarjeta-hites.html"
+    },
+    {
+      "source": "/sacar-plata-tarjeta-lider",
+      "destination": "/sacar-plata-tarjeta-lider.html"
+    },
+    {
+      "source": "/sacar-plata-tarjeta-polar",
+      "destination": "/sacar-plata-tarjeta-polar.html"
+    },
+    {
+      "source": "/servicios-cupo-dolar",
+      "destination": "/servicios-cupo-dolar.html"
+    },
+    {
+      "source": "/superavance-cmr-falabella",
+      "destination": "/superavance-cmr-falabella.html"
+    },
+    {
+      "source": "/superavance-tarjeta-lider",
+      "destination": "/superavance-tarjeta-lider.html"
+    },
+    {
+      "source": "/superavance-tarjeta-paris-cencosud",
+      "destination": "/superavance-tarjeta-paris-cencosud.html"
+    },
+    {
+      "source": "/tarjeta-abc-din-efectivo-rapido",
+      "destination": "/tarjeta-abc-din-efectivo-rapido.html"
+    },
+    {
+      "source": "/tarjeta-abc-sin-avance",
+      "destination": "/tarjeta-abc-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-cmr-sin-avance",
+      "destination": "/tarjeta-cmr-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-credito-cupo-dolar",
+      "destination": "/tarjeta-credito-cupo-dolar.html"
+    },
+    {
+      "source": "/tarjeta-hites-sin-avance",
+      "destination": "/tarjeta-hites-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-la-polar-sin-avance",
+      "destination": "/tarjeta-la-polar-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-lider-bci-efectivo-rapido",
+      "destination": "/tarjeta-lider-bci-efectivo-rapido.html"
+    },
+    {
+      "source": "/tarjeta-lider-con-cupo-y-sin-avance",
+      "destination": "/tarjeta-lider-con-cupo-y-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-lider-sin-avance",
+      "destination": "/tarjeta-lider-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-paris-plata-rapido",
+      "destination": "/tarjeta-paris-plata-rapido.html"
+    },
+    {
+      "source": "/tarjeta-paris-sin-avance",
+      "destination": "/tarjeta-paris-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-retail-efectivo-mismo-dia",
+      "destination": "/tarjeta-retail-efectivo-mismo-dia.html"
+    },
+    {
+      "source": "/tarjeta-ripley-efectivo-inmediato",
+      "destination": "/tarjeta-ripley-efectivo-inmediato.html"
+    },
+    {
+      "source": "/tarjeta-ripley-sin-avance",
+      "destination": "/tarjeta-ripley-sin-avance.html"
+    },
+    {
+      "source": "/tarjeta-sin-avance-habilitado-chile",
+      "destination": "/tarjeta-sin-avance-habilitado-chile.html"
+    },
+    {
+      "source": "/transferir-cupo-cmr-a-cuenta",
+      "destination": "/transferir-cupo-cmr-a-cuenta.html"
+    },
+    {
+      "source": "/urgente-cupo-lider-efectivo",
+      "destination": "/urgente-cupo-lider-efectivo.html"
+    },
+    {
+      "source": "/urgente-cupo-paris-hoy",
+      "destination": "/urgente-cupo-paris-hoy.html"
+    },
+    {
+      "source": "/vender-cupo-abcdin-urgente",
+      "destination": "/vender-cupo-abcdin-urgente.html"
+    },
+    {
+      "source": "/vender-cupo-banco-chile",
+      "destination": "/vender-cupo-banco-chile.html"
+    },
+    {
+      "source": "/vender-cupo-banco-estado",
+      "destination": "/vender-cupo-banco-estado.html"
+    },
+    {
+      "source": "/vender-cupo-bci",
+      "destination": "/vender-cupo-bci.html"
+    },
+    {
+      "source": "/vender-cupo-cmr-falabella",
+      "destination": "/vender-cupo-cmr-falabella.html"
+    },
+    {
+      "source": "/vender-cupo-cmr-hoy",
+      "destination": "/vender-cupo-cmr-hoy.html"
+    },
+    {
+      "source": "/vender-cupo-dolar-online",
+      "destination": "/vender-cupo-dolar-online.html"
+    },
+    {
+      "source": "/vender-cupo-dolar-tarjeta-credito",
+      "destination": "/vender-cupo-dolar-tarjeta-credito.html"
+    },
+    {
+      "source": "/vender-cupo-dolar-transferencia",
+      "destination": "/vender-cupo-dolar-transferencia.html"
+    },
+    {
+      "source": "/vender-cupo-dolar",
+      "destination": "/vender-cupo-dolar.html"
+    },
+    {
+      "source": "/vender-cupo-easy-mismo-dia",
+      "destination": "/vender-cupo-easy-mismo-dia.html"
+    },
+    {
+      "source": "/vender-cupo-hites-ahora",
+      "destination": "/vender-cupo-hites-ahora.html"
+    },
+    {
+      "source": "/vender-cupo-internacional",
+      "destination": "/vender-cupo-internacional.html"
+    },
+    {
+      "source": "/vender-cupo-itau",
+      "destination": "/vender-cupo-itau.html"
+    },
+    {
+      "source": "/vender-cupo-jumbo-online",
+      "destination": "/vender-cupo-jumbo-online.html"
+    },
+    {
+      "source": "/vender-cupo-lider-santiago",
+      "destination": "/vender-cupo-lider-santiago.html"
+    },
+    {
+      "source": "/vender-cupo-paris-efectivo",
+      "destination": "/vender-cupo-paris-efectivo.html"
+    },
+    {
+      "source": "/vender-cupo-ripley-rapido",
+      "destination": "/vender-cupo-ripley-rapido.html"
+    },
+    {
+      "source": "/vender-cupo-santander",
+      "destination": "/vender-cupo-santander.html"
+    },
+    {
+      "source": "/vender-cupo-scotiabank",
+      "destination": "/vender-cupo-scotiabank.html"
+    },
+    {
+      "source": "/vender-dolares-tarjeta-credito",
+      "destination": "/vender-dolares-tarjeta-credito.html"
+    },
+    {
+      "source": "/vender-dolares-tarjeta-visa",
+      "destination": "/vender-dolares-tarjeta-visa.html"
+    },
+    {
+      "source": "/vender-usd-chile",
+      "destination": "/vender-usd-chile.html"
+    },
+    {
+      "source": "/vender-usd",
+      "destination": "/vender-usd.html"
+    },
+    {
+      "source": "/venta-cupo-dolares",
+      "destination": "/venta-cupo-dolares.html"
+    },
+    {
+      "source": "/widget",
+      "destination": "/widget.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
