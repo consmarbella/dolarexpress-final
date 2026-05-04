@@ -7,12 +7,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, 'public');
 const distDir = path.join(__dirname, 'dist');
 
-// Ensure dist exists
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
-// Recursively copy all HTML and XML files from public to dist
 function copyFilesRecursive(src, dest) {
   let copied = 0;
 
@@ -28,7 +26,16 @@ function copyFilesRecursive(src, dest) {
 
     if (entry.isDirectory()) {
       copied += copyFilesRecursive(srcPath, destPath);
-    } else if (entry.name.endsWith('.html') || entry.name.endsWith('.xml')) {
+    } else if (entry.name.endsWith('.html')) {
+      // Convert file.html to file/index.html for Vercel routing
+      const baseName = entry.name.replace('.html', '');
+      const folderPath = path.join(dest, baseName);
+      if (!fs.existsSync(folderPath)) {
+        fs.mkdirSync(folderPath, { recursive: true });
+      }
+      fs.copyFileSync(srcPath, path.join(folderPath, 'index.html'));
+      copied++;
+    } else if (entry.name.endsWith('.xml')) {
       fs.copyFileSync(srcPath, destPath);
       copied++;
     }
@@ -38,4 +45,4 @@ function copyFilesRecursive(src, dest) {
 }
 
 const copied = copyFilesRecursive(publicDir, distDir);
-console.log(`✅ Copied ${copied} static files to dist/`);
+console.log(`✅ Converted and copied ${copied} HTML files to folder/index.html structure`);
