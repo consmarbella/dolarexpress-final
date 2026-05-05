@@ -87,12 +87,14 @@ const Home: React.FC = () => {
             <Link to="/" className="font-medium text-white hover:text-[#C8A045] transition-colors hidden md:block">
               Inicio
             </Link>
-            <Link
-              to="/venta-usd"
+            <a
+              href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20vender%20mi%20cupo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#C8A045] text-white px-5 py-2 rounded-lg font-bold hover:brightness-105 hover:-translate-y-0.5 transition-all shadow-md"
             >
               Vender Cupo
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
@@ -109,12 +111,14 @@ const Home: React.FC = () => {
             ¿Necesitas efectivo? <strong>Compramos tu cupo dólar</strong> con la mejor tasa del mercado. Transferencias seguras en minutos a todo Chile.
           </p>
           <div className="flex justify-center gap-4">
-            <Link
-              to="/venta-usd"
+            <a
+              href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20vender%20mi%20cupo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#C8A045] text-white text-lg px-10 py-4 rounded-xl font-bold hover:shadow-[0_0_25px_rgba(200,160,69,0.5)] transition-all transform hover:scale-105"
             >
               Quiero Vender mi Cupo
-            </Link>
+            </a>
           </div>
         </div>
       </header>
@@ -224,7 +228,7 @@ const Home: React.FC = () => {
           <div className="flex justify-center gap-6 mb-8 text-sm text-gray-400">
             <a href="#" className="hover:text-[#C8A045]">Términos y Condiciones</a>
             <a href="#" className="hover:text-[#C8A045]">Política de Privacidad</a>
-            <a href="#" className="hover:text-[#C8A045]">Contacto</a>
+            <a href="https://wa.me/56967658939?text=Hola%20DolarExpress" target="_blank" rel="noopener noreferrer" className="hover:text-[#C8A045]">Contacto</a>
           </div>
           <p className="text-xs text-gray-500 max-w-lg mx-auto leading-relaxed">
             © {new Date().getFullYear()} DolarExpress. Servicios financieros digitales líderes en Chile.
