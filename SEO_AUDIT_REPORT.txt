@@ -1,0 +1,47 @@
+TOTAL HTML PAGES: 331
+
+=== PROBLEMA #1: CANONICAL CON www ===
+Pages with www canonical: 326
+  avance-abc-visa.html -> https://www.dolarexpress.cl/avance-abc-visa/
+  avance-cmr-sin-avance-habilitado.html -> https://www.dolarexpress.cl/avance-cmr-sin-avance-habilitado/
+  avance-cupo-dolares.html -> https://www.dolarexpress.cl/avance-cupo-dolares/
+  avance-efectivo-dolares.html -> https://www.dolarexpress.cl/avance-efectivo-dolares/
+  avance-efectivo-sin-avance-habilitado.html -> https://www.dolarexpress.cl/avance-efectivo-sin-avance-habilitado/
+  ... and 321 more
+
+=== CANONICAL: sin canonical ===
+Pages without any canonical: 3
+  changenow-widget (2).html
+  changenow-widget.html
+  compra-usdc.html
+
+=== CANONICAL: trailing slashes ===
+Pages with / canonical: 1
+
+=== CANONICAL: .html extension ===
+Pages with .html canonical: 1
+
+=== CANONICAL: OK ===
+Pages OK: 0
+
+=== PROBLEMA #2: INTERLINKING CON www ===
+Pages with www links: 327
+
+=== PROBLEMA #3: NOINDEX ===
+Pages with noindex: 1
+  recursos.html
+
+=== RESUMEN DE IMPACTO GSC ===
+
+El Excel muestra estos problemas en GSC:
+  - Paginas con redireccion: 761 (por www -> sin www)
+  - Paginas alternativas con canonica adecuada: 327 (por www canonical)
+  - No encontrado 404: 41
+  - Excluida por noindex: 1
+  - Sin indexar (descubiertas): 134
+
+CAUSA RAIZ: Cientos de paginas HTML tienen:
+  1. canonical apuntando a www.dolarexpress.cl
+  2. Links internos a www.dolarexpress.cl
+  3. El dominio principal es dolarexpress.cl (sin www)
+  4. Esto hace que Google vea redirecciones masivas y duplicados
