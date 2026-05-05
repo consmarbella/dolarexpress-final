@@ -2,3 +2,6 @@
 # Solo redirecciones 301 necesarias
 
 # NO agregues más redirecciones
+
+# SPA Fallback - NECESARIO para que funcionen todas las rutas de React
+/*    /index.html   200
