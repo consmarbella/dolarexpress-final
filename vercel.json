@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "projectSettings": {
+    "buildCommand": "next build",
+    "outputDirectory": ".next",
+    "installCommand": "npm ci"
+  },
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "@next_public_site_url"
+  },
+  "regions": ["sfo1"],
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
+  },
+  "redirects": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/public/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/public/robots.txt",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/public/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    }
+  ]
+}
