@@ -1,17 +1,29 @@
 {
   "buildCommand": "vite build && node copy-html-files.js",
   "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "index, follow" }
+      ]
+    }
+  ],
   "routes": [
     {
       "handle": "filesystem"
     },
     {
-      "src": "/.*\\.html$",
-      "dest": "/:splat"
+      "src": "/([^/]+)\\.html$",
+      "dest": "/$1/index.html"
     },
     {
       "src": "/([^/]+)/([^/]+)/?$",
       "dest": "/$1/$2/index.html"
+    },
+    {
+      "src": "/([^/]+)/?$",
+      "dest": "/$1/index.html"
     },
     {
       "src": "/(.*)",
@@ -30,6 +42,9 @@
     { "source": "/avance-efectivo", "destination": "/venta-cupo-dolares", "statusCode": 301 },
     { "source": "/convertir-cupo", "destination": "/venta-cupo-dolares", "statusCode": 301 },
     { "source": "/comprar-cupo", "destination": "/venta-cupo-dolares", "statusCode": 301 },
-    { "source": "/vender-usd", "destination": "/venta-cupo-dolares", "statusCode": 301 }
+    { "source": "/vender-usd", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/index", "destination": "/", "statusCode": 301 },
+    { "source": "/home", "destination": "/", "statusCode": 301 },
+    { "source": "/default", "destination": "/", "statusCode": 301 }
   ]
 }

@@ -13,6 +13,7 @@ if (!fs.existsSync(distDir)) {
 
 function copyFilesRecursive(src, dest) {
   let copied = 0;
+  let folders = 0;
 
   if (!fs.existsSync(dest)) {
     fs.mkdirSync(dest, { recursive: true });
@@ -20,33 +21,41 @@ function copyFilesRecursive(src, dest) {
 
   const entries = fs.readdirSync(src, { withFileTypes: true });
 
-  entries.forEach(entry => {
+  for (const entry of entries) {
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
 
     if (entry.isDirectory()) {
-      copied += copyFilesRecursive(srcPath, destPath);
+      const result = copyFilesRecursive(srcPath, destPath);
+      copied += result.files;
+      folders += result.folders;
     } else if (entry.name.endsWith('.html')) {
+      // 1. Copiar como carpeta/index.html (para rutas sin extensión)
       const baseName = entry.name.replace('.html', '');
       const folderPath = path.join(dest, baseName);
       if (!fs.existsSync(folderPath)) {
         fs.mkdirSync(folderPath, { recursive: true });
       }
       fs.copyFileSync(srcPath, path.join(folderPath, 'index.html'));
-      copied++;
-    } else if (entry.name.endsWith('.xml')) {
+      folders++;
+
+      // 2. Copiar también como archivo.html (para rutas con .html)
       fs.copyFileSync(srcPath, destPath);
       copied++;
-    } else if (entry.name === 'sitemap.xml') {
+    } else if (entry.name.endsWith('.xml')) {
+      // Sitemap
+      fs.copyFileSync(srcPath, destPath);
+      copied++;
+    } else if (entry.name === 'robots.txt') {
       fs.copyFileSync(srcPath, destPath);
       copied++;
     }
-  });
+  }
 
-  return copied;
+  return { files: copied, folders };
 }
 
-const copied = copyFilesRecursive(publicDir, distDir);
-console.log(`✅ Copied ${copied} HTML files to dist/`);
-
-console.log(`✅ Build complete - HTML pages will be served as static files, bypassing SPA`);
+console.log('Copiando archivos de public a dist...');
+const result = copyFilesRecursive(publicDir, distDir);
+console.log(`✅ Copiados ${result.files} archivos y ${result.folders} carpetas`);
+console.log('✅ Las paginas HTML se serviran directamente (SPA ignorada para esas rutas)');
