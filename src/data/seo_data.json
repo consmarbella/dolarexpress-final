@@ -1,0 +1,518 @@
+{
+  "bancos": {
+    "banco-chile": {
+      "nombre": "Banco de Chile",
+      "nombre_largo": "Banco de Chile",
+      "clientes": "más de 2 millones",
+      "tipo": "banco tradicional",
+      "tarjetas": ["Visa Classic", "Visa Oro", "Visa Platinum", "Visa Signature", "Black"],
+      "descripcion": "El banco más grande de Chile con presencia en todo el territorio nacional. Tarjetas Visa con cupo internacional automático.",
+      "ventajas": ["Red de sucursales más extensa", "App móvil altamente valorada", "Cupo automático sin solicitud"],
+      "caracteristicas": "Sistema de banking robusto, múltiples productos de crédito, atención presencial y digital",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 500-2000", "descripcion": "Cupo básico para clientes standard"},
+        "oro": {"rango": "USD 2000-8000", "descripcion": "Cupo intermedio con beneficios premium"},
+        "platinum": {"rango": "USD 8000-20000", "descripcion": "Cupo alto para clientes premium"},
+        "black": {"rango": "USD 20000+", "descripcion": "Cupo elite sin límites definidos"}
+      }
+    },
+    "bci": {
+      "nombre": "BCI",
+      "nombre_largo": "Banco Crédito e Inversiones",
+      "clientes": "más de 1.5 millones",
+      "tipo": "banco digital",
+      "tarjetas": ["Visa BCI Classic", "Visa BCI Oro", "Visa BCI Platinum", "Mastercard BCI"],
+      "descripcion": "Segundo banco más grande de Chile, líder en innovación digital y banking móvil.",
+      "ventajas": ["Mejor app de banking según estudios", "Procesos 100% digitales", "Atención por WhatsApp"],
+      "caracteristicas": "Plataforma digital avanzada, rápido procesamiento, múltiples canales digitales",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 500-1500", "descripcion": "Cupo básico digital"},
+        "oro": {"rango": "USD 1500-5000", "descripcion": "Cupo digital premium"},
+        "platinum": {"rango": "USD 5000-15000", "descripcion": "Cupo alto digital"}
+      }
+    },
+    "santander": {
+      "nombre": "Santander",
+      "nombre_largo": "Banco Santander Chile",
+      "clientes": "más de 1.3 millones",
+      "tipo": "banco tradicional",
+      "tarjetas": ["Visa Santander Classic", "Visa Santander Oro", "Visa Santander Platinum", "Mastercard Santander"],
+      "descripcion": "Banco internacional con fuerte presencia en Chile, ofrece tarjetas con cupo internacional.",
+      "ventajas": ["Red internacional amplia", "Beneficios en cadenas asociadas", "Programa de puntos robusto"],
+      "caracteristicas": "Banca universal, presencia internacional, programas de beneficios",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 400-1200", "descripcion": "Cupo básico estándar"},
+        "oro": {"rango": "USD 1200-4000", "descripcion": "Cupo con beneficios"},
+        "platinum": {"rango": "USD 4000-10000", "descripcion": "Cupo premium"}
+      }
+    },
+    "scotiabank": {
+      "nombre": "Scotiabank",
+      "nombre_largo": "Scotiabank Chile",
+      "clientes": "más de 800 mil",
+      "tipo": "banco tradicional",
+      "tarjetas": ["Visa Scotiabank", "Mastercard Scotiabank"],
+      "descripcion": "Banco canadiense con presencia en Chile, ofrece tarjetas con cupo internacional.",
+      "ventajas": ["Atención al cliente valorada", "Costos competitivos", "Programa de beneficios"],
+      "caracteristicas": "Banca internacional, servicio al cliente destacado",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 300-1000", "descripcion": "Cupo básico"},
+        "oro": {"rango": "USD 1000-3500", "descripcion": "Cupo intermedio"},
+        "platinum": {"rango": "USD 3500-8000", "descripcion": "Cupo alto"}
+      }
+    },
+    "bbva": {
+      "nombre": "BBVA",
+      "nombre_largo": "Banco BBVA Chile",
+      "clientes": "más de 600 mil",
+      "tipo": "banco tradicional",
+      "tarjetas": ["Visa BBVA", "Mastercard BBVA"],
+      "descripcion": "Banco español con presencia en Chile, tarjetas con cupo internacional.",
+      "ventajas": ["Innovación tecnológica", "App móvil intuitiva", "Promociones temporales"],
+      "caracteristicas": "Banca digital avanzada, productos accesibles",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 300-800", "descripcion": "Cupo básico"},
+        "oro": {"rango": "USD 800-2500", "descripcion": "Cupo intermedio"},
+        "platinum": {"rango": "USD 2500-6000", "descripcion": "Cupo alto"}
+      }
+    },
+    "banco-estado": {
+      "nombre": "Banco Estado",
+      "nombre_largo": "Banco del Estado de Chile",
+      "clientes": "más de 3 millones",
+      "tipo": "banco estatal",
+      "tarjetas": ["Visa Banco Estado", "Redcompra", "Banco Estado Mastercard"],
+      "descripcion": "El banco estatal más grande de Chile, con acceso a millones de clientes y programas sociales.",
+      "ventajas": ["Acceso a programas estatales", "Red de cajeros más extensa", "Costos muy competitivos"],
+      "caracteristicas": "Banca inclusiva, mayor red de sucursales, programas sociales",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 200-600", "descripcion": "Cupo básico estatal"},
+        "plus": {"rango": "USD 600-1500", "descripcion": "Cupo con más beneficios"}
+      }
+    },
+    "itau": {
+      "nombre": "Itaú",
+      "nombre_largo": "Itaú Chile",
+      "clientes": "más de 900 mil",
+      "tipo": "banco tradicional",
+      "tarjetas": ["Visa Itaú", "Mastercard Itaú"],
+      "descripcion": "Banco latinoamericano con presencia en Chile, ofrece tarjetas con cupo internacional.",
+      "ventajas": ["Marca regional reconocida", "Beneficios internacionales", "App moderna"],
+      "caracteristicas": "Banca regional, servicios internacionales",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 400-1000", "descripcion": "Cupo básico"},
+        "oro": {"rango": "USD 1000-3000", "descripcion": "Cupo intermedio"},
+        "platinum": {"rango": "USD 3000-7000", "descripcion": "Cupo premium"}
+      }
+    }
+  },
+  "retails": {
+    "ripley": {
+      "nombre": "Ripley",
+      "nombre_largo": "Tarjetas Ripley",
+      "clientes": "más de 1.2 millones de tarjetahabientes",
+      "tipo": "retail financiero",
+      "tarjetas": ["Ripley Visa", "Ripley Mastercard"],
+      "descripcion": "Retail chileno con programa de tarjetas propia, permite compras internacionales y tiene cupo en dólares.",
+      "ventajas": ["Programa de puntos Duoc", "Promociones en tiendas", "Cuotas sin interés"],
+      "caracteristicas": "Financiamiento retail, puntos Duoc, fácil aprobación",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 200-800", "descripcion": "Cupo básico retail"},
+        "oro": {"rango": "USD 800-2000", "descripcion": "Cupo intermedio"},
+        "premium": {"rango": "USD 2000-5000", "descripcion": "Cupo premium retail"}
+      }
+    },
+    "paris": {
+      "nombre": "Paris",
+      "nombre_largo": "Tarjetas Paris",
+      "clientes": "más de 900 mil tarjetahabientes",
+      "tipo": "retail financiero",
+      "tarjetas": ["Paris Visa", "Paris Mastercard"],
+      "descripcion": "Retail de Falabella, tarjetas con capacidad de compras internacionales.",
+      "ventajas": ["Programa de puntos", "Promociones en tienda", "Cupo disponible rápido"],
+      "caracteristicas": "Financiamiento Falabella, puntos Club", 
+      "tipos_cupo": {
+        "classic": {"rango": "USD 200-700", "descripcion": "Cupo básico"},
+        "oro": {"rango": "USD 700-1800", "descripcion": "Cupo intermedio"},
+        "premium": {"rango": "USD 1800-4000", "descripcion": "Cupo premium"}
+      }
+    },
+    "cmr": {
+      "nombre": "CMR",
+      "nombre_largo": "CMR Falabella",
+      "clientes": "más de 1.5 millones",
+      "tipo": "retail financiero",
+      "tarjetas": ["CMR Visa", "CMR Mastercard"],
+      "descripcion": "La tarjeta más grande de Chile, принадлежит a Falabella, con operaciones en múltiples países.",
+      "ventajas": ["Más puntos Club", "Mayor red de aceptacion", "Promociones exclusivas"],
+      "caracteristicas": "Líder del retail, puntos Club, cobertura nacional",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 300-1000", "descripcion": "Cupo básico CMR"},
+        "oro": {"rango": "USD 1000-2500", "descripcion": "Cupo intermedio"},
+        "premium": {"rango": "USD 2500-6000", "descripcion": "Cupo premium"}
+      }
+    },
+    "lider": {
+      "nombre": "Líder",
+      "nombre_largo": "Tarjetas Líder",
+      "clientes": "más de 700 mil",
+      "tipo": "retail financiero",
+      "tarjetas": ["Líder Visa", "Líder Mastercard"],
+      "descripcion": "Retail de Walmart Chile, tarjetas con capacidad internacional.",
+      "ventajas": ["Precios bajos en supermercado", "Aceptación amplia", "Cupo accesible"],
+      "caracteristicas": "Retail masivo, precios competitivos",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 150-500", "descripcion": "Cupo básico"},
+        "plus": {"rango": "USD 500-1200", "descripcion": "Cupo intermedio"}
+      }
+    },
+    "hites": {
+      "nombre": "Hites",
+      "nombre_largo": "Tarjetas Hites",
+      "clientes": "más de 500 mil",
+      "tipo": "retail financiero",
+      "tarjetas": ["Hites Visa", "Hites Mastercard"],
+      "descripcion": "Retail chileno especializado en crédito y financiamiento.",
+      "ventajas": ["Aprobación accesible", "Promociones locales", "Cupo disponible"],
+      "caracteristicas": "Crédito accesible, financiamiento flexible",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 100-400", "descripcion": "Cupo básico"},
+        "plus": {"rango": "USD 400-1000", "descripcion": "Cupo intermedio"}
+      }
+    },
+    "jumbo": {
+      "nombre": "Jumbo",
+      "nombre_largo": "Tarjetas Jumbo",
+      "clientes": "más de 600 mil",
+      "tipo": "retail financiero",
+      "tarjetas": ["Jumbo Visa", "Jumbo Mastercard"],
+      "descripcion": "Retail de Falabella orientado a productos premium, tarjetas con cupo internacional.",
+      "ventajas": ["Productos premium", "Puntos Club", "Experiencia de compra"],
+      "caracteristicas": "Retail premium, productos de calidad",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 200-800", "descripcion": "Cupo básico"},
+        "premium": {"rango": "USD 800-2000", "descripcion": "Cupo premium"}
+      }
+    },
+    "easy": {
+      "nombre": "Easy",
+      "nombre_largo": "Tarjetas Easy",
+      "clientes": "más de 400 mil",
+      "tipo": "retail financiero",
+      "tarjetas": ["Easy Visa", "Easy Mastercard"],
+      "descripcion": "Retail de Falabella para productos de mejora del hogar.",
+      "ventajas": ["Productos para el hogar", "Promociones de construction", "Cupo disponible"],
+      "caracteristicas": "Mejora del hogar, construcción, jardín",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 150-500", "descripcion": "Cupo básico"},
+        "plus": {"rango": "USD 500-1000", "descripcion": "Cupo intermedio"}
+      }
+    },
+    "la-polar": {
+      "nombre": "La Polar",
+      "nombre_largo": "Tarjetas La Polar",
+      "clientes": "más de 450 mil",
+      "tipo": "retail financiero",
+      "tarjetas": ["La Polar Visa", "La Polar Mastercard"],
+      "descripcion": "Retail chileno con sistema de crédito propio.",
+      "ventajas": ["Aprobación flexible", "Promociones frecuentes", "Cupo accesible"],
+      "caracteristicas": "Crédito retail, promociones temporales",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 100-350", "descripcion": "Cupo básico"},
+        "plus": {"rango": "USD 350-800", "descripcion": "Cupo intermedio"}
+      }
+    },
+    "abc": {
+      "nombre": "ABC",
+      "nombre_largo": "Tarjetas ABC Din",
+      "clientes": "más de 300 mil",
+      "tipo": "retail financiero",
+      "tarjetas": ["ABC Din Visa"],
+      "descripcion": "Retail de crédito fácil y accesible en Chile.",
+      "ventajas": ["Aprobación rápida", "Credit scoring flexible", "Cupo inmediato"],
+      "caracteristicas": "Crédito fácil, aprobación ágil",
+      "tipos_cupo": {
+        "classic": {"rango": "USD 80-300", "descripcion": "Cupo básico"},
+        "plus": {"rango": "USD 300-700", "descripcion": "Cupo intermedio"}
+      }
+    }
+  },
+  "ciudades": {
+    "santiago": {
+      "nombre": "Santiago",
+      "region": "Metropolitana",
+      "poblacion": "más de 6 millones",
+      "descripcion": "Capital y ciudad más grande de Chile, centro financiero y comercial del país.",
+      "caracteristicas": "Mayor densidad de usuarios, múltiples opciones bancarias, competencia alta",
+      "ventajas_servicio": ["Delivery disponible", "Variedad de horarios", "Múltiples puntos de encuentro"],
+      "palabras_ubicacion": ["Santiago centro", "Santiago norte", "Santiago sur", "Santiago oriente", "Santiago poniente"]
+    },
+    "valparaiso": {
+      "nombre": "Valparaíso",
+      "region": "Valparaíso",
+      "poblacion": "más de 280 mil",
+      "descripcion": "Ciudad portuaria y capital regional, importante centro turístico y cultural.",
+      "caracteristicas": "Turismo activo, población flotante, servicios多样",
+      "ventajas_servicio": ["Centro histórico", "Sector puerto", "Plan de la Serena"],
+      "palabras_ubicacion": ["Valparaíso centro", "Viña del Mar", "Concón", "Villa Alemana"]
+    },
+    "concepcion": {
+      "nombre": "Concepción",
+      "region": "Biobío",
+      "poblacion": "más de 230 mil",
+      "descripcion": "Capital de la región del Biobío, importante centro universitario e industrial.",
+      "caracteristicas": "Ciudad universitaria, Actividad industrial, Segunda área metropolitana",
+      "ventajas_servicio": ["Zona centro", "San Pedro de la Paz", "Chiguayante"],
+      "palabras_ubicacion": ["Concepción centro", "Talcahuano", "Hualpén", "San Pedro de la Paz"]
+    },
+    "la-serena": {
+      "nombre": "La Serena",
+      "region": "Coquimbo",
+      "poblacion": "más de 210 mil",
+      "descripcion": "Capital de la región de Coquimbo, importante destino turístico.",
+      "caracteristicas": "Turismo强烈", "Población estable", "Servicios financieros limitados",
+      "ventajas_servicio": ["Zona urbana", "Coquimbo", "Ovalle"],
+      "palabras_ubicacion": ["La Serena centro", "Coquimbo", "Ovalle", "Illapel"]
+    },
+    "temuco": {
+      "nombre": "Temuco",
+      "region": "La Araucanía",
+      "poblacion": "más de 240 mil",
+      "descripcion": "Capital de la región de La Araucanía, centro comercial del sur de Chile.",
+      "caracteristicas": "Comercio regional", "Servicios limitados", "Crecimiento sostenido",
+      "ventajas_servicio": ["Zona centro", "Padre Las Casas", "Villarrica"],
+      "palabras_ubicacion": ["Temuco centro", "Padre Las Casas", "Villarrica", "Pucón"]
+    },
+    "antofagasta": {
+      "nombre": "Antofagasta",
+      "region": "Antofagasta",
+      "poblacion": "más de 190 mil",
+      "descripcion": "Capital regional, centro de la minería del cobre.",
+      "caracteristicas": "Economía minera", "Alto poder adquisitivo", "Población fluctuante",
+      "ventajas_servicio": ["Zona norte", "Calama", "Tocopilla"],
+      "palabras_ubicacion": ["Antofagasta centro", "Calama", "Tocopilla", "Mejillones"]
+    },
+    "iquique": {
+      "nombre": "Iquique",
+      "region": "Tarapacá",
+      "poblacion": "más de 140 mil",
+      "descripcion": "Ciudad puerto libre, centro comercial de la zona norte.",
+      "caracteristicas": "Zona franca", "Turismo", "Población estable",
+      "ventajas_servicio": ["Zona libre", "Arica", "Alto Hospicio"],
+      "palabras_ubicacion": ["Iquique centro", "Arica", "Alto Hospicio", "Pica"]
+    },
+    "rancagua": {
+      "nombre": "Rancagua",
+      "region": "O'Higgins",
+      "poblacion": "más de 160 mil",
+      "descripcion": "Capital regional, centro agrícola y comercial.",
+      "caracteristicas": "Agricultura", "Servicios regionales", "Ubicación estratégica",
+      "ventajas_servicio": ["Zona centro", "San Fernando", "Pichilemu"],
+      "palabras_ubicacion": ["Rancagua centro", "San Fernando", "Pichilemu", "Santa Cruz"]
+    },
+    "chillan": {
+      "nombre": "Chillán",
+      "region": "Ñuble",
+      "poblacion": "más de 170 mil",
+      "descripcion": "Capital de la región de Ñuble, centro de servicios del sur.",
+      "caracteristicas": "Servicios regionales", "Educación", "Agricultura",
+      "ventajas_servicio": ["Zona urbana", "Los Ángeles", "Yungay"],
+      "palabras_ubicacion": ["Chillán centro", "Los Ángeles", "Yungay", "San Carlos"]
+    },
+    "puerto-montt": {
+      "nombre": "Puerto Montt",
+      "region": "Los Lagos",
+      "poblacion": "más de 130 mil",
+      "descripcion": "Capital de la región de Los Lagos, puerta de entrada a la Patagonia.",
+      "caracteristicas": "Acuicultura", "Turismo", "Comercio sur",
+      "ventajas_servicio": ["Zona sur", "Osorno", "Castro"],
+      "palabras_ubicacion": ["Puerto Montt centro", "Osorno", "Castro", "Ancud"]
+    },
+    "copiapo": {
+      "nombre": "Copiapó",
+      "region": "Atacama",
+      "poblacion": "más de 100 mil",
+      "descripcion": "Capital de la región de Atacama, centro minero.",
+      "caracteristicas": "Minería", "Población estable", "Servicios limitados",
+      "ventajas_servicio": ["Zona norte", "Caldera", "Tierra Amarilla"],
+      "palabras_ubicacion": ["Copiapó centro", "Caldera", "Tierra Amarilla", "Vallenar"]
+    },
+    "los-angeles": {
+      "nombre": "Los Ángeles",
+      "region": "Biobío",
+      "poblacion": "más de 130 mil",
+      "descripcion": "Segunda ciudad más importante del Biobío después de Concepción.",
+      "caracteristicas": "Comercio regional", "Agricultura", "Servicios crecientes",
+      "ventajas_servicio": ["Zona sur Biobío", "Santa Bárbara", "Mulchén"],
+      "palabras_ubicacion": ["Los Ángeles centro", "Santa Bárbara", "Mulchén", "Laja"]
+    },
+    "curico": {
+      "nombre": "Curicó",
+      "region": "Maule",
+      "poblacion": "más de 120 mil",
+      "descripcion": "Capital de la región del Maule, centro agrícola importante.",
+      "caracteristicas": "Agricultura", "Vitivinicultura", "Servicios regionales",
+      "ventajas_servicio": ["Zona centro sur", "Linares", "Cauquenes"],
+      "palabras_ubicacion": ["Curicó centro", "Linares", "Cauquenes", "Molina"]
+    },
+    "osorno": {
+      "nombre": "Osorno",
+      "region": "Los Lagos",
+      "poblacion": "más de 90 mil",
+      "descripcion": "Ciudad clave en la región de Los Lagos, sector ganadero.",
+      "caracteristicas": "Ganadería", "Agricultura", "Comercio local",
+      "ventajas_servicio": ["Zona sur", "Puerto Montt", "Frutillar"],
+      "palabras_ubicacion": ["Osorno centro", "Puerto Montt", "Frutillar", "Llanquihue"]
+    },
+    "linares": {
+      "nombre": "Linares",
+      "region": "Maule",
+      "poblacion": "más de 80 mil",
+      "descripcion": "Capital provincial, centro de servicios del Maule sur.",
+      "caracteristicas": "Agricultura", "Comercio local", "Servicios básicos",
+      "ventajas_servicio": ["Maule sur", "Cauquenes", "Parral"],
+      "palabras_ubicacion": ["Linares centro", "Cauquenes", "Parral", "Longaví"]
+    }
+  },
+  "montos": {
+    "50-usd": {
+      "monto": 50,
+      "equiv_clp_aprox": "38,000-40,000",
+      "uso": "gasto menor urgente",
+      "descripcion": "Monto pequeño para necesidades inmediatas"
+    },
+    "100-usd": {
+      "monto": 100,
+      "equiv_clp_aprox": "76,000-80,000",
+      "uso": "pago de servicios",
+      "descripcion": "Monto para pagos pequeños o emergencias"
+    },
+    "200-usd": {
+      "monto": 200,
+      "equiv_clp_aprox": "152,000-160,000",
+      "uso": "gastosmedianos",
+      "descripcion": "Monto moderado para gastos medios"
+    },
+    "300-usd": {
+      "monto": 300,
+      "equiv_clp_aprox": "228,000-240,000",
+      "uso": "deuda pequeña",
+      "descripcion": "Monto para cancelar deudas pequeñas"
+    },
+    "500-usd": {
+      "monto": 500,
+      "equiv_clp_aprox": "380,000-400,000",
+      "uso": "gastos grandes",
+      "descripcion": "Monto significativo para necesidades mayores"
+    },
+    "1000-usd": {
+      "monto": 1000,
+      "equiv_clp_aprox": "760,000-800,000",
+      "uso": "inversion menor",
+      "descripcion": "Monto alto para inversiones o pagos importantes"
+    },
+    "1500-usd": {
+      "monto": 1500,
+      "equiv_clp_aprox": "1,140,000-1,200,000",
+      "uso": "liquidez alta",
+      "descripcion": "Monto elevado para necesidades importantes"
+    },
+    "2000-usd": {
+      "monto": 2000,
+      "equiv_clp_aprox": "1,520,000-1,600,000",
+      "uso": "deuda o inversion",
+      "descripcion": "Monto alto para obligaciones financieras"
+    },
+    "3000-usd": {
+      "monto": 3000,
+      "equiv_clp_aprox": "2,280,000-2,400,000",
+      "uso": "liquidez maxima",
+      "descripcion": "Monto muy alto para necesidades grandes"
+    },
+    "5000-usd": {
+      "monto": 5000,
+      "equiv_clp_aprox": "3,800,000-4,000,000",
+      "uso": "capital",
+      "descripcion": "Monto de capital para negocios o inversiones"
+    }
+  },
+  "servicios": {
+    "vender-cupo": {
+      "nombre": "Vender Cupo",
+      "slug": "vender-cupo",
+      "descripcion_corta": "Venta de cupo dólar a pesos",
+      "descripcion_larga": "Convierte tu cupo en dólares de tarjeta de crédito en pesos chilenos de forma inmediata y segura.",
+      "palabras_clave": ["vender cupo dolar", "vender cupo", "vender cupo tarjeta", "vender cupo a pesos"],
+      "preguntas_faq": [
+        {"q": "¿Cuánto tiempo tarda?", "a": "Máximo 15 minutos desde confirmación."},
+        {"q": "¿Qué necesito?", "a": "Solo foto del cupo disponible y número de cuenta."},
+        {"q": "¿Es seguro?", "a": "100% seguro, operamos con transferencia bancaria formal."}
+      ]
+    },
+    "comprar-cupo": {
+      "nombre": "Comprar Cupo",
+      "slug": "comprar-cupo",
+      "descripcion_corta": "Compra de cupo dólar",
+      "descripcion_larga": "Adquiere cupo en dólares para tus compras internacionales o viajes.",
+      "palabras_clave": ["comprar cupo dolar", "comprar cupo", "comprar cupo tarjeta"],
+      "preguntas_faq": [
+        {"q": "¿Cómo funciona?", "a": "Nos transfieres pesos y te entregamos el dólar en tu tarjeta."},
+        {"q": "¿Cuánto demora?", "a": "Same day para transferencias confirmadas antes de las 5 PM."}
+      ]
+    },
+    "avance-efectivo": {
+      "nombre": "Avance Efectivo",
+      "slug": "avance-efectivo",
+      "descripcion_corta": "Avance de efectivo con tarjeta",
+      "descripcion_larga": "Obtén efectivo urgente usando el cupo de tu tarjeta de crédito.",
+      "palabras_clave": ["avance efectivo", "avance tarjeta", "avance credito"],
+      "preguntas_faq": [
+        {"q": "¿Cuánto puedo avanzar?", "a": "Hasta el 80% de tu cupo disponible."},
+        {"q": "¿Cuánto interés?", "a": "Tasa competitiva, menor que avance en cajero."}
+      ]
+    },
+    "urgente": {
+      "nombre": "Dinero Urgente",
+      "slug": "urgente",
+      "descripcion_corta": "Dinero urgente 24/7",
+      "descripcion_larga": "Obtén dinero urgente en menos de 15 minutos, disponible 24 horas, 7 días.",
+      "palabras_clave": ["dinero urgente", "plata urgente", "dinero hoy", "necesito plata"],
+      "preguntas_faq": [
+        {"q": "¿En cuánto tiempo?", "a": "15 minutos máximo desde confirmación."},
+        {"q": "¿Qué requisitos?", "a": "Cupo disponible en tarjeta y cuenta bancaria."}
+      ]
+    }
+  },
+  "categorias": {
+    "bancos": {
+      "nombre": "Bancos",
+      "slug": "bancos",
+      "descripcion": "Venta de cupo dólar de tarjetas de bancos tradicionales",
+      "modelo": "banco"
+    },
+    "retails": {
+      "nombre": "Retail",
+      "slug": "retails",
+      "descripcion": "Venta de cupo dólar de tiendas retail",
+      "modelo": "retail"
+    },
+    "ciudades": {
+      "nombre": "Ciudades",
+      "slug": "ciudades",
+      "descripcion": "Servicio por ciudad en Chile",
+      "modelo": "ciudad"
+    },
+    "montos": {
+      "nombre": "Montos",
+      "slug": "montos",
+      "descripcion": "Venta de cupo por monto específico",
+      "modelo": "monto"
+    },
+    "urgente": {
+      "nombre": "Urgente",
+      "slug": "urgente",
+      "descripcion": "Servicio urgente 24/7",
+      "modelo": "servicio"
+    }
+  }
+}
