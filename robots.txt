@@ -9,10 +9,11 @@ Disallow: /admin/
 Disallow: /.git/
 Disallow: /.github/
 Disallow: /node_modules/
-Disallow: /*?*
-Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /worker/
+
+Allow: /*.html$
+Allow: /*?
+Allow: /*.xml$
 
 Sitemap: https://dolarexpress.cl/sitemap.xml
 

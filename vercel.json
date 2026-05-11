@@ -1,4 +1,35 @@
 {
   "buildCommand": "vite build && node copy-html-files.js",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*\\.html$",
+      "dest": "/:splat"
+    },
+    {
+      "src": "/([^/]+)/([^/]+)/?$",
+      "dest": "/$1/$2/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "redirects": [
+    { "source": "/vender-cupo-banco-chile", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-cupo-bci", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-cupo-santander", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-cupo-scotiabank", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-cupo-bbva", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-cupo-itau", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-cupo-banco-estado", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/cupo-dolar", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/avance-efectivo", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/convertir-cupo", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/comprar-cupo", "destination": "/venta-cupo-dolares", "statusCode": 301 },
+    { "source": "/vender-usd", "destination": "/venta-cupo-dolares", "statusCode": 301 }
+  ]
 }

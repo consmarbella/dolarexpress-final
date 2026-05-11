@@ -27,7 +27,6 @@ function copyFilesRecursive(src, dest) {
     if (entry.isDirectory()) {
       copied += copyFilesRecursive(srcPath, destPath);
     } else if (entry.name.endsWith('.html')) {
-      // Convert file.html to file/index.html for Vercel routing
       const baseName = entry.name.replace('.html', '');
       const folderPath = path.join(dest, baseName);
       if (!fs.existsSync(folderPath)) {
@@ -38,6 +37,9 @@ function copyFilesRecursive(src, dest) {
     } else if (entry.name.endsWith('.xml')) {
       fs.copyFileSync(srcPath, destPath);
       copied++;
+    } else if (entry.name === 'sitemap.xml') {
+      fs.copyFileSync(srcPath, destPath);
+      copied++;
     }
   });
 
@@ -45,4 +47,6 @@ function copyFilesRecursive(src, dest) {
 }
 
 const copied = copyFilesRecursive(publicDir, distDir);
-console.log(`✅ Converted and copied ${copied} HTML files to folder/index.html structure`);
+console.log(`✅ Copied ${copied} HTML files to dist/`);
+
+console.log(`✅ Build complete - HTML pages will be served as static files, bypassing SPA`);
