@@ -71,7 +71,14 @@ const PSEOPage: React.FC = () => {
           <div className="flex gap-4 items-center">
             <Link to="/" className="font-medium text-white hover:text-[#C8A045] hidden md:block">Inicio</Link>
             <Link to="/directorio-general" className="font-medium text-white hover:text-[#C8A045] hidden md:block">Directorio</Link>
-            <Link to="/venta-usd" className="bg-[#C8A045] text-white px-5 py-2 rounded-lg font-bold">Vender Cupo</Link>
+            <a
+              href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20vengo%20de%20la%20web%20por%20Vender%20Cupo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#C8A045] text-white px-5 py-2 rounded-lg font-bold"
+            >
+              Vender Cupo
+            </a>
           </div>
         </div>
       </nav>
