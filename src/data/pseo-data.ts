@@ -1638,6 +1638,26 @@ export const pseoPages: PSEOPageData[] = [
     description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
   },
   {
+    slug: 'cupo-dolar-cruz-verde',
+    title: 'Cupo Dólar Cruz Verde a Pesos | DolarExpress',
+    description: '¿Tenés tarjeta Cruz Verde con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-banco-edwards',
+    title: 'Cupo Dólar Banco Edwards a Pesos | DolarExpress',
+    description: '¿Tenés tarjeta Banco Edwards con cupo internacional? Te compramos tu cupo en dólares. Transferencia inmediata. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-coopeuch',
+    title: 'Cupo Dólar Coopeuch a Pesos | DolarExpress',
+    description: '¿Tenés tarjeta Coopeuch con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos. Proceso simple y rápido.'
+  },
+  {
+    slug: 'cupo-dolar-banco-consorcio',
+    title: 'Cupo Dólar Banco Consorcio a Pesos | DolarExpress',
+    description: '¿Tenés tarjeta Banco Consorcio con cupo internacional? Te compramos tu cupo en dólares. Transferencia inmediata. Sin complicaciones.'
+  },
+  {
     slug: 'prestamos-santiago/300-mil-ripley',
     title: '300 Mil Pesos con Tarjeta Ripley | DolarExpress',
     description: '¿Necesitas 300 mil pesos con tarjeta Ripley? Obtené efectivo en 15 minutos. Sin Dicom, sin aval. Atendemos en toda la Región Metropolitana.'

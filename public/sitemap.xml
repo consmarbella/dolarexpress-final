@@ -2524,4 +2524,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://dolarexpress.cl/cupo-dolar-cruz-verde</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/cupo-dolar-banco-edwards</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/cupo-dolar-coopeuch</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/cupo-dolar-banco-consorcio</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
