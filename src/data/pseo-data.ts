@@ -1641,5 +1641,30 @@ export const pseoPages: PSEOPageData[] = [
     slug: 'venta-cupo-dolares',
     title: 'Venta Cupo Dolares | DolarExpress',
     description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-sin-cuotas-internacionales',
+    title: 'Cupo Dólar sin Cuotas Internacionales | DolarExpress',
+    description: 'Convertí tu cupo de compras a pesos sin necesitar cuotas internacionales. CMR, Ripley, Líder y más. 100% online.'
+  },
+  {
+    slug: 'comparador-tasas-cupo-dolar',
+    title: 'Comparador de Tasas Cupo Dólar | DolarExpress',
+    description: 'Compará las mejores tasas para vender tu cupo en dólares. Te ofrecemos el mejor tipo de cambio del mercado chileno.'
+  },
+  {
+    slug: 'cupo-dolar-sin-claves-bancarias',
+    title: 'Cupo Dólar sin Claves Bancarias | DolarExpress',
+    description: 'Vendé tu cupo en dólares sin compartir claves bancarias. Proceso 100% seguro, sin phishing, sin riesgos.'
+  },
+  {
+    slug: 'cupo-dolar-100-remoto',
+    title: 'Cupo Dólar 100% Remoto sin Oficina | DolarExpress',
+    description: 'Convertí tu cupo en dólares a pesos sin ir a sucursales. 100% online, transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-internacional-entel',
+    title: 'Cupo Internacional Entel a Pesos | DolarExpress',
+    description: '¿Tenés tarjeta Entel con cupo internacional? Convertilo a pesos chilenos al instante. Transferencia en 15 minutos.'
   }
 ];
