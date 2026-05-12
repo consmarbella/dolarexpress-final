@@ -4,9 +4,9 @@ import Logo from '../components/Logo';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    document.title = "DolarExpress | Compra y Venta de Cupo en Dólares al Instante";
+    document.title = "DolarExpress | Compramos tu Cupo en Dólares | Efectivo al Instante";
     const metaDescription = document.querySelector('meta[name="description"]');
-    const description = "Servicio de compra y venta de cupo en dólares de tarjetas de crédito en Chile. Convertimos tu cupo internacional a pesos chilenos con transferencia inmediata.";
+    const description = "Servicio de compra de cupo en dólares de tarjetas de crédito en Chile. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.";
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
     } else {
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       "@context": "https://schema.org",
       "@type": "FinancialService",
       "name": "DolarExpress",
-      "description": "Servicio de compra y venta de cupo en dólares de tarjetas de crédito. Convertimos tu cupo internacional a pesos chilenos con transferencia inmediata.",
+      "description": "Servicio de compra de cupo en dólares de tarjetas de crédito. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.",
       "url": "https://dolarexpress.cl",
       "areaServed": {
         "@type": "Country",
@@ -104,8 +104,8 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] z-0"></div>
         <div className="container mx-auto px-4 text-center z-10 relative max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Compra y Venta de Cupo en Dólares: <br />
-            <span className="text-[#C8A045]">Transfiere a tu Cuenta al Instante</span>
+            Compramos tu Cupo en Dólares: <br />
+            <span className="text-[#C8A045]">Transferencia a tu Cuenta al Instante</span>
           </h1>
           <p className="text-xl md:text-2xl mb-10 opacity-90 text-gray-200">
             ¿Necesitas efectivo? <strong>Compramos tu cupo dólar</strong> con la mejor tasa del mercado. Transferencias seguras en minutos a todo Chile.
@@ -232,7 +232,7 @@ const Home: React.FC = () => {
           </div>
           <p className="text-xs text-gray-500 max-w-lg mx-auto leading-relaxed">
             © {new Date().getFullYear()} DolarExpress. Servicios financieros digitales líderes en Chile.
-            <br />Especialistas en compra y venta de cupo dólar de manera segura.
+            <br />Especialistas en compra de cupo dólar de manera segura.
           </p>
         </div>
       </footer>
