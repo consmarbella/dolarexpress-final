@@ -1638,6 +1638,106 @@ export const pseoPages: PSEOPageData[] = [
     description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
   },
   {
+    slug: 'prestamos-santiago/300-mil-ripley',
+    title: '300 Mil Pesos con Tarjeta Ripley | DolarExpress',
+    description: '¿Necesitas 300 mil pesos con tarjeta Ripley? Obtené efectivo en 15 minutos. Sin Dicom, sin aval. Atendemos en toda la Región Metropolitana.'
+  },
+  {
+    slug: 'prestamos-santiago/avance-cuotas-cmr',
+    title: 'Avance en Cuotas con Tarjeta CMR | DolarExpress',
+    description: '¿Necesitas avance en cuotas con tarjeta CMR? Obtené efectivo en 15 minutos. Sin Dicom, sin aval. Atendemos en toda la Región Metropolitana.'
+  },
+  {
+    slug: 'prestamos-santiago/avance-efectivo-santiago-centro',
+    title: 'Avance Efectivo en Santiago Centro | DolarExpress',
+    description: '¿Necesitas avance efectivo en Santiago Centro? Obtené efectivo en 15 minutos. Sin Dicom, sin aval. Atendemos en toda la Región Metropolitana.'
+  },
+  {
+    slug: 'prestamos-santiago/avance-jumbo-easy',
+    title: 'Avance en Tarjeta Jumbo Easy | DolarExpress',
+    description: '¿Necesitas avance en tarjeta Jumbo Easy? Obtené efectivo en 15 minutos. Sin Dicom, sin aval. Atendemos en toda la Región Metropolitana.'
+  },
+  {
+    slug: 'prestamos-santiago/avance-ripley-santiago',
+    title: 'Avance Efectivo Tarjeta Ripley Santiago | DolarExpress',
+    description: '¿Necesitas avance efectivo tarjeta Ripley Santiago? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/cupo-compras-efectivo-lider',
+    title: 'Cupo de Compras a Efectivo Tarjeta Líder | DolarExpress',
+    description: '¿Necesitas cupo de compras a efectivo tarjeta Líder? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/cupo-lider-bci-pesos',
+    title: 'Cupo Tarjeta Líder BCI a Pesos | DolarExpress',
+    description: '¿Necesitas cupo tarjeta Líder BCI a pesos? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/dinero-instante-cencosud',
+    title: 'Dinero al Instante con Tarjeta Cencosud | DolarExpress',
+    description: '¿Necesitas dinero al instante con tarjeta Cencosud? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/efectivo-cmr-inmediato',
+    title: 'Efectivo Inmediato con Tarjeta CMR | DolarExpress',
+    description: '¿Necesitas efectivo inmediato con tarjeta CMR? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/efectivo-santiago-tarjeta-credito',
+    title: 'Efectivo en Santiago con Tarjeta de Crédito | DolarExpress',
+    description: '¿Necesitas efectivo en Santiago con tarjeta de crédito? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/liquidez-tarjeta-lider',
+    title: 'Liquidez con Tarjeta Líder | DolarExpress',
+    description: '¿Necesitas liquidez con tarjeta Líder? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/plata-tarjeta-paris',
+    title: 'Plata con Tarjeta Paris | DolarExpress',
+    description: '¿Necesitas plata con tarjeta Paris? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/prestamo-cencosud-rapido',
+    title: 'Préstamo Rápido con Tarjeta Cencosud | DolarExpress',
+    description: '¿Necesitas préstamo rápido con tarjeta Cencosud? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/prestamo-cmr-falabella-santiago',
+    title: 'Préstamo con Tarjeta CMR Falabella Santiago | DolarExpress',
+    description: '¿Necesitas préstamo con tarjeta CMR Falabella en Santiago? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/prestamo-la-polar-urgente',
+    title: 'Préstamo con Tarjeta La Polar Urgente | DolarExpress',
+    description: '¿Necesitas préstamo con tarjeta La Polar urgente? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/prestamo-online-santiago-sin-dicom',
+    title: 'Préstamo Online Santiago sin Dicom | DolarExpress',
+    description: '¿Necesitas préstamo online Santiago sin Dicom? Obtené efectivo en 15 minutos. Sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/prestamo-personal-la-polar',
+    title: 'Préstamo Personal con Tarjeta La Polar | DolarExpress',
+    description: '¿Necesitas préstamo personal con tarjeta La Polar? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/prestamo-providencia-tarjeta',
+    title: 'Préstamo Rápido Providencia con Tarjeta | DolarExpress',
+    description: '¿Necesitas préstamo rápido en Providencia con tarjeta? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/sacar-dinero-hites',
+    title: 'Sacar Dinero de Tarjeta Hites | DolarExpress',
+    description: '¿Necesitas sacar dinero de tarjeta Hites? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
+    slug: 'prestamos-santiago/vender-cupo-ripley-sin-avance',
+    title: 'Vender Cupo Ripley sin Avance | DolarExpress',
+    description: '¿Necesitas vender cupo Ripley sin avance? Obtené efectivo en 15 minutos. Sin Dicom, sin aval.'
+  },
+  {
     slug: 'venta-cupo-dolares',
     title: 'Venta Cupo Dolares | DolarExpress',
     description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
