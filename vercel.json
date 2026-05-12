@@ -11,6 +11,11 @@
   ],
   "routes": [
     {
+      "src": "^/vender-cupo-internacional(\\.html)?$",
+      "status": 301,
+      "dest": "/cupo-internacional-a-pesos"
+    },
+    {
       "handle": "filesystem"
     },
     {
