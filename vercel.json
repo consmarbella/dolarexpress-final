@@ -11,6 +11,11 @@
   ],
   "routes": [
     {
+      "src": "^/(?:cupo-internacional-pesos|cupo-dolar-bci-pesos|cupo-dolar-cencosud-pesos|cupo-dolar-cmr-pesos|cupo-dolar-ripley-pesos|cupo-mastercard-pesos)(\\.html)?$",
+      "status": 301,
+      "dest": "/venta-cupo-dolares"
+    },
+    {
       "src": "^/vender-cupo-internacional(\\.html)?$",
       "status": 301,
       "dest": "/cupo-internacional-a-pesos"
