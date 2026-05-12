@@ -15,15 +15,18 @@
     },
     {
       "src": "/([^/]+)\\.html$",
-      "dest": "/$1/index.html"
+      "dest": "/$1/index.html",
+      "check": true
     },
     {
       "src": "/([^/]+)/([^/]+)/?$",
-      "dest": "/$1/$2/index.html"
+      "dest": "/$1/$2/index.html",
+      "check": true
     },
     {
       "src": "/([^/]+)/?$",
-      "dest": "/$1/index.html"
+      "dest": "/$1/index.html",
+      "check": true
     },
     {
       "src": "/(.*)",
