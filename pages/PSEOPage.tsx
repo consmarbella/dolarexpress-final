@@ -3,22 +3,93 @@ import { useParams, Link } from 'react-router-dom';
 import { pseoPages } from '../src/data/pseo-data.ts';
 import Logo from '../components/Logo';
 
+function slugToTitle(slug: string): string {
+  return slug
+    .split('-')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
+}
+
+function generateUniqueMeta(page: { slug: string; title: string; card?: string; city?: string }): { title: string; description: string } {
+  const parts = page.slug.split('/');
+  const lastPart = parts[parts.length - 1] || page.slug;
+
+  if (page.card && page.city) {
+    return {
+      title: `Compramos Cupo ${page.card} en ${page.city} | DolarExpress`,
+      description: `¿Tenés tarjeta ${page.card} en ${page.city}? Te compramos tu cupo en dólares al instante. Transferencia a tu cuenta en 15 minutos. Cotizá sin compromiso.`,
+    };
+  }
+
+  if (lastPart.includes('banco') || lastPart.includes('bci') || lastPart.includes('santander') || lastPart.includes('scotiabank') || lastPart.includes('itau') || lastPart.includes('security') || lastPart.includes('bice') || lastPart.includes('bancoestado')) {
+    const bankName = slugToTitle(lastPart.replace(/^(cupo-dolar-|cupo-internacional-)/, ''));
+    return {
+      title: `Compramos Cupo ${bankName} a Pesos | DolarExpress`,
+      description: `¿Tenés tarjeta ${bankName} con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos. Proceso 100% online y seguro.`,
+    };
+  }
+
+  if (lastPart.includes('cmr') || lastPart.includes('falabella')) {
+    return {
+      title: `Compramos Cupo CMR Falabella a Pesos | DolarExpress`,
+      description: `¿Tenés cupo CMR Falabella? Te lo compramos al instante. Transferencia en 15 minutos. Sin Dicom, sin aval. 100% online.`,
+    };
+  }
+
+  if (lastPart.includes('ripley')) {
+    return {
+      title: `Compramos Cupo Ripley a Pesos | DolarExpress`,
+      description: `¿Tenés cupo Ripley? Te lo compramos al instante. Transferencia en 15 minutos. Sin Dicom, sin aval. 100% online.`,
+    };
+  }
+
+  if (lastPart.includes('lider')) {
+    return {
+      title: `Compramos Cupo Líder BCI a Pesos | DolarExpress`,
+      description: `¿Tenés tarjeta Líder BCI con cupo? Te lo compramos al instante. Transferencia en 15 minutos. 100% online.`,
+    };
+  }
+
+  if (lastPart.startsWith('avance')) {
+    return {
+      title: slugToTitle(lastPart) + ' | DolarExpress',
+      description: `¿Necesitás ${slugToTitle(lastPart).toLowerCase()}? Te compramos tu cupo en dólares y te transferimos al instante. 100% online, sin trámites.`,
+    };
+  }
+
+  return {
+    title: page.title,
+    description: `Compramos tu cupo en dólares en Chile. Transferencia inmediata y segura. Cotizá online sin compromiso.`,
+  };
+}
+
 const PSEOPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const pageData = pseoPages.find(p => p.slug === slug);
 
   useEffect(() => {
     if (pageData) {
-      document.title = pageData.title;
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', pageData.description);
+      const meta = generateUniqueMeta(pageData);
+      document.title = meta.title;
+
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', meta.description);
       } else {
-        const meta = document.createElement('meta');
-        meta.name = 'description';
-        meta.content = pageData.description;
-        document.head.appendChild(meta);
+        const m = document.createElement('meta');
+        m.name = 'description';
+        m.content = meta.description;
+        document.head.appendChild(m);
       }
+
+      // Canonical
+      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+      canonical.href = `https://dolarexpress.cl/${pageData.slug}`;
     }
   }, [pageData]);
 
@@ -32,36 +103,39 @@ const PSEOPage: React.FC = () => {
     );
   }
 
-  // Use generic content if card/city not provided
-  const title = pageData.card && pageData.city 
-    ? `Vende tu Cupo ${pageData.card} en ${pageData.city}`
-    : 'Servicio de DolarExpress';
-  
-  const description = pageData.card && pageData.city
-    ? `En DolarExpress facilitamos la compra de cupo en dólares para residentes de ${pageData.city}. Si tienes una tarjeta ${pageData.card} con cupo internacional, puedes convertirlo en pesos chilenos de forma inmediata y segura.`
-    : 'Compramos tu cupo en dólares de tarjetas de crédito. Transferencia inmediata, segura y rápida.';
+  const meta = generateUniqueMeta(pageData);
+  const title = meta.title.replace(' | DolarExpress', '');
+  const whatsappText = `Hola%20DolarExpress%2C%20vengo%20de%20la%20web%20por%20${encodeURIComponent(title)}`;
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "FinancialService",
-    "name": `DolarExpress`,
-    "description": pageData.description,
-    "url": `https://dolarexpress.cl/${pageData.slug}`,
-    ...(pageData.city && {
-      "areaServed": {
-        "@type": "City",
-        "name": pageData.city
+  // Generate interlinking URLs from same category
+  const slugLower = slug?.toLowerCase() || '';
+  const related = pseoPages
+    .filter(p => {
+      if (p.slug === slug) return false;
+      if (slugLower.includes('banco') || slugLower.includes('bci') || slugLower.includes('santander') || slugLower.includes('scotiabank') || slugLower.includes('itau')) {
+        return p.slug.includes('cupo-dolar-') && !p.slug.includes('/');
       }
+      return false;
     })
-  };
+    .slice(0, 6);
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-[#1a1a1a]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FinancialService",
+            name: title,
+            description: meta.description,
+            url: `https://dolarexpress.cl/${pageData.slug}`,
+            provider: { "@type": "Organization", name: "DolarExpress", url: "https://dolarexpress.cl" },
+            areaServed: { "@type": "Country", name: "Chile" },
+          }),
+        }}
       />
-      
+
       {/* Navbar */}
       <nav className="fixed w-full z-50 bg-[#1a1a1a] shadow-sm border-b border-[#333]">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl">
@@ -82,37 +156,32 @@ const PSEOPage: React.FC = () => {
           </div>
         </div>
       </nav>
-      
+
       {/* Breadcrumbs */}
       <nav className="pt-24 pb-2 bg-[#1a1a1a] text-gray-400 text-sm" aria-label="Breadcrumb">
         <div className="container mx-auto px-4 max-w-6xl">
           <ol className="flex flex-wrap gap-1">
             <li><Link to="/" className="hover:text-[#C8A045]">Inicio</Link></li>
             <li className="mx-1">/</li>
-            <li className="text-white truncate max-w-[300px]" aria-current="page">
-              {pageData ? pageData.title.replace(' | DolarExpress', '') : 'Pagina'}
-            </li>
+            <li className="text-white truncate max-w-[300px]" aria-current="page">{title}</li>
           </ol>
         </div>
       </nav>
-      
-      {/* Schema.org BreadcrumbList */}
-      {pageData && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://dolarexpress.cl/" },
-                { "@type": "ListItem", "position": 2, "name": pageData.title.replace(' | DolarExpress', ''), "item": `https://dolarexpress.cl/${pageData.slug}` }
-              ]
-            })
-          }}
-        />
-      )}
-      
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Inicio", item: "https://dolarexpress.cl/" },
+              { "@type": "ListItem", position: 2, name: title, item: `https://dolarexpress.cl/${pageData.slug}` },
+            ],
+          }),
+        }}
+      />
+
       {/* Hero Section */}
       <header className="pt-36 pb-24 bg-[#1a1a1a] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] z-0"></div>
@@ -121,11 +190,11 @@ const PSEOPage: React.FC = () => {
             {title}
           </h1>
           <p className="text-xl md:text-2xl mb-10 opacity-90 text-gray-200">
-            {pageData.description}
+            {meta.description}
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href={`https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20vengo%20de%20la%20web%20por%20${encodeURIComponent(pageData.title.replace(' | DolarExpress', ''))}`}
+              href={`https://wa.me/56967658939?text=${whatsappText}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#C8A045] text-white text-lg px-10 py-4 rounded-xl font-bold hover:shadow-[0_0_25px_rgba(200,160,69,0.5)] transition-all transform hover:scale-105"
@@ -136,38 +205,82 @@ const PSEOPage: React.FC = () => {
         </div>
       </header>
 
-      
       {/* Main Content */}
       <main className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 max-w-4xl text-gray-700 leading-relaxed">
           <article>
             <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6">{title}</h2>
-            <p className="mb-6 text-lg">{description}</p>
+            <p className="mb-6 text-lg">{meta.description}</p>
             <p className="mb-6">
-              Nuestro proceso está diseñado para ser rápido y confiable, permitiéndote obtener liquidez sin las complicaciones de un avance en efectivo bancario tradicional.
+              En DolarExpress te ofrecemos la solución más rápida y segura para convertir tu cupo en dólares a pesos chilenos. Olvidate de los trámites bancarios tradicionales, las filas y los papeleos. Todo se hace por WhatsApp, desde tu celular, en menos de 15 minutos.
+            </p>
+            <p className="mb-6">
+              Trabajamos con todas las tarjetas de crédito chilenas: bancarias (Banco Chile, Santander, BCI, Scotiabank, Itaú, Security, BICE, BancoEstado) y retail (CMR Falabella, Ripley, Líder BCI, Cencosud, Paris, Jumbo, Easy, Hites, La Polar, ABC Din, Johnson). Si tenés cupo disponible en dólares, nosotros te lo compramos.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 my-12">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#C8A045] text-lg mb-2">1. Cotiza Ahora</h3>
-                <p className="text-sm">Contáctanos para recibir la mejor tasa del mercado para tu cupo en dólares.</p>
+                <h3 className="font-bold text-[#C8A045] text-lg mb-2">1. Cotizá Ahora</h3>
+                <p className="text-sm">Contactanos por WhatsApp y te mostramos la mejor tasa del mercado para tu cupo en dólares.</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <h3 className="font-bold text-[#C8A045] text-lg mb-2">2. Validación</h3>
-                <p className="text-sm">Procesamos tu solicitud de forma segura a través de nuestra plataforma verificada.</p>
+                <p className="text-sm">Procesamos tu solicitud de forma segura. Sin compartir claves bancarias ni datos sensibles.</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <h3 className="font-bold text-[#C8A045] text-lg mb-2">3. Pago Inmediato</h3>
-                <p className="text-sm">Recibe tu transferencia en menos de 15 minutos en cualquier banco de Chile.</p>
+                <p className="text-sm">Recibís la transferencia en tu cuenta bancaria en menos de 15 minutos. Rápido, seguro y sin complicaciones.</p>
               </div>
+            </div>
+
+            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">¿Por qué elegir DolarExpress?</h3>
+            <ul className="list-disc pl-6 mb-8 space-y-2">
+              <li><strong>Transferencia en 15 minutos:</strong> Coordinamos todo por WhatsApp y el dinero llega al instante a tu CuentaRUT o cuenta corriente.</li>
+              <li><strong>Sin Dicom ni aval:</strong> No revisamos tu historial crediticio. Solo necesitás tener cupo disponible en tu tarjeta.</li>
+              <li><strong>100% online:</strong> Todo desde tu celular, sin ir a sucursales, sin filas, sin papeleos.</li>
+              <li><strong>Mejor tasa del mercado:</strong> Te mostramos la tasa antes de aceptar. Sin sorpresas, sin comisiones ocultas.</li>
+              <li><strong>Seguro y transparente:</strong> Operamos con años de experiencia en el mercado chileno. Miles de operaciones realizadas.</li>
+            </ul>
+
+            <div className="bg-[#C8A045]/10 p-6 rounded-xl border border-[#C8A045]/30 my-8">
+              <p className="text-lg font-semibold text-[#1a1a1a] mb-2">💡 ¿Sabías que...?</p>
+              <p>Muchas tarjetas retail como CMR, Ripley o Líder NO tienen avance en efectivo disponible. Nosotros usamos tu cupo de compras para darte efectivo al instante. Sin necesidad de avance bancario.</p>
             </div>
           </article>
         </div>
       </main>
 
+      {/* Related Services */}
+      {related.length > 0 && (
+        <section className="py-12 bg-white border-t border-gray-100">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h3 className="text-xl font-bold text-[#1a1a1a] mb-6">Servicios relacionados</h3>
+            <div className="flex flex-wrap gap-3">
+              {related.map(r => (
+                <Link
+                  key={r.slug}
+                  to={`/${r.slug}`}
+                  className="text-sm text-[#C8A045] bg-gray-50 border border-[#C8A045]/20 px-4 py-2 rounded-full hover:bg-[#C8A045] hover:text-white transition"
+                >
+                  {generateUniqueMeta(r).title.replace(' | DolarExpress', '')}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Footer */}
       <footer className="bg-[#1a1a1a] text-white py-12 mt-auto">
         <div className="container mx-auto px-4 max-w-6xl text-center">
+          <div className="flex justify-center gap-6 mb-6 text-sm text-gray-400">
+            <Link to="/" className="hover:text-[#C8A045]">Inicio</Link>
+            <Link to="/directorio-general" className="hover:text-[#C8A045]">Directorio</Link>
+            <Link to="/testimonios" className="hover:text-[#C8A045]">Testimonios</Link>
+            <Link to="/preguntas-frecuentes" className="hover:text-[#C8A045]">FAQ</Link>
+            <Link to="/privacidad" className="hover:text-[#C8A045]">Privacidad</Link>
+            <Link to="/contacto" className="hover:text-[#C8A045]">Contacto</Link>
+          </div>
           <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} DolarExpress. Especialistas en compra de cupo en dólares.
           </p>
@@ -176,7 +289,7 @@ const PSEOPage: React.FC = () => {
 
       {/* WhatsApp Button Fixed */}
       <a
-        href={`https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20vengo%20de%20la%20web%20por%20${encodeURIComponent(pageData.title.replace(' | DolarExpress', ''))}`}
+        href={`https://wa.me/56967658939?text=${whatsappText}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#20ba5a] transition-colors md:hover:scale-110 md:animate-none animate-pulse-custom"
@@ -187,7 +300,6 @@ const PSEOPage: React.FC = () => {
         </svg>
       </a>
     </div>
-
   );
 };
 

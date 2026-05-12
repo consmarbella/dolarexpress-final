@@ -294,12 +294,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://dolarexpress.cl/changenow-widget (2)</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
   <url>
     <loc>https://dolarexpress.cl/ciudades/cupo-dolar-antofagasta</loc>
     <lastmod>2026-05-11</lastmod>
@@ -444,12 +439,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://dolarexpress.cl/compra-usdc</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
   <url>
     <loc>https://dolarexpress.cl/comprar-cupo-dolar</loc>
     <lastmod>2026-05-11</lastmod>
@@ -1902,12 +1892,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://dolarexpress.cl/page1</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
   <url>
     <loc>https://dolarexpress.cl/pasar-cupo-de-compras-a-efectivo</loc>
     <lastmod>2026-05-11</lastmod>
@@ -2388,12 +2373,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://dolarexpress.cl/widget</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
   <url>
     <loc>https://dolarexpress.cl/cupo-dolar-sin-cuotas-internacionales</loc>
     <lastmod>2026-05-11</lastmod>
@@ -2519,5 +2499,29 @@
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/testimonios</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/preguntas-frecuentes</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/seguridad</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dolarexpress.cl/nosotros</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
