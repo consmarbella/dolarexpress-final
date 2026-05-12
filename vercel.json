@@ -47,6 +47,8 @@
     {"source": "/index", "destination": "/", "statusCode": 301},
     {"source": "/home", "destination": "/", "statusCode": 301},
     {"source": "/default", "destination": "/", "statusCode": 301},
+    {"source": "/vender-cupo-internacional", "destination": "/cupo-internacional-a-pesos", "statusCode": 301},
+    {"source": "/vender-cupo-internacional.html", "destination": "/cupo-internacional-a-pesos", "statusCode": 301},
     {"source": "/cupo-dolar-banco-chile", "destination": "/vender-cupo-banco-chile", "statusCode": 301},
     {"source": "/cupo-dolar-bci", "destination": "/vender-cupo-bci", "statusCode": 301},
     {"source": "/cupo-dolar-santander", "destination": "/vender-cupo-santander", "statusCode": 301},
