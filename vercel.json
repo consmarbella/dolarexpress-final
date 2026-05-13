@@ -109,6 +109,16 @@
     {"source": "/wp-admin", "destination": "/", "statusCode": 301},
     {"source": "/login", "destination": "/", "statusCode": 301},
     {"source": "/signin", "destination": "/", "statusCode": 301},
-    {"source": "/dashboard", "destination": "/", "statusCode": 301}
+    {"source": "/dashboard", "destination": "/", "statusCode": 301},
+    {"source": "/compra-usdc", "destination": "/venta-cupo-dolares", "statusCode": 301},
+    {"source": "/compra-usdc.html", "destination": "/venta-cupo-dolares", "statusCode": 301},
+    {"source": "/widget", "destination": "/", "statusCode": 301},
+    {"source": "/widget.html", "destination": "/", "statusCode": 301},
+    {"source": "/changenow-widget", "destination": "/", "statusCode": 301},
+    {"source": "/page1", "destination": "/", "statusCode": 301},
+    {"source": "/page1.html", "destination": "/", "statusCode": 301},
+    {"source": "/cupo-internacional-pesos", "destination": "/cupo-internacional-a-pesos", "statusCode": 301},
+    {"source": "/cupo-dolar-mastercard-pesos", "destination": "/cupo-dolar-mastercard", "statusCode": 301},
+    {"source": "/cupo-dolar-cencosud-pesos", "destination": "/cupo-dolar-cencosud", "statusCode": 301}
   ]
 }

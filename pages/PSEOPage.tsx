@@ -3,63 +3,128 @@ import { useParams, Link } from 'react-router-dom';
 import { pseoPages } from '../src/data/pseo-data.ts';
 import Logo from '../components/Logo';
 
-function slugToTitle(slug: string): string {
-  return slug
-    .split('-')
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
+// Bank-specific data for unique content generation
+const BANK_DATA: Record<string, { name: string; desc: string; fact: string; offices: string }> = {
+  'banco-chile': { name: 'Banco de Chile', desc: 'el banco más grande del país con más de 2 millones de clientes', fact: 'Fue fundado en 1893 y es uno de los bancos más antiguos de Chile', offices: 'más de 200 sucursales a lo largo de Chile' },
+  'bancoestado': { name: 'BancoEstado', desc: 'el banco estatal más grande de Chile con más de 3 millones de clientes', fact: 'Tiene la red de cajeros automáticos más extensa del país', offices: 'más de 350 sucursales en todo Chile' },
+  'bci': { name: 'BCI', desc: 'uno de los bancos más innovadores de Chile con más de 1.5 millones de clientes', fact: 'Fue pionero en Chile con la banca digital y la app móvil', offices: 'más de 150 sucursales en Chile' },
+  'santander': { name: 'Santander', desc: 'un banco internacional con fuerte presencia en Chile y más de 1.3 millones de clientes', fact: 'Santander fue el primer banco en Chile en ofrecer transferencias internacionales desde su app', offices: 'más de 120 sucursales en Chile' },
+  'scotiabank': { name: 'Scotiabank', desc: 'un banco canadiense con presencia en Chile y más de 800 mil clientes', fact: 'Scotiabank opera con presencia en más de 50 países a nivel global', offices: 'más de 60 sucursales en Chile' },
+  'itau': { name: 'Itaú', desc: 'el banco más grande de América Latina con presencia en Chile', fact: 'Itaú fue pionero en Chile con su programa de puntos LATAM Pass', offices: 'más de 80 sucursales en Chile' },
+  'bice': { name: 'BICE', desc: 'un banco chileno con más de 40 años de experiencia', fact: 'BICE se destaca por su atención personalizada a cada cliente', offices: '20 sucursales en las principales ciudades de Chile' },
+  'security': { name: 'Security', desc: 'un banco chileno especializado en banca privada y empresas', fact: 'Security se enfoca en clientes de altos ingresos con cupos preferenciales', offices: '30 sucursales en Chile' },
+  'bbva': { name: 'BBVA', desc: 'un banco español con presencia en Chile', fact: 'BBVA tiene alianza con las principales aerolíneas del mundo', offices: 'más de 70 sucursales en Chile' },
+};
+
+function detectBank(slug: string): { key: string; name: string; desc: string; fact: string; offices: string } | null {
+  for (const [key, data] of Object.entries(BANK_DATA)) {
+    if (slug.includes(key)) return { key, ...data };
+  }
+  return null;
 }
+
+function detectCity(slug: string): string | null {
+  const cities = ['santiago','concepcion','valparaiso','vina-del-mar','temuco','rancagua','antofagasta',
+    'la-serena','puerto-montt','iquique','arica','chillan','calama','copiapo','osorno','talca',
+    'valdivia','punta-arenas','las-condes','providencia','maipu','la-florida','penalolen',
+    'nunoa','vitacura','lo-barnechea','recoleta','independencia','san-miguel','el-bosque',
+    'quilicura','cerro-navia','renca','quinta-normal','estacion-central','linares','san-fernando',
+    'san-antonio','santa-cruz','pichilemu','villaricca','pucon','castro','ancud','quellon',
+    'osorno','la-union','rio-bueno','frutillar','puerto-varas','llanquihue'];
+  for (const c of cities) {
+    if (slug.includes(c)) return c;
+  }
+  return null;
+}
+
+function detectCardType(slug: string): string | null {
+  const cards: Record<string, string> = {
+    'visa-gold': 'Visa Gold',
+    'visa-platinum': 'Visa Platinum',
+    'visa-signature': 'Visa Signature',
+    'mastercard-gold': 'Mastercard Gold',
+    'mastercard-black': 'Mastercard Black',
+    'mastercard-platinum': 'Mastercard Platinum',
+    'amex': 'American Express',
+    'cmr': 'CMR Falabella',
+    'ripley': 'Ripley',
+    'falabella': 'Falabella',
+    'lider': 'Líder BCI',
+  };
+  for (const [key, name] of Object.entries(cards)) {
+    if (slug.includes(key)) return name;
+  }
+  return null;
+}
+
+function slugToTitle(slug: string): string {
+  return slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
+const cityNames: Record<string, string> = {
+  'santiago': 'Santiago', 'concepcion': 'Concepción', 'valparaiso': 'Valparaíso',
+  'vina-del-mar': 'Viña del Mar', 'temuco': 'Temuco', 'rancagua': 'Rancagua',
+  'antofagasta': 'Antofagasta', 'la-serena': 'La Serena', 'puerto-montt': 'Puerto Montt',
+  'iquique': 'Iquique', 'arica': 'Arica', 'chillan': 'Chillán',
+};
 
 function generateUniqueMeta(page: { slug: string; title: string; card?: string; city?: string }): { title: string; description: string } {
   const parts = page.slug.split('/');
   const lastPart = parts[parts.length - 1] || page.slug;
+  const bank = detectBank(lastPart);
+  const cardType = detectCardType(lastPart);
 
-  if (page.card && page.city) {
+  if (bank) {
+    const citySlug = detectCity(lastPart);
+    const cityName = citySlug ? (cityNames[citySlug] || slugToTitle(citySlug)) : '';
+    const base = cityName ? ` en ${cityName}` : '';
     return {
-      title: `Compramos Cupo ${page.card} en ${page.city} | DolarExpress`,
-      description: `¿Tenés tarjeta ${page.card} en ${page.city}? Te compramos tu cupo en dólares al instante. Transferencia a tu cuenta en 15 minutos. Cotizá sin compromiso.`,
+      title: `Cupo Dólar ${bank.name}${base} | DolarExpress`,
+      description: cityName
+        ? `¿Tenés tarjeta ${bank.name} en ${cityName} con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos. ${bank.fact}.`
+        : `¿Tenés tarjeta ${bank.name} con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos. ${bank.fact}.`,
     };
   }
 
-  if (lastPart.includes('banco') || lastPart.includes('bci') || lastPart.includes('santander') || lastPart.includes('scotiabank') || lastPart.includes('itau') || lastPart.includes('security') || lastPart.includes('bice') || lastPart.includes('bancoestado')) {
-    const bankName = slugToTitle(lastPart.replace(/^(cupo-dolar-|cupo-internacional-)/, ''));
+  if (cardType) return { title: `Cupo Dólar ${cardType} a Pesos | DolarExpress`, description: `¿Tenés tarjeta ${cardType} con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos.` };
+  if (lastPart.startsWith('avance')) return { title: slugToTitle(lastPart) + ' | DolarExpress', description: `¿Necesitás ${slugToTitle(lastPart).toLowerCase()}? Te compramos tu cupo en dólares y te transferimos al instante.` };
+  return { title: page.title, description: `Compramos tu cupo en dólares en Chile. Transferencia inmediata y segura.` };
+}
+
+function generateUniqueContent(slug: string): { paragraph1: string; paragraph2: string; tip: string } {
+  const bank = detectBank(slug);
+  const citySlug = detectCity(slug);
+  const cityName = citySlug ? (cityNames[citySlug] || slugToTitle(citySlug)) : 'tu ciudad';
+  const cardType = detectCardType(slug);
+
+  if (bank) {
     return {
-      title: `Compramos Cupo ${bankName} a Pesos | DolarExpress`,
-      description: `¿Tenés tarjeta ${bankName} con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos. Proceso 100% online y seguro.`,
+      paragraph1: `${bank.name} es ${bank.desc}. ${bank.fact}. Si tenés una tarjeta de crédito de ${bank.name} con cupo internacional disponible en ${cityName}, nosotros te lo compramos al instante. El proceso es 100% online y no requiere que vayas a ninguna sucursal.`,
+      paragraph2: `${bank.name} cuenta con ${bank.offices}. Si estás en ${cityName}, podés coordinar la operación completamente por WhatsApp. Te mostramos la tasa antes de aceptar y la transferencia llega a tu cuenta en menos de 15 minutos.`,
+      tip: `Dato de ${bank.name}: ${bank.fact}. Muchos clientes nos prefieren porque no necesitan ir al banzo ni hacer filas.`,
     };
   }
 
-  if (lastPart.includes('cmr') || lastPart.includes('falabella')) {
+  if (cardType) {
     return {
-      title: `Compramos Cupo CMR Falabella a Pesos | DolarExpress`,
-      description: `¿Tenés cupo CMR Falabella? Te lo compramos al instante. Transferencia en 15 minutos. Sin Dicom, sin aval. 100% online.`,
+      paragraph1: `¿Tenés una tarjeta ${cardType} en ${cityName}? Nosotros te compramos el cupo en dólares al mejor tipo de cambio. El proceso es simple y rápido, sin papeleos ni trámites complicados.`,
+      paragraph2: `Las tarjetas ${cardType} tienen cupo internacional disponible para compras en el extranjero. Ese mismo cupo podés convertirlo a pesos chilenos con nosotros. Te transferimos a tu cuenta en minutos.`,
+      tip: `¿Sabías que muchas tarjetas como ${cardType} permiten usar el cupo internacional sin tener que activarlo? Verificá en tu app bancaria si tenés cupo disponible.`,
     };
   }
 
-  if (lastPart.includes('ripley')) {
+  if (citySlug && bank) {
     return {
-      title: `Compramos Cupo Ripley a Pesos | DolarExpress`,
-      description: `¿Tenés cupo Ripley? Te lo compramos al instante. Transferencia en 15 minutos. Sin Dicom, sin aval. 100% online.`,
-    };
-  }
-
-  if (lastPart.includes('lider')) {
-    return {
-      title: `Compramos Cupo Líder BCI a Pesos | DolarExpress`,
-      description: `¿Tenés tarjeta Líder BCI con cupo? Te lo compramos al instante. Transferencia en 15 minutos. 100% online.`,
-    };
-  }
-
-  if (lastPart.startsWith('avance')) {
-    return {
-      title: slugToTitle(lastPart) + ' | DolarExpress',
-      description: `¿Necesitás ${slugToTitle(lastPart).toLowerCase()}? Te compramos tu cupo en dólares y te transferimos al instante. 100% online, sin trámites.`,
+      paragraph1: `En ${cityName}, trabajamos con todas las tarjetas bancarias y del retail. ${bank ? `${bank.name} es uno de los bancos más usados en ${cityName}.` : ''}`,
+      paragraph2: `No importa dónde estés en ${cityName}, el proceso es 100% online. Te contactamos por WhatsApp, coordinamos la operación y recibís la transferencia en tu cuenta.`,
+      tip: `¿Sabías que en ${cityName} muchas personas ya usaron nuestro servicio? El proceso es simple y seguro.`,
     };
   }
 
   return {
-    title: page.title,
-    description: `Compramos tu cupo en dólares en Chile. Transferencia inmediata y segura. Cotizá online sin compromiso.`,
+    paragraph1: 'En DolarExpress te ofrecemos la solución más rápida y segura para convertir tu cupo en dólares a pesos chilenos. Olvidate de los trámites bancarios tradicionales, las filas y los papeleos.',
+    paragraph2: 'Trabajamos con todas las tarjetas de crédito chilenas: bancarias (Banco Chile, Santander, BCI, Scotiabank, Itaú, Security, BICE, BancoEstado) y retail (CMR Falabella, Ripley, Líder BCI, Cencosud, Paris, Jumbo, Easy, Hites, La Polar, ABC Din, Johnson).',
+    tip: 'Muchas tarjetas retail como CMR, Ripley o Líder NO tienen avance en efectivo disponible. Nosotros usamos tu cupo de compras para darte efectivo al instante.',
   };
 }
 
@@ -106,6 +171,7 @@ const PSEOPage: React.FC = () => {
   const meta = generateUniqueMeta(pageData);
   const title = meta.title.replace(' | DolarExpress', '');
   const whatsappText = `Hola%20DolarExpress%2C%20vengo%20de%20la%20web%20por%20${encodeURIComponent(title)}`;
+  const uniqueContent = generateUniqueContent(pageData.slug);
 
   // Generate interlinking URLs from same category
   const slugLower = slug?.toLowerCase() || '';
@@ -211,12 +277,8 @@ const PSEOPage: React.FC = () => {
           <article>
             <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6">{title}</h2>
             <p className="mb-6 text-lg">{meta.description}</p>
-            <p className="mb-6">
-              En DolarExpress te ofrecemos la solución más rápida y segura para convertir tu cupo en dólares a pesos chilenos. Olvidate de los trámites bancarios tradicionales, las filas y los papeleos. Todo se hace por WhatsApp, desde tu celular, en menos de 15 minutos.
-            </p>
-            <p className="mb-6">
-              Trabajamos con todas las tarjetas de crédito chilenas: bancarias (Banco Chile, Santander, BCI, Scotiabank, Itaú, Security, BICE, BancoEstado) y retail (CMR Falabella, Ripley, Líder BCI, Cencosud, Paris, Jumbo, Easy, Hites, La Polar, ABC Din, Johnson). Si tenés cupo disponible en dólares, nosotros te lo compramos.
-            </p>
+            <p className="mb-6">{uniqueContent.paragraph1}</p>
+            <p className="mb-6">{uniqueContent.paragraph2}</p>
 
             <div className="grid md:grid-cols-3 gap-6 my-12">
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
@@ -244,7 +306,7 @@ const PSEOPage: React.FC = () => {
 
             <div className="bg-[#C8A045]/10 p-6 rounded-xl border border-[#C8A045]/30 my-8">
               <p className="text-lg font-semibold text-[#1a1a1a] mb-2">💡 ¿Sabías que...?</p>
-              <p>Muchas tarjetas retail como CMR, Ripley o Líder NO tienen avance en efectivo disponible. Nosotros usamos tu cupo de compras para darte efectivo al instante. Sin necesidad de avance bancario.</p>
+              <p>{uniqueContent.tip}</p>
             </div>
           </article>
         </div>
