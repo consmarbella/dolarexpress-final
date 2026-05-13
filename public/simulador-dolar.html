@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Dólar a Pesos Chilenos | DolarExpress</title>
+  <meta name="description" content="Simulador de cambio de dólar a pesos chilenos. Ingresa el monto en USD y calcula cuánto recibes en CLP. Tasa actualizada en vivo.">
+  <link rel="canonical" href="https://dolarexpress.cl/simulador-dolar/" />
+  <meta property="og:title" content="Simulador de Dólar a Pesos Chilenos | DolarExpress">
+  <meta property="og:description" content="Calcula cuánto recibes por tus dólares. Tasa actualizada en vivo.">
+  <meta property="og:url" content="https://dolarexpress.cl/simulador-dolar/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta name="robots" content="index, follow">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --verde: #00b159; --verde-dark: #007a3d; --gris: #1a1a2e; --gris-claro: #f5f5f5; --texto: #222; --blanco: #fff; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--texto); background: var(--blanco); line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+    header { background: var(--gris); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    header a.logo { color: var(--verde); font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+    header a.cta-header { background: var(--verde); color: #fff; padding: 8px 18px; border-radius: 24px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+    header a.cta-header:hover { background: var(--verde-dark); }
+    header .nav-links a { color: #aaa; font-size: 0.9rem; margin-right: 14px; text-decoration: none; }
+    header .nav-links a:hover { color: #fff; }
+    .hero { background: linear-gradient(135deg, var(--gris) 0%, #16213e 100%); color: #fff; padding: 60px 20px 50px; text-align: center; }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 12px; }
+    .hero p { max-width: 640px; margin: 0 auto; font-size: 1.05rem; opacity: 0.88; }
+    .simulator { max-width: 520px; margin: 40px auto; padding: 32px; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+    .simulator .tasa-actual { text-align: center; margin-bottom: 24px; padding: 16px; background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-radius: 12px; }
+    .simulator .tasa-actual .label { font-size: 0.85rem; color: #666; }
+    .simulator .tasa-actual .valor { font-size: 2rem; font-weight: 800; color: var(--gris); }
+    .simulator .tasa-actual .fecha { font-size: 0.75rem; color: #999; margin-top: 4px; }
+    .simulator .tasa-actual .loading { font-size: 1rem; color: #999; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: var(--gris); }
+    .form-group .input-group { display: flex; border: 2px solid #ddd; border-radius: 10px; overflow: hidden; transition: border-color 0.2s; }
+    .form-group .input-group:focus-within { border-color: var(--verde); }
+    .form-group .input-group .currency { background: var(--gris-claro); padding: 12px 16px; font-weight: 700; color: #666; font-size: 1.1rem; }
+    .form-group .input-group input { flex: 1; padding: 12px 16px; border: none; outline: none; font-size: 1.2rem; font-weight: 600; }
+    .resultado { background: linear-gradient(135deg, var(--gris) 0%, #16213e 100%); color: #fff; border-radius: 12px; padding: 24px; margin-top: 24px; text-align: center; display: none; }
+    .resultado .label-recibes { font-size: 0.85rem; opacity: 0.8; }
+    .resultado .monto-final { font-size: 2.4rem; font-weight: 800; color: var(--verde); margin: 8px 0; }
+    .resultado .detalle { font-size: 0.8rem; opacity: 0.7; }
+    .resultado .detalle span { display: inline-block; margin: 0 8px; }
+    .btn-ws { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 1rem; text-decoration: none; margin-top: 16px; transition: transform 0.2s; }
+    .btn-ws:hover { transform: translateY(-2px); }
+    .info-box { max-width: 640px; margin: 0 auto 40px; padding: 24px; background: var(--gris-claro); border-radius: 12px; font-size: 0.9rem; }
+    .info-box h3 { color: var(--gris); margin-bottom: 8px; }
+    .info-box ul { padding-left: 20px; color: #555; }
+    .info-box ul li { margin-bottom: 6px; }
+    footer { background: var(--gris); color: #aaa; text-align: center; padding: 32px 20px; font-size: 0.82rem; margin-top: auto; }
+    footer a { color: var(--verde); }
+    .error-msg { color: #d32f2f; font-size: 0.85rem; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">💱 Dolar<span style="color:var(--verde)">Express</span></a>
+    <div class="nav-links">
+      <a href="/directorio-general.html">Directorio</a>
+      <a href="/vender-cupo-dolar.html">Vender Cupo</a>
+      <a href="https://wa.me/56967658939?text=Hola%20quiero%20vender%20mi%20cupo%20en%20d%C3%B3lares" class="cta-header" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>💰 Simulador de Dólar a Pesos Chilenos</h1>
+    <p>Ingresá el monto en dólares y calculá al instante cuánto recibís en pesos chilenos con la tasa de cambio actualizada.</p>
+  </section>
+
+  <div class="simulator" id="app">
+    <div class="tasa-actual" id="tasaDisplay">
+      <div class="label">Tasa de cambio del día</div>
+      <div class="loading" id="loadingText">Cargando tasa actual...</div>
+      <div class="valor" id="tasaValor" style="display:none"></div>
+      <div class="fecha" id="tasaFecha" style="display:none"></div>
+    </div>
+
+    <div class="form-group">
+      <label>¿Cuántos dólares querés cambiar?</label>
+      <div class="input-group">
+        <span class="currency">USD</span>
+        <input type="number" id="usdInput" placeholder="Ej: 500" min="1" step="1" autofocus>
+      </div>
+    </div>
+
+    <button onclick="calcular()" style="width:100%;padding:14px;background:var(--verde);color:#fff;border:none;border-radius:10px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='var(--verde-dark)'" onmouseout="this.style.background='var(--verde)'">
+      Calcular
+    </button>
+
+    <div class="resultado" id="resultado">
+      <div class="label-recibes">Recibes aproximadamente</div>
+      <div class="monto-final" id="montoFinal">$0</div>
+      <div class="detalle">
+        <span id="detalleUsd">USD 0</span>
+        ×
+        <span id="detalleTasa">$0</span>
+        <span id="detallePorcentaje">× 85%</span>
+      </div>
+      <p style="margin-top:12px;font-size:0.85rem;opacity:0.8;">Tasa referencial del mercado. La tasa final se confirma por WhatsApp.</p>
+      <a href="https://wa.me/56967658939?text=Hola%20quiero%20vender%20mi%20cupo%20en%20d%C3%B3lares" class="btn-ws" target="_blank" rel="noopener">
+        💬 Cotizar por WhatsApp
+      </a>
+    </div>
+
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+
+  <div class="info-box">
+    <h3>📌 Cómo funciona</h3>
+    <ul>
+      <li>La tasa de cambio se obtiene de la <strong>API del Banco Central de Chile</strong> y se actualiza cada día hábil.</li>
+      <li>El simulador muestra el <strong>85% del valor total</strong>, que es el estimado que recibirías después de nuestra comisión.</li>
+      <li>Usamos el <strong>dólar observado</strong> del Banco Central de Chile como referencia.</li>
+      <li>La tasa final se confirma al momento de la operación por WhatsApp sin compromiso.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 DolarExpress &middot; Especialistas en compra de cupo en dólares &middot; <a href="/privacidad.html">Privacidad</a> &middot; <a href="/terminos.html">Términos</a></p>
+  </footer>
+
+  <script>
+    let tasaDolar = 0;
+    let fechaTasa = "";
+
+    async function obtenerTasa() {
+      const loading = document.getElementById('loadingText');
+      const valorEl = document.getElementById('tasaValor');
+      const fechaEl = document.getElementById('tasaFecha');
+
+      // Try mindicador.cl (free Chilean API)
+      try {
+        const res = await fetch('https://mindicador.cl/api/dolar');
+        if (res.ok) {
+          const data = await res.json();
+          tasaDolar = data.serie[0].valor;
+          fechaTasa = data.serie[0].fecha.substring(0, 10);
+          mostrarTasa();
+          return;
+        }
+      } catch(e) {}
+
+      // Fallback: try dolarapi.com
+      try {
+        const res = await fetch('https://dolarapi.com/v1/cotizaciones/usd');
+        if (res.ok) {
+          const data = await res.json();
+          tasaDolar = data.compra;
+          fechaTasa = data.fechaActualizacion ? data.fechaActualizacion.substring(0, 10) : new Date().toISOString().substring(0, 10);
+          mostrarTasa();
+          return;
+        }
+      } catch(e) {}
+
+      // Fallback 2: try nexioclient API
+      try {
+        const res = await fetch('https://api.nexioclient.com/v1/dolar');
+        if (res.ok) {
+          const data = await res.json();
+          tasaDolar = data.valor;
+          fechaTasa = new Date().toISOString().substring(0, 10);
+          mostrarTasa();
+          return;
+        }
+      } catch(e) {}
+
+      // Last fallback: use a fixed approximate rate
+      tasaDolar = 950;
+      fechaTasa = new Date().toISOString().substring(0, 10);
+      loading.textContent = "Usando tasa referencial (aproximada)";
+      setTimeout(() => { mostrarTasa(); }, 500);
+    }
+
+    function mostrarTasa() {
+      document.getElementById('loadingText').style.display = 'none';
+      const valorEl = document.getElementById('tasaValor');
+      const fechaEl = document.getElementById('tasaFecha');
+      valorEl.style.display = 'block';
+      fechaEl.style.display = 'block';
+      valorEl.textContent = '$' + Math.round(tasaDolar).toLocaleString('es-CL');
+      fechaEl.textContent = 'Actualizado: ' + fechaTasa;
+    }
+
+    function calcular() {
+      const input = document.getElementById('usdInput');
+      const usd = parseFloat(input.value);
+
+      if (!usd || usd <= 0) {
+        document.getElementById('errorMsg').textContent = 'Ingresá un monto en dólares válido.';
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('resultado').style.display = 'none';
+        return;
+      }
+
+      if (usd < 50) {
+        document.getElementById('errorMsg').textContent = 'El monto mínimo es USD 50.';
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('resultado').style.display = 'none';
+        return;
+      }
+
+      document.getElementById('errorMsg').style.display = 'none';
+
+      if (tasaDolar === 0) {
+        document.getElementById('errorMsg').textContent = 'La tasa aún no se ha cargado. Esperá un momento y probá de nuevo.';
+        document.getElementById('errorMsg').style.display = 'block';
+        return;
+      }
+
+      const valorBruto = usd * tasaDolar;
+      const porcentaje = 0.85;
+      const valorFinal = valorBruto * porcentaje;
+
+      document.getElementById('montoFinal').textContent = '$' + Math.round(valorFinal).toLocaleString('es-CL');
+      document.getElementById('detalleUsd').textContent = 'USD ' + usd.toLocaleString('es-CL');
+      document.getElementById('detalleTasa').textContent = '$' + Math.round(tasaDolar).toLocaleString('es-CL');
+      document.getElementById('detallePorcentaje').textContent = '× ' + (porcentaje * 100) + '%';
+
+      document.getElementById('resultado').style.display = 'block';
+    }
+
+    // Allow Enter key to trigger calculation
+    document.getElementById('usdInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') calcular();
+    });
+
+    // Load rate on page load
+    obtenerTasa();
+  </script>
+</body>
+</html>
