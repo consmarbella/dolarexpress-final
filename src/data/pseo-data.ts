@@ -1877,4 +1877,405 @@ export const pseoPages: PSEOPageData[] = [
     title: 'Cupo Dólar Santander American Express | DolarExpress',
     description: '¿Tienes tarjeta Santander American Express con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
   },
+
+  {
+    slug: 'cupo-dolar-scotiabank-santiago',
+    title: 'Cupo Dólar Scotiabank Santiago | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-concepcion',
+    title: 'Cupo Dólar Scotiabank Concepcion | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-rancagua',
+    title: 'Cupo Dólar Scotiabank Rancagua | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-antofagasta',
+    title: 'Cupo Dólar Scotiabank Antofagasta | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-la-serena',
+    title: 'Cupo Dólar Scotiabank La Serena | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-puerto-montt',
+    title: 'Cupo Dólar Scotiabank Puerto Montt | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-iquique',
+    title: 'Cupo Dólar Scotiabank Iquique | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-arica',
+    title: 'Cupo Dólar Scotiabank Arica | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-chillan',
+    title: 'Cupo Dólar Scotiabank Chillan | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-mastercard-gold',
+    title: 'Cupo Dólar Scotiabank Mastercard Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-mastercard-black',
+    title: 'Cupo Dólar Scotiabank Mastercard Black | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-mastercard-platinum',
+    title: 'Cupo Dólar Scotiabank Mastercard Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-scotiabank-amex',
+    title: 'Cupo Dólar Scotiabank Amex | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-santiago',
+    title: 'Cupo Dólar Itau Santiago | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-concepcion',
+    title: 'Cupo Dólar Itau Concepcion | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-valparaiso',
+    title: 'Cupo Dólar Itau Valparaiso | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-vina-del-mar',
+    title: 'Cupo Dólar Itau Vina Del Mar | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-temuco',
+    title: 'Cupo Dólar Itau Temuco | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-rancagua',
+    title: 'Cupo Dólar Itau Rancagua | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-antofagasta',
+    title: 'Cupo Dólar Itau Antofagasta | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-la-serena',
+    title: 'Cupo Dólar Itau La Serena | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-puerto-montt',
+    title: 'Cupo Dólar Itau Puerto Montt | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-iquique',
+    title: 'Cupo Dólar Itau Iquique | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-arica',
+    title: 'Cupo Dólar Itau Arica | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-chillan',
+    title: 'Cupo Dólar Itau Chillan | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-visa-gold',
+    title: 'Cupo Dólar Itau Visa Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-visa-platinum',
+    title: 'Cupo Dólar Itau Visa Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-visa-signature',
+    title: 'Cupo Dólar Itau Visa Signature | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-mastercard-gold',
+    title: 'Cupo Dólar Itau Mastercard Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-mastercard-black',
+    title: 'Cupo Dólar Itau Mastercard Black | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-mastercard-platinum',
+    title: 'Cupo Dólar Itau Mastercard Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-amex',
+    title: 'Cupo Dólar Itau Amex | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-itau-pesos',
+    title: 'Cupo Dólar Itau Pesos | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-santiago',
+    title: 'Cupo Dólar Bice Santiago | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-concepcion',
+    title: 'Cupo Dólar Bice Concepcion | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-valparaiso',
+    title: 'Cupo Dólar Bice Valparaiso | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-vina-del-mar',
+    title: 'Cupo Dólar Bice Vina Del Mar | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-temuco',
+    title: 'Cupo Dólar Bice Temuco | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-rancagua',
+    title: 'Cupo Dólar Bice Rancagua | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-antofagasta',
+    title: 'Cupo Dólar Bice Antofagasta | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-la-serena',
+    title: 'Cupo Dólar Bice La Serena | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-puerto-montt',
+    title: 'Cupo Dólar Bice Puerto Montt | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-iquique',
+    title: 'Cupo Dólar Bice Iquique | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-arica',
+    title: 'Cupo Dólar Bice Arica | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-chillan',
+    title: 'Cupo Dólar Bice Chillan | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-visa-gold',
+    title: 'Cupo Dólar Bice Visa Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-visa-platinum',
+    title: 'Cupo Dólar Bice Visa Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-visa-signature',
+    title: 'Cupo Dólar Bice Visa Signature | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-mastercard-gold',
+    title: 'Cupo Dólar Bice Mastercard Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-mastercard-black',
+    title: 'Cupo Dólar Bice Mastercard Black | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-mastercard-platinum',
+    title: 'Cupo Dólar Bice Mastercard Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-amex',
+    title: 'Cupo Dólar Bice Amex | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bice-pesos',
+    title: 'Cupo Dólar Bice Pesos | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bancoestado-arica',
+    title: 'Cupo Dólar Bancoestado Arica | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bancoestado-chillan',
+    title: 'Cupo Dólar Bancoestado Chillan | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bancoestado-pesos',
+    title: 'Cupo Dólar Bancoestado Pesos | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-security-arica',
+    title: 'Cupo Dólar Security Arica | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-security-chillan',
+    title: 'Cupo Dólar Security Chillan | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-security-pesos',
+    title: 'Cupo Dólar Security Pesos | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva',
+    title: 'Cupo Dólar Bbva | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-santiago',
+    title: 'Cupo Dólar Bbva Santiago | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-concepcion',
+    title: 'Cupo Dólar Bbva Concepcion | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-valparaiso',
+    title: 'Cupo Dólar Bbva Valparaiso | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-vina-del-mar',
+    title: 'Cupo Dólar Bbva Vina Del Mar | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-temuco',
+    title: 'Cupo Dólar Bbva Temuco | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-rancagua',
+    title: 'Cupo Dólar Bbva Rancagua | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-antofagasta',
+    title: 'Cupo Dólar Bbva Antofagasta | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-la-serena',
+    title: 'Cupo Dólar Bbva La Serena | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-puerto-montt',
+    title: 'Cupo Dólar Bbva Puerto Montt | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-iquique',
+    title: 'Cupo Dólar Bbva Iquique | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-arica',
+    title: 'Cupo Dólar Bbva Arica | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-chillan',
+    title: 'Cupo Dólar Bbva Chillan | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-visa-gold',
+    title: 'Cupo Dólar Bbva Visa Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-visa-platinum',
+    title: 'Cupo Dólar Bbva Visa Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-visa-signature',
+    title: 'Cupo Dólar Bbva Visa Signature | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-mastercard-gold',
+    title: 'Cupo Dólar Bbva Mastercard Gold | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-mastercard-black',
+    title: 'Cupo Dólar Bbva Mastercard Black | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-mastercard-platinum',
+    title: 'Cupo Dólar Bbva Mastercard Platinum | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-amex',
+    title: 'Cupo Dólar Bbva Amex | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
+  {
+    slug: 'cupo-dolar-bbva-pesos',
+    title: 'Cupo Dólar Bbva Pesos | DolarExpress',
+    description: 'Convierte tu cupo en dólares en Chile. Transferencia inmediata, segura y rápida.'
+  },
 ];
