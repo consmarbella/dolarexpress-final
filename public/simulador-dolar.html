@@ -123,53 +123,41 @@
   <script>
     let tasaDolar = 0;
     let fechaTasa = "";
+    let apiUsada = "";
 
     async function obtenerTasa() {
       const loading = document.getElementById('loadingText');
-      const valorEl = document.getElementById('tasaValor');
-      const fechaEl = document.getElementById('tasaFecha');
 
-      // Try mindicador.cl (free Chilean API)
+      // Usar mindicador.cl (API oficial del Banco Central de Chile)
       try {
         const res = await fetch('https://mindicador.cl/api/dolar');
         if (res.ok) {
           const data = await res.json();
           tasaDolar = data.serie[0].valor;
           fechaTasa = data.serie[0].fecha.substring(0, 10);
+          apiUsada = "mindicador.cl";
           mostrarTasa();
           return;
         }
       } catch(e) {}
 
-      // Fallback: try dolarapi.com
+      // Fallback: Google Finance
       try {
-        const res = await fetch('https://dolarapi.com/v1/cotizaciones/usd');
+        const res = await fetch('https://finance.google.com/finance/converter?a=1&from=USD&to=CLP');
         if (res.ok) {
-          const data = await res.json();
-          tasaDolar = data.compra;
-          fechaTasa = data.fechaActualizacion ? data.fechaActualizacion.substring(0, 10) : new Date().toISOString().substring(0, 10);
-          mostrarTasa();
-          return;
+          const text = await res.text();
+          const match = text.match(/([0-9,.]+)\s*CLP/);
+          if (match) {
+            tasaDolar = parseFloat(match[1].replace(/,/g, ''));
+            fechaTasa = new Date().toISOString().substring(0, 10);
+            apiUsada = "Google Finance";
+            mostrarTasa();
+            return;
+          }
         }
       } catch(e) {}
 
-      // Fallback 2: try nexioclient API
-      try {
-        const res = await fetch('https://api.nexioclient.com/v1/dolar');
-        if (res.ok) {
-          const data = await res.json();
-          tasaDolar = data.valor;
-          fechaTasa = new Date().toISOString().substring(0, 10);
-          mostrarTasa();
-          return;
-        }
-      } catch(e) {}
-
-      // Last fallback: use a fixed approximate rate
-      tasaDolar = 950;
-      fechaTasa = new Date().toISOString().substring(0, 10);
-      loading.textContent = "Usando tasa referencial (aproximada)";
-      setTimeout(() => { mostrarTasa(); }, 500);
+      loading.textContent = "No se pudo obtener la tasa en este momento. Probá de nuevo más tarde.";
     }
 
     function mostrarTasa() {
@@ -220,12 +208,10 @@
       document.getElementById('resultado').style.display = 'block';
     }
 
-    // Allow Enter key to trigger calculation
     document.getElementById('usdInput').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') calcular();
     });
 
-    // Load rate on page load
     obtenerTasa();
   </script>
 </body>
