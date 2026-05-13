@@ -1786,5 +1786,95 @@ export const pseoPages: PSEOPageData[] = [
     slug: 'cupo-internacional-entel',
     title: 'Cupo Internacional Entel a Pesos | DolarExpress',
     description: '¿Tenés tarjeta Entel con cupo internacional? Convertilo a pesos chilenos al instante. Transferencia en 15 minutos.'
-  }
+  },
+  {
+    slug: 'cupo-dolar-santander-santiago',
+    title: 'Cupo Dólar Santander Santiago | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Santiago? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-concepcion',
+    title: 'Cupo Dólar Santander Concepción | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Concepción? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-valparaiso',
+    title: 'Cupo Dólar Santander Valparaíso | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Valparaíso? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-vina-del-mar',
+    title: 'Cupo Dólar Santander Viña del Mar | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Viña del Mar? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-temuco',
+    title: 'Cupo Dólar Santander Temuco | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Temuco? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-rancagua',
+    title: 'Cupo Dólar Santander Rancagua | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Rancagua? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-antofagasta',
+    title: 'Cupo Dólar Santander Antofagasta | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Antofagasta? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-la-serena',
+    title: 'Cupo Dólar Santander La Serena | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en La Serena? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-puerto-montt',
+    title: 'Cupo Dólar Santander Puerto Montt | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Puerto Montt? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-iquique',
+    title: 'Cupo Dólar Santander Iquique | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Iquique? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-arica',
+    title: 'Cupo Dólar Santander Arica | DolarExpress',
+    description: '¿Tienes cupo en dólares del Banco Santander en Arica? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos. 100% online.'
+  },
+  {
+    slug: 'cupo-dolar-santander-visa-gold',
+    title: 'Cupo Dólar Santander Visa Gold | DolarExpress',
+    description: '¿Tienes tarjeta Santander Visa Gold con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-dolar-santander-visa-platinum',
+    title: 'Cupo Dólar Santander Visa Platinum | DolarExpress',
+    description: '¿Tienes tarjeta Santander Visa Platinum con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-dolar-santander-visa-signature',
+    title: 'Cupo Dólar Santander Visa Signature | DolarExpress',
+    description: '¿Tienes tarjeta Santander Visa Signature con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-dolar-santander-mastercard-gold',
+    title: 'Cupo Dólar Santander Mastercard Gold | DolarExpress',
+    description: '¿Tienes tarjeta Santander Mastercard Gold con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-dolar-santander-mastercard-black',
+    title: 'Cupo Dólar Santander Mastercard Black | DolarExpress',
+    description: '¿Tienes tarjeta Santander Mastercard Black con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-dolar-santander-mastercard-platinum',
+    title: 'Cupo Dólar Santander Mastercard Platinum | DolarExpress',
+    description: '¿Tienes tarjeta Santander Mastercard Platinum con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
+  {
+    slug: 'cupo-dolar-santander-amex',
+    title: 'Cupo Dólar Santander American Express | DolarExpress',
+    description: '¿Tienes tarjeta Santander American Express con cupo en dólares? Conviértelo a pesos chilenos al instante. Transferencia en 15 minutos.'
+  },
 ];
