@@ -1,163 +1,71 @@
 import { google } from 'googleapis';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import { createInterface } from 'readline';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = resolve(__dirname, '..', 'dist');
-const TOKEN_PATH = resolve(__dirname, 'gsc-token.json');
-const ENV_PATH = resolve(__dirname, '..', '.env.gsc');
-
 if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
-function loadCreds() {
-  if (!existsSync(ENV_PATH)) {
-    console.error('\nCrea el archivo .env.gsc en la carpeta del proyecto (usa .env.gsc.example de referencia)');
-    process.exit(1);
-  }
-  const lines = readFileSync(ENV_PATH, 'utf-8').split('\n').filter(Boolean);
-  const env = {};
-  for (const line of lines) {
-    const [k, ...v] = line.split('=');
-    env[k.trim()] = v.join('=').trim();
-  }
-  if (!env.GSC_CLIENT_ID || !env.GSC_CLIENT_SECRET) {
-    console.error('.env.gsc debe tener GSC_CLIENT_ID y GSC_CLIENT_SECRET');
-    process.exit(1);
-  }
-  return env;
-}
-
 async function getAuth() {
-  // Try gcloud ADC (Application Default Credentials)
-  try {
-    const { execSync } = await import('child_process');
-    const token = execSync('gcloud auth application-default print-access-token 2>nul || gcloud auth print-access-token 2>nul', { encoding: 'utf-8' }).trim();
-    if (token && token.length > 20) {
-      const oauth2Client = new google.auth.OAuth2();
-      oauth2Client.setCredentials({ access_token: token });
-      console.log('Autenticado con gcloud');
-      return oauth2Client;
-    }
-  } catch { }
-
-  // Try saved token
-  const TOKEN_PATH2 = resolve(__dirname, 'gsc-token.json');
-  if (existsSync(TOKEN_PATH2)) {
-    try {
-      const token = JSON.parse(readFileSync(TOKEN_PATH2, 'utf-8'));
-      const oauth2Client = new google.auth.OAuth2();
-      oauth2Client.setCredentials(token);
-      return oauth2Client;
-    } catch { }
-  }
-
-  // OAuth interactive
-  return getOAuthClient();
-}
-
-async function getOAuthClient() {
-  const creds = loadCreds();
-
-  if (existsSync(TOKEN_PATH)) {
-    try {
-      const token = JSON.parse(readFileSync(TOKEN_PATH, 'utf-8'));
-      const oauth2Client = new google.auth.OAuth2(creds.GSC_CLIENT_ID, creds.GSC_CLIENT_SECRET, 'urn:ietf:wg:oauth:2.0:oob');
-      oauth2Client.setCredentials(token);
-      return oauth2Client;
-    } catch { }
-  }
-
-  const oauth2Client = new google.auth.OAuth2(creds.GSC_CLIENT_ID, creds.GSC_CLIENT_SECRET, 'urn:ietf:wg:oauth:2.0:oob');
-  const authUrl = oauth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: ['https://www.googleapis.com/auth/webmasters.readonly'],
-    prompt: 'consent'
+  // ADC (gcloud auth application-default login)
+  const auth = new google.auth.GoogleAuth({
+    scopes: ['https://www.googleapis.com/auth/webmasters.readonly']
   });
-
-  console.log('\n1. Abre este link en tu NAVEGADOR:');
-  console.log('\n' + authUrl);
-  console.log('\n2. Si ves "Acceso bloqueado": click "Avanzado" (abajo a la izquierda)');
-  console.log('   Luego click en "Ir a seo (unsafe)"');
-  console.log('3. Acepta los permisos. Google te mostrara un CODIGO.');
-  console.log('4. Pega el codigo abajo y presiona Enter.\n');
-
-  const rl = createInterface({ input: process.stdin, output: process.stdout });
-  const code = await new Promise(resolve => rl.question('Codigo: ', resolve));
-  rl.close();
-
-  const { tokens } = await oauth2Client.getToken(code);
-  oauth2Client.setCredentials(tokens);
-  writeFileSync(TOKEN_PATH, JSON.stringify(tokens, null, 2));
-  console.log('Token guardado\n');
-  return oauth2Client;
+  const client = await auth.getClient();
+  await client.getRequestHeaders();
+  return client;
 }
 
 async function inspectAll() {
+  console.log('Autenticando con ADC...');
   const auth = await getAuth();
-  const urlInspection = google.searchconsole('v1');
+  console.log('OK');
+  const api = google.searchconsole('v1');
   const siteUrl = 'https://dolarexpress.cl/';
 
-  const pseoContent = readFileSync(resolve(__dirname, '..', 'src', 'data', 'pseo-data.ts'), 'utf-8');
-  const slugs = [...pseoContent.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
-  const uniqueSlugs = [...new Set(slugs)].filter(s => s !== 'index');
+  const data = readFileSync(resolve(__dirname, '..', 'src', 'data', 'pseo-data.ts'), 'utf-8');
+  const slugs = [...new Set([...data.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]))].filter(s => s !== 'index');
 
-  console.log('Inspeccionando ' + uniqueSlugs.length + ' URLs...\n');
+  console.log('Inspeccionando ' + slugs.length + ' URLs...\n');
   const results = [];
 
-  for (let i = 0; i < uniqueSlugs.length; i++) {
-    const slug = uniqueSlugs[i];
-    process.stdout.write('[' + (i + 1) + '/' + uniqueSlugs.length + '] ' + slug.padEnd(50) + ' ');
-
+  for (let i = 0; i < slugs.length; i++) {
+    process.stdout.write('[' + (i + 1) + '/' + slugs.length + '] ' + slugs[i].padEnd(50) + ' ');
     try {
-      const res = await urlInspection.urlInspection.index.inspect({
-        requestBody: { siteUrl, inspectionUrl: 'https://dolarexpress.cl/' + slug, languageCode: 'es-CL' }
+      const res = await api.urlInspection.index.inspect({
+        requestBody: { siteUrl, inspectionUrl: siteUrl + slugs[i], languageCode: 'es-CL' }
       });
-
-      const idx = res.data.inspectionResult?.indexStatusResult;
-      const verdict = idx?.verdict || 'UNKNOWN';
-      const coverage = idx?.coverageState || 'UNKNOWN';
-      results.push({ slug, verdict, coverage });
-
-      if (verdict === 'PASS') console.log('INDEXADO');
-      else if (coverage === 'ALTERNATE_PAGE_WITH_CANONICAL') console.log('Alternativa canonica');
-      else if (coverage === 'CRAWLED_NOT_INDEXED') console.log('Crawleado no indexado');
-      else if (coverage === 'NOT_FOUND') console.log('404');
-      else console.log(coverage);
-
-      if (i < uniqueSlugs.length - 1) await new Promise(r => setTimeout(r, 1100));
-    } catch (err) {
-      results.push({ slug, verdict: 'ERROR', coverage: err.message });
-      console.log('ERROR: ' + err.message.slice(0, 80));
-      await new Promise(r => setTimeout(r, 5000));
+      const s = res.data.inspectionResult?.indexStatusResult;
+      const coverage = s?.coverageState || 'UNKNOWN';
+      const verdict = s?.verdict || 'UNKNOWN';
+      results.push({ slug: slugs[i], verdict, coverage });
+      console.log(verdict === 'PASS' ? 'INDEXADO' : coverage);
+    } catch (e) {
+      results.push({ slug: slugs[i], verdict: 'ERROR', coverage: e.message });
+      console.log('ERROR');
     }
+    if (i < slugs.length - 1) await new Promise(r => setTimeout(r, 1100));
   }
 
   const counts = {};
-  for (const r of results) {
-    counts[r.coverage] = (counts[r.coverage] || 0) + 1;
-  }
+  for (const r of results) counts[r.coverage] = (counts[r.coverage] || 0) + 1;
 
   console.log('\n=== RESULTADOS ===');
-  for (const [k, v] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
-    console.log('  ' + k + ': ' + v);
-  }
+  for (const [k, v] of Object.entries(counts).sort((a, b) => b[1] - a[1]))
+    console.log('  ' + (k === 'PASS' ? 'INDEXADAS' : k) + ': ' + v);
 
   for (const key of ['ALTERNATE_PAGE_WITH_CANONICAL', 'CRAWLED_NOT_INDEXED', 'NOT_FOUND']) {
     const items = results.filter(r => r.coverage === key);
-    if (items.length > 0) {
+    if (items.length) {
       console.log('\n' + key + ':');
-      items.forEach(r => console.log('  https://dolarexpress.cl/' + r.slug));
+      items.forEach(r => console.log('  ' + siteUrl + r.slug));
     }
   }
 
-  const csvPath = resolve(OUTPUT_DIR, 'gsc-inspection.csv');
-  writeFileSync(csvPath, 'slug,verdict,coverage\n' + results.map(r => '"' + r.slug + '","' + r.verdict + '","' + r.coverage.replace(/"/g, '""') + '"').join('\n'), 'utf-8');
-  console.log('\nCSV guardado: ' + csvPath);
+  const csv = 'slug,verdict,coverage\n' + results.map(r => '"' + r.slug + '","' + r.verdict + '","' + r.coverage.replace(/"/g, '""') + '"').join('\n');
+  writeFileSync(resolve(OUTPUT_DIR, 'gsc-inspection.csv'), csv, 'utf-8');
+  console.log('\nCSV: ' + resolve(OUTPUT_DIR, 'gsc-inspection.csv'));
 }
 
-inspectAll().catch(err => {
-  console.error('Error:', err.message);
-  process.exit(1);
-});
+inspectAll().catch(e => { console.error('Error:', e.message); process.exit(1); });
