@@ -5,6 +5,16 @@ import Logo from '../components/Logo';
 const Home: React.FC = () => {
   useEffect(() => {
     document.title = "DolarExpress | Compramos tu Cupo en Dólares | Efectivo al Instante";
+
+    // Canonical de la home
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://dolarexpress.cl/';
+
     const metaDescription = document.querySelector('meta[name="description"]');
     const description = "Servicio de compra de cupo en dólares de tarjetas de crédito en Chile. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.";
     if (metaDescription) {
