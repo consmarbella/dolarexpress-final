@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# GSC credentials
+.env.gsc
+scripts/gsc-token.json

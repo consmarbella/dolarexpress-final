@@ -10,12 +10,14 @@
     "lint": "tsc --noEmit",
     "seo:sitemap": "node generate-sitemap.js",
     "seo:interlinking": "python add_interlinking.py",
+    "seo:inspect": "node scripts/gsc-inspect.js",
     "seo:all": "node generate-sitemap.js && python add_interlinking.py",
     "deploy": "npm run seo:all && npm run build"
   },
   "dependencies": {
     "@octokit/rest": "^22.0.1",
     "glob": "^13.0.6",
+    "googleapis": "^171.4.0",
     "http-node": "^1.2.0",
     "isomorphic-git": "^1.37.2",
     "react": "^19.2.4",
