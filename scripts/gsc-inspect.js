@@ -1,79 +1,45 @@
 import { google } from 'googleapis';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import { createInterface } from 'readline';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const TOKEN_PATH = resolve(__dirname, 'gsc-token.json');
 const OUTPUT_DIR = resolve(__dirname, '..', 'dist');
 
 if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
-function loadCredentials() {
-  const envPath = resolve(__dirname, '..', '.env.gsc');
-  if (!existsSync(envPath)) {
-    console.error('\n❌ No se encuentra .env.gsc');
-    console.error('\nCrea el archivo en: ' + envPath);
-    console.error('Con este contenido:');
-    console.error('\nGSC_CLIENT_ID=tu-client-id.apps.googleusercontent.com');
-    console.error('GSC_CLIENT_SECRET=tu-client-secret');
-    console.error('\nPara obtenerlos:');
-    console.error('1. https://console.cloud.google.com/apis/credentials');
-    console.error('2. Crear credenciales → ID de cliente OAuth 2.0');
-    console.error('3. Tipo: Aplicación de escritorio');
-    console.error('4. Copiar Client ID y Client Secret al .env.gsc');
-    process.exit(1);
-  }
-  const lines = readFileSync(envPath, 'utf-8').split('\n').filter(Boolean);
-  const env = {};
-  for (const line of lines) {
-    const [key, ...rest] = line.split('=');
-    env[key.trim()] = rest.join('=').trim();
-  }
-  if (!env.GSC_CLIENT_ID || !env.GSC_CLIENT_SECRET) {
-    console.error('❌ .env.gsc debe contener GSC_CLIENT_ID y GSC_CLIENT_SECRET');
-    process.exit(1);
-  }
-  return env;
-}
+async function getAuthClient() {
+  const jsonPaths = [
+    resolve(__dirname, '..', 'gsc-credentials.json'),
+    resolve(__dirname, '..', 'dolarexpress-seo-7f49ec49eb3c.json'),
+  ];
 
-async function getAuthenticatedClient() {
-  const env = loadCredentials();
-  const redirectUri = 'urn:ietf:wg:oauth:2.0:oob';
-
-  if (existsSync(TOKEN_PATH)) {
-    const token = JSON.parse(readFileSync(TOKEN_PATH, 'utf-8'));
-    const oauth2Client = new google.auth.OAuth2(env.GSC_CLIENT_ID, env.GSC_CLIENT_SECRET, redirectUri);
-    oauth2Client.setCredentials(token);
-    return oauth2Client;
+  for (const jsonPath of jsonPaths) {
+    if (existsSync(jsonPath)) {
+      const key = JSON.parse(readFileSync(jsonPath, 'utf-8'));
+      const jwtClient = new google.auth.JWT(
+        key.client_email,
+        null,
+        key.private_key,
+        ['https://www.googleapis.com/auth/webmasters.readonly'],
+        null
+      );
+      await jwtClient.authorize();
+      console.log(`✅ Autenticado con service account: ${key.client_email}`);
+      return jwtClient;
+    }
   }
 
-  const oauth2Client = new google.auth.OAuth2(env.GSC_CLIENT_ID, env.GSC_CLIENT_SECRET, redirectUri);
-
-  const authUrl = oauth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: ['https://www.googleapis.com/auth/webmasters.readonly'],
-  });
-
-  console.log('\n🔗 Abre este link en tu navegador:');
-  console.log(authUrl);
-  console.log('\nInicia sesión con tu cuenta de GSC, acepta los permisos');
-  console.log('Google te mostrará un código. Cópialo y pégalo abajo.\n');
-
-  const rl = createInterface({ input: process.stdin, output: process.stdout });
-  const code = await new Promise(resolve => rl.question('Código: ', resolve));
-  rl.close();
-
-  const { tokens } = await oauth2Client.getToken(code);
-  oauth2Client.setCredentials(tokens);
-  writeFileSync(TOKEN_PATH, JSON.stringify(tokens, null, 2));
-  console.log('✅ Token guardado (no hace falta autenticarse de nuevo)');
-  return oauth2Client;
+  console.error('\n❌ No se encontró archivo JSON de service account.');
+  console.error('\nBusca el archivo .json que descargaste de Google Cloud');
+  console.error('y cópialo a esta carpeta:');
+  console.error(resolve(__dirname, '..'));
+  console.error('\nCon nombre: gsc-credentials.json');
+  process.exit(1);
 }
 
 async function inspectAll() {
-  const auth = await getAuthenticatedClient();
+  const auth = await getAuthClient();
   const urlInspection = google.searchconsole('v1');
   const siteUrl = 'https://dolarexpress.cl/';
 
@@ -168,13 +134,19 @@ async function inspectAll() {
   }
 
   const csvPath = resolve(OUTPUT_DIR, 'gsc-inspection.csv');
-  const csv = 'slug,url,verdict,coverage\n' +
-    results.map(r => `"${r.slug}","${r.url}","${r.verdict}","${r.coverage.replace(/"/g, '""')}"`).join('\n');
+  const csv = 'slug,url,verdict,coverage,canonical\n' +
+    results.map(r => `"${r.slug}","${r.url}","${r.verdict}","${r.coverage.replace(/"/g, '""')}","${r.canonical}"`).join('\n');
   writeFileSync(csvPath, csv, 'utf-8');
   console.log(`\n✅ CSV guardado: ${csvPath}`);
 }
 
 inspectAll().catch(err => {
   console.error('\n💥 Error fatal:', err.message);
+  if (err.message.includes('not authorized') || err.message.includes('not found')) {
+    console.error('\n📌 El service account necesita acceso en GSC:');
+    console.error('   1. https://search.google.com/search-console');
+    console.error('   2. Settings → Users and permissions → Add user');
+    console.error(`   3. Email: seo-236@dolarexpress-seo.iam.gserviceaccount.com`);
+  }
   process.exit(1);
 });
