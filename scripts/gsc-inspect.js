@@ -92,22 +92,23 @@ async function getToken() {
 }
 
 async function findSiteUrl(token) {
-  for (const siteUrl of ['https://dolarexpress.cl/', 'https://dolarexpress.cl', 'scoped:https://dolarexpress.cl/']) {
-    try {
-      const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
-        method: 'POST',
-        headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ siteUrl, inspectionUrl: 'https://dolarexpress.cl/', languageCode: 'es-CL' })
-      });
-      const json = await res.json();
-      if (res.ok) {
-        console.log('Usando siteUrl: ' + siteUrl);
-        return siteUrl;
-      }
-    } catch { }
+  const tries = ['https://dolarexpress.cl/', 'https://dolarexpress.cl', 'scoped:https://dolarexpress.cl/'];
+  for (const siteUrl of tries) {
+    console.log('Probando siteUrl: ' + siteUrl);
+    const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
+      method: 'POST',
+      headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ siteUrl, inspectionUrl: 'https://dolarexpress.cl/', languageCode: 'es-CL' })
+    });
+    const json = await res.json();
+    if (res.ok) {
+      console.log('Usando siteUrl: ' + siteUrl);
+      return siteUrl;
+    }
+    console.log('  Error: ' + (json.error?.message || json.error?.status || res.status));
   }
-  console.error('No se pudo determinar la URL de la propiedad en GSC.');
-  console.error('Verifica que tu email tenga acceso a dolarexpress.cl en Search Console');
+  console.error('\nVe a Search Console y dime exactamente como aparece la propiedad arriba a la izquierda:');
+  console.error('https://search.google.com/search-console');
   process.exit(1);
 }
 
