@@ -3154,81 +3154,19 @@ export const pseoPages: PSEOPageData[] = [
     title: 'Vender Cupo Dolar Antofagasta | DolarExpress',
     description: 'Vende tu cupo en dolares en Antofagasta. Transferencia inmediata y segura.'
   },
-  {
-    slug: 'vender-cupo-dolar-arica',
-    title: 'Vender Cupo Dolar Arica | DolarExpress',
-    description: 'Vende tu cupo en dolares en Arica. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-calama',
-    title: 'Vender Cupo Dolar Calama | DolarExpress',
-    description: 'Vende tu cupo en dolares en Calama. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-chillan',
-    title: 'Vender Cupo Dolar Chillan | DolarExpress',
-    description: 'Vende tu cupo en dolares en Chillan. Transferencia inmediata y segura.'
-  },
+
   {
     slug: 'vender-cupo-dolar-concepcion',
     title: 'Vender Cupo Dolar Concepcion | DolarExpress',
     description: 'Vende tu cupo en dolares en Concepcion. Transferencia inmediata y segura.'
   },
-  {
-    slug: 'vender-cupo-dolar-copiapo',
-    title: 'Vender Cupo Dolar Copiapo | DolarExpress',
-    description: 'Vende tu cupo en dolares en Copiapo. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-iquique',
-    title: 'Vender Cupo Dolar Iquique | DolarExpress',
-    description: 'Vende tu cupo en dolares en Iquique. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-la-serena',
-    title: 'Vender Cupo Dolar La Serena | DolarExpress',
-    description: 'Vende tu cupo en dolares en La Serena. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-osorno',
-    title: 'Vender Cupo Dolar Osorno | DolarExpress',
-    description: 'Vende tu cupo en dolares en Osorno. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-puerto-montt',
-    title: 'Vender Cupo Dolar Puerto Montt | DolarExpress',
-    description: 'Vende tu cupo en dolares en Puerto Montt. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-punta-arenas',
-    title: 'Vender Cupo Dolar Punta Arenas | DolarExpress',
-    description: 'Vende tu cupo en dolares en Punta Arenas. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-rancagua',
-    title: 'Vender Cupo Dolar Rancagua | DolarExpress',
-    description: 'Vende tu cupo en dolares en Rancagua. Transferencia inmediata y segura.'
-  },
+
   {
     slug: 'vender-cupo-dolar-santiago',
     title: 'Vender Cupo Dolar Santiago | DolarExpress',
     description: 'Vende tu cupo en dolares en Santiago. Transferencia inmediata y segura.'
   },
-  {
-    slug: 'vender-cupo-dolar-talca',
-    title: 'Vender Cupo Dolar Talca | DolarExpress',
-    description: 'Vende tu cupo en dolares en Talca. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-temuco',
-    title: 'Vender Cupo Dolar Temuco | DolarExpress',
-    description: 'Vende tu cupo en dolares en Temuco. Transferencia inmediata y segura.'
-  },
-  {
-    slug: 'vender-cupo-dolar-valdivia',
-    title: 'Vender Cupo Dolar Valdivia | DolarExpress',
-    description: 'Vende tu cupo en dolares en Valdivia. Transferencia inmediata y segura.'
-  },
+
   {
     slug: 'vender-cupo-dolar-valparaiso',
     title: 'Vender Cupo Dolar Valparaiso | DolarExpress',
