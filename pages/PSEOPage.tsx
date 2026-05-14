@@ -65,7 +65,9 @@ const cityNames: Record<string, string> = {
   'santiago': 'Santiago', 'concepcion': 'Concepción', 'valparaiso': 'Valparaíso',
   'vina-del-mar': 'Viña del Mar', 'temuco': 'Temuco', 'rancagua': 'Rancagua',
   'antofagasta': 'Antofagasta', 'la-serena': 'La Serena', 'puerto-montt': 'Puerto Montt',
-  'iquique': 'Iquique', 'arica': 'Arica', 'chillan': 'Chillán',
+  'iquique': 'Iquique', 'arica': 'Arica', 'chillan': 'Chillán', 'calama': 'Calama',
+  'copiapo': 'Copiapo', 'osorno': 'Osorno', 'talca': 'Talca', 'valdivia': 'Valdivia',
+  'punta-arenas': 'Punta Arenas',
 };
 
 function generateUniqueMeta(page: { slug: string; title: string; card?: string; city?: string }): { title: string; description: string } {
@@ -88,6 +90,10 @@ function generateUniqueMeta(page: { slug: string; title: string; card?: string; 
 
   if (cardType) return { title: `Cupo Dólar ${cardType} a Pesos | DolarExpress`, description: `¿Tenés tarjeta ${cardType} con cupo en dólares? Te lo compramos al instante. Transferencia en 15 minutos.` };
   if (lastPart.startsWith('avance')) return { title: slugToTitle(lastPart) + ' | DolarExpress', description: `¿Necesitás ${slugToTitle(lastPart).toLowerCase()}? Te compramos tu cupo en dólares y te transferimos al instante.` };
+  const citySlugGen = detectCity(lastPart);
+  const cityNameGen = citySlugGen ? (cityNames[citySlugGen] || slugToTitle(citySlugGen)) : '';
+  if (citySlugGen && lastPart.startsWith('vender-cupo-dolar')) return { title: `Vender Cupo Dólar en ${cityNameGen} | DolarExpress`, description: `¿Necesitás vender tu cupo en dólares en ${cityNameGen}? Te lo compramos al instante. Transferencia en 15 minutos a tu cuenta bancaria. Seguro y 100% online.` };
+  if (citySlugGen) return { title: page.title, description: `¿Tenés cupo en dólares en ${cityNameGen}? Te lo compramos al instante. Transferencia en 15 minutos. Proceso 100% online.` };
   return { title: page.title, description: `Compramos tu cupo en dólares en Chile. Transferencia inmediata y segura.` };
 }
 
@@ -113,11 +119,11 @@ function generateUniqueContent(slug: string): { paragraph1: string; paragraph2: 
     };
   }
 
-  if (citySlug && bank) {
+  if (citySlug) {
     return {
-      paragraph1: `En ${cityName}, trabajamos con todas las tarjetas bancarias y del retail. ${bank ? `${bank.name} es uno de los bancos más usados en ${cityName}.` : ''}`,
-      paragraph2: `No importa dónde estés en ${cityName}, el proceso es 100% online. Te contactamos por WhatsApp, coordinamos la operación y recibís la transferencia en tu cuenta.`,
-      tip: `¿Sabías que en ${cityName} muchas personas ya usaron nuestro servicio? El proceso es simple y seguro.`,
+      paragraph1: `¿Estás en ${cityName} y querés vender tu cupo en dólares? En DolarExpress te compramos el cupo internacional de tu tarjeta de crédito al mejor tipo de cambio. El proceso es 100% online desde ${cityName}, sin moverte de tu casa.`,
+      paragraph2: `Coordinamos todo por WhatsApp. Te mostramos la tasa antes de aceptar y la transferencia llega a tu cuenta bancaria en menos de 15 minutos. No importa si estás en el centro de ${cityName} o en cualquier otra comuna, el proceso es el mismo: rápido, seguro y sin papeleos.`,
+      tip: `En ${cityName}, muchas personas ya vendieron su cupo en dólares con nosotros. La mayoría de las tarjetas Visa y Mastercard emitidas en Chile tienen cupo internacional disponible sin necesidad de activación. Verificá en tu app bancaria.`,
     };
   }
 
