@@ -3177,4 +3177,44 @@ export const pseoPages: PSEOPageData[] = [
     title: 'Vender Cupo Dolar Vina Del Mar | DolarExpress',
     description: 'Vende tu cupo en dolares en Vina del Mar. Transferencia inmediata y segura.'
   },
+  // Grupo 1: vender cupo dolar + banco
+  { slug: 'vender-cupo-dolar-bci', title: 'Vender Cupo Dólar BCI | DolarExpress', description: 'Vendé tu cupo en dólares BCI de forma rápida y segura. Transferencia inmediata, sin comisiones.' },
+  { slug: 'vender-cupo-dolar-banco-chile', title: 'Vender Cupo Dólar Banco de Chile | DolarExpress', description: 'Vendé tu cupo en dólares Banco de Chile. Pago en minutos, operación 100% segura.' },
+  { slug: 'vender-cupo-dolar-banco-estado', title: 'Vender Cupo Dólar BancoEstado | DolarExpress', description: 'Vendé tu cupo en dólares BancoEstado. Sin comisiones, transferencia inmediata.' },
+  { slug: 'vender-cupo-dolar-santander', title: 'Vender Cupo Dólar Santander | DolarExpress', description: 'Vendé tu cupo en dólares Santander. Mejor precio del mercado garantizado.' },
+  { slug: 'vender-cupo-dolar-scotiabank', title: 'Vender Cupo Dólar Scotiabank | DolarExpress', description: 'Vendé tu cupo en dólares Scotiabank. Rápido, seguro y sin burocracia.' },
+  { slug: 'vender-cupo-dolar-falabella', title: 'Vender Cupo Dólar CMR Falabella | DolarExpress', description: 'Vendé tu cupo en dólares CMR Falabella. Cotización inmediata, pago en minutos.' },
+  { slug: 'vender-cupo-dolar-ripley', title: 'Vender Cupo Dólar Ripley | DolarExpress', description: 'Vendé tu cupo en dólares Ripley. Pago en minutos vía transferencia bancaria.' },
+  { slug: 'vender-cupo-dolar-itau', title: 'Vender Cupo Dólar Itaú | DolarExpress', description: 'Vendé tu cupo en dólares Itaú. Operación 100% segura y confiable.' },
+  { slug: 'vender-cupo-dolar-hites', title: 'Vender Cupo Dólar Hites | DolarExpress', description: 'Vendé tu cupo en dólares Hites. Transferencia inmediata sin comisiones.' },
+  { slug: 'vender-cupo-dolar-bice', title: 'Vender Cupo Dólar Bice | DolarExpress', description: 'Vendé tu cupo en dólares Bice. Mejor cotización garantizada en el mercado.' },
+  { slug: 'vender-cupo-dolar-security', title: 'Vender Cupo Dólar Banco Security | DolarExpress', description: 'Vendé tu cupo en dólares Banco Security. Rápido, seguro y confiable.' },
+  // Grupo 2: cambiar cupo dolar + banco
+  { slug: 'cambiar-cupo-dolar-bci', title: 'Cambiar Cupo Dólar BCI | DolarExpress', description: 'Cambiá tu cupo en dólares BCI a pesos chilenos. Operación en minutos.' },
+  { slug: 'cambiar-cupo-dolar-banco-chile', title: 'Cambiar Cupo Dólar Banco de Chile | DolarExpress', description: 'Cambiá tu cupo en dólares Banco de Chile a pesos. Sin comisiones.' },
+  { slug: 'cambiar-cupo-dolar-banco-estado', title: 'Cambiar Cupo Dólar BancoEstado | DolarExpress', description: 'Cambiá tu cupo en dólares BancoEstado a pesos chilenos. Rápido y seguro.' },
+  { slug: 'cambiar-cupo-dolar-santander', title: 'Cambiar Cupo Dólar Santander | DolarExpress', description: 'Cambiá tu cupo en dólares Santander a pesos. Transferencia inmediata.' },
+  { slug: 'cambiar-cupo-dolar-falabella', title: 'Cambiar Cupo Dólar CMR Falabella | DolarExpress', description: 'Cambiá tu cupo en dólares CMR Falabella. Cotización en segundos.' },
+  { slug: 'cambiar-cupo-dolar-ripley', title: 'Cambiar Cupo Dólar Ripley | DolarExpress', description: 'Cambiá tu cupo en dólares Ripley a pesos chilenos. Rápido y seguro.' },
+  // Grupo 3: bancos/tarjetas nuevos
+  { slug: 'cupo-dolar-coopeuch', title: 'Cupo Dólar Coopeuch | DolarExpress', description: 'Vendé tu cupo en dólares Coopeuch. Pago inmediato sin comisiones.' },
+  { slug: 'cupo-dolar-tenpo', title: 'Cupo Dólar Tenpo | DolarExpress', description: 'Cupo en dólares Tenpo: cotización y venta rápida. Transferencia inmediata.' },
+  { slug: 'cupo-dolar-credichile', title: 'Cupo Dólar CredíChile | DolarExpress', description: 'Vendé tu cupo en dólares CredíChile. Transferencia inmediata, sin comisiones.' },
+  { slug: 'cupo-dolar-consorcio', title: 'Cupo Dólar Banco Consorcio | DolarExpress', description: 'Cupo en dólares Banco Consorcio: venta segura y rápida. Mejor precio.' },
+  { slug: 'cupo-dolar-latam-pass', title: 'Cupo Dólar LATAM Pass | DolarExpress', description: 'Vendé tu cupo en dólares LATAM Pass. Mejor precio garantizado.' },
+  // Grupo 4: informacionales
+  { slug: 'cuanto-pagan-cupo-dolar', title: '¿Cuánto Pagan por Cupo Dólar? | DolarExpress', description: 'Precio actual del cupo en dólares en Chile. Cotización en tiempo real sin comisiones.' },
+  { slug: 'cupo-dolar-mismo-dia', title: 'Cupo Dólar Mismo Día | DolarExpress', description: 'Vendé tu cupo en dólares y cobrate el mismo día. Transferencia inmediata garantizada.' },
+  { slug: 'cupo-dolar-cencosud', title: 'Cupo Dólar Cencosud | DolarExpress', description: 'Cupo en dólares Cencosud: venta rápida y segura. Transferencia inmediata.' },
+  { slug: 'vender-cupo-dolar-precio', title: 'Precio al Vender Cupo Dólar Hoy | DolarExpress', description: 'Precio de compra de cupo en dólares hoy en Chile. Sin comisiones ocultas.' },
+  { slug: 'cupo-dolar-precio-hoy', title: 'Precio Cupo Dólar Hoy | DolarExpress', description: 'Precio del cupo en dólares hoy en Chile. Actualizado en tiempo real.' },
+  { slug: 'vender-cupo-dolar-santiago', title: 'Vender Cupo Dólar en Santiago | DolarExpress', description: 'Vendé tu cupo en dólares en Santiago. Transferencia inmediata, mejor precio.' },
+  { slug: 'vender-cupo-dolar-concepcion', title: 'Vender Cupo Dólar en Concepción | DolarExpress', description: 'Vendé tu cupo en dólares en Concepción. Pago en minutos vía transferencia.' },
+  { slug: 'vender-cupo-dolar-valparaiso', title: 'Vender Cupo Dólar en Valparaíso | DolarExpress', description: 'Vendé tu cupo en dólares en Valparaíso. Cotización inmediata, sin comisiones.' },
+  // Grupo 5: ciudades + vender
+  { slug: 'vender-cupo-dolar-temuco', title: 'Vender Cupo Dólar en Temuco | DolarExpress', description: 'Vendé tu cupo en dólares en Temuco. Transferencia rápida y segura.' },
+  { slug: 'vender-cupo-dolar-antofagasta', title: 'Vender Cupo Dólar en Antofagasta | DolarExpress', description: 'Vendé tu cupo en dólares en Antofagasta. Sin comisiones, pago inmediato.' },
+  { slug: 'vender-cupo-dolar-iquique', title: 'Vender Cupo Dólar en Iquique | DolarExpress', description: 'Vendé tu cupo en dólares en Iquique. Operación segura y rápida.' },
+  { slug: 'vender-cupo-dolar-vina-del-mar', title: 'Vender Cupo Dólar en Viña del Mar | DolarExpress', description: 'Vendé tu cupo en dólares en Viña del Mar. Pago inmediato sin comisiones.' },
+  { slug: 'vender-cupo-dolar-rancagua', title: 'Vender Cupo Dólar en Rancagua | DolarExpress', description: 'Vendé tu cupo en dólares en Rancagua. Transferencia inmediata garantizada.' }
 ];
