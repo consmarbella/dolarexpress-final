@@ -44,6 +44,17 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{"type": "host", "value": "www.dolarexpress.cl"}],
+      "destination": "https://dolarexpress.cl/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:slug.html",
+      "destination": "/:slug",
+      "permanent": true
+    },
     {"source": "/vender-cupo-banco-chile", "destination": "/venta-cupo-dolares", "statusCode": 301},
     {"source": "/vender-cupo-bci", "destination": "/venta-cupo-dolares", "statusCode": 301},
     {"source": "/vender-cupo-santander", "destination": "/venta-cupo-dolares", "statusCode": 301},
