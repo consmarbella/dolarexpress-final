@@ -7,24 +7,44 @@
     <meta name="description" content="¿Necesitas liquidez? Compramos tu cupo en dólares de tarjetas de crédito (CMR, Cencosud, Ripley, Bancarias). Transfiere a tu cuenta en 15 minutos. Seguro y rápido." />
     <meta name="robots" content="index, follow" />
     <meta name="msvalidate.01" content="5FA314B20BB93FD6E5357FBFF4B76C39" />
-    <meta name="google-site-verification" content="PENDIENTE_AGREGAR_CODIGO_GSC" />
-    <!-- canonical se inyecta por JS segun la ruta actual (PSEOPage.tsx / Home.tsx) -->
-    
+    <!-- TODO: reemplazar con token real de GSC → Search Console > Configuración > Verificación del sitio > Etiqueta HTML -->
+    <!-- <meta name="google-site-verification" content="TU_TOKEN_GSC_AQUI" /> -->
+    <link rel="canonical" href="https://dolarexpress.cl/" />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "DolarExpress",
-      "url": "https://dolarexpress.cl/",
-      "description": "Compramos tu cupo en dólares de tarjetas de crédito. Transferencia inmediata, segura y rápida.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+56967658939",
-        "contactType": "customer service",
-        "availableLanguage": ["Spanish"]
-      },
-      "sameAs": [
-        "https://wa.me/56967658939"
+      "@graph": [
+        {
+          "@type": ["FinancialService", "LocalBusiness"],
+          "@id": "https://dolarexpress.cl/#organization",
+          "name": "DolarExpress",
+          "url": "https://dolarexpress.cl/",
+          "description": "Compramos tu cupo en dólares de tarjetas de crédito (CMR, Cencosud, Ripley, Bancarias). Transferencia inmediata a tu cuenta en 15 minutos.",
+          "telephone": "+56967658939",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Chile"
+          },
+          "currenciesAccepted": "CLP, USD",
+          "priceRange": "$$",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+56967658939",
+            "contactType": "customer service",
+            "availableLanguage": "Spanish",
+            "contactOption": "TollFree"
+          },
+          "sameAs": ["https://wa.me/56967658939"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dolarexpress.cl/#website",
+          "url": "https://dolarexpress.cl/",
+          "name": "DolarExpress",
+          "inLanguage": "es-CL",
+          "publisher": { "@id": "https://dolarexpress.cl/#organization" }
+        }
       ]
     }
     </script>

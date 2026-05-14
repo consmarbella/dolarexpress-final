@@ -23,10 +23,14 @@ function scanHtmlFiles(dir, basePath = '') {
 
   entries.forEach(entry => {
     if (entry.name.startsWith('.')) return; // skip hidden files
+    const EXCLUDED = ['404.html', 'venta-usd.html']; // system/error pages
+    if (EXCLUDED.includes(entry.name)) return;
     const fullPath = path.join(dir, entry.name);
     const relPath = basePath ? `${basePath}/${entry.name}` : entry.name;
 
     if (entry.isDirectory()) {
+      const EXCLUDED_DIRS = ['404', 'assets'];
+      if (EXCLUDED_DIRS.includes(entry.name)) return;
       results.push(...scanHtmlFiles(fullPath, relPath));
     } else if (entry.name.endsWith('.html') && entry.name !== 'index.html') {
       const slug = relPath.replace(/\.html$/, '');

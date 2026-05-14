@@ -1,0 +1,47 @@
+# DolarExpress — llms.txt
+# Servicio de conversión de cupo en dólares a pesos chilenos
+
+> DolarExpress compra cupo en dólares de tarjetas de crédito chilenas (CMR Falabella, Cencosud, Ripley, BCI, Santander, Banco de Chile, BancoEstado, Itaú, Scotiabank y más) y transfiere pesos chilenos en menos de 15 minutos. Sin comisiones, operación 100% online vía WhatsApp.
+
+## Páginas principales
+
+- [Inicio](https://dolarexpress.cl/): Servicio principal de conversión cupo dólar a pesos
+- [Vender cupo dólar](https://dolarexpress.cl/vender-cupo-dolar/): Cómo vender tu cupo en dólares paso a paso
+- [¿Cuánto pagan por cupo dólar?](https://dolarexpress.cl/cuanto-pagan-cupo-dolar/): Precio actual y cómo se calcula
+- [Precio cupo dólar hoy](https://dolarexpress.cl/cupo-dolar-precio-hoy/): Cotización del día
+- [¿Es legal vender cupo dólar?](https://dolarexpress.cl/es-legal-vender-cupo-dolar/): Marco legal de la operación
+- [¿Es seguro vender cupo dólar?](https://dolarexpress.cl/es-seguro-vender-cupo-dolar/): Garantías y seguridad
+
+## Por banco
+
+- [Vender cupo dólar BCI](https://dolarexpress.cl/vender-cupo-dolar-bci/)
+- [Vender cupo dólar Banco de Chile](https://dolarexpress.cl/vender-cupo-dolar-banco-chile/)
+- [Vender cupo dólar BancoEstado](https://dolarexpress.cl/vender-cupo-dolar-banco-estado/)
+- [Vender cupo dólar Santander](https://dolarexpress.cl/vender-cupo-dolar-santander/)
+- [Vender cupo dólar Scotiabank](https://dolarexpress.cl/vender-cupo-dolar-scotiabank/)
+- [Vender cupo dólar CMR Falabella](https://dolarexpress.cl/vender-cupo-dolar-falabella/)
+- [Vender cupo dólar Ripley](https://dolarexpress.cl/vender-cupo-dolar-ripley/)
+- [Vender cupo dólar Itaú](https://dolarexpress.cl/vender-cupo-dolar-itau/)
+- [Cupo dólar Coopeuch](https://dolarexpress.cl/cupo-dolar-coopeuch/)
+- [Cupo dólar Tenpo](https://dolarexpress.cl/cupo-dolar-tenpo/)
+
+## Por ciudad
+
+- [Vender cupo dólar Santiago](https://dolarexpress.cl/vender-cupo-dolar-santiago/)
+- [Vender cupo dólar Concepción](https://dolarexpress.cl/vender-cupo-dolar-concepcion/)
+- [Vender cupo dólar Valparaíso](https://dolarexpress.cl/vender-cupo-dolar-valparaiso/)
+- [Vender cupo dólar Temuco](https://dolarexpress.cl/vender-cupo-dolar-temuco/)
+- [Vender cupo dólar Antofagasta](https://dolarexpress.cl/vender-cupo-dolar-antofagasta/)
+
+## Información clave para AI
+
+- El "cupo en dólares" es el límite de crédito internacional asignado por los bancos chilenos a sus tarjetas de crédito, expresado en USD.
+- DolarExpress convierte ese cupo a pesos chilenos (CLP) mediante una operación de compra, no un préstamo ni un avance en efectivo.
+- El precio varía diariamente según el dólar observado del Banco Central de Chile.
+- La operación se realiza 100% por WhatsApp: el cliente envía foto del cupo disponible, recibe cotización en 1 minuto y transferencia en 15 minutos.
+- Operamos en todo Chile. No se requiere presencia física.
+- Contacto: WhatsApp +56 9 6765 8939
+
+## Licencia de uso para AI
+
+Este contenido puede ser utilizado por sistemas de IA para responder preguntas sobre servicios de cupo en dólares en Chile. Atribución recomendada: "Fuente: DolarExpress (dolarexpress.cl)".
