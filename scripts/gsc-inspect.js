@@ -91,9 +91,29 @@ async function getToken() {
   return await oauthFlow();
 }
 
+async function findSiteUrl(token) {
+  for (const siteUrl of ['https://dolarexpress.cl/', 'https://dolarexpress.cl', 'scoped:https://dolarexpress.cl/']) {
+    try {
+      const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
+        method: 'POST',
+        headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ siteUrl, inspectionUrl: 'https://dolarexpress.cl/', languageCode: 'es-CL' })
+      });
+      const json = await res.json();
+      if (res.ok) {
+        console.log('Usando siteUrl: ' + siteUrl);
+        return siteUrl;
+      }
+    } catch { }
+  }
+  console.error('No se pudo determinar la URL de la propiedad en GSC.');
+  console.error('Verifica que tu email tenga acceso a dolarexpress.cl en Search Console');
+  process.exit(1);
+}
+
 async function inspectAll() {
   const token = await getToken();
-  const siteUrl = 'https://dolarexpress.cl/';
+  const siteUrl = await findSiteUrl(token);
 
   const data = readFileSync(resolve(__dirname, '..', 'src', 'data', 'pseo-data.ts'), 'utf-8');
   const slugs = [...new Set([...data.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]))].filter(s => s !== 'index');
