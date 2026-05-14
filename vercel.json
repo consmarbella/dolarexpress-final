@@ -11,6 +11,12 @@
   ],
   "routes": [
     {
+      "src": "/(.*)",
+      "has": [{"type": "host", "value": "www\\.dolarexpress\\.cl"}],
+      "status": 308,
+      "dest": "https://dolarexpress.cl/$1"
+    },
+    {
       "src": "^/(?:cupo-internacional-pesos|cupo-dolar-bci-pesos|cupo-dolar-cencosud-pesos|cupo-dolar-cmr-pesos|cupo-dolar-ripley-pesos|cupo-mastercard-pesos)(\\.html)?$",
       "status": 301,
       "dest": "/venta-cupo-dolares"
