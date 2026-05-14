@@ -1554,8 +1554,8 @@ export const pseoPages: PSEOPageData[] = [
   },
   {
     slug: 'vender-cupo-dolar-tarjeta-credito',
-    title: 'Vender Cupo Dolar Tarjeta Credito | DolarExpress',
-    description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+    title: 'Vender Cupo Dólar con Tarjeta de Crédito | DolarExpress',
+    description: 'Vende el cupo en dólares de tu tarjeta de crédito. Transferencia inmediata a tu cuenta bancaria. 100% online.'
   },
   {
     slug: 'vender-cupo-dolar-transferencia',
