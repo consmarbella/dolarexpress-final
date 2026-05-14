@@ -56,7 +56,7 @@ async function inspectAll() {
       console.log(verdict === 'PASS' ? 'INDEXADO' : coverage);
     } catch (e) {
       results.push({ slug: slugs[i], verdict: 'ERROR', coverage: e.message });
-      console.log('ERROR');
+      console.log(e.message);
     }
     if (i < slugs.length - 1) await new Promise(r => setTimeout(r, 1100));
   }
