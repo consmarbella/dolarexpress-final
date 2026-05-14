@@ -1,5 +1,6 @@
 import { google } from 'googleapis';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { execSync } from 'child_process';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,21 +8,29 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = resolve(__dirname, '..', 'dist');
 if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
-async function getAuth() {
-  // ADC (gcloud auth application-default login)
-  const auth = new google.auth.GoogleAuth({
-    scopes: ['https://www.googleapis.com/auth/webmasters.readonly']
-  });
-  const client = await auth.getClient();
-  await client.getRequestHeaders();
-  return client;
+async function getToken() {
+  // Try gcloud auth print-access-token (user login, not ADC)
+  try {
+    const token = execSync('gcloud auth print-access-token 2>nul', { encoding: 'utf-8', timeout: 10000 }).trim();
+    if (token && token.length > 20) {
+      console.log('Token obtenido de gcloud');
+      return token;
+    }
+  } catch { }
+  // Fallback: ADC
+  try {
+    const auth = new google.auth.GoogleAuth({ scopes: ['https://www.googleapis.com/auth/webmasters.readonly'] });
+    const client = await auth.getClient();
+    const token = await client.getAccessToken();
+    console.log('Token obtenido de ADC');
+    return token.token;
+  } catch { }
+  console.error('\nNo hay credenciales. Corre:\n  gcloud auth login');
+  process.exit(1);
 }
 
 async function inspectAll() {
-  console.log('Autenticando con ADC...');
-  const auth = await getAuth();
-  console.log('OK');
-  const api = google.searchconsole('v1');
+  const token = await getToken();
   const siteUrl = 'https://dolarexpress.cl/';
 
   const data = readFileSync(resolve(__dirname, '..', 'src', 'data', 'pseo-data.ts'), 'utf-8');
@@ -33,10 +42,14 @@ async function inspectAll() {
   for (let i = 0; i < slugs.length; i++) {
     process.stdout.write('[' + (i + 1) + '/' + slugs.length + '] ' + slugs[i].padEnd(50) + ' ');
     try {
-      const res = await api.urlInspection.index.inspect({
-        requestBody: { siteUrl, inspectionUrl: siteUrl + slugs[i], languageCode: 'es-CL' }
+      const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ siteUrl, inspectionUrl: siteUrl + slugs[i], languageCode: 'es-CL' })
       });
-      const s = res.data.inspectionResult?.indexStatusResult;
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error?.message || 'HTTP ' + res.status);
+      const s = json.inspectionResult?.indexStatusResult;
       const coverage = s?.coverageState || 'UNKNOWN';
       const verdict = s?.verdict || 'UNKNOWN';
       results.push({ slug: slugs[i], verdict, coverage });
