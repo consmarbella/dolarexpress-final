@@ -21,12 +21,17 @@
       "dest": "/cupo-internacional-a-pesos"
     },
     {
-      "handle": "filesystem"
+      "src": "/([^/]+)\\.html$",
+      "status": 301,
+      "dest": "/$1"
     },
     {
-      "src": "/([^/]+)\\.html$",
-      "dest": "/$1/index.html",
-      "check": true
+      "src": "/([^/]+)/([^/]+)\\.html$",
+      "status": 301,
+      "dest": "/$1/$2"
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/([^/]+)/([^/]+)/?$",
