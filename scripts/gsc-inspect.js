@@ -1,64 +1,94 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { createInterface } from 'readline';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = resolve(__dirname, '..', 'dist');
+const TOKEN_FILE = resolve(__dirname, 'gsc-token.json');
+const ENV_FILE = resolve(__dirname, '..', '.env.gsc');
 if (!existsSync(OUTPUT_DIR)) mkdirSync(OUTPUT_DIR, { recursive: true });
 
-async function getToken() {
-  // Try service account JSON
-  const jsonPaths = [
-    resolve(__dirname, '..', 'gsc-credentials.json'),
-    resolve(__dirname, '..', 'dolarexpress-seo-7f49ec49eb3c.json')
-  ];
-  for (const p of jsonPaths) {
-    if (existsSync(p)) {
-      try {
-        const key = JSON.parse(readFileSync(p, 'utf-8'));
-        const { google } = await import('googleapis');
-        const jwt = new google.auth.JWT({
-          email: key.client_email,
-          key: key.private_key,
-          scopes: ['https://www.googleapis.com/auth/webmasters.readonly']
-        });
-        await jwt.authorize();
-        const token = await jwt.getAccessToken();
-        console.log('Autenticado con service account: ' + key.client_email);
-        return token.token;
-      } catch (e) {
-        console.error('Service account error:', e.message);
-        console.error('Agrega ' + JSON.parse(readFileSync(p, 'utf-8')).client_email + ' a GSC como usuario');
-        process.exit(1);
-      }
-    }
+function loadEnv() {
+  if (!existsSync(ENV_FILE)) {
+    console.error('Falta .env.gsc. Debe tener:');
+    console.error('GSC_CLIENT_ID=...');
+    console.error('GSC_CLIENT_SECRET=...');
+    process.exit(1);
   }
+  const env = {};
+  for (const line of readFileSync(ENV_FILE, 'utf-8').split('\n').filter(Boolean)) {
+    const [k, ...v] = line.split('=');
+    env[k.trim()] = v.join('=').trim();
+  }
+  return env;
+}
 
-  // Try gcloud
-  try {
-    const { execSync } = await import('child_process');
-    const token = execSync('gcloud auth print-access-token 2>nul', { encoding: 'utf-8', timeout: 10000 }).trim();
-    if (token && token.length > 20) {
-      // Test if it has the right scope
-      const test = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
-        method: 'POST',
-        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ siteUrl: 'https://dolarexpress.cl/', inspectionUrl: 'https://dolarexpress.cl/', languageCode: 'es-CL' })
-      });
-      const testJson = await test.json();
-      if (testJson.error?.message?.includes('insufficient')) {
-        console.error('El token de gcloud no tiene scope webmasters.readonly.');
-        console.error('Corre en PowerShell:');
-        console.error('  gcloud auth login --scopes=openid,https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/webmasters.readonly');
-        process.exit(1);
-      }
-      console.log('Autenticado con gcloud');
-      return token;
-    }
-  } catch { }
+async function oauthFlow() {
+  const env = loadEnv();
+  const redirect = 'urn:ietf:wg:oauth:2.0:oob';
 
-  console.error('No hay credenciales disponibles');
-  process.exit(1);
+  const authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' +
+    'client_id=' + env.GSC_CLIENT_ID +
+    '&redirect_uri=' + redirect +
+    '&response_type=code' +
+    '&scope=https://www.googleapis.com/auth/webmasters.readonly' +
+    '&access_type=offline' +
+    '&prompt=consent';
+
+  console.log('\n1) Abre este link en tu navegador:');
+  console.log(authUrl);
+  console.log('\n2) Inicia sesion con xaos27@gmail.com');
+  console.log('3) Acepta los permisos');
+  console.log('4) Copia el CODIGO que te muestra Google');
+  console.log('5) Pegalo abajo y presiona Enter\n');
+
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  const code = await new Promise(r => rl.question('Codigo: ', r));
+  rl.close();
+
+  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      code, client_id: env.GSC_CLIENT_ID, client_secret: env.GSC_CLIENT_SECRET,
+      redirect_uri: redirect, grant_type: 'authorization_code'
+    })
+  });
+  const tokens = await tokenRes.json();
+  if (!tokenRes.ok) {
+    console.error('Error OAuth:', tokens.error_description || tokens.error);
+    process.exit(1);
+  }
+  writeFileSync(TOKEN_FILE, JSON.stringify(tokens, null, 2));
+  console.log('Token guardado\n');
+  return tokens.access_token;
+}
+
+async function refreshToken(refreshToken) {
+  const env = loadEnv();
+  const res = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      refresh_token: refreshToken, client_id: env.GSC_CLIENT_ID,
+      client_secret: env.GSC_CLIENT_SECRET, grant_type: 'refresh_token'
+    })
+  });
+  const json = await res.json();
+  if (json.access_token) return json.access_token;
+  throw new Error(json.error_description);
+}
+
+async function getToken() {
+  if (existsSync(TOKEN_FILE)) {
+    try {
+      const tokens = JSON.parse(readFileSync(TOKEN_FILE, 'utf-8'));
+      if (tokens.refresh_token) return await refreshToken(tokens.refresh_token);
+      if (tokens.access_token) return tokens.access_token;
+    } catch { }
+  }
+  return await oauthFlow();
 }
 
 async function inspectAll() {
@@ -76,7 +106,7 @@ async function inspectAll() {
     try {
       const res = await fetch('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
         method: 'POST',
-        headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+        headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
         body: JSON.stringify({ siteUrl, inspectionUrl: siteUrl + slugs[i], languageCode: 'es-CL' })
       });
       const json = await res.json();
@@ -104,14 +134,14 @@ async function inspectAll() {
   for (const key of ['ALTERNATE_PAGE_WITH_CANONICAL', 'CRAWLED_NOT_INDEXED', 'NOT_FOUND']) {
     const items = results.filter(r => r.coverage === key);
     if (items.length) {
-      console.log('\n' + key + ':');
+      console.log('\n' + key + ' (' + items.length + '):');
       items.forEach(r => console.log('  ' + siteUrl + r.slug));
     }
   }
 
-  const csv = 'slug,verdict,coverage\n' + results.map(r => '"' + r.slug + '","' + r.verdict + '","' + r.coverage.replace(/"/g, '""') + '"').join('\n');
-  writeFileSync(resolve(OUTPUT_DIR, 'gsc-inspection.csv'), csv, 'utf-8');
+  writeFileSync(resolve(OUTPUT_DIR, 'gsc-inspection.csv'),
+    'slug,verdict,coverage\n' + results.map(r => '"' + r.slug + '","' + r.verdict + '","' + r.coverage.replace(/"/g, '""') + '"').join('\n'), 'utf-8');
   console.log('\nCSV: ' + resolve(OUTPUT_DIR, 'gsc-inspection.csv'));
 }
 
-inspectAll().catch(e => { console.error('Error:', e.message); process.exit(1); });
+inspectAll().catch(e => { console.error(e.message); process.exit(1); });
