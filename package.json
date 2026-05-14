@@ -13,7 +13,6 @@
     "seo:all": "node generate-sitemap.js && python add_interlinking.py",
     "deploy": "npm run seo:all && npm run build"
   },
-
   "dependencies": {
     "@octokit/rest": "^22.0.1",
     "glob": "^13.0.6",
@@ -24,8 +23,10 @@
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.4",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }
