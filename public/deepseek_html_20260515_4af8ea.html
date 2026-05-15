@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>DolarExpress - Vender USD a BTC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo principal más claro y moderno */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(145deg, #f4f7fc 0%, #eef2f8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Efecto decorativo sutil */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 30% 10%, rgba(95, 65, 255, 0.05), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Tarjeta principal con efecto glassmorphism limpio */
+        .exchange-card {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.2s ease;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Encabezado con bandera de Chile y título */
+        .card-header {
+            padding: 1.8rem 2rem 1rem 2rem;
+            background: white;
+            border-bottom: 1px solid #eef2f8;
+        }
+
+        .flag-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Bandera de Chile (SVG inline de alta calidad, CC0) */
+        .chile-flag {
+            width: 48px;
+            height: 32px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            background-color: #ffffff;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e2a3a, #0f172a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 0;
+        }
+
+        .subhead {
+            color: #4b5565;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .badge-rate {
+            background: #eef2ff;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #5f41ff;
+        }
+
+        /* Contenedor del widget (iframe adaptativo) */
+        .widget-container {
+            padding: 1.5rem 2rem 2rem 2rem;
+            background: #ffffff;
+        }
+
+        .widget-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 550px;
+            border-radius: 1.5rem;
+            background: #fafcff;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255,255,255,0.6);
+        }
+
+        iframe {
+            width: 100%;
+            height: 560px;
+            border: none;
+            border-radius: 1.25rem;
+            background: transparent;
+            display: block;
+        }
+
+        /* Pequeño detalle de confianza */
+        .footer-note {
+            padding: 1rem 2rem 1.8rem 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6c757d;
+            border-top: 1px solid #eef2f8;
+            background: white;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-note span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Responsive: en móviles el iframe se ajusta perfectamente */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .card-header {
+                padding: 1.5rem 1.2rem 0.8rem 1.2rem;
+            }
+            .widget-container {
+                padding: 1.2rem;
+            }
+            iframe {
+                height: 520px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .chile-flag {
+                width: 40px;
+                height: 27px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            iframe {
+                height: 500px;
+            }
+        }
+
+        /* Animación de entrada suave */
+        .exchange-card {
+            animation: fadeSlideUp 0.5s ease-out;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="exchange-card">
+        <div class="card-header">
+            <div class="flag-container">
+                <!-- Bandera de Chile SVG (Dominio público / CC0, alta calidad) -->
+                <svg class="chile-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+                    <rect width="900" height="600" fill="#FFFFFF"/>
+                    <rect width="900" height="300" fill="#0039A6"/>
+                    <rect width="450" height="300" fill="#FFFFFF"/>
+                    <polygon points="0,0 450,0 0,300" fill="#D52B1E"/>
+                    <polygon points="0,0 450,0 450,300" fill="transparent"/>
+                    <circle cx="150" cy="150" r="80" fill="#FFFFFF"/>
+                    <circle cx="150" cy="150" r="50" fill="#0039A6"/>
+                    <circle cx="150" cy="150" r="15" fill="#FFFFFF"/>
+                </svg>
+                <h1>Vender USD</h1>
+            </div>
+            <div class="subhead">
+                <span>🇺🇸 → ₿ Convierte dólares a Bitcoin al instante</span>
+                <span class="badge-rate">Tasa en tiempo real</span>
+            </div>
+        </div>
+        <div class="widget-container">
+            <div class="widget-wrapper">
+                <!-- Widget Changelly actualizado: USD → BTC con dirección fija -->
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="none" 
+                    allow="camera" 
+                    src="https://widget.changelly.com?from=usd&to=btc&amount=0&address=15FxSPQd3t8JZ8TYuCb3rQJt2WfgaZFfN9&fromDefault=usd&toDefault=btc&merchant_id=SXrMEK_-5VgG47_5&payment_id=&v=3&type=no-rev-share&color=5f41ff&headerId=1&logo=hide&buyButtonTextId=1">
+                    Can't load widget - verifica tu conexión
+                </iframe>
+            </div>
+        </div>
+        <div class="footer-note">
+            <span>🔒 Transacción segura</span>
+            <span>⚡ Conversión en minutos</span>
+            <span>💳 Compra con tarjeta o transferencia</span>
+        </div>
+    </div>
+</body>
+</html>
