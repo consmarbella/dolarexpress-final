@@ -149,23 +149,23 @@ export const pseoPages: PSEOPageData[] = [
   },
   {
     slug: 'como-obtener-liquidez-con-tarjeta-retail',
-    title: 'Como Obtener Liquidez Con Tarjeta Retail | DolarExpress',
-    description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+    title: 'Cómo Obtener Liquidez con Tarjeta Retail | DolarExpress',
+    description: 'Guía completa: aprende cómo obtener liquidez con tu tarjeta de tienda. Convierte tu cupo de compras en efectivo en 15 minutos sin avance habilitado.'
   },
   {
     slug: 'como-sacar-plata-si-no-tengo-avance',
-    title: 'Como Sacar Plata Si No Tengo Avance | DolarExpress',
-    description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+    title: 'Cómo Sacar Plata si No Tengo Avance Habilitado | DolarExpress',
+    description: 'Descubre cómo sacar efectivo sin avance. Te enseñamos cómo usar el cupo de compras de tu tarjeta retail para obtener plata en minutos.'
   },
   {
     slug: 'como-usar-el-cupo-de-mi-tarjeta-sin-avance',
-    title: 'Como Usar El Cupo De Mi Tarjeta Sin Avance | DolarExpress',
-    description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+    title: 'Cómo Usar el Cupo de tu Tarjeta sin Avance | DolarExpress',
+    description: 'Guía paso a paso: cómo usar el cupo de compras de tu tarjeta retail sin necesitar avance en efectivo. Convierte tu cupo en efectivo hoy.'
   },
   {
     slug: 'como-vender-cupo-dolar',
-    title: 'Como Vender Cupo Dolar | DolarExpress',
-    description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+    title: 'Cómo Vender tu Cupo en Dólares Hoy | DolarExpress',
+    description: 'Aprende cómo vender tu cupo en dólares de forma segura y rápida. Las mejores tasas del mercado y transferencia en 15 minutos.'
   },
   {
     slug: 'compra-cupo-dolares',
@@ -664,8 +664,8 @@ export const pseoPages: PSEOPageData[] = [
   },
   {
     slug: 'cupo-dolar-como-funciona',
-    title: 'Cupo Dolar Como Funciona | DolarExpress',
-    description: 'Especialistas en compra y venta de cupo en dólares. Transferencia inmediata, segura y rápida.'
+    title: 'Cómo Funciona el Cupo en Dólares | DolarExpress',
+    description: 'Explicación completa: qué es el cupo en dólares y cómo funciona. Descubre cómo vender tu cupo internacional al mejor tipo de cambio.'
   },
   {
     slug: 'cupo-dolar-concepcion',

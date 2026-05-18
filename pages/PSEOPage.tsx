@@ -48,6 +48,7 @@ function detectRetailCard(slug: string): { key: string; name: string; fullName: 
 }
 
 function detectIntent(slug: string): string {
+  if (slug.startsWith('como-')) return 'como';
   if (slug.includes('sin-dicom')) return 'sin-dicom';
   if (slug.includes('con-dicom') || slug.includes('estoy-en-dicom') || slug.includes('tengo-dicom')) return 'con-dicom';
   if (slug.includes('urgente') || slug.includes('rapida') || slug.includes('mismo-dia') || slug.includes('al-instante') || slug.includes('inmediata')) return 'urgente';
@@ -120,6 +121,18 @@ function generateUniqueMeta(page: { slug: string; title: string; card?: string; 
 
   if (retailCard) {
     const intents: Record<string, { title: string; description: string }> = {
+      'como': {
+        title: lastPart.includes('liquidez') ? `Cómo Obtener Liquidez con Tarjeta ${retailCard.name} | DolarExpress` :
+               lastPart.includes('plata-si-no-tengo-avance') ? `Cómo Sacar Plata sin Avance Habilitado | DolarExpress` :
+               lastPart.includes('cupo-de-mi-tarjeta-sin-avance') ? `Cómo Usar el Cupo de tu Tarjeta ${retailCard.name} sin Avance | DolarExpress` :
+               lastPart.includes('vender-cupo-dolar') ? `Cómo Vender tu Cupo Dólar Hoy | DolarExpress` :
+               `Cómo Obtener Efectivo con Tarjeta ${retailCard.name} | DolarExpress`,
+        description: lastPart.includes('liquidez') ? `Aprende cómo obtener liquidez con tu tarjeta ${retailCard.name}. Te explicamos el proceso paso a paso para convertir tu cupo en efectivo en 15 minutos sin avance habilitado.` :
+                   lastPart.includes('plata-si-no-tengo-avance') ? `¿No tenés avance habilitado? Descubre cómo sacar plata con tu tarjeta de tienda usando el cupo de compras. DolarExpress te lo explica paso a paso.` :
+                   lastPart.includes('cupo-de-mi-tarjeta-sin-avance') ? `Guía completa: cómo usar el cupo de tu tarjeta ${retailCard.name} sin avance habilitado. Conoce las opciones para convertir tu cupo en efectivo hoy.` :
+                   lastPart.includes('vender-cupo-dolar') ? `Aprende cómo vender tu cupo en dólares de forma segura. DolarExpress te explica el proceso, tasas y cómo recibir tu dinero en minutos.` :
+                   `Cómo obtener efectivo de tu tarjeta ${retailCard.name}. Guía paso a paso para usar tu cupo de compras sin avance.`
+      },
       'sin-dicom': {
         title: `Préstamo Tarjeta ${retailCard.name} Sin Dicom | DolarExpress`,
         description: `¿Tenés tarjeta ${retailCard.name} y estás en DICOM? No importa tu historial. Solo necesitás cupo disponible. Recibís efectivo en 15 minutos.`
@@ -224,6 +237,23 @@ function generateUniqueContent(slug: string): { paragraph1: string; paragraph2: 
     const rc = retailCard;
 
     const contentByIntent: Record<string, { paragraph1: string; paragraph2: string; tip: string }> = {
+      'como': {
+        paragraph1: slug.includes('liquidez') ? `Obtener liquidez con tu tarjeta ${rc.fullName} es más simple de lo que pensás. ${rc.desc.charAt(0).toUpperCase() + rc.desc.slice(1)}. Si tenés cupo de compras disponible, podés convertirlo en efectivo hoy sin necesidad de tener avance habilitado. En DolarExpress somos especialistas en esto: hemos realizado miles de operaciones transformando cupo retail en pesos que llegan directamente a tu cuenta bancaria en menos de 15 minutos.` :
+                 slug.includes('plata-si-no-tengo-avance') ? `La mayoría de las tarjetas retail en Chile, como la ${rc.fullName}, no tienen avance en efectivo disponible para todos los clientes. Esto deja a miles de personas sin opciones para acceder a liquidez cuando la necesitan. Pero existe una solución: tu cupo de compras. DolarExpress convierte ese cupo en pesos chilenos sin que necesites tener avance habilitado.` :
+                 slug.includes('cupo-de-mi-tarjeta-sin-avance') ? `Tu tarjeta ${rc.fullName} tiene un cupo de compras entre ${rc.cupoRange} que podés usar normalmente en tiendas. Pero sabías que podés convertir ese mismo cupo en efectivo sin necesitar avance? En DolarExpress realizamos exactamente eso: usamos tu cupo de compras y te transferimos el equivalente en pesos a tu cuenta bancaria.` :
+                 slug.includes('vender-cupo-dolar') ? `Vender tu cupo en dólares nunca fue tan fácil. Si tenés una tarjeta con cupo internacional (Visa, Mastercard, Amex), ese cupo en dólares tiene valor real. En DolarExpress lo compramos todos los días a las mejores tasas del mercado. El proceso es simple: nos muestras tu saldo en dólares, acordamos la tasa, y recibes la transferencia en pesos en tu cuenta bancaria.` :
+                 `Tu tarjeta ${rc.fullName} es una herramienta financiera más poderosa de lo que creés. El cupo de compras entre ${rc.cupoRange} que tenés disponible puede convertirse en efectivo inmediato sin necesidad de avance bancario tradicional. DolarExpress es el especialista en Chile en esta operación.`,
+        paragraph2: slug.includes('liquidez') ? `El proceso es directo y seguro: (1) Contactanos por WhatsApp. (2) Nos mostrás el cupo disponible en tu app ${rc.name}. (3) Te damos la mejor tasa del mercado sin comisiones ocultas. (4) Ejecutamos la operación. (5) Recibís la transferencia en tu CuentaRUT o cuenta corriente en menos de 15 minutos. No pedimos liquidaciones, boletas ni aval. Solo cupo disponible y tus datos bancarios para transferencia.` :
+                 slug.includes('plata-si-no-tengo-avance') ? `Si no tenés avance habilitado en tu tarjeta ${rc.name}, el sistema bancario te dice que no podés sacar efectivo. Pero DolarExpress ofrece una alternativa real. Tu cupo de compras funciona diferente: lo usamos para efectuar una operación de compra y te transferimos el equivalente en pesos. El resultado es el mismo para vos: tenés efectivo en tu cuenta, sin pasar por el banco.` :
+                 slug.includes('cupo-de-mi-tarjeta-sin-avance') ? `El cupo de compras es diferente del avance en efectivo. El avance es una función bancaria que requiere habilitar, mientras que el cupo de compras ya está activo en tu tarjeta ${rc.name}. Con DolarExpress usamos ese cupo de compras para darte efectivo. No es transferencias ni movimientos normales de tu tarjeta: es una operación directa entre nosotros y vos. Transferencia en 15 minutos.` :
+                 slug.includes('vender-cupo-dolar') ? `Vender cupo dólar en DolarExpress es diferente a otras opciones. No necesitás ir a ningún lado ni compliar con requisitos bancarios complicados. Todo se maneja por WhatsApp: verificas tu saldo en dólares en tu app, nos dices qué monto querés vender, te mostramos la tasa, aceptás, ejecutamos y listo. La transferencia en pesos llega a tu cuenta en minutos. Operamos los 7 días de la semana, incluyendo feriados.` :
+                 `El cupo de tu tarjeta ${rc.name} no es solo para comprar: puede convertirse en efectivo inmediato. El proceso es completamente diferente a un préstamo bancario. No evaluamos historial, no pedimos documentos, no hacemos consultas a registros de deudores. Solo verificamos que tengas cupo disponible y ejecutamos la operación en minutos.`,
+        tip: slug.includes('liquidez') ? `${rc.fact}. La liquidez es crítica en situaciones inesperadas. Tener una tarjeta ${rc.name} con cupo disponible es como tener un fondo de emergencia instantáneo. Contacta a DolarExpress cualquier momento.` :
+             slug.includes('plata-si-no-tengo-avance') ? `Dato importante: no todos los bancos habilitaban avance para todos los clientes. Muchas personas con tarjetas retail en Chile no tienen acceso a avance. ${rc.fact}. Con DolarExpress, eso no es un problema porque trabajamos con el cupo de compras.` :
+             slug.includes('cupo-de-mi-tarjeta-sin-avance') ? `${rc.fact}. Tu tarjeta ${rc.name} es uno de tus activos financieros más valiosos. El cupo que te aprobaron está ahí para usarlo. Con DolarExpress lo convertís en efectivo cuando lo necesites.` :
+             slug.includes('vender-cupo-dolar') ? `Los tipos de cambio varían constantemente. Cuando tenés cupo en dólares y necesitas pesos, el tiempo es importante. DolarExpress te da la mejor cotización al momento de la operación, sin retrasos ni esperas. Recibís tu dinero en minutos.` :
+             `${rc.fact}. Muchos chilenos descubren DolarExpress cuando necesitan efectivo urgente y se dan cuenta de que su tarjeta ${rc.name} puede ser la solución.`
+      },
       'sin-dicom': {
         paragraph1: `La tarjeta ${rc.fullName} es ${rc.desc}. Muchas personas en DICOM tienen esta tarjeta con cupo disponible pero creen que no pueden acceder a efectivo. En DolarExpress rompemos ese mito: no revisamos tu historial crediticio ni tu situación en DICOM. Lo único que necesitás es tener cupo de compras disponible en tu tarjeta ${rc.name}.`,
         paragraph2: `El proceso es completamente diferente a un préstamo bancario. No hacemos consultas al DICOM, no pedimos liquidaciones de sueldo ni boletas de honorarios. Coordinamos todo por WhatsApp: vos nos mostrás el cupo disponible en tu app, nosotros usamos ese cupo y te transferimos el efectivo equivalente a tu CuentaRUT o cuenta corriente en menos de 15 minutos.`,
