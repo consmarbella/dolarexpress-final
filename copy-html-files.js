@@ -29,6 +29,9 @@ function copyFilesRecursive(src, dest) {
       const result = copyFilesRecursive(srcPath, destPath);
       copied += result.files;
       folders += result.folders;
+    } else if (entry.name === 'index.html' && src === publicDir) {
+      // Never overwrite root index.html — that's the React app entry point built by Vite
+      continue;
     } else if (entry.name.endsWith('.html')) {
       // 1. Copiar como carpeta/index.html (para rutas sin extensión)
       const baseName = entry.name.replace('.html', '');
