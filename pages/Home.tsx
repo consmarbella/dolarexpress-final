@@ -5,22 +5,20 @@ import Logo from '../components/Logo';
 
 const Home: React.FC = () => {
   const pageTitle = "DolarExpress | Compramos tu Cupo en Dólares | Efectivo al Instante";
-  const pageDescription = "Servicio de compra de cupo en dólares de tarjetas de crédito en Chile. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.";
+  const pageDescription = "Compramos tu cupo en dólares de tarjetas de crédito CMR, Ripley, Cencosud y bancos. Te transferimos a pesos en menos de 15 minutos. 100% online, sin filas.";
 
   const structuredData = [
     {
       "@context": "https://schema.org",
       "@type": "FinancialService",
       "name": "DolarExpress",
-      "description": "Servicio de compra de cupo en dólares de tarjetas de crédito. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.",
+      "description": pageDescription,
       "url": "https://dolarexpress.cl",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Chile"
-      },
+      "telephone": "+56967658939",
+      "areaServed": { "@type": "Country", "name": "Chile" },
       "currenciesAccepted": "CLP, USD",
-      "paymentAccepted": "Credit Card",
-      "priceRange": "$$"
+      "openingHours": "Mo-Su 09:00-21:00",
+      "sameAs": ["https://wa.me/56967658939"]
     },
     {
       "@context": "https://schema.org",
@@ -29,33 +27,31 @@ const Home: React.FC = () => {
         {
           "@type": "Question",
           "name": "¿Es legal vender mi cupo en dólares?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, es completamente legal. La venta de cupo internacional es una operación de compraventa de servicios o productos digitales. Usted utiliza su cupo para realizar una compra y nosotros le pagamos por ello. Es una transacción privada y legítima bajo la legislación chilena."
-          }
+          "acceptedAnswer": { "@type": "Answer", "text": "Sí, es completamente legal. Usas tu cupo para comprar en un comercio internacional y nosotros te pagamos en pesos chilenos. Es una operación privada legítima." }
         },
         {
           "@type": "Question",
-          "name": "¿Cuánto demora la transferencia a mi cuenta?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El proceso es inmediato. Una vez validada la operación de compra de cupo, la transferencia se realiza en menos de 15 minutos a su Cuenta RUT, Cuenta Corriente o Vista de cualquier banco en Chile."
-          }
+          "name": "¿Cuánto demora la transferencia?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Menos de 15 minutos desde que confirmas la operación. Trabajamos con transferencia inmediata a cualquier banco en Chile." }
         },
         {
           "@type": "Question",
-          "name": "¿Qué tarjetas aceptan para comprar cupo?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Compramos cupo de todas las tarjetas de crédito con cupo internacional emitidas en Chile, incluyendo CMR Falabella, Cencosud Scotiabank, Ripley, Lider Bci, y tarjetas bancarias (Banco de Chile, Santander, Itaú, Bci, etc.)."
-          }
+          "name": "¿Qué tarjetas aceptan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "CMR Falabella, Cencosud, Ripley, Líder BCI, La Polar, Hites, ABCDin y tarjetas bancarias (Banco de Chile, Santander, BCI, BancoEstado, Itaú, Scotiabank)." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Revisan DICOM?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Solo necesitas cupo disponible en tu tarjeta. No revisamos historial crediticio ni DICOM." }
         }
       ]
     }
   ];
 
+  const WA_URL = "https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20vender%20mi%20cupo";
+
   return (
-    <div className="min-h-screen flex flex-col font-sans text-[#1a1a1a]">
+    <div className="min-h-screen flex flex-col font-sans bg-white text-[#1a1a1a]">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -66,187 +62,190 @@ const Home: React.FC = () => {
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content="https://dolarexpress.cl/og-image.svg" />
         <meta property="og:site_name" content="DolarExpress" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
-      {/* Schema.org Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
       {/* Navbar */}
-      <nav className="fixed w-full z-50 bg-[#1a1a1a] shadow-sm border-b border-[#333]">
+      <nav className="fixed w-full z-50 bg-[#1a1a1a] shadow-lg">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-6xl">
-          <Link to="/" className="flex items-center gap-2" aria-label="Volver al inicio">
-            <Logo className="h-16 w-auto object-contain" />
+          <Link to="/" aria-label="DolarExpress inicio">
+            <Logo className="h-14 w-auto object-contain" />
           </Link>
-          <div className="flex gap-4 items-center">
-            <Link to="/" className="font-medium text-white hover:text-[#C8A045] transition-colors hidden md:block">
-              Inicio
-            </Link>
-            <a
-              href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20vender%20mi%20cupo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#C8A045] text-white px-5 py-2 rounded-lg font-bold hover:brightness-105 hover:-translate-y-0.5 transition-all shadow-md"
-            >
-              Vender Cupo
-            </a>
-          </div>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#C8A045] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:brightness-110 transition-all shadow-md"
+          >
+            Cotizar Ahora
+          </a>
         </div>
       </nav>
-      
-      {/* Hero Section */}
-      <header className="pt-36 pb-24 bg-[#1a1a1a] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] z-0"></div>
-        <div className="container mx-auto px-4 text-center z-10 relative max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Compramos tu Cupo en Dólares: <br />
-            <span className="text-[#C8A045]">Transferencia a tu Cuenta al Instante</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-10 opacity-90 text-gray-200">
-            ¿Necesitas efectivo? <strong>Compramos tu cupo dólar</strong> con la mejor tasa del mercado. Transferencias seguras en minutos a todo Chile.
-          </p>
-          <div className="flex justify-center gap-4">
-            <a
-              href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20vender%20mi%20cupo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#C8A045] text-white text-lg px-10 py-4 rounded-xl font-bold hover:shadow-[0_0_25px_rgba(200,160,69,0.5)] transition-all transform hover:scale-105"
-            >
-              Quiero Vender mi Cupo
-            </a>
+
+      {/* Hero */}
+      <header className="pt-28 pb-20 bg-[#1a1a1a] text-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-block bg-[#C8A045]/20 text-[#C8A045] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+                Servicio 100% online · Lunes a domingo
+              </div>
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                Compramos tu Cupo en Dólares.<br />
+                <span className="text-[#C8A045]">Te transferimos en 15 min.</span>
+              </h1>
+              <p className="text-gray-300 text-lg mb-8 max-w-xl">
+                Tienes cupo en dólares en tu tarjeta CMR, Ripley, Cencosud o bancaria y necesitas efectivo. Coordinamos todo por WhatsApp y el dinero llega a tu cuenta al instante.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white text-lg px-8 py-4 rounded-xl font-bold hover:bg-[#20ba5a] transition-all shadow-lg"
+                >
+                  <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                  Cotizar por WhatsApp
+                </a>
+              </div>
+              <p className="text-gray-500 text-sm mt-4">Respuesta en menos de 2 minutos · Comisión 15%</p>
+            </div>
+
+            {/* Info Box */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:w-72 w-full">
+              <div className="space-y-4">
+                {[
+                  { label: "Tiempo de transferencia", value: "< 15 minutos" },
+                  { label: "Comisión", value: "15% del monto" },
+                  { label: "Monto mínimo", value: "USD 200" },
+                  { label: "Revisan DICOM", value: "No" },
+                  { label: "Horario", value: "Lun–Dom 9–21h" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex justify-between items-center border-b border-white/10 pb-3 last:border-0 last:pb-0">
+                    <span className="text-gray-400 text-sm">{label}</span>
+                    <span className="text-white font-semibold text-sm">{value}</span>
+                  </div>
+                ))}
+              </div>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+                className="mt-6 w-full block text-center bg-[#C8A045] text-white font-bold py-3 rounded-xl hover:brightness-110 transition-all text-sm">
+                Iniciar operación →
+              </a>
+            </div>
           </div>
         </div>
       </header>
-      
-      {/* Trust Section */}
-      <section className="py-10 bg-white border-b border-gray-100" aria-label="Tarjetas aceptadas">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <p className="text-center text-gray-400 text-sm font-semibold uppercase tracking-wider mb-8">Compramos cupo de todas estas tarjetas</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
-            <span className="text-2xl font-bold text-[#1A1F71]">VISA</span>
-            <span className="text-2xl font-bold text-[#EB001B]">Mastercard</span>
-            <span className="text-2xl font-bold text-[#007F3E]">CMR Falabella</span>
-            <span className="text-2xl font-bold text-[#00519E]">Cencosud</span>
-            <span className="text-2xl font-bold text-[#672C91]">Ripley</span>
+
+      {/* Cómo funciona */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-2xl font-bold text-center mb-12">¿Cómo funciona?</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { n: "1", title: "Escríbenos", desc: "Contáctanos por WhatsApp con el monto en dólares que tienes disponible." },
+              { n: "2", title: "Cotización al instante", desc: "Te enviamos cuánto recibirás en pesos chilenos. Tasa clara, sin sorpresas." },
+              { n: "3", title: "Autorizas la operación", desc: "Usas tu tarjeta para procesar la compra. Tú controlas todo el proceso." },
+              { n: "4", title: "Recibes tu dinero", desc: "Transferimos a tu cuenta bancaria en menos de 15 minutos." },
+            ].map(({ n, title, desc }) => (
+              <div key={n} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
+                <div className="w-10 h-10 bg-[#C8A045] text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">{n}</div>
+                <h3 className="font-bold mb-2">{title}</h3>
+                <p className="text-sm text-gray-600">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      
-      {/* Main Content & SEO Strategy */}
-      <main className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl text-gray-700 leading-relaxed">
-          <article>
-            <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6">¿Cómo cambiar cupo dólar a pesos chilenos?</h2>
-            <p className="mb-6 text-lg">
-              Si estás buscando <strong>dónde compran cupo en dólares</strong> de forma segura y rápida, DolarExpress es tu solución. Nos especializamos en la <strong>compra de cupo internacional</strong> de tarjetas de crédito, permitiéndote transformar ese saldo digital en dinero en efectivo (transferencia bancaria) sin los altos intereses de un avance en efectivo tradicional.
-            </p>
-            <p className="mb-6">
-               Nuestro servicio es ideal para obtener liquidez inmediata utilizando el cupo disponible de tu tarjeta de crédito Visa o Mastercard emitida en Chile.
-            </p>
 
-            <div className="grid md:grid-cols-3 gap-6 my-12">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#C8A045] text-lg mb-2">1. Cotiza tu Cupo</h3>
-                <p className="text-sm">Indícanos el monto en dólares que deseas vender. Te daremos una cotización transparente en pesos chilenos al instante.</p>
+      {/* Tarjetas aceptadas */}
+      <section className="py-14 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-2xl font-bold text-center mb-10">Tarjetas que compramos</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { name: "CMR Falabella", color: "bg-green-50 text-green-800 border-green-200" },
+              { name: "Ripley", color: "bg-purple-50 text-purple-800 border-purple-200" },
+              { name: "Cencosud", color: "bg-blue-50 text-blue-800 border-blue-200" },
+              { name: "Líder BCI", color: "bg-yellow-50 text-yellow-800 border-yellow-200" },
+              { name: "La Polar", color: "bg-red-50 text-red-800 border-red-200" },
+              { name: "Hites", color: "bg-orange-50 text-orange-800 border-orange-200" },
+              { name: "Banco de Chile", color: "bg-sky-50 text-sky-800 border-sky-200" },
+              { name: "Santander", color: "bg-red-50 text-red-800 border-red-200" },
+              { name: "BCI", color: "bg-blue-50 text-blue-800 border-blue-200" },
+              { name: "BancoEstado", color: "bg-green-50 text-green-800 border-green-200" },
+              { name: "Itaú", color: "bg-orange-50 text-orange-800 border-orange-200" },
+              { name: "Scotiabank", color: "bg-red-50 text-red-800 border-red-200" },
+            ].map(({ name, color }) => (
+              <div key={name} className={`border rounded-lg px-4 py-3 text-center text-sm font-semibold ${color}`}>
+                {name}
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#C8A045] text-lg mb-2">2. Verificación Segura</h3>
-                <p className="text-sm">Validamos la operación mediante una pasarela segura para proteger tu identidad y prevenir fraudes.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#C8A045] text-lg mb-2">3. Recibe tus Pesos</h3>
-                <p className="text-sm">Transferimos el dinero a tu cuenta bancaria (RUT, Corriente, Vista) en menos de 15 minutos.</p>
-              </div>
-            </div>
-
-            <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6 mt-16">Tarjetas de Crédito Compatibles</h2>
-            <p className="mb-6">
-              Aceptamos la mayoría de las tarjetas bancarias y del retail para la <strong>compra de cupo dólar</strong>. Las operaciones más frecuentes incluyen:
-            </p>
-            <ul className="list-disc pl-6 mb-8 space-y-2">
-              <li><strong>Venta de cupo CMR Falabella:</strong> Convierte tu cupo internacional CMR en efectivo hoy.</li>
-              <li><strong>Cambiar cupo Cencosud Scotiabank:</strong> Usa tu tarjeta Jumbo/Easy para obtener liquidez.</li>
-              <li><strong>Banco Ripley y Lider Bci:</strong> También compramos cupo de estas tarjetas retail.</li>
-              <li><strong>Bancos Tradicionales:</strong> Banco de Chile, Santander, Itaú, BancoEstado, Edwards, Security y Bice.</li>
-            </ul>
-
-            <h2 className="text-3xl font-bold text-[#1a1a1a] mb-6 mt-16">Seguridad en la Venta de Cupo</h2>
-            <p className="mb-6">
-              Entendemos que la seguridad es fundamental. Al realizar la <strong>venta de tu cupo en dólares</strong> con nosotros, operas bajo un modelo transparente y legal. Utilizamos tecnología SSL de 256 bits y nunca almacenamos los códigos de seguridad de tu tarjeta. Evita riesgos informales y opera con expertos en transacciones digitales.
-            </p>
-          </article>
+            ))}
+          </div>
         </div>
-      </main>
-      
-      {/* FAQ Section */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-center text-[#1a1a1a] mb-12">Preguntas Frecuentes sobre Compra de Cupo</h2>
-          <div className="space-y-6">
-            <details className="group bg-gray-50 rounded-xl p-6 cursor-pointer">
-              <summary className="font-bold text-lg text-[#1a1a1a] list-none flex justify-between items-center">
-                ¿Es legal vender mi cupo en dólares?
-                <span className="text-[#C8A045] transform group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <div className="text-gray-600 mt-4 leading-relaxed">
-                <p>Sí, es completamente legal. Es una operación privada de compraventa de servicios digitales donde tú usas tu cupo internacional y nosotros te pagamos en pesos chilenos.</p>
-              </div>
-            </details>
-            <details className="group bg-gray-50 rounded-xl p-6 cursor-pointer">
-              <summary className="font-bold text-lg text-[#1a1a1a] list-none flex justify-between items-center">
-                ¿Cuánto demora la transferencia?
-                <span className="text-[#C8A045] transform group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <div className="text-gray-600 mt-4 leading-relaxed">
-                <p>Generalmente menos de 15 minutos en horario hábil una vez validada la operación. Trabajamos con transferencia inmediata a la mayoría de bancos.</p>
-              </div>
-            </details>
-            <details className="group bg-gray-50 rounded-xl p-6 cursor-pointer">
-              <summary className="font-bold text-lg text-[#1a1a1a] list-none flex justify-between items-center">
-                ¿Compran cupo de todas las tarjetas?
-                <span className="text-[#C8A045] transform group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <div className="text-gray-600 mt-4 leading-relaxed">
-                <p>Compramos cupo de tarjetas de crédito VISA y Mastercard emitidas en Chile que tengan cupo internacional disponible (cupo en dólares). Esto incluye CMR, Cencosud, Ripley y banca tradicional.</p>
-              </div>
-            </details>
+          <h2 className="text-2xl font-bold text-center mb-10">Preguntas frecuentes</h2>
+          <div className="space-y-3">
+            {[
+              { q: "¿Es legal vender mi cupo en dólares?", a: "Sí, es completamente legal. Usas tu cupo para comprar en un comercio y nosotros te pagamos en pesos. Es una operación privada entre particulares." },
+              { q: "¿Revisan mi DICOM o historial?", a: "No revisamos DICOM ni historial crediticio. Solo necesitas tener cupo disponible en tu tarjeta." },
+              { q: "¿Cuánto demora la transferencia?", a: "Menos de 15 minutos desde que confirmas la operación. En horario bancario puede ser incluso más rápido." },
+              { q: "¿Cuál es la comisión?", a: "15% del monto. Si tienes USD 1.000 de cupo, recibes el equivalente a USD 850 en pesos chilenos al tipo de cambio del día." },
+              { q: "¿Necesito ir a alguna sucursal?", a: "No. Todo el proceso es 100% online coordinado por WhatsApp. Puedes hacerlo desde tu casa o desde cualquier lugar de Chile." },
+            ].map(({ q, a }) => (
+              <details key={q} className="bg-white border border-gray-200 rounded-xl group">
+                <summary className="px-6 py-4 font-semibold cursor-pointer list-none flex justify-between items-center hover:bg-gray-50 transition-colors">
+                  {q}
+                  <span className="text-[#C8A045] text-lg transition-transform group-open:rotate-180 shrink-0 ml-4">▼</span>
+                </summary>
+                <div className="px-6 pb-4 text-gray-600 text-sm leading-relaxed">{a}</div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
-      
+
+      {/* CTA Final */}
+      <section className="py-16 bg-[#1a1a1a] text-white text-center">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <h2 className="text-3xl font-bold mb-4">¿Listo para cotizar?</h2>
+          <p className="text-gray-400 mb-8">Escríbenos ahora. Te respondemos en menos de 2 minutos con el monto exacto que recibirás.</p>
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#25D366] text-white text-lg px-10 py-4 rounded-xl font-bold hover:bg-[#20ba5a] transition-all shadow-lg">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-[#1a1a1a] text-white py-12 mt-auto border-t border-[#333]">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <div className="relative w-40 h-16 mx-auto mb-6 opacity-90 flex justify-center items-center">
-            <Logo className="h-full w-auto object-contain brightness-0 invert" lightMode={false} />
-          </div>
-          <div className="flex justify-center gap-6 mb-8 text-sm text-gray-400">
-            <a href="#" className="hover:text-[#C8A045]">Términos y Condiciones</a>
-            <a href="#" className="hover:text-[#C8A045]">Política de Privacidad</a>
-            <a href="#" className="hover:text-[#C8A045]">Contacto</a>
-          </div>
-          <p className="text-xs text-gray-500 max-w-lg mx-auto leading-relaxed">
-            © {new Date().getFullYear()} DolarExpress. Servicios financieros digitales líderes en Chile.
-            <br />Especialistas en compra de cupo dólar de manera segura.
+      <footer className="bg-[#111] text-gray-500 py-8 text-center text-sm">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <Logo className="h-10 w-auto object-contain mx-auto mb-4 opacity-60 brightness-0 invert" lightMode={false} />
+          <p>© {new Date().getFullYear()} DolarExpress.cl — Servicio de compra de cupo en dólares.</p>
+          <p className="mt-1">
+            <a href="https://wa.me/56967658939" className="hover:text-[#C8A045] transition-colors">WhatsApp</a>
+            {" · "}
+            <a href="/directorio-general" className="hover:text-[#C8A045] transition-colors">Directorio</a>
           </p>
         </div>
       </footer>
-      
-      {/* WhatsApp Button Fixed */}
-      <a
-        href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20vender%20mi%20cupo"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#20ba5a] transition-colors md:hover:scale-110 md:animate-none animate-pulse-custom"
-        aria-label="Contactar por WhatsApp para vender cupo"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+
+      {/* WhatsApp flotante */}
+      <a href={WA_URL} target="_blank" rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:bg-[#20ba5a] transition-colors"
+        aria-label="Contactar por WhatsApp">
+        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
       </a>
     </div>
