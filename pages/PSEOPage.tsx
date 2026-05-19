@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { pseoPages } from '../src/data/pseo-data.ts';
 import Logo from '../components/Logo';
 
@@ -368,32 +369,6 @@ const PSEOPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const pageData = pseoPages.find(p => p.slug === slug);
 
-  useEffect(() => {
-    if (pageData) {
-      const meta = generateUniqueMeta(pageData);
-      document.title = meta.title;
-
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute('content', meta.description);
-      } else {
-        const m = document.createElement('meta');
-        m.name = 'description';
-        m.content = meta.description;
-        document.head.appendChild(m);
-      }
-
-      // Canonical
-      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        document.head.appendChild(canonical);
-      }
-      canonical.href = `https://dolarexpress.cl/${pageData.slug}`;
-    }
-  }, [pageData]);
-
   if (!pageData) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#1a1a1a] text-white">
@@ -435,6 +410,21 @@ const PSEOPage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-[#1a1a1a]">
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <link rel="canonical" href={`https://dolarexpress.cl/${pageData.slug}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://dolarexpress.cl/${pageData.slug}`} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content="https://dolarexpress.cl/og-image.svg" />
+        <meta property="og:site_name" content="DolarExpress" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+      </Helmet>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

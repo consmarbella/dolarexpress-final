@@ -1,36 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Logo from '../components/Logo';
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    document.title = "DolarExpress | Compramos tu Cupo en Dólares | Efectivo al Instante";
-
-    // Canonical de la home
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://dolarexpress.cl/';
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const description = "Servicio de compra de cupo en dólares de tarjetas de crédito en Chile. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.";
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = description;
-      document.head.appendChild(meta);
-
-                  const bingMeta = document.createElement('meta');
-                  bingMeta.name = 'msvalidate.01';
-                  bingMeta.content = '48D05AE35E1829A92FF3852D903F02A';
-                  document.head.appendChild(bingMeta);
-    }
-  }, []);
+  const pageTitle = "DolarExpress | Compramos tu Cupo en Dólares | Efectivo al Instante";
+  const pageDescription = "Servicio de compra de cupo en dólares de tarjetas de crédito en Chile. Te compramos tu cupo internacional y te transferimos a pesos chilenos al instante.";
 
   const structuredData = [
     {
