@@ -56,6 +56,21 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-[#1a1a1a]">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href="https://dolarexpress.cl/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dolarexpress.cl/" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content="https://dolarexpress.cl/og-image.svg" />
+        <meta property="og:site_name" content="DolarExpress" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+      </Helmet>
+
       {/* Schema.org Injection */}
       <script
         type="application/ld+json"

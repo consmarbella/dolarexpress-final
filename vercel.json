@@ -44,16 +44,6 @@
       "handle": "filesystem"
     },
     {
-      "src": "/([^/]+)/([^/]+)/?$",
-      "dest": "/$1/$2/index.html",
-      "check": true
-    },
-    {
-      "src": "/([^/]+)/?$",
-      "dest": "/$1/index.html",
-      "check": true
-    },
-    {
       "src": "^/venta-usd/?$",
       "dest": "/index.html"
     },
