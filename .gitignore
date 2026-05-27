@@ -6,3 +6,16 @@ __pycache__/
 agents/pdfs_do/
 *.png
 *.zip
+dist
+dist-ssr
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vercel

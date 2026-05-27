@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Allow: /public/
+Allow: /documentos/
+Allow: /assets/
+Allow: /src/
+
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /*?*
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /worker/
+
+Sitemap: https://dolarexpress.cl/sitemap.xml
+
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

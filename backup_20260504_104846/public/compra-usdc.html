@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia tus USD a CLP | DolarExpress</title>
+    <meta name="description" content="Usa tu cupo internacional para obtener pesos chilenos al instante">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0f;
+            color: #e8e8f0;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(180deg, #0a0a0f 0%, #14141a 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .highlight {
+            background: linear-gradient(135deg, #5f41ff 0%, #8b7aff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #7a7a91;
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .checkout-wrapper {
+            background: #111116;
+            border: 1px solid rgba(95, 65, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .checkout-iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
+        .info-banner {
+            background: rgba(95, 65, 255, 0.1);
+            border: 1px solid rgba(95, 65, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-banner .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-banner p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #b8b8d1;
+        }
+
+        .steps {
+            max-width: 800px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: #14141a;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #5f41ff 0%, #8b7aff 100%);
+            border-radius: 50%;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 36px;
+            margin-bottom: 0.75rem;
+        }
+
+        .step h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #e8e8f0;
+        }
+
+        .step p {
+            font-size: 0.8rem;
+            color: #7a7a91;
+            line-height: 1.4;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #4a4a5e;
+            font-size: 0.75rem;
+        }
+
+        .footer a {
+            color: #5f41ff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-iframe {
+                height: 650px;
+            }
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Cambia tus <span class="highlight">USD</span> a <span class="highlight">CLP</span></h1>
+        <p>Usa tu cupo internacional para obtener pesos chilenos al instante</p>
+    </div>
+
+    <div class="checkout-container">
+        <div class="info-banner">
+            <div class="icon">💳</div>
+            <p>
+                <strong>Tu wallet ya está configurada.</strong> Solo elige el monto que quieres comprar, 
+                completa el pago con tu tarjeta y recibirás tus USDC automáticamente. 
+                Nosotros te pagamos los CLP equivalentes.
+            </p>
+        </div>
+
+        <div class="checkout-wrapper">
+            <iframe 
+                class="checkout-iframe"
+                src="https://checkout.banxa.com/?fiatType=USD&coinType=USDC&walletAddress=0x90de0ca2156a9386367f1ae69b8da8db042cc40a&blockchain=ETH&orderMode=BUY"
+                allow="camera; payment"
+                title="Checkout Banxa">
+            </iframe>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Elige monto</h3>
+                <p>Selecciona cuántos USD quieres usar de tu cupo internacional</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Paga con tarjeta</h3>
+                <p>Completa el pago seguro con tu tarjeta de crédito internacional</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Recibe CLP</h3>
+                <p>Te transferimos los pesos chilenos a tu cuenta en minutos</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 <a href="https://www.dolarexpress.cl">DolarExpress</a> — Procesamiento seguro powered by Banxa
+    </div>
+
+</body>
+</html>

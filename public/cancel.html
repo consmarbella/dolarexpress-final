@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Cancelado - DolarExpress</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: white; border-radius: 20px; padding: 40px;
+            max-width: 420px; width: 100%; text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        .icon { font-size: 64px; margin-bottom: 16px; }
+        h1 { font-size: 24px; color: #1a1a2e; margin-bottom: 8px; }
+        p { color: #666; line-height: 1.6; margin-bottom: 24px; }
+        .btn {
+            display: inline-block; padding: 14px 32px;
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: white; border-radius: 12px; text-decoration: none;
+            font-weight: 600; transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">↩️</div>
+        <h1>Transacción Cancelada</h1>
+        <p>Has cancelado la transacción.<br>No se ha realizado ningún cargo.<br>Puedes intentarlo nuevamente cuando quieras.</p>
+        <a href="/pagar" class="btn">Intentar de nuevo</a>
+    </div>
+</body>
+</html>
