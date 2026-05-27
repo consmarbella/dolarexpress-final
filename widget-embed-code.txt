@@ -1,0 +1,61 @@
+========================================
+ WIDGET "Compra BTC" - DolarExpress
+========================================
+
+ESTRATEGIA
+----------
+El widget muestra "Compra BTC" para que el cliente vea el valor en Bitcoin,
+que es difícil de calcular y comparar. Internamente:
+
+1. El cliente paga USD con tarjeta
+2. Guardarian convierte USD → BTC
+3. Los BTC se envían a la wallet de DolarExpress
+4. Tú recibes BTC en tu wallet de Binance
+
+Wallet destino: 15FxSPQd3t8JZ8TYuCb3rQJt2WfgaZFfN9 (BTC)
+
+ARCHIVOS HTML (no necesitan servidor)
+-------------------------------------
+
+1. widget-venta-usd.html → Widget completo con calculadora y botón
+   - Abrir directamente en el navegador
+   - Hace llamadas directas a la API de Guardarian
+   - Muestra tasa en tiempo real, comisiones, y wallet destino
+   - Al hacer clic en "Comprar BTC ahora" crea la transacción y redirige al checkout
+
+2. widget-dolarexpress.html → Widget con iframe de Guardarian
+   - Abrir directamente en el navegador
+   - Muestra el calculator de Guardarian dentro de un iframe
+   - Incluye la wallet para copiar y pegar en el checkout
+   - Más simple, el usuario interactúa directamente con Guardarian
+
+CÓMO USAR
+---------
+1. Abre cualquiera de los dos HTML directamente en el navegador
+   (doble clic en el archivo)
+2. Ingresa el monto en USD
+3. Haz clic en "Comprar BTC ahora"
+4. Serás redirigido al checkout de Guardarian
+5. En el checkout, pega la dirección: 15FxSPQd3t8JZ8TYuCb3rQJt2WfgaZFfN9
+6. Completa el pago con tarjeta
+
+NOTA: La API Key está visible en el frontend porque es la misma
+que se usa en el iframe de Guardarian. Es una key de partner.
+
+CÓDIGO PARA EMBEBER EN CUALQUIER SITIO
+---------------------------------------
+<div id="dolarexpress-widget"></div>
+<script>
+(function() {
+    var container = document.getElementById('dolarexpress-widget');
+    if (!container) return;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'widget-venta-usd.html'; // o la URL donde esté alojado
+    iframe.style.width = '100%';
+    iframe.style.maxWidth = '480px';
+    iframe.style.height = '600px';
+    iframe.style.border = 'none';
+    iframe.style.borderRadius = '12px';
+    container.appendChild(iframe);
+})();
+</script>

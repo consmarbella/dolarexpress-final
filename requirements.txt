@@ -1,0 +1,17 @@
+# pSEO Pipeline — LangGraph Stack con Gemini
+# Instalar con: pip install -r requirements.txt
+
+# ── Orquestación ──────────────────────────────────────────────────────────────
+langgraph>=0.2.0
+langchain-core>=0.3.0
+
+# ── IA (Gemini) ───────────────────────────────────────────────────────────────
+google-generativeai>=0.8.0
+
+# ── Scraping ──────────────────────────────────────────────────────────────────
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# ── Utilidades ────────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0

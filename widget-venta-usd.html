@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra BTC - DolarExpress</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f7931a 0%, #e67e22 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .widget-container {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 32px;
+            max-width: 480px;
+            width: 100%;
+        }
+        .widget-header { text-align: center; margin-bottom: 24px; }
+        .widget-header .logo { font-size: 42px; margin-bottom: 6px; }
+        .widget-header h1 { font-size: 24px; color: #1a1a2e; font-weight: 800; }
+        .widget-header p { font-size: 14px; color: #888; margin-top: 4px; }
+        
+        .rate-banner {
+            background: linear-gradient(135deg, #f7931a 0%, #e67e22 100%);
+            color: white; padding: 16px; border-radius: 14px; text-align: center; margin-bottom: 24px;
+        }
+        .rate-banner .rate { font-size: 28px; font-weight: 700; }
+        .rate-banner .rate-label { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+        
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; }
+        .input-wrapper {
+            display: flex; align-items: center;
+            border: 2px solid #e0e0e0; border-radius: 12px; transition: border-color 0.2s; overflow: hidden;
+        }
+        .input-wrapper:focus-within { border-color: #f7931a; }
+        .input-wrapper .currency-badge {
+            background: #f0f2f5; padding: 12px 16px; font-weight: 700; font-size: 14px;
+            color: #333; min-width: 60px; text-align: center;
+        }
+        .input-wrapper input {
+            flex: 1; padding: 14px 16px; border: none; outline: none; font-size: 18px;
+            font-weight: 600; color: #1a1a2e; background: transparent; width: 100%;
+        }
+        .input-wrapper input::placeholder { color: #ccc; }
+        
+        .swap-icon { text-align: center; margin: 6px 0; font-size: 22px; color: #f7931a; }
+        
+        .result-box {
+            background: #f8f9fa; border-radius: 12px; padding: 16px;
+            margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .result-box .label { font-size: 13px; color: #888; }
+        .result-box .amount { font-size: 24px; font-weight: 700; color: #1a1a2e; }
+        .result-box .amount .currency { font-size: 14px; font-weight: 600; color: #f7931a; }
+        
+        .fees-breakdown {
+            background: #fff8e1; border: 1px solid #ffe082; border-radius: 10px;
+            padding: 12px 14px; margin-bottom: 18px; font-size: 12px;
+        }
+        .fees-breakdown .fee-row {
+            display: flex; justify-content: space-between; padding: 3px 0; color: #795548;
+        }
+        .fees-breakdown .fee-row.total {
+            border-top: 1px solid #ffe082; margin-top: 4px; padding-top: 6px;
+            font-weight: 700; color: #e65100;
+        }
+        .fees-breakdown .fee-row .value { font-weight: 600; }
+        
+        .wallet-box {
+            background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 12px;
+            padding: 14px; margin-bottom: 18px;
+        }
+        .wallet-box .title { font-size: 12px; color: #2e7d32; font-weight: 600; margin-bottom: 6px; }
+        .wallet-box .address {
+            font-family: 'Courier New', monospace; font-size: 12px; color: #1b5e20;
+            word-break: break-all; background: white; padding: 8px 10px;
+            border-radius: 6px; border: 1px solid #c8e6c9; user-select: all;
+        }
+        
+        .btn-primary {
+            width: 100%; padding: 16px;
+            background: linear-gradient(135deg, #f7931a 0%, #e67e22 100%);
+            color: white; border: none; border-radius: 12px; font-size: 16px;
+            font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(247, 147, 26, 0.4); }
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .btn-primary .spinner {
+            display: inline-block; width: 20px; height: 20px;
+            border: 2px solid rgba(255,255,255,0.3); border-top-color: white;
+            border-radius: 50%; animation: spin 0.8s linear infinite;
+            vertical-align: middle; margin-right: 8px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .error-msg {
+            background: #ffebee; color: #c62828; padding: 12px; border-radius: 8px;
+            font-size: 13px; margin-bottom: 16px; display: none;
+        }
+        .error-msg.show { display: block; }
+        
+        .email-input { margin-bottom: 18px; }
+        .email-input input {
+            width: 100%; padding: 14px 16px; border: 2px solid #e0e0e0;
+            border-radius: 12px; font-size: 14px; outline: none; transition: border-color 0.2s;
+        }
+        .email-input input:focus { border-color: #f7931a; }
+        
+        .disclaimer { margin-top: 16px; font-size: 11px; color: #bbb; text-align: center; line-height: 1.4; }
+        
+        @media (max-width: 480px) {
+            .widget-container { padding: 24px 18px; }
+            .widget-header h1 { font-size: 20px; }
+            .rate-banner .rate { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="widget-header">
+            <div class="logo">₿</div>
+            <h1>Compra BTC</h1>
+            <p>Paga con tu tarjeta y recibe Bitcoin al instante</p>
+        </div>
+
+        <div class="rate-banner">
+            <div class="rate" id="exchangeRate">Cargando tasa...</div>
+            <div class="rate-label">Tasa estimada • 1 USD → BTC</div>
+        </div>
+
+        <div class="error-msg" id="errorMessage"></div>
+
+        <form id="exchangeForm">
+            <div class="form-group">
+                <label>Monto en USD</label>
+                <div class="input-wrapper">
+                    <span class="currency-badge">USD</span>
+                    <input type="number" id="amountUSD" placeholder="0.00" min="20" step="0.01" required autofocus>
+                </div>
+            </div>
+
+            <div class="swap-icon">⬇️</div>
+
+            <div class="result-box">
+                <div>
+                    <div class="label">Recibirás aproximadamente</div>
+                    <div class="amount">
+                        <span id="amountBTC">0</span>
+                        <span class="currency">BTC</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fees-breakdown" id="feesBreakdown">
+                <div class="fee-row">
+                    <span>Tasa de cambio</span>
+                    <span class="value" id="feeRate">1 USD → BTC</span>
+                </div>
+                <div class="fee-row">
+                    <span>Comisión de servicio (0.5%)</span>
+                    <span class="value" id="feeService">$0.00 USD</span>
+                </div>
+                <div class="fee-row">
+                    <span>Comisión de red Bitcoin</span>
+                    <span class="value" id="feeNetwork">0.0000035 BTC</span>
+                </div>
+                <div class="fee-row total">
+                    <span>Costo total estimado</span>
+                    <span class="value" id="feeTotal">~0%</span>
+                </div>
+            </div>
+
+            <div class="email-input">
+                <label style="display:block;font-size:13px;font-weight:600;color:#555;margin-bottom:6px;">
+                    Tu email (para recibir confirmación)
+                </label>
+                <input type="email" id="email" placeholder="tucorreo@ejemplo.com">
+            </div>
+
+            <div class="wallet-box">
+                <div class="title">🔒 Los BTC se depositan en esta wallet (fija)</div>
+                <div class="address">15FxSPQd3t8JZ8TYuCb3rQJt2WfgaZFfN9</div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="btnSubmit">
+                ₿ Comprar BTC ahora
+            </button>
+        </form>
+
+        <div class="disclaimer">
+            Al continuar, aceptas los Términos y Condiciones de Guardarian.
+            Los BTC se envían automáticamente a la wallet de DolarExpress.
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // CONFIGURACIÓN
+        // ============================================================
+        const API_KEY = 'aba29bc3-2e85-481c-8e62-f409d0561684';
+        const API_BASE = 'https://api-payments.guardarian.com/v1';
+        const WALLET = '15FxSPQd3t8JZ8TYuCb3rQJt2WfgaZFfN9';
+        const MIN_USD = 20;
+        const MAX_USD = 29000;
+
+        // ============================================================
+        // DOM
+        // ============================================================
+        const amountUSD = document.getElementById('amountUSD');
+        const amountBTC = document.getElementById('amountBTC');
+        const exchangeRate = document.getElementById('exchangeRate');
+        const form = document.getElementById('exchangeForm');
+        const btnSubmit = document.getElementById('btnSubmit');
+        const errorMsg = document.getElementById('errorMessage');
+        const feeRate = document.getElementById('feeRate');
+        const feeService = document.getElementById('feeService');
+        const feeNetwork = document.getElementById('feeNetwork');
+        const feeTotal = document.getElementById('feeTotal');
+
+        let currentRate = 0.00001248;
+        let currentServiceFee = 0.5;
+        let currentNetworkFee = 0.0000035;
+
+        // ============================================================
+        // CARGAR TASA DESDE API DE GUARDARIAN
+        // ============================================================
+        async function loadRate() {
+            try {
+                const res = await fetch(`${API_BASE}/estimate?from_currency=USD&to_currency=BTC&from_network=USD&to_network=BTC&from_amount=100`, {
+                    headers: {
+                        'Accept': 'application/json',
+                        'x-api-key': API_KEY
+                    }
+                });
+                const data = await res.json();
+                if (data.estimated_exchange_rate) {
+                    currentRate = parseFloat(data.estimated_exchange_rate);
+                    currentServiceFee = parseFloat(data.service_fees?.[0]?.amount) || 0.5;
+                    currentNetworkFee = parseFloat(data.network_fee?.amount) || 0.0000035;
+                }
+            } catch(e) {
+                console.log('Usando tasa por defecto');
+            }
+            exchangeRate.textContent = `1 USD ≈ ${currentRate.toFixed(8)} BTC`;
+            calculateFees();
+        }
+        loadRate();
+
+        // ============================================================
+        // CÁLCULO EN TIEMPO REAL
+        // ============================================================
+        amountUSD.addEventListener('input', calculateFees);
+
+        function calculateFees() {
+            const usd = parseFloat(amountUSD.value) || 0;
+            
+            const serviceFeeUSD = usd * 0.005;
+            const usdAfterService = usd - serviceFeeUSD;
+            const btcAfterService = usdAfterService * currentRate;
+            const btcFinal = Math.max(0, btcAfterService - currentNetworkFee);
+            
+            amountBTC.textContent = btcFinal.toFixed(8);
+            
+            feeRate.textContent = `1 USD → ${currentRate.toFixed(8)} BTC`;
+            feeService.textContent = `$${serviceFeeUSD.toFixed(2)} USD`;
+            feeNetwork.textContent = `${currentNetworkFee.toFixed(8)} BTC`;
+            
+            if (usd > 0) {
+                const totalCostUSD = usd - (btcFinal / currentRate);
+                const totalPct = (totalCostUSD / usd) * 100;
+                feeTotal.textContent = `~${totalPct.toFixed(1)}% (≈ $${totalCostUSD.toFixed(2)} USD)`;
+            } else {
+                feeTotal.textContent = '~0%';
+            }
+        }
+
+        // ============================================================
+        // CREAR TRANSACCIÓN EN GUARDARIAN
+        // ============================================================
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const from_amount = parseFloat(amountUSD.value);
+            const email = document.getElementById('email').value;
+
+            if (!from_amount || from_amount < MIN_USD) {
+                showError(`El monto mínimo es $${MIN_USD} USD`);
+                return;
+            }
+            if (from_amount > MAX_USD) {
+                showError(`El monto máximo es $${MAX_USD.toLocaleString()} USD`);
+                return;
+            }
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<span class="spinner"></span> Creando transacción...';
+            hideError();
+
+            try {
+                const transactionData = {
+                    from_amount: from_amount,
+                    from_currency: 'USD',
+                    to_currency: 'BTC',
+                    from_network: 'USD',
+                    to_network: 'BTC',
+                    payout_address: WALLET,
+                    customer: {
+                        contact_info: {
+                            email: email || 'cliente@dolarexpress.cl'
+                        }
+                    },
+                    deposit: {
+                        skip_choose_payment_category: false
+                    },
+                    redirects: {
+                        successful: 'https://dolarexpress.cl/',
+                        cancelled: 'https://dolarexpress.cl/',
+                        failed: 'https://dolarexpress.cl/'
+                    },
+                    locale: 'es'
+                };
+
+                const response = await fetch(`${API_BASE}/transaction`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'x-api-key': API_KEY
+                    },
+                    body: JSON.stringify(transactionData)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || data.error || 'Error al crear transacción');
+                }
+
+                if (data.redirect_url) {
+                    window.location.href = data.redirect_url;
+                } else {
+                    window.location.href = `https://payments.guardarian.com/es/checkout?tid=${data.id}`;
+                }
+            } catch (error) {
+                showError(error.message || 'Error al procesar la solicitud');
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '₿ Comprar BTC ahora';
+            }
+        });
+
+        function showError(msg) {
+            errorMsg.textContent = msg;
+            errorMsg.classList.add('show');
+        }
+
+        function hideError() {
+            errorMsg.classList.remove('show');
+        }
+    </script>
+</body>
+</html>
