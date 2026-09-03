@@ -1,0 +1,52 @@
+{
+  "santiago": {
+    "nombre": "Santiago",
+    "region": "Metropolitana",
+    "descripcion": "Capital y ciudad más grande de Chile, centro financiero y comercial del país."
+  },
+  "valparaiso": {
+    "nombre": "Valparaíso",
+    "region": "Valparaíso",
+    "descripcion": "Ciudad portuaria y capital regional, importante centro turístico y cultural."
+  },
+  "concepcion": {
+    "nombre": "Concepción",
+    "region": "Biobío",
+    "descripcion": "Capital de la región del Biobío, importante centro universitario e industrial."
+  },
+  "la-serena": {
+    "nombre": "La Serena",
+    "region": "Coquimbo",
+    "descripcion": "Capital de la región de Coquimbo, importante destino turístico."
+  },
+  "temuco": {
+    "nombre": "Temuco",
+    "region": "La Araucanía",
+    "descripcion": "Capital de la región de La Araucanía, centro comercial del sur de Chile."
+  },
+  "antofagasta": {
+    "nombre": "Antofagasta",
+    "region": "Antofagasta",
+    "descripcion": "Capital regional, centro de la minería del cobre."
+  },
+  "iquique": {
+    "nombre": "Iquique",
+    "region": "Tarapacá",
+    "descripcion": "Ciudad puerto libre, centro comercial de la zona norte."
+  },
+  "rancagua": {
+    "nombre": "Rancagua",
+    "region": "O'Higgins",
+    "descripcion": "Capital regional, centro agrícola y comercial."
+  },
+  "chillan": {
+    "nombre": "Chillán",
+    "region": "Ñuble",
+    "descripcion": "Capital de la región de Ñuble, centro de servicios del sur."
+  },
+  "puerto-montt": {
+    "nombre": "Puerto Montt",
+    "region": "Los Lagos",
+    "descripcion": "Capital de la región de Los Lagos, puerta de entrada a la Patagonia."
+  }
+}

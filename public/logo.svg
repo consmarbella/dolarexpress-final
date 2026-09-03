@@ -1,0 +1,7 @@
+<svg width="250" height="60" xmlns="http://www.w3.org/2000/svg">
+  <text x="5" y="38" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#1a1a1a">
+    Dolar<tspan fill="#C8A045">Express</tspan>
+  </text>
+  <circle cx="220" cy="30" r="18" fill="#C8A045"/>
+  <text x="213" y="38" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#ffffff">$</text>
+</svg>

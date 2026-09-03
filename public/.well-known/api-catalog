@@ -1,0 +1,174 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.dolarexpress.cl/.well-known/api-catalog",
+      "item": [
+        {
+          "href": "https://www.dolarexpress.cl/",
+          "title": "Inicio — DolarExpress: Venta de cupo en dólares Chile",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/vender-cupo-dolar",
+          "title": "Vender cupo dólar: Guía paso a paso",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/venta-cupo-dolares",
+          "title": "Venta cupo dólares: Proceso de venta",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/vender-cupo-tarjeta-credito",
+          "title": "Vender cupo tarjeta de crédito",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/cupo-internacional-a-pesos",
+          "title": "Cupo internacional a pesos chilenos",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/avance-cupo-dolares",
+          "title": "Avance cupo dólares",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/directorio-general",
+          "title": "Directorio general de tarjetas y bancos",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/contacto",
+          "title": "Contacto y WhatsApp",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/comisiones",
+          "title": "Comisiones y tasas",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/preguntas-frecuentes",
+          "title": "Preguntas frecuentes (FAQ)",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/banco-estado",
+          "title": "Vender cupo BancoEstado",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/banco-chile",
+          "title": "Vender cupo Banco de Chile",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/santander",
+          "title": "Vender cupo Santander",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/bci",
+          "title": "Vender cupo BCI",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/scotiabank",
+          "title": "Vender cupo Scotiabank",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/bbva",
+          "title": "Vender cupo BBVA",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/itau",
+          "title": "Vender cupo Itaú",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/cmr",
+          "title": "Vender cupo CMR Falabella",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/ripley",
+          "title": "Vender cupo Ripley",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/cencosud",
+          "title": "Vender cupo Cencosud",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/lider",
+          "title": "Vender cupo Líder",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/la-polar",
+          "title": "Vender cupo La Polar",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/paris",
+          "title": "Vender cupo Paris",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/hites",
+          "title": "Vender cupo Hites",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/abcdin",
+          "title": "Vender cupo Abcdin",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/jumbo",
+          "title": "Vender cupo Jumbo",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/easy",
+          "title": "Vender cupo Easy",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/internacional",
+          "title": "Internacional",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/cupo-internacional-a-pesos",
+          "title": "Vender cupo internacional",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/privacidad",
+          "title": "Política de privacidad",
+          "type": "text/html"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/terminos",
+          "title": "Términos y condiciones",
+          "type": "text/html"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.dolarexpress.cl/llms.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://www.dolarexpress.cl/llms-full.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}

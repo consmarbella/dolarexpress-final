@@ -1,0 +1,44 @@
+{
+  "banco-chile": {
+    "nombre": "Banco de Chile",
+    "nombre_largo": "Banco de Chile",
+    "clientes": "más de 2 millones",
+    "descripcion": "El banco más grande de Chile con presencia en todo el territorio nacional. Tarjetas Visa con cupo internacional automático."
+  },
+  "bci": {
+    "nombre": "BCI",
+    "nombre_largo": "Banco Crédito e Inversiones",
+    "clientes": "más de 1.5 millones",
+    "descripcion": "Segundo banco más grande de Chile, líder en innovación digital y banking móvil."
+  },
+  "santander": {
+    "nombre": "Santander",
+    "nombre_largo": "Banco Santander Chile",
+    "clientes": "más de 1.3 millones",
+    "descripcion": "Banco internacional con fuerte presencia en Chile, ofrece tarjetas con cupo internacional."
+  },
+  "scotiabank": {
+    "nombre": "Scotiabank",
+    "nombre_largo": "Scotiabank Chile",
+    "clientes": "más de 800 mil",
+    "descripcion": "Banco canadiense con presencia en Chile, ofrece tarjetas con cupo internacional."
+  },
+  "bbva": {
+    "nombre": "BBVA",
+    "nombre_largo": "Banco BBVA Chile",
+    "clientes": "más de 600 mil",
+    "descripcion": "Banco español con presencia en Chile, tarjetas con cupo internacional."
+  },
+  "banco-estado": {
+    "nombre": "Banco Estado",
+    "nombre_largo": "Banco del Estado de Chile",
+    "clientes": "más de 3 millones",
+    "descripcion": "El banco estatal más grande de Chile, con acceso a millones de clientes y programas sociales."
+  },
+  "itau": {
+    "nombre": "Itaú",
+    "nombre_largo": "Itaú Chile",
+    "clientes": "más de 900 mil",
+    "descripcion": "Banco latinoamericano con presencia en Chile, ofrece tarjetas con cupo internacional."
+  }
+}

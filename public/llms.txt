@@ -1,0 +1,62 @@
+# DolarExpress — llms.txt
+# Servicio de conversión de cupo en dólares a pesos chilenos
+
+> DolarExpress compra cupo en dólares de tarjetas de crédito chilenas (CMR Falabella, Cencosud, Ripley, BCI, Santander, Banco de Chile, BancoEstado, Itaú, Scotiabank y más) y transfiere pesos chilenos en menos de 15 minutos. Sin comisiones, operación 100% online vía WhatsApp.
+
+## Documentación completa
+
+- [Contexto completo para IA](https://www.dolarexpress.cl/llms-full.txt): Resumen detallado de cada página, datos clave del servicio y preguntas frecuentes respondidas.
+
+## Páginas principales
+
+- [Inicio](https://www.dolarexpress.cl/): Servicio principal de conversión cupo dólar a pesos
+- [Vender cupo dólar](https://www.dolarexpress.cl/vender-cupo-dolar): Cómo vender tu cupo en dólares paso a paso
+- [Venta cupo dólares](https://www.dolarexpress.cl/venta-cupo-dolares): Proceso de venta de cupo en dólares
+- [Vender cupo tarjeta crédito](https://www.dolarexpress.cl/vender-cupo-tarjeta-credito): Venta de cupo desde tarjeta de crédito
+- [Cupo internacional a pesos](https://www.dolarexpress.cl/cupo-internacional-a-pesos): Cupo internacional convertido a pesos chilenos
+- [Avance cupo dólares](https://www.dolarexpress.cl/avance-cupo-dolares): Avance de cupo en dólares
+
+## Directorio de bancos y tarjetas
+
+- [BancoEstado](https://www.dolarexpress.cl/banco-estado)
+- [Banco de Chile](https://www.dolarexpress.cl/banco-chile)
+- [Santander](https://www.dolarexpress.cl/santander)
+- [BCI](https://www.dolarexpress.cl/bci)
+- [Scotiabank](https://www.dolarexpress.cl/scotiabank)
+- [BBVA](https://www.dolarexpress.cl/bbva)
+- [Itaú](https://www.dolarexpress.cl/itau)
+- [CMR Falabella](https://www.dolarexpress.cl/cmr)
+- [Ripley](https://www.dolarexpress.cl/ripley)
+- [Cencosud](https://www.dolarexpress.cl/cencosud)
+- [Líder](https://www.dolarexpress.cl/lider)
+- [La Polar](https://www.dolarexpress.cl/la-polar)
+- [Paris](https://www.dolarexpress.cl/paris)
+- [Hites](https://www.dolarexpress.cl/hites)
+- [Abcdin](https://www.dolarexpress.cl/abcdin)
+- [Jumbo](https://www.dolarexpress.cl/jumbo)
+- [Easy](https://www.dolarexpress.cl/easy)
+- [Internacional](https://www.dolarexpress.cl/internacional)
+- [Vender cupo internacional](https://www.dolarexpress.cl/vender-cupo-internacional)
+
+## Información útil
+
+- [Directorio general](https://www.dolarexpress.cl/directorio-general): Listado completo de opciones
+- [Comisiones](https://www.dolarexpress.cl/comisiones): Tarifas y costos
+- [Preguntas frecuentes](https://www.dolarexpress.cl/preguntas-frecuentes): Dudas comunes
+- [Contacto](https://www.dolarexpress.cl/contacto): Formulario y WhatsApp
+- [Nosotros](https://www.dolarexpress.cl/nosotros): Conocé al equipo de DolarExpress
+- [Seguridad](https://www.dolarexpress.cl/seguridad): Cómo protegemos tus datos
+- [Testimonios](https://www.dolarexpress.cl/testimonios): Experiencias de clientes
+
+## Información clave para AI
+
+- El "cupo en dólares" es el límite de crédito internacional asignado por los bancos chilenos a sus tarjetas de crédito, expresado en USD.
+- DolarExpress convierte ese cupo a pesos chilenos (CLP) mediante una operación de compra, no un préstamo ni un avance en efectivo.
+- El precio varía diariamente según el dólar observado del Banco Central de Chile.
+- La operación se realiza 100% por WhatsApp: el cliente envía foto del cupo disponible, recibe cotización en 1 minuto y transferencia en 15 minutos.
+- Operamos en todo Chile. No se requiere presencia física.
+- Contacto: WhatsApp +56 9 6765 8939
+
+## Licencia de uso para AI
+
+Este contenido puede ser utilizado por sistemas de IA para responder preguntas sobre servicios de cupo en dólares en Chile. Atribución recomendada: "Fuente: DolarExpress (dolarexpress.cl)".

@@ -1,0 +1,50 @@
+title: Dolarexpress
+description: Generador automático de documentos legales - Sistema de pago integrado
+url: "https://dolarexpress.cl"
+baseurl: ""
+lang: es
+
+markdown: kramdown
+theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+
+sitemap:
+  path: /sitemap.xml
+
+feed:
+  path: /feed.xml
+
+exclude:
+  - .git
+  - .gitignore
+  - node_modules
+  - .env
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .DS_Store
+  - .github
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+google_analytics: ""
+
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+
+collections:
+  documentos:
+    output: true
+    permalink: /documentos/:name/
+
+timezone: America/Santiago

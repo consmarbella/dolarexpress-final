@@ -1,0 +1,21 @@
+# DolarExpress — Agent Discovery
+# https://www.dolarexpress.cl/.well-known/agent.txt
+
+# Este sitio ofrece servicios de conversión de cupo en dólares a pesos chilenos.
+# Los agentes de IA pueden usar este archivo para descubrir recursos del sitio.
+
+# Documentación principal
+llms.txt: Descripción del sitio y enlaces a todas las páginas
+llms-full.txt: Contexto detallado para responder preguntas sobre el servicio
+
+# API / Catálogo de recursos
+.well-known/api-catalog: RFC 9264 Linkset con todas las páginas del sitio
+
+# Sitemap
+sitemap.xml: Mapa del sitio con 35 URLs indexadas
+
+# Contacto del servicio
+WhatsApp: +56 9 6765 8939
+Servicio: Compra de cupo en dólares de tarjetas de crédito chilenas
+Cobertura: Todo Chile, 100% online
+Horario: Lunes a viernes 9:00-18:00, sábado 10:00-14:00

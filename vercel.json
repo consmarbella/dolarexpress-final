@@ -1,0 +1,59 @@
+{
+  "outputDirectory": "dist",
+  "buildCommand": "vite build && node generate-sitemap.js",
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/([^/]+)\\.html$",
+      "status": 301,
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Robots-Tag": "index, follow",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+        "Link": "</llms.txt>; rel=\"describedby\", </llms.txt>; rel=\"service-doc\", </llms-full.txt>; rel=\"service-doc\"; title=\"Full context for AI\", </sitemap.xml>; rel=\"sitemap\", </.well-known/api-catalog>; rel=\"api-catalog\""
+      },
+      "continue": true
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "dolarexpress.cl"
+        }
+      ],
+      "destination": "https://www.dolarexpress.cl/:path",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-internacional",
+      "destination": "/cupo-internacional-a-pesos",
+      "statusCode": 301
+    }
+  ]
+}

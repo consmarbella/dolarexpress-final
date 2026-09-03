@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="150" cy="315" r="80" fill="#d4af37" opacity="0.15"/>
+  <text x="600" y="260" font-family="system-ui,sans-serif" font-size="72" font-weight="700" fill="#f1f5f9" text-anchor="middle">Dolar<span fill="#d4af37">Express</span></text>
+  <text x="600" y="330" font-family="system-ui,sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">Compramos tu cupo en dólares</text>
+  <text x="600" y="370" font-family="system-ui,sans-serif" font-size="18" fill="#64748b" text-anchor="middle">Transferencia en 15 minutos · 100% online</text>
+</svg>
