@@ -29,31 +29,41 @@
     }
   ],
   "redirects": [
-    {
-      "source": "/:path(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "dolarexpress.cl"
-        }
-      ],
-      "destination": "https://www.dolarexpress.cl/:path",
-      "permanent": true
-    },
-    {
-      "source": "/index",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/home",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/vender-cupo-internacional",
-      "destination": "/cupo-internacional-a-pesos",
-      "statusCode": 301
-    }
-  ]
+      {
+        "source": "/:path(.*)",
+        "has": [
+          {
+            "type": "host",
+            "value": "dolarexpress.cl"
+          }
+        ],
+        "destination": "https://www.dolarexpress.cl/:path",
+        "permanent": true
+      },
+      {
+        "source": "/index",
+        "destination": "/",
+        "statusCode": 301
+      },
+      {
+        "source": "/home",
+        "destination": "/",
+        "statusCode": 301
+      },
+      {
+        "source": "/vender-cupo-internacional",
+        "destination": "/cupo-internacional-a-pesos",
+        "statusCode": 301
+      },
+      {
+        "source": "/guia-cupo-dolares",
+        "destination": "/guia/vender-cupo-dolares",
+        "statusCode": 301
+      },
+      {
+        "source": "/prestamos-santiago/sacar-dinero-hites",
+        "destination": "/sacar-dinero-tarjeta-hites",
+        "statusCode": 301
+      }
+    ]
 }
