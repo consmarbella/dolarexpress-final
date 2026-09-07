@@ -3,6 +3,11 @@
   "buildCommand": "vite build && node copy-html-files.js && node generate-sitemap.js",
   "routes": [
     {
+      "src": "/([^/]+)\\.html$",
+      "status": 301,
+      "dest": "/$1"
+    },
+    {
       "src": "/(.*)",
       "headers": {
         "X-Robots-Tag": "index, follow",
