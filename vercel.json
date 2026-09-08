@@ -50,18 +50,8 @@
         "statusCode": 301
       },
       {
-        "source": "/vender-cupo-internacional",
-        "destination": "/cupo-internacional-a-pesos",
-        "statusCode": 301
-      },
-      {
         "source": "/guia-cupo-dolares",
         "destination": "/guia/vender-cupo-dolares",
-        "statusCode": 301
-      },
-      {
-        "source": "/prestamos-santiago/sacar-dinero-hites",
-        "destination": "/sacar-dinero-tarjeta-hites",
         "statusCode": 301
       }
     ]
