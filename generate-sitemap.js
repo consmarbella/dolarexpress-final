@@ -41,6 +41,8 @@ const urls = [
   { loc: `${baseUrl}/nosotros`, priority: '0.6', changefreq: 'monthly' },
   { loc: `${baseUrl}/contacto`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${baseUrl}/seguridad`, priority: '0.6', changefreq: 'monthly' },
+  // Widget
+  { loc: `${baseUrl}/widget`, priority: '0.6', changefreq: 'monthly' },
   // Legales
   { loc: `${baseUrl}/privacidad`, priority: '0.3', changefreq: 'yearly' },
   { loc: `${baseUrl}/terminos`, priority: '0.3', changefreq: 'yearly' },
