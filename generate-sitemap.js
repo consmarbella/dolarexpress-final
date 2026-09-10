@@ -61,6 +61,7 @@ ${urls.map(u => `  <url>
 
 const outputPaths = [
   path.join(__dirname, 'public', 'sitemap.xml'),
+  path.join(__dirname, 'dist', 'sitemap.xml'),
 ];
 
 outputPaths.forEach(outputPath => {
