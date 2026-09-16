@@ -7,9 +7,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.join(__dirname, 'public');
 const distDir = path.join(__dirname, 'dist');
 
-if (!fs.existsSync(distDir)) {
-  fs.mkdirSync(distDir, { recursive: true });
+// Clean dist before copying (remove stale files from previous builds)
+if (fs.existsSync(distDir)) {
+  fs.rmSync(distDir, { recursive: true, force: true });
+  console.log('🧹 dist/ limpiado');
 }
+fs.mkdirSync(distDir, { recursive: true });
 
 function copyFilesRecursive(src, dest) {
   let copied = 0;
@@ -46,7 +49,7 @@ function copyFilesRecursive(src, dest) {
       // Sitemap
       fs.copyFileSync(srcPath, destPath);
       copied++;
-    } else if (entry.name === 'robots.txt') {
+    } else if (entry.name === 'robots.txt' || entry.name.endsWith('.txt') || entry.name.endsWith('.svg') || entry.name.endsWith('.json')) {
       fs.copyFileSync(srcPath, destPath);
       copied++;
     }
