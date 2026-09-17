@@ -53,231 +53,6 @@
   ],
   "redirects": [
     {
-      "source": "/cupo-dolar-banco-chile-.*",
-      "destination": "/vender-cupo-banco-chile",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-banco-estado-.*",
-      "destination": "/vender-cupo-banco-chile",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-bci-.*",
-      "destination": "/vender-cupo-bci",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-santander-.*",
-      "destination": "/vender-cupo-santander",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-scotiabank-.*",
-      "destination": "/vender-cupo-scotiabank",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-itau-.*",
-      "destination": "/vender-cupo-itau",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-cmr-.*",
-      "destination": "/vender-cupo-cmr-falabella",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-ripley-.*",
-      "destination": "/vender-cupo-ripley-rapido",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-lider-.*",
-      "destination": "/vender-cupo-lider-santiago",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-dolar-.*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/vender-cupo-dolar-.*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/vender-dolares-*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/avance-.*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/efectivo-.*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-compras-*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/sacar-dinero-*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/prestamo-*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/prestamos-*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/liquidar-cupo-*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/convertir-cupo-*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/tarjeta-.*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/dolar-tarjeta-pesos",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/casa-de-cambio-*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/landing/*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/guia-cupo-dolares",
-      "destination": "/guia/vender-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/como-vender-cupo-dolar",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/como-vender-cupo-dolares",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/como-vender-dolares-tarjeta-credito",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/venta-cupo-dolares",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/vender-usd",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-en-dolares",
-      "destination": "/que-es-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/cupo-internacional-banco-chile",
-      "destination": "/vender-cupo-banco-chile",
-      "permanent": true
-    },
-    {
-      "source": "/bancos/*",
-      "destination": "/vender-cupo-banco-chile",
-      "permanent": true
-    },
-    {
-      "source": "/blog/*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/comparativa/*",
-      "destination": "/vender-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/montos/*",
-      "destination": "/cuanto-pagan-por-cupo-dolar",
-      "permanent": true
-    },
-    {
-      "source": "/itau",
-      "destination": "/vender-cupo-itau",
-      "permanent": true
-    },
-    {
-      "source": "/ripley",
-      "destination": "/vender-cupo-ripley-rapido",
-      "permanent": true
-    },
-    {
-      "source": "/banco-chile",
-      "destination": "/vender-cupo-banco-chile",
-      "permanent": true
-    },
-    {
-      "source": "/prestamos-santiago/*",
-      "destination": "/avance-cupo-dolares",
-      "permanent": true
-    },
-    {
-      "source": "/directorio-general",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/privacidad",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/terminos",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/seguridad",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/widget",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/index",
       "destination": "/",
       "statusCode": 301
@@ -290,14 +65,194 @@
   ],
   "rewrites": [
     {
-      "source": "/:path(.*)",
+      "source": "/cupo-dolar-banco-chile-:path*",
+      "destination": "/vender-cupo-banco-chile"
+    },
+    {
+      "source": "/cupo-dolar-banco-estado-:path*",
+      "destination": "/vender-cupo-banco-chile"
+    },
+    {
+      "source": "/cupo-dolar-bci-:path*",
+      "destination": "/vender-cupo-bci"
+    },
+    {
+      "source": "/cupo-dolar-santander-:path*",
+      "destination": "/vender-cupo-santander"
+    },
+    {
+      "source": "/cupo-dolar-scotiabank-:path*",
+      "destination": "/vender-cupo-scotiabank"
+    },
+    {
+      "source": "/cupo-dolar-itau-:path*",
+      "destination": "/vender-cupo-itau"
+    },
+    {
+      "source": "/cupo-dolar-cmr-:path*",
+      "destination": "/vender-cupo-cmr-falabella"
+    },
+    {
+      "source": "/cupo-dolar-ripley-:path*",
+      "destination": "/vender-cupo-ripley-rapido"
+    },
+    {
+      "source": "/cupo-dolar-lider-:path*",
+      "destination": "/vender-cupo-lider-santiago"
+    },
+    {
+      "source": "/cupo-dolar-:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/vender-cupo-dolar-:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/vender-dolares-:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/avance-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/efectivo-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/cupo-compras-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/sacar-dinero-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/prestamo-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/prestamos-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/liquidar-cupo-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/convertir-cupo-:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/tarjeta-:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/dolar-tarjeta-pesos",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/casa-de-cambio-:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/landing/:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/guia-cupo-dolares",
+      "destination": "/guia/vender-cupo-dolares"
+    },
+    {
+      "source": "/como-vender-cupo-dolar",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/como-vender-cupo-dolares",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/como-vender-dolares-tarjeta-credito",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/venta-cupo-dolares",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/vender-usd",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/cupo-en-dolares",
+      "destination": "/que-es-cupo-dolares"
+    },
+    {
+      "source": "/cupo-internacional-banco-chile",
+      "destination": "/vender-cupo-banco-chile"
+    },
+    {
+      "source": "/bancos/:path*",
+      "destination": "/vender-cupo-banco-chile"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/comparativa/:path*",
+      "destination": "/vender-cupo-dolar"
+    },
+    {
+      "source": "/montos/:path*",
+      "destination": "/cuanto-pagan-por-cupo-dolar"
+    },
+    {
+      "source": "/itau",
+      "destination": "/vender-cupo-itau"
+    },
+    {
+      "source": "/ripley",
+      "destination": "/vender-cupo-ripley-rapido"
+    },
+    {
+      "source": "/banco-chile",
+      "destination": "/vender-cupo-banco-chile"
+    },
+    {
+      "source": "/prestamos-santiago/:path*",
+      "destination": "/avance-cupo-dolares"
+    },
+    {
+      "source": "/directorio-general",
+      "destination": "/"
+    },
+    {
+      "source": "/privacidad",
+      "destination": "/"
+    },
+    {
+      "source": "/terminos",
+      "destination": "/"
+    },
+    {
+      "source": "/seguridad",
+      "destination": "/"
+    },
+    {
+      "source": "/widget",
+      "destination": "/"
+    },
+    {
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "dolarexpress.cl"
         }
       ],
-      "destination": "https://www.dolarexpress.cl/:path"
+      "destination": "https://www.dolarexpress.cl/:path*"
     }
   ]
 }
