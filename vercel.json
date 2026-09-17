@@ -48,7 +48,7 @@
   ],
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path(.*)",
       "has": [
         {
           "type": "host",
