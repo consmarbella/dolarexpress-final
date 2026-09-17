@@ -31,7 +31,15 @@ const urls = [
   // Institucionales
   { loc: `${baseUrl}/testimonios`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${baseUrl}/nosotros`, priority: '0.6', changefreq: 'monthly' },
-  { loc: `${baseUrl}/contacto`, priority: '0.7', changefreq: 'monthly' },
+   { loc: `${baseUrl}/contacto`, priority: '0.7', changefreq: 'monthly' },
+   // Blog
+   { loc: `${baseUrl}/vender-cupo-dolar-comision-mas-baja`, priority: '0.8', changefreq: 'monthly' },
+   { loc: `${baseUrl}/vender-cupo-dolar-sin-clave-bancaria`, priority: '0.8', changefreq: 'monthly' },
+   { loc: `${baseUrl}/como-vender-cupo-dolar-rapido`, priority: '0.8', changefreq: 'monthly' },
+   { loc: `${baseUrl}/vender-cupo-dolar-sin-dicom`, priority: '0.8', changefreq: 'monthly' },
+   { loc: `${baseUrl}/cuanto-sale-vender-cupo-dolar-hoy`, priority: '0.8', changefreq: 'monthly' },
+   // Comparación
+   { loc: `${baseUrl}/tabla-comparativa`, priority: '0.8', changefreq: 'monthly' },
 ];
 
 const today = new Date().toISOString().split('T')[0];
