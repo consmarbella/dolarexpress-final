@@ -11,8 +11,8 @@ const urls = [
   { loc: `${baseUrl}/`, priority: '1.0', changefreq: 'weekly' },
   { loc: `${baseUrl}/avance-cupo-dolares`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${baseUrl}/vender-cupo-dolar`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${baseUrl}/que-es-cupo-dolares`, priority: '0.9', changefreq: 'weekly' },
-  { loc: `${baseUrl}/cuanto-cupo-vender`, priority: '0.9', changefreq: 'weekly' },
+  { loc: `${baseUrl}/que-es-cupo-en-dolares`, priority: '0.9', changefreq: 'weekly' },
+  { loc: `${baseUrl}/cuanto-pagan-por-cupo-dolar`, priority: '0.9', changefreq: 'weekly' },
   { loc: `${baseUrl}/cupo-dolares-por-banco`, priority: '0.9', changefreq: 'weekly' },
   // Guide
   { loc: `${baseUrl}/guia/vender-cupo-dolares`, priority: '0.8', changefreq: 'monthly' },
