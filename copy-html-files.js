@@ -49,7 +49,7 @@ function copyFilesRecursive(src, dest) {
       // Sitemap
       fs.copyFileSync(srcPath, destPath);
       copied++;
-    } else if (entry.name === 'robots.txt' || entry.name.endsWith('.txt') || entry.name.endsWith('.svg') || entry.name.endsWith('.json')) {
+    } else if (entry.name === 'robots.txt' || entry.name === '_redirects' || entry.name.endsWith('.txt') || entry.name.endsWith('.svg') || entry.name.endsWith('.json')) {
       fs.copyFileSync(srcPath, destPath);
       copied++;
     }

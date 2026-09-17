@@ -10,8 +10,7 @@
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Link", "value": "</llms.txt>; rel=\"describedby\", </llms.txt>; rel=\"service-doc\", </llms-full.txt>; rel=\"service-doc\"; title=\"Full context for AI\", </sitemap.xml>; rel=\"sitemap\", </.well-known/api-catalog>; rel=\"api-catalog\"" }
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     },
     {
@@ -40,7 +39,13 @@
       ]
     },
     {
-      "source": "/llms.*",
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
@@ -66,11 +71,6 @@
     {
       "source": "/home",
       "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/guia-cupo-dolares",
-      "destination": "/guia/vender-cupo-dolares",
       "statusCode": 301
     }
   ]
