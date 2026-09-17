@@ -50,28 +50,5 @@
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "dolarexpress.cl"
-        }
-      ],
-      "destination": "https://www.dolarexpress.cl/:path",
-      "permanent": true
-    },
-    {
-      "source": "/index",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/home",
-      "destination": "/",
-      "statusCode": 301
-    }
   ]
 }

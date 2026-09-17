@@ -1,4 +1,7 @@
-# Redirect viejas URLs a las nuevas
+# Non-www to www redirect
+/:path(.*)  https://www.dolarexpress.cl/:path  308
+
+# Old cupo pages to new pages
 /cupo-dolar-banco-chile-.*  /vender-cupo-banco-chile  301
 /cupo-dolar-banco-estado-.*  /vender-cupo-banco-chile  301
 /cupo-dolar-bci-.*           /vender-cupo-bci          301
@@ -43,3 +46,5 @@
 /ripley                      /vender-cupo-ripley-rapido 301
 /banco-chile                 /vender-cupo-banco-chile  301
 /prestamos-santiago/*        /avance-cupo-dolares      301
+/index                       /                       301
+/home                        /                       301
