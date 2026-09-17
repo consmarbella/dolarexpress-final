@@ -11,7 +11,7 @@
         },
         {
           "key": "X-Robots-Tag",
-          "value": "index, follow"
+          "value": "noindex, follow"
         },
         {
           "key": "X-Content-Type-Options",
@@ -19,7 +19,7 @@
         },
         {
           "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
+          "value": "noindex, follow"
         },
         {
           "key": "Referrer-Policy",
@@ -28,6 +28,10 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
         }
       ]
     },
@@ -86,6 +90,35 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|guiavender-cupo-dolares|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)\\.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
     }
