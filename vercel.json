@@ -19,7 +19,7 @@
         },
         {
           "key": "X-Frame-Options",
-          "value": "noindex, follow"
+          "value": "SAMEORIGIN"
         },
         {
           "key": "Referrer-Policy",
@@ -28,10 +28,6 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
-        },
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, follow"
         }
       ]
     },
@@ -94,7 +90,94 @@
       ]
     },
     {
-      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|guiavender-cupo-dolares|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)\\.html",
+      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)\\.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/guia/vender-cupo-dolares",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/",
       "headers": [
         {
           "key": "Cache-Control",
@@ -125,6 +208,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "dolarexpress.cl"
+        }
+      ],
+      "destination": "https://www.dolarexpress.cl/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/index",
       "destination": "/",
       "statusCode": 301
@@ -143,202 +237,317 @@
       "source": "/cuanto-cupo-vender",
       "destination": "/cuanto-pagan-por-cupo-dolar",
       "statusCode": 301
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/cupo-dolar-banco-chile",
-      "destination": "/vender-cupo-banco-chile"
     },
     {
       "source": "/cupo-dolar-banco-chile-:path*",
-      "destination": "/vender-cupo-banco-chile"
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-banco-estado-:path*",
-      "destination": "/vender-cupo-banco-chile"
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-bci-:path*",
-      "destination": "/vender-cupo-bci"
+      "destination": "/vender-cupo-bci",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-santander-:path*",
-      "destination": "/vender-cupo-santander"
+      "destination": "/vender-cupo-santander",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-scotiabank-:path*",
-      "destination": "/vender-cupo-scotiabank"
+      "destination": "/vender-cupo-scotiabank",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-itau-:path*",
-      "destination": "/vender-cupo-itau"
+      "destination": "/vender-cupo-itau",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-cmr-:path*",
-      "destination": "/vender-cupo-cmr-falabella"
+      "destination": "/vender-cupo-cmr-falabella",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-ripley-:path*",
-      "destination": "/vender-cupo-ripley-rapido"
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-lider-:path*",
-      "destination": "/vender-cupo-lider-santiago"
+      "destination": "/vender-cupo-lider-santiago",
+      "statusCode": 301
     },
     {
       "source": "/cupo-dolar-:path*",
-      "destination": "/vender-cupo-dolar"
-    },
-    {
-      "source": "/vender-cupo-dolar-:path*",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/vender-dolares-:path*",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/avance-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/efectivo-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/cupo-compras-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/sacar-dinero-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/prestamo-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/prestamos-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/liquidar-cupo-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/convertir-cupo-:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/tarjeta-:path*",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/dolar-tarjeta-pesos",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/casa-de-cambio",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/casa-de-cambio-:path*",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/landing/:path*",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/guia-cupo-dolares",
-      "destination": "/guia/vender-cupo-dolares"
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/como-vender-cupo-dolar",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/como-vender-cupo-dolares",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/como-vender-dolares-tarjeta-credito",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/venta-cupo-dolares",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/vender-usd",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/cupo-en-dolares",
-      "destination": "/que-es-cupo-en-dolares"
+      "destination": "/que-es-cupo-en-dolares",
+      "statusCode": 301
     },
     {
       "source": "/cupo-internacional-banco-chile",
-      "destination": "/vender-cupo-banco-chile"
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
     },
     {
       "source": "/bancos/:path*",
-      "destination": "/vender-cupo-banco-chile"
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
     },
     {
       "source": "/comparativa/:path*",
-      "destination": "/vender-cupo-dolar"
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/montos/:path*",
-      "destination": "/cuanto-pagan-por-cupo-dolar"
+      "destination": "/cuanto-pagan-por-cupo-dolar",
+      "statusCode": 301
     },
     {
       "source": "/itau",
-      "destination": "/vender-cupo-itau"
+      "destination": "/vender-cupo-itau",
+      "statusCode": 301
     },
     {
       "source": "/ripley",
-      "destination": "/vender-cupo-ripley-rapido"
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
     },
     {
       "source": "/banco-chile",
-      "destination": "/vender-cupo-banco-chile"
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
     },
     {
       "source": "/prestamos-santiago/:path*",
-      "destination": "/avance-cupo-dolares"
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
     },
     {
       "source": "/directorio-general",
-      "destination": "/"
+      "destination": "/",
+      "statusCode": 301
     },
     {
       "source": "/privacidad",
-      "destination": "/"
+      "destination": "/",
+      "statusCode": 301
     },
     {
       "source": "/terminos",
-      "destination": "/"
+      "destination": "/",
+      "statusCode": 301
     },
     {
       "source": "/seguridad",
-      "destination": "/"
+      "destination": "/",
+      "statusCode": 301
     },
     {
       "source": "/widget",
-      "destination": "/"
+      "destination": "/",
+      "statusCode": 301
     },
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "dolarexpress.cl"
-        }
-      ],
-      "destination": "https://www.dolarexpress.cl/:path*"
+      "source": "/vender-cupo-dolar-santiago",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-providencia",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-las-condes",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-vina-del-mar",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-valparaiso",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-concepcion",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-antofagasta",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-temuco",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-la-serena",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-rancagua",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-talca",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-iquique",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-puerto-montt",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-arica",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-vitacura",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-nunoa",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cupo-dolar-banco-chile",
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
     }
-  ]
+  ],
+  "rewrites": []
 }
