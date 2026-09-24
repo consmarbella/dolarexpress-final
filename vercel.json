@@ -208,6 +208,17 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "dolarexpress.cl"
+        }
+      ],
+      "destination": "https://www.dolarexpress.cl/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -294,7 +305,37 @@
       "statusCode": 301
     },
     {
-      "source": "/avance-:path*",
+      "source": "/avance-cupo-en-dolares-:path*",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-efectivo",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-efectivo-:path*",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-la-polar-:path*",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-lider-:path*",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-ripley-:path*",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-tarjeta-:path*",
       "destination": "/avance-cupo-dolares",
       "statusCode": 301
     },
@@ -546,6 +587,186 @@
     {
       "source": "/cupo-dolar-banco-chile",
       "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
+    },
+    {
+      "source": "/cupo-en-dolares-:path*",
+      "destination": "/que-es-cupo-en-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-banco-chile-:path*",
+      "destination": "/vender-cupo-banco-chile",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-banco-estado-:path*",
+      "destination": "/cupo-dolares-por-banco",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-itau-:path*",
+      "destination": "/vender-cupo-itau",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-ripley-:path*",
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-lider-:path*",
+      "destination": "/vender-cupo-lider-santiago",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-easy-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-jumbo-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-hites-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-paris-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-la-polar-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-abc-din-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-bbva-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-ripley",
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-tarjeta-credito",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-lo-barnechea",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-pucon",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-banco-estado",
+      "destination": "/cupo-dolares-por-banco",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-banco-estado-vitacura",
+      "destination": "/cupo-dolares-por-banco",
+      "statusCode": 301
+    },
+    {
+      "source": "/cupo-dolar",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/alternativa-avance-la-polar",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/credito-con-dicom-tarjeta-de-tienda",
+      "destination": "/vender-cupo-dolar-sin-dicom",
+      "statusCode": 301
+    },
+    {
+      "source": "/estoy-en-dicom-y-tengo-cupo-cmr",
+      "destination": "/vender-cupo-dolar-sin-dicom",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-me-dan-de-avance-tarjeta-lider",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-presta-la-cmr",
+      "destination": "/cuanto-pagan-por-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-presta-tarjeta-ripley",
+      "destination": "/cuanto-pagan-por-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/dinero-en-efectivo-tarjeta-paris",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/pasar-cupo-hites-a-efectivo",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/transferir-cupo-hites-a-cuenta",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/tengo-cupo-en-ripley-y-necesito-efectivo",
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/urgente-cupo-paris-hoy",
+      "destination": "/como-vender-cupo-dolar-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/compra-cupo-dolares",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/compra-cupo-dolares/",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-usd-chile",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-usd-chile/",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/evitar-estafas-cupo-dolar",
+      "destination": "/guia/vender-cupo-dolares",
       "statusCode": 301
     }
   ],
