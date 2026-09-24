@@ -16,11 +16,13 @@ Canónica elegida: **https://www.dolarexpress.cl/**
 - Verificación post-deploy: `curl.exe` a las 4 variantes (http/https × www/no-www) — pendiente resultado abajo.
 - MANUAL: en dashboard Vercel → Settings → Domains → set `www.dolarexpress.cl` como Primary; en GSC → declarar propiedad de dominio preferida y pedir reindexación del home canónico.
 
-## Fase 3 — Consolidación vercel.json (68 → 110 redirects, 0 rewrites)
+## Fase 3 — Consolidación vercel.json (68 → 142 redirects, 0 rewrites)
 - `public/` no tiene páginas de ciudad: las familias `cupo-en-dolares-en-*` y `avance-cupo-en-dolares-en-*` son legacy 404. Cruzadas 220 URLs indexadas conocidas vs redirects: 46 huérfanas (menos canónicas vivas).
-- Nuevos 301: `/cupo-en-dolares-:path*` → `/que-es-cupo-en-dolares`; wildcards por marca (`banco-chile/itau/ripley/lider/easy/jumbo/hites/paris/la-polar/abc-din/bbva`) → su pilar; 20 exactas temáticas (ej `/estoy-en-dicom-y-tengo-cupo-cmr` → `/vender-cupo-dolar-sin-dicom`, `/tengo-cupo-en-ripley-y-necesito-efectivo` → `/vender-cupo-ripley-rapido`, `/urgente-cupo-paris-hoy` → `/como-vender-cupo-dolar-rapido`, `/guia/evitar-estafas-cupo-dolar` → `/guia/vender-cupo-dolares`).
+- Primera tanda: `/cupo-en-dolares-:path*` → `/que-es-cupo-en-dolares`; wildcards por marca (`banco-chile/itau/ripley/lider/easy/jumbo/hites/paris/la-polar/abc-din/bbva`) → su pilar; 20 exactas temáticas (ej `/estoy-en-dicom-y-tengo-cupo-cmr` → `/vender-cupo-dolar-sin-dicom`, `/tengo-cupo-en-ripley-y-necesito-efectivo` → `/vender-cupo-ripley-rapido`, `/urgente-cupo-paris-hoy` → `/como-vender-cupo-dolar-rapido`, `/guia/evitar-estafas-cupo-dolar` → `/guia/vender-cupo-dolares`).
+- Verificación post-deploy: spot-checks de redirects + `/avance-cupo-dolares` → 200 (loop eliminado).
+- Creadas `/privacidad` y `/terminos` (institucionales que pedía el brief); sitemap final: 27 URLs.
 - **Bug crítico hallado y fixeado**: `/avance-:path*` matcheaba `/avance-cupo-dolares` → **loop 301 a sí misma en vivo** (verificado con curl: `301 -> misma URL`). Reemplazada por 7 reglas específicas (`avance-cupo-en-dolares-*`, `avance-efectivo[-*]`, `avance-la-polar/lider/ripley/tarjeta-*`). Re-chequeo programático: 0 hijacks sobre las 25 canónicas.
-- Verificación post-deploy: spot-checks de 4 redirects + `/avance-cupo-dolares` → 200.
+- Segunda tanda desde backups archivados: wildcards `/urgente/`, `/ciudades/`, `/cambio-`, `/cambiar-`; exactas de alto valor (`/compro-cupo-dolar`, `/comprar-cupo-dolar`, `/que-es-cupo-dolar`, `/cupo-en-dolares`, `/es-legal-vender-cupo-dolar`, `/mejor-tasa-cupo-dolar` → landing comisión, `/vender-cupo-dolar-online/-transferencia`, `/vender-cupo-internacional`, `/girar-*`, `/convertir-cupo-dolar-pesos`, `/necesito-plata-tengo-cupo-*`, `/superavance-*`, 8 subpáginas `/guia/*` legacy → `/guia/vender-cupo-dolares`).
 
 ## Fase 4 — Keywords en contenido
 - Fix title corrupto `que-es-cupo-en-dolares.html:1` → "Qué es el Cupo en Dólares y Cómo Funciona | Guía Chile 2026" (cubre "cupo en dolares chile" 77 imp/trim).
@@ -29,13 +31,13 @@ Canónica elegida: **https://www.dolarexpress.cl/**
 - Sin stuffing: 2 inserciones léxicas + 1 frase reescrita.
 
 ## Fase 5 — Sitemap, robots, limpieza
-- `sitemap.xml` regenerado: exactamente las 25 canónicas `https://www`, cero legacy (verificado por listado).
+- `sitemap.xml` regenerado: 27 URLs (`https://www`): 25 canónicas + `/privacidad` + `/terminos`, cero legacy (verificado por listado).
 - `robots.txt`: `Allow: /`, sitemap correcto, sin bloqueos relevantes.
 - Limpieza: ~40 scripts `fix-*`/`gen-*`/`add-*`/`check-*`, 5 carpetas `backup_*`, 18 HTML sueltos en raíz, zip/csv sueltos → movidos a `/archive/` (nota en `archive/README.md`). Se conservaron `generate-sitemap.js`, `copy-html-files.js`, `scripts/` (gsc_audit en uso). App React y dirs `legalhelp-*`/`temp-repo` NO tocados (revisar aparte).
 
 ## Pendiente MANUAL (sin acceso a consolas)
 1. Vercel → Primary domain = `www.dolarexpress.cl`.
-2. GSC → Removals: patrones `cupo-en-dolares-en-*`, `avance-cupo-en-dolares-en-*`, `vender-cupo-dolar-[banco]-[ciudad]`; luego "Solicitar indexación" de las 25 del sitemap.
+2. GSC → Removals: patrones `cupo-en-dolares-en-*`, `avance-cupo-en-dolares-en-*`, `vender-cupo-dolar-[banco]-[ciudad]`, `urgente/*`, `ciudades/*`, `montos/*`, `comparativa/*`; luego "Solicitar indexación" de las 27 del sitemap.
 3. GSC → declarar preferencia de dominio www (donde aplique).
 4. GBP → renombrar a "DolarExpress" y responder reseñas.
 5. Re-revisar en 7 días: impresiones, "excluida por noindex" (debe subir), 404 (debe bajar).

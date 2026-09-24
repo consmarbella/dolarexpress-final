@@ -90,7 +90,7 @@
       ]
     },
     {
-      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)",
+      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|privacidad|terminos|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)\\.html",
+      "source": "/(avance-cupo-dolares|vender-cupo-dolar|que-es-cupo-en-dolares|cuanto-pagan-por-cupo-dolar|cupo-dolares-por-banco|preguntas-frecuentes|vender-cupo-banco-chile|vender-cupo-bci|vender-cupo-santander|vender-cupo-scotiabank|vender-cupo-itau|vender-cupo-cmr-falabella|vender-cupo-ripley-rapido|vender-cupo-lider-santiago|testimonios|nosotros|contacto|privacidad|terminos|vender-cupo-dolar-comision-mas-baja|vender-cupo-dolar-sin-clave-bancaria|como-vender-cupo-dolar-rapido|vender-cupo-dolar-sin-dicom|cuanto-sale-vender-cupo-dolar-hoy|tabla-comparativa)\\.html",
       "headers": [
         {
           "key": "Cache-Control",
@@ -766,6 +766,166 @@
     },
     {
       "source": "/guia/evitar-estafas-cupo-dolar",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/urgente/:path*",
+      "destination": "/como-vender-cupo-dolar-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/ciudades/:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/cambio-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/cambiar-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/compro-cupo-dolar",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/comprar-cupo-dolar",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/que-es-cupo-dolar",
+      "destination": "/que-es-cupo-en-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/cupo-en-dolares",
+      "destination": "/que-es-cupo-en-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/es-legal-vender-cupo-dolar",
+      "destination": "/preguntas-frecuentes",
+      "statusCode": 301
+    },
+    {
+      "source": "/riesgos-vender-cupo-dolar",
+      "destination": "/preguntas-frecuentes",
+      "statusCode": 301
+    },
+    {
+      "source": "/mejor-tasa-cupo-dolar",
+      "destination": "/vender-cupo-dolar-comision-mas-baja",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-online",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-dolar-transferencia",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/vender-cupo-internacional",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/girar-cupo-dolares",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/girar-dolares-tarjeta",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/convertir-cupo-dolar-pesos",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/necesito-plata-tengo-cupo-cmr",
+      "destination": "/vender-cupo-cmr-falabella",
+      "statusCode": 301
+    },
+    {
+      "source": "/necesito-plata-tengo-cupo-ripley",
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/convertir-cupo-cmr-pesos-hoy",
+      "destination": "/vender-cupo-cmr-falabella",
+      "statusCode": 301
+    },
+    {
+      "source": "/convertir-cupo-ripley-efectivo-rapido",
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/superavance-cmr-falabella",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/superavance-tarjeta-lider",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/superavance-tarjeta-paris-cencosud",
+      "destination": "/avance-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/como-cambiar-dolar-a-pesos-rapido",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/como-saber-cupo-dolar-mi-banco",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/cupo-dolar-bloqueado-como-desbloquearlo",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/cupo-dolar-para-viajar-internacional",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/preguntas-frecuentes-cupo-dolar",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/que-es-cupo-internacional",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/tarjeta-credito-sin-cupo-dolar-tengo",
+      "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/guia/tipo-cambio-dolar-hoy-chile",
       "destination": "/guia/vender-cupo-dolares",
       "statusCode": 301
     }

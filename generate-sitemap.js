@@ -32,6 +32,8 @@ const urls = [
   { loc: `${baseUrl}/testimonios`, priority: '0.7', changefreq: 'monthly' },
   { loc: `${baseUrl}/nosotros`, priority: '0.6', changefreq: 'monthly' },
    { loc: `${baseUrl}/contacto`, priority: '0.7', changefreq: 'monthly' },
+   { loc: `${baseUrl}/privacidad`, priority: '0.3', changefreq: 'yearly' },
+   { loc: `${baseUrl}/terminos`, priority: '0.3', changefreq: 'yearly' },
    // Blog
    { loc: `${baseUrl}/vender-cupo-dolar-comision-mas-baja`, priority: '0.8', changefreq: 'monthly' },
    { loc: `${baseUrl}/vender-cupo-dolar-sin-clave-bancaria`, priority: '0.8', changefreq: 'monthly' },

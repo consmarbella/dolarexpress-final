@@ -115,6 +115,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.dolarexpress.cl/privacidad</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dolarexpress.cl/terminos</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.dolarexpress.cl/vender-cupo-dolar-comision-mas-baja</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
