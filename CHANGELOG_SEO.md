@@ -35,6 +35,11 @@ Canónica elegida: **https://www.dolarexpress.cl/**
 - `robots.txt`: `Allow: /`, sitemap correcto, sin bloqueos relevantes.
 - Limpieza: ~40 scripts `fix-*`/`gen-*`/`add-*`/`check-*`, 5 carpetas `backup_*`, 18 HTML sueltos en raíz, zip/csv sueltos → movidos a `/archive/` (nota en `archive/README.md`). Se conservaron `generate-sitemap.js`, `copy-html-files.js`, `scripts/` (gsc_audit en uso). App React y dirs `legalhelp-*`/`temp-repo` NO tocados (revisar aparte).
 
+## Fase 6 — Hub-and-spoke en variantes del negocio (2026-09-24)
+- Pilar `/vender-cupo-dolar` no enlazaba a ninguna variante: sección bancos/retail convertida a links (8 variantes + hub). Homepage nav+footer → pilar con anchor "vender cupo (en dólares)" (el pilar estaba huérfano de la página más fuerte).
+- Hub `/cupo-dolares-por-banco`: cada ficha ahora enlaza a su variante (5 bancos + CMR + Ripley).
+- `tabla-comparativa` 443 → ~900 palabras: metodología con caso USD 1.000, links a 10 variantes/pilares, 3 FAQs.
+
 ## Pendiente MANUAL (sin acceso a consolas)
 1. Vercel → Primary domain = `www.dolarexpress.cl`.
 2. GSC → Removals: patrones `cupo-en-dolares-en-*`, `avance-cupo-en-dolares-en-*`, `vender-cupo-dolar-[banco]-[ciudad]`, `urgente/*`, `ciudades/*`, `montos/*`, `comparativa/*`; luego "Solicitar indexación" de las 27 del sitemap.
