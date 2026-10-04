@@ -40,6 +40,13 @@ Canónica elegida: **https://www.dolarexpress.cl/**
 - Hub `/cupo-dolares-por-banco`: cada ficha ahora enlaza a su variante (5 bancos + CMR + Ripley).
 - `tabla-comparativa` 443 → ~900 palabras: metodología con caso USD 1.000, links a 10 variantes/pilares, 3 FAQs.
 
+## Fase 7 — 6 páginas tarjeta-variantes con placeholders (2026-10-04, commit d37ac01b)
+- Creadas `vender-cupo-dolar-tarjeta-{abc,paris,hites,visa,mastercard,amex}.html` con `meta robots noindex`, canonical sin slash, FAQ schema+visible, links a pilar/hub/tabla, 7 placeholders `ALEJANDRO` c/u. Fuera del sitemap (sigue 27).
+- `CONTENIDO_A_RELLENAR.json` + `GUÍA_PARA_ALEJANDRO.md` en raíz (no se despliegan: el copy solo lee `public/`).
+- `vercel.json` 144→146 redirects: +`/sacar-plata-:path*`, +`/cuanto-presta-:path*` → pilar; +trailing-slash exactas `cuanto-presta-tarjeta-paris/`, `sacar-plata-tarjeta-lider/`. Eliminados hijacks `/privacidad`→`/`, `/terminos`→`/` (ahora son páginas reales, 200 live).
+- Verificado live: 6×200 con noindex, slash-URLs→301, privacidad/terminos 200, avance 200, 0 hijacks.
+- Commit 2 (Alejandro): rellenar datos reales → quitar noindex → sitemap+headers → push → GSC.
+
 ## Pendiente MANUAL (sin acceso a consolas)
 1. Vercel → Primary domain = `www.dolarexpress.cl`.
 2. GSC → Removals: patrones `cupo-en-dolares-en-*`, `avance-cupo-en-dolares-en-*`, `vender-cupo-dolar-[banco]-[ciudad]`, `urgente/*`, `ciudades/*`, `montos/*`, `comparativa/*`; luego "Solicitar indexación" de las 27 del sitemap.
