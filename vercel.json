@@ -480,16 +480,6 @@
       "statusCode": 301
     },
     {
-      "source": "/privacidad",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/terminos",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
       "source": "/seguridad",
       "destination": "/",
       "statusCode": 301
@@ -927,6 +917,26 @@
     {
       "source": "/guia/tipo-cambio-dolar-hoy-chile",
       "destination": "/guia/vender-cupo-dolares",
+      "statusCode": 301
+    },
+    {
+      "source": "/sacar-plata-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-presta-:path*",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-presta-tarjeta-paris/",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/sacar-plata-tarjeta-lider/",
+      "destination": "/vender-cupo-dolar",
       "statusCode": 301
     }
   ],
