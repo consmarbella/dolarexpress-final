@@ -485,11 +485,6 @@
       "statusCode": 301
     },
     {
-      "source": "/widget",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
       "source": "/vender-cupo-dolar-santiago",
       "destination": "/vender-cupo-dolar",
       "statusCode": 301
