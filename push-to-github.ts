@@ -5,7 +5,12 @@ import path from 'path';
 
 async function pushToGitHub() {
   const dir = process.cwd();
-  const token = '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';
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) {
+    throw new Error(
+      'GITHUB_TOKEN no definido. Exporta la variable de entorno GITHUB_TOKEN (nunca hardcodear el PAT).'
+    );
+  }
   const repoUrl = 'https://github.com/consmarbella/dolarexpress-final.git';
 
   try {
