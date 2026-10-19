@@ -73,9 +73,9 @@ _Ejecutado el 2026-10-19 en la rama `seo-fixes-oct-2026`. Los bloques T2–T5 y 
 ### T6 — lastmod real del sitemap
 - `generate-sitemap.js`: lastmod por URL = fecha del último commit git del HTML fuente (`git log -1 --format=%cI`), fallback a hoy si no hay historial. Antes: misma fecha de build para todas.
 
-### T7 — og:image rasterizada
-- Generado `public/og-image.png` 1200×630 desde el SVG existente (one-shot con `npx sharp-cli`; sin dependencia nueva en package.json, sin cambio de build).
-- 15 tags `og:image` → `.png`.
+### T7 — og:image rasterizada ✅
+- Generado `public/og-image.png` 1200×630 (41 KB) desde el SVG existente (one-shot con `npx sharp-cli`; **sin** dependencia nueva en package.json, **sin** cambio de build). Verificado: header PNG 1200×630.
+- 30 tags (15 `og:image` + 15 `twitter:image`) → `.png`. Verificado: 0 refs restantes a `.svg`.
 - `copy-html-files.js`: añadido `.png` a la lista de copia a `dist/`.
 
 ### T8 — og:url vs canonical
