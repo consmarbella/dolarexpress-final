@@ -938,6 +938,21 @@
       "source": "/sacar-plata-tarjeta-lider/",
       "destination": "/vender-cupo-dolar",
       "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-abc-visa",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
     }
   ],
   "rewrites": []
