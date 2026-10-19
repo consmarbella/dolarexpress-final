@@ -81,8 +81,9 @@ _Ejecutado el 2026-10-19 en la rama `seo-fixes-oct-2026`. Los bloques T2–T5 y 
 ### T8 — og:url vs canonical
 - `og:url` de nosotros, preguntas-frecuentes y testimonios sin trailing slash (igual a canonical).
 
-### T1 — Páginas órfanas enlazadas
+### T1 — Páginas órfanas enlazadas ✅
 - 5 enlaces añadidos al footer de las 26 páginas del sitemap: `/que-es-cupo-en-dolares`, `/cuanto-pagan-por-cupo-dolar`, `/guia/vender-cupo-dolares`, `/nosotros`, `/terminos`.
+- 2 familias de footer distintas: `.footer-links` (11 páginas) + footer inline (15 páginas). Los 5 órfanos pasan de **0 inbound a 25 inbound** cada uno (el propio fichero no se enlaza a sí mismo). Home enlaza los 5.
 
 ### T9 — Token GitHub hardcodeado
 - `push-to-github.ts`: token `github_pat_…` (línea 8) reemplazado por `process.env.GITHUB_TOKEN` + throw si falta. ACCIÓN PENDIENTE DEL USUARIO: revocar el PAT comprometido en GitHub (Settings → Developer settings → Personal access tokens).
