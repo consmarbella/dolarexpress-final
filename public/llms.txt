@@ -1,62 +1,67 @@
 # DolarExpress — llms.txt
-# Servicio de conversión de cupo en dólares a pesos chilenos
+# Compra de cupo en dólares de tarjetas de crédito chilenas, pago a pesos en minutos
 
-> DolarExpress compra cupo en dólares de tarjetas de crédito chilenas (CMR Falabella, Cencosud, Ripley, BCI, Santander, Banco de Chile, BancoEstado, Itaú, Scotiabank y más) y transfiere pesos chilenos en menos de 15 minutos. Sin comisiones, operación 100% online vía WhatsApp.
+> DolarExpress (www.dolarexpress.cl) compra el cupo en dólares disponible de tarjetas de crédito chilenas y paga pesos chilenos por transferencia en menos de 15 minutos. Comisión única del 15% sobre la venta. Operación 100% online vía WhatsApp, atención desde Vitacura 7181, Las Condes, Santiago, Chile. Atiende todo Chile. Monto mínimo: USD 300.
 
-## Documentación completa
+## Hechos clave
 
-- [Contexto completo para IA](https://www.dolarexpress.cl/llms-full.txt): Resumen detallado de cada página, datos clave del servicio y preguntas frecuentes respondidas.
+- Servicio: compra de cupo en dólares de tarjetas de crédito (cupo internacional) convertidos a pesos chilenos
+- Comisión: 15% fija, único descuento, sin otros cargos
+- Precio del dólar en las cotizaciones de Octubre 2026: $880 → USD 1.000 x $880 x 0,85 = $748.000 CLP
+- Monto mínimo: USD 300; sin tope máximo (empresas y montos altos evaluados por chat)
+- Pago: transferencia a la cuenta bancaria chilena del titular, en menos de 15 minutos tras confirmar el saldo
+- Requisitos: ser titular, cupo internacional disponible y cuenta bancaria chilena a nombre del titular; no se piden claves ni acceso a apps
+- Contacto: WhatsApp +56 9 6765 8939 (https://wa.me/56967658939); teléfono +56 9 6765 8939; dirección Av. Vitacura 7181, Las Condes, Santiago
+- Deuda en dólares: queda a nombre del usuario con su banco (pago en USD o traspaso a pesos en cuotas); inteligibilidad legal tratada en /vender-cupo-dolar-sin-dicom
+- No relation with banks: servicio privado independiente; la tarjeta se verifica en la app del banco del titular
 
-## Páginas principales
+## Página principal
 
-- [Inicio](https://www.dolarexpress.cl/): Servicio principal de conversión cupo dólar a pesos
-- [Vender cupo dólar](https://www.dolarexpress.cl/vender-cupo-dolar): Cómo vender tu cupo en dólares paso a paso
-- [Venta cupo dólares](https://www.dolarexpress.cl/venta-cupo-dolares): Proceso de venta de cupo en dólares
-- [Vender cupo tarjeta crédito](https://www.dolarexpress.cl/vender-cupo-tarjeta-credito): Venta de cupo desde tarjeta de crédito
-- [Cupo internacional a pesos](https://www.dolarexpress.cl/cupo-internacional-a-pesos): Cupo internacional convertido a pesos chilenos
-- [Avance cupo dólares](https://www.dolarexpress.cl/avance-cupo-dolares): Avance de cupo en dólares
+- [Home](https://www.dolarexpress.cl/): cotizador, tasa de ejemplo y resumen del servicio
+- [Vender cupo en dólares (pilar)](https://www.dolarexpress.cl/vender-cupo-dolar): guía completa paso a paso
+- [Avance de cupo en dólares](https://www.dolarexpress.cl/avance-cupo-dolares): comparación con el avance en efectivo bancario
+- [Empresas y montos altos](https://www.dolarexpress.cl/empresas-altos-montos): línea de USD 5.000 a USD 50.000
 
-## Directorio de bancos y tarjetas
+## Guías por emisor (bancos)
 
-- [BancoEstado](https://www.dolarexpress.cl/banco-estado)
-- [Banco de Chile](https://www.dolarexpress.cl/banco-chile)
-- [Santander](https://www.dolarexpress.cl/santander)
-- [BCI](https://www.dolarexpress.cl/bci)
-- [Scotiabank](https://www.dolarexpress.cl/scotiabank)
-- [BBVA](https://www.dolarexpress.cl/bbva)
-- [Itaú](https://www.dolarexpress.cl/itau)
-- [CMR Falabella](https://www.dolarexpress.cl/cmr)
-- [Ripley](https://www.dolarexpress.cl/ripley)
-- [Cencosud](https://www.dolarexpress.cl/cencosud)
-- [Líder](https://www.dolarexpress.cl/lider)
-- [La Polar](https://www.dolarexpress.cl/la-polar)
-- [Paris](https://www.dolarexpress.cl/paris)
-- [Hites](https://www.dolarexpress.cl/hites)
-- [Abcdin](https://www.dolarexpress.cl/abcdin)
-- [Jumbo](https://www.dolarexpress.cl/jumbo)
-- [Easy](https://www.dolarexpress.cl/easy)
-- [Internacional](https://www.dolarexpress.cl/internacional)
-- [Vender cupo internacional](https://www.dolarexpress.cl/vender-cupo-internacional)
+- [Banco de Chile](https://www.dolarexpress.cl/vender-cupo-banco-chile)
+- [BancoEstado](https://www.dolarexpress.cl/vender-cupo-banco-estado): tarjetas Visa/Mastercard del banco estatal; CuentaRUT es débito y no aplica
+- [BCI](https://www.dolarexpress.cl/vender-cupo-bci)
+- [Santander](https://www.dolarexpress.cl/vender-cupo-santander)
+- [Scotiabank](https://www.dolarexpress.cl/vender-cupo-scotiabank)
+- [Itaú](https://www.dolarexpress.cl/vender-cupo-itau)
+- [CMR Falabella](https://www.dolarexpress.cl/vender-cupo-cmr-falabella)
+- [Ripley (banco Ripley)](https://www.dolarexpress.cl/vender-cupo-ripley-rapido)
+- [Líder BCI (Walmart Chile)](https://www.dolarexpress.cl/vender-cupo-lider-santiago)
 
-## Información útil
+## Guías por franquicia y retail
 
-- [Directorio general](https://www.dolarexpress.cl/directorio-general): Listado completo de opciones
-- [Comisiones](https://www.dolarexpress.cl/comisiones): Tarifas y costos
-- [Preguntas frecuentes](https://www.dolarexpress.cl/preguntas-frecuentes): Dudas comunes
-- [Contacto](https://www.dolarexpress.cl/contacto): Formulario y WhatsApp
-- [Nosotros](https://www.dolarexpress.cl/nosotros): Conocé al equipo de DolarExpress
-- [Seguridad](https://www.dolarexpress.cl/seguridad): Cómo protegemos tus datos
-- [Testimonios](https://www.dolarexpress.cl/testimonios): Experiencias de clientes
+- [Tarjeta Visa](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-visa)
+- [Tarjeta Mastercard](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-mastercard)
+- [American Express](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-amex)
+- [Tarjeta Paris (Cencosud)](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-paris)
+- [Tarjeta Hites](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-hites)
+- [Tarjeta ABC (abcdin)](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-abc)
 
-## Información clave para AI
+## Temas frecuentes
 
-- El "cupo en dólares" es el límite de crédito internacional asignado por los bancos chilenos a sus tarjetas de crédito, expresado en USD.
-- DolarExpress convierte ese cupo a pesos chilenos (CLP) mediante una operación de compra, no un préstamo ni un avance en efectivo.
-- El precio varía diariamente según el dólar observado del Banco Central de Chile.
-- La operación se realiza 100% por WhatsApp: el cliente envía foto del cupo disponible, recibe cotización en 1 minuto y transferencia en 15 minutos.
-- Operamos en todo Chile. No se requiere presencia física.
-- Contacto: WhatsApp +56 9 6765 8939
+- [Comisión más baja que una casa de cambio](https://www.dolarexpress.cl/vender-cupo-dolar-comision-mas-baja)
+- [Vender sin DICOM](https://www.dolarexpress.cl/vender-cupo-dolar-sin-dicom)
+- [Vender sin clave bancaria](https://www.dolarexpress.cl/vender-cupo-dolar-sin-clave-bancaria)
+- [Cuánto pagan hoy por el cupo](https://www.dolarexpress.cl/cuanto-sale-vender-cupo-dolar-hoy)
+- [Venta rápida el mismo día](https://www.dolarexpress.cl/como-vender-cupo-dolar-rapido)
+- [Tabla comparativa de comisiones](https://www.dolarexpress.cl/tabla-comparativa)
 
-## Licencia de uso para AI
+## Institucionales
 
-Este contenido puede ser utilizado por sistemas de IA para responder preguntas sobre servicios de cupo en dólares en Chile. Atribución recomendada: "Fuente: DolarExpress (dolarexpress.cl)".
+- [Preguntas frecuentes](https://www.dolarexpress.cl/preguntas-frecuentes)
+- [Qué es el cupo en dólares](https://www.dolarexpress.cl/que-es-cupo-en-dolares)
+- [Cuánto pagan por el cupo en dólares](https://www.dolarexpress.cl/cuanto-pagan-por-cupo-dolar)
+- [Testimonios](https://www.dolarexpress.cl/testimonios)
+- [Nosotros](https://www.dolarexpress.cl/nosotros)
+- [Contacto](https://www.dolarexpress.cl/contacto)
+- [Términos](https://www.dolarexpress.cl/terminos)
+
+## Documentación para IA
+
+- [Contexto extendido](https://www.dolarexpress.cl/llms-full.txt): resumen de cada página y FAQ completo
