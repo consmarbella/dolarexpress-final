@@ -1,0 +1,30 @@
+{
+  "name": "American Express",
+  "faqs": [
+    ["¿Toda tarjeta American Express tiene cupo en dólares?",
+     "No. Algunas Amex son nacionales o de uso restringido; solo las que incluyen cupo internacional en USD se procesan. En tu app o estado de cuenta verás si ese cupo está disponible."],
+    ["¿Quién emite las Amex que aceptan?",
+     "Indistinto: tanto Amex directo como tarjetas Amex emitidas por bancos chilenos se procesan, siempre con cupo internacional disponible y titularidad verificada."],
+    ["¿Son los puntos Amex lo mismo que el cupo?",
+     "No y es importante separarlos: el cupo en dólares es la línea de crédito; el programa de puntos acumulados se mantiene sin cambios al vender el cupo."],
+    ["¿Cuál es el monto mínimo con Amex?",
+     "USD 300 de cupo internacional disponible. Sin tope superior; montos altos se coordinan con el titular por WhatsApp con validaciones extra."],
+    ["¿Por qué es más que otros casos revisar mi Amex?",
+     "American Express suele tener tarjetas con límites de uso especializados (viaje, premium). Verificamos juntos que tu cupo en USD sea usable antes de cerrar."],
+    ["¿Puedo operar si mi Amex es estadounidense o de otro país?",
+     "Solo procesamos tarjetas emitidas en Chile para clientes con cuenta bancaria chilena del titular: es requisito del flujo."],
+    ["¿En cuanto me pagan tras confirmar?",
+     "En menos de 15 minutos desde tu confirmación de saldo, mediante transferencia a la cuenta del titular."]
+  ],
+  "particularidades": [
+    ["Tarjetas premium con verificación extra", "American Express suele emitir tarjetas con segmentos premium: el cupo internacional de estas tarjetas se revisa un poco más (visible en tu estado de cuenta)."],
+    ["Directo o por banco", "Algunas Amex chilenas se emiten por bancos: da igual, todos respetan la misma mecánica de venta y el mismo precio."],
+    ["Puntos intactos", "Vendemos solo el cupo disponible; tu programa de puntos Amex queda tal como está."]
+  ],
+  "steps": [
+    ["Cotizá", "Envíanos por WhatsApp el cupo internacional en USD de tu Amex (o verificalo en tu app o estado de cuenta)."],
+    ["Validación", "Confirmamos el saldo contigo, sin pedir claves ni accesos a tu banca."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "En Chile las American Express se emitieron históricamente con foco en tarjetas premium y de viaje. El cupo internacional de una Amex, cuando está disponible en USD, se vende con el mismo precio estándar: comisión del 15% fija."
+}

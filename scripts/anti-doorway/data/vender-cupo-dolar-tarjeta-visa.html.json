@@ -1,0 +1,30 @@
+{
+  "name": "Visa",
+  "faqs": [
+    ["¿Vender cupo Visa es distinto al de otras redes?",
+     "No en el fondo: lo que compramos es el cupo internacional disponible de tu tarjeta, aunque el plástico sea Visa. La comisión aplicada es el 15% fijo igual que con cualquier otra red."],
+    ["¿Aceptan tarjetas Visa de cualquier banco?",
+     "Sí. La red no importa para el flujo: mientras el emisor sea un banco o institución financiera chilena y tu Visa tenga cupo en dólares disponible, se procesa igual."],
+    ["¿Cómo reviso el cupo disponible de mi Visa?",
+     "Desde la app o portal del banco emisor, sección tarjetas: el cupo internacional en USD aparece al instante. Solo pedimos una captura de pantalla, jamás contraseñas ni accesos."],
+    ["¿Cuál es el monto mínimo para una Visa?",
+     "USD 300 de cupo internacional disponible. No hay tope superior; los montos grandes se coordinan directamente con el titular por WhatsApp."],
+    ["¿Y si mi Visa tiene limitaciones de uso internacional?",
+     "Si el banco emisor ha bloqueado o restringido el cupo para uso en el extranjero, primero debe estar habilitado antes de vender. Te guiamos por WhatsApp para verificarlo."],
+    ["¿La venta afecta mis millas o puntos Visa?",
+     "No. Operamos sobre el cupo disponible solamente: tu programa de millas o beneficios del emisor permanece sin cambios."],
+    ["¿En cuánto me pagan?",
+     "En menos de 15 minutos desde tu confirmación de saldo, mediante transferencia a la cuenta bancaria chilena del titular."]
+  ],
+  "particularidades": [
+    ["Red global, flujo local", "Visa es la red de tarjetas con mayor aceptación mundial: el cupo en dólares de cualquier Visa chilena se procesa aquí con el mismo estándar."],
+    ["Cualquier emisor chileno", "No importa si tu Visa es de un banco tradicional, de una financiera o de comercio: lo relevante es el cupo internacional disponible."],
+    ["Habilitación internacional", "Si tu Visa tiene el cupo bloqueado para el extranjero, primero se habilita en el emisor; te orientamos para verificarlo."]
+  ],
+  "steps": [
+    ["Cotizá", "Envíanos por WhatsApp el cupo internacional en USD que muestra tu app del emisor de tu tarjeta Visa."],
+    ["Validación", "Cotejamos el saldo contigo, sin pedir claves ni accesos a tu banca."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "Visa es la red con más tarjetas emitidas en el mundo, y en Chile casi todo banco la usa. Vender el cupo internacional de una Visa es exactamente igual a vender el de cualquier otro emisor: comisión fija del 15% y pago en minutos."
+}

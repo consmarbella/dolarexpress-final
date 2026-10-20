@@ -1,0 +1,30 @@
+{
+  "name": "CMR Falabella",
+  "faqs": [
+    ["¿Sirven las tarjetas CMR Visa?",
+     "Sí. Las CMR Visa son emitidas por Banco Falabella, así que basta que el cupo internacional esté disponible y seas el titular para procesar la venta."],
+    ["¿El cupo internacional CMR se ve en alguna app?",
+     "En la app o portal de Banco Falabella, sección tarjetas: el cupo disponible en USD es visible. Con una captura cotizamos exacto; nunca pedimos tus contraseñas."],
+    ["¿Se afecta mi programa de puntos CMR?",
+     "No. El canje de puntos por productos o descuentos en Falabella, Tottus o Sodimac sigue funcionando: vendemos el cupo disponible, no los beneficios ni los puntos."],
+    ["¿Puedo pagar mi cuenta CMR en las tiendas?",
+     "La cuenta con tu banco la administras tú por los canales del banco. Tras vender el cupo, la deuda en dólares la pagas en USD antes del vencimiento o esperas el traspaso a pesos que hace el banco."],
+    ["¿Cuál es el cupo mínimo que aceptan?",
+     "USD 300 disponibles. No hay tope superior y los montos especialmente altos se coordinan con el titular en la misma conversación de WhatsApp."],
+    ["¿A qué velocidad me pagan?",
+     "En menos de 15 minutos después de tu confirmación de saldo: la transferencia sale directo a la cuenta bancaria chilena del titular."],
+    ["¿Debo ir a tienda Falabella para operar?",
+     "No hace falta. Todo se resuelve por WhatsApp: cotización, validación y transferencia, sin filas de tienda ni trámites en cajas."]
+  ],
+  "particularidades": [
+    ["Emisión vía Banco Falabella", "Las tarjetas CMR Visa son emitidas por Banco Falabella: mientras el cupo internacional esté disponible, el flujo es exactamente igual que con un banco tradicional."],
+    ["Beneficios de tienda a salvo", "El programa de puntos y descuentos CMR (Falabella, Tottus, Sodimac) no se ve tocado: operamos solo sobre el cupo disponible."],
+    ["Prueba del saldo por app", "El banco muestra el cupo internacional disponible en su app o portal: una captura alcanza para cotizar."]
+  ],
+  "steps": [
+    ["Cotizá", "Manda por WhatsApp el cupo internacional en USD que veas en la app o portal de Banco Falabella (tarjetas CMR Visa)."],
+    ["Validación", "Confirmamos el saldo contigo, sin solicitar claves ni accesos a tu banca."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación. La deuda en dólares queda a tu nombre."]
+  ],
+  "did": "La tarjeta CMR Visa la emite Banco Falabella, no una compañía de retail genérica: por eso el cupo internacional que compramos se maneja con la misma mecánica bancaria (comisión 15% fija, pago bajo 15 minutos)."
+}

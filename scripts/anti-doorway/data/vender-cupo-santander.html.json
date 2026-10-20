@@ -1,0 +1,30 @@
+{
+  "name": "Santander",
+  "faqs": [
+    ["¿Sirve la tarjeta Santander White?",
+     "Sí. Aunque la White es 100% digital, si tiene cupo internacional disponible se procesa igual que una tarjeta física del banco, con la comisión del 15% fija."],
+    ["¿Cómo verifico mi cupo desde la app de Santander?",
+     "Dentro de la app o web del banco, sección tarjeta: el cupo disponible en USD se ve en el detalle. Solo necesitamos una captura; jamás pedimos contraseñas ni accesos a tu banca."],
+    ["¿Se puede negociar la comisión?",
+     "No la variamos por persona y eso es deliberado: 15% fijo para todos, sin cargos ocultos por transferencia ni gestión. La cifra que te cotizamos es la que llega a tu cuenta."],
+    ["¿Es lo mismo que pedir un avance en efectivo?",
+     "No, y conviene no confundirlos: el avance de Santander genera intereses desde el día uno. Vender el cupo tiene un único costo, el 15%, sin intereses acumulativos."],
+    ["¿Qué pasa si mi deuda en dólares se traspasa al cupo en pesos?",
+     "Santander maneja la deuda en USD con la mecánica habitual: si no la pagas antes del vencimiento, pasa al cupo en pesos y desde ahí la pagas como deuda normal. Tú decides el camino."],
+    ["¿Atienden si no estoy en Santiago?",
+     "El proceso es 100% online por WhatsApp: la ubicación no importa. Operamos de Arica a Punta Arenas con cualquier cuenta bancaria chilena a nombre del titular."],
+    ["¿Hacen operaciones para empresas?",
+     "Sí. Montos mayores se tratan directamente con el titular por WhatsApp, con validaciones adicionales para mantener transparencia y seguridad."]
+  ],
+  "particularidades": [
+    ["Soporte para tarjeta 100% digital", "La tarjeta White sin plástico físico entra al mismo flujo; lo que define el precio es el cupo internacional disponible, no el formato de la tarjeta."],
+    ["Getnet no interfiere", "Getnet es la empresa de pagos del grupo Santander para negocios y no cambia nada respecto a la venta de tu cupo personal."],
+    ["Un solo costo visible", "15% y nada más. Sin fee por transferencia ni “gastos de gestión”: la transparencia del precio es parte del servicio."]
+  ],
+  "steps": [
+    ["Cotizá", "Comparte por WhatsApp el cupo internacional en USD que muestra tu app de Santander (o de tu tarjeta White digital)."],
+    ["Validación", "Confirmamos el saldo juntos, tú desde tu app, sin pedir claves ni accesos."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos. La deuda en USD queda a tu nombre y la gestionas con el banco."]
+  ],
+  "did": "Santander Chile pertenece al grupo español Santander, presente en el país desde 1937. Su ecosistema incluye la tarjeta digital White y la plataforma de pagos Getnet, y su cartera de cupos internacionales es una de las más activas del mercado: se procesa con la comisión fija del 15%."
+}

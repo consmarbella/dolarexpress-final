@@ -1,0 +1,30 @@
+{
+  "name": "Líder",
+  "faqs": [
+    ["¿Sirve la tarjeta Líder Visa?",
+     "Sí. La tarjeta Líder Visa, emitida por Promarca (la unidad financiera ligada a Walmart Chile), se procesa cuando tiene cupo internacional disponible y eres el titular."],
+    ["¿Dónde reviso mi cupo en dólares?",
+     "En los canales digitales que Promarca o el banco administran para la tarjeta: el cupo disponible en USD se consulta desde la app o el portal. Con una captura cotizamos exacto."],
+    ["¿Afecta a mis beneficios en Líder o Ekono?",
+     "No. Los descuentos y promociones en Líder, Ekono y el resto del ecosistema de la tarjeta se mantienen: solo operamos sobre el cupo disponible."],
+    ["¿Hay límites de monto?",
+     "El mínimo es de USD 300. No existe tope superior; los montos grandes se coordinan directamente con el titular por WhatsApp."],
+    ["¿Y si queda deuda en dólares?",
+     "Es tuya y la pagas tú al banco: en USD antes del vencimiento, o mediante el traspaso a pesos al cierre del ciclo y el pago en cuotas normales."],
+    ["¿Puedo vender si soy adicional?",
+     "Se procesa si la gestión la conduce el titular o con su autorización expresa. El cupo internacional debe estar activo y la tarjeta sin bloqueos."],
+    ["¿Cuánto demora la transferencia?",
+     "Menos de 15 minutos desde tu confirmación. Todo el flujo ocurre por WhatsApp sin necesidad de visitas."]
+  ],
+  "particularidades": [
+    ["Emisión vía Promarca", "La tarjeta Líder Visa la administra Promarca, la unidad financiera ligada a Walmart Chile: un flujo bancario con perspectiva retail."],
+    ["Beneficios de supermercado intactos", "Promociones y descuentos en Líder y Ekono siguen operando normalmente: el cupo vendido no toca tus beneficios."],
+    ["Cotización por captura", "El cupo disponible en USD se acredita con una captura de la app o portal; nada de papeleo extra."]
+  ],
+  "steps": [
+    ["Cotizá", "Pásanos el cupo internacional en USD que ves en los canales digitales de tu tarjeta Líder (Promarca)."],
+    ["Validación", "Confirmamos el saldo contigo, sin pedir claves ni credenciales."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "La tarjeta Líder pertenece a Promarca, la unidad financiera ligada a Walmart Chile, y se usa en su ecosistema de supermercados (Líder, Ekono). Ese mismo cupo en dólares se vende por WhatsApp con la comisión fija del 15%."
+}

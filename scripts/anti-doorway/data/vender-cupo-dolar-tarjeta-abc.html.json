@@ -1,0 +1,30 @@
+{
+  "name": "ABC",
+  "faqs": [
+    ["¿Sirve la tarjeta ABC?",
+     "Sí. Si tu tarjeta ABC la emite una institución financiera y tiene cupo internacional disponible, se procesa con el flujo estándar de venta y la comisión del 15% fija."],
+    ["¿Dónde veo mi cupo en dólares?",
+     "En la app o el portal de tu institución emisora: el cupo disponible en USD se lee directamente. Con una captura de pantalla cotizamos el monto exacto."],
+    ["¿Se alteran mis descuentos en ABCDIN o sucursales asociadas?",
+     "No. Las promociones vinculadas a la marca ABC quedan operativas: vendemos el cupo disponible, no los beneficios del programa de la tienda."],
+    ["¿Cuál es el monto mínimo?",
+     "USD 300 de cupo internacional disponible. No hay tope superior; montos especialmente altos se coordinan con el titular en la misma conversación."],
+    ["¿Qué pasa con la deuda en dólares remanente?",
+     "La pagas tú al emisor: en USD antes del vencimiento o vía el traspaso a pesos que hace la institución al cierre del ciclo."],
+    ["¿Hay que ir físicamente a alguna parte?",
+     "No. Todo se resuelve por WhatsApp, desde la cotización hasta la transferencia a la cuenta bancaria del titular."],
+    ["¿Cómo rápido reciben el pago?",
+     "Menos de 15 minutos después de que confirmes el saldo, siempre que la cuenta receptora sea del titular."]
+  ],
+  "particularidades": [
+    ["Marca de retail de tecnología", "ABCDIN se especializa en tecnología y electrodomésticos: las tarjetas de su marca con cupo internacional en USD se venden siguiendo el flujo bancario estándar."],
+    ["Beneficios de marca preservados", "Las promociones y descuentos de la marca ABC no cambian; el cupo vendido es solo la línea disponible."],
+    ["Verificación por captura", "La captura del cupo disponible en tus canales digitales alcanza para cotizar sin necesidad de estados de cuenta impresos."]
+  ],
+  "steps": [
+    ["Cotizá", "Pásanos el cupo internacional en USD que muestra la app o portal de tu tarjeta ABC."],
+    ["Validación", "Confirmamos el saldo contigo, sin pedir claves ni accesos."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "ABCDIN se especializa en tecnología: su tarjeta ABC, cuando trae cupo internacional en dólares, se procesa con la misma mecánica bancaria que usamos con todos los emisores (comisión 15% fija)."
+}

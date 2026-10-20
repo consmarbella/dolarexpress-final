@@ -1,0 +1,30 @@
+{
+  "name": "Itaú",
+  "faqs": [
+    ["¿Sirve con tarjetas Jazz de Itaú?",
+     "Sí, si tu Jazz es emitida por Itaú y tiene cupo internacional disponible. Se procesa con el mismo flujo y la misma comisión del 15% que las tarjetas Visa o Mastercard del banco."],
+    ["¿Cómo reviso el cupo en la app de Itaú?",
+     "Dentro de la app o plataforma del banco, sección tarjetas: el cupo internacional en USD aparece en línea. Solo pedimos una captura; nunca contraseñas ni accesos a tu banca."],
+    ["¿La operación afecta mis puntos LATAM Pass?",
+     "No. Vendemos el cupo disponible sin intervenir tu programa: los puntos o beneficios acumulados en la tarjeta se mantienen intactos."],
+    ["¿Es lo mismo que un avance de efectivo?",
+     "No. El avance genera intereses desde el día uno. Vender el cupo tiene un único costo fijo del 15%, sin intereses acumulativos ni cargos escondidos."],
+    ["¿El cupo se mide en otra moneda?",
+     "En tarjetas internacionales el cupo se expresa en dólares. Si tienes dudas por un uso reciente de la tarjeta, cuéntanoslo por WhatsApp y lo verificamos juntos antes de cerrar."],
+    ["¿Atienden ciudades fuera de Santiago?",
+     "Sí, 100% online por WhatsApp. Puedes estar en cualquier comuna o región de Chile, siempre que la cuenta receptora sea del titular."],
+    ["¿Qué trayectoria tienen ustedes?",
+     "Operamos hace más de 7 años desde Vitacura 7181: oficina registrada, teléfono público y comisión fija. Sin intermediarios anónimos ni promesas irreales."]
+  ],
+  "particularidades": [
+    ["Programa LATAM Pass intacto", "Operamos sobre el cupo disponible de la tarjeta, no sobre el programa de beneficios: tus puntos LATAM Pass quedan tal como están."],
+    ["Tarjeta Jazz compatible", "La línea Jazz de Itaú, emitida por el banco y con cupo internacional activo, entra al mismo flujo sin excepciones."],
+    ["App siempre actualizada", "Itaú muestra el cupo en tiempo real dentro de su app; no necesitas estados de cuenta previos ni números de tarjeta para cotizar."]
+  ],
+  "steps": [
+    ["Cotizá", "Envíanos por WhatsApp el cupo internacional en USD que ves en tu app de Itaú."],
+    ["Validación", "Revisamos el saldo contigo al lado, sin pedir claves ni accesos a la banca."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "Itaú Unibanco, de Brasil, es uno de los bancos más grandes de América Latina y en Chile es conocido por su programa LATAM Pass. La línea Jazz y las tarjetas tradicionales con cupo internacional se procesan con el mismo estándar: 15% fijo, pago bajo 15 minutos."
+}

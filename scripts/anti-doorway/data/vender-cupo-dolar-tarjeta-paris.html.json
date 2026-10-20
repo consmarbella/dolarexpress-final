@@ -1,0 +1,30 @@
+{
+  "name": "Paris (Cencosud)",
+  "faqs": [
+    ["¿Sirve la tarjeta Paris con cupo internacional?",
+     "Sí. La tarjeta Paris Visa o Mastercard, administrada por Cencosud, se procesa cuando el cupo internacional está disponible y la operación la conduce el titular."],
+    ["¿Dónde consulto mi cupo en dólares?",
+     "En los canales digitales que Cencosud administra para la tarjeta: el cupo disponible en USD se revisa desde la app o el portal. Solo pedimos una captura para cotizar."],
+    ["¿Cambian mis beneficios en Paris, Jumbo o Easy?",
+     "No. Los descuentos y promociones del grupo (Paris, Jumbo, Santa Isabel, Easy) quedan intactos: vendemos el cupo disponible, no tus beneficios."],
+    ["¿Qué monto mínimo se vende?",
+     "USD 300 de cupo internacional disponible. Los montos superiores no tienen tope y se coordinan directo con el titular por WhatsApp."],
+    ["¿Y la deuda en dólares que queda pendiente?",
+     "La administras tú: pagas en USD antes del vencimiento o esperas el traspaso a pesos al cierre del ciclo y la pagas en cuotas normales."],
+    ["¿Debo pasar por una tienda Paris?",
+     "No hace falta. La operación completa es online por WhatsApp: cotización, validación y transferencia sin pisar una tienda."],
+    ["¿En cuánto me pagan después de confirmar?",
+     "En menos de 15 minutos desde tu confirmación de saldo, mediante transferencia a la cuenta chilena del titular."]
+  ],
+  "particularidades": [
+    ["Ecosistema Cencosud", "La tarjeta Paris pertenece al grupo Cencosud (Paris, Jumbo, Santa Isabel, Easy) y su cupo internacional en dólares se procesa igual que el de un banco."],
+    ["Beneficios multi-tienda intactos", "Descuentos y promociones de la familia de tiendas del grupo permanecen sin cambios al vender el cupo."],
+    ["Captura y listo", "El cupo disponible se acredita con una captura de los canales digitales de la tarjeta: sin trámites adicionales."]
+  ],
+  "steps": [
+    ["Cotizá", "Pásanos por WhatsApp el cupo internacional en USD que muestra la app o portal de tu tarjeta Paris."],
+    ["Validación", "Confirmamos el saldo contigo, sin pedir claves ni accesos a tus canales."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "La tarjeta Paris la administra Cencosud, el mismo grupo tras Jumbo, Santa Isabel y Easy. Su cupo internacional es una línea de crédito común y se vende con la misma mecánica de un banco: 15% fijo y pago en minutos."
+}

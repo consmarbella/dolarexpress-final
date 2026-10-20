@@ -1,0 +1,30 @@
+{
+  "name": "BCI",
+  "faqs": [
+    ["¿Sirve con CuentaMía?",
+     "CuentaMía es la cuenta digital del BCI y su tarjeta es de débito, así que no tiene cupo en dólares. Sí operamos con tarjetas de crédito BCI (Visa o Mastercard) y con la tarjeta Más del banco cuando traen cupo internacional."],
+    ["¿Cómo reviso mi cupo desde la app BCI?",
+     "En la app o la web del banco, en la sección de tarjetas, figura el cupo disponible en USD. Solo pedimos una captura de pantalla; nunca credenciales ni accesos a tu banca."],
+    ["¿Puedo vender el cupo de una tarjeta adicional BCI?",
+     "Sí, si el cupo internacional está disponible y la operación la conduce el titular. Para tarjetas adicionales de otra persona, se coordina la autorización expresa del titular por WhatsApp."],
+    ["¿Y la deuda que queda en dólares después?",
+     "Queda a tu nombre y la manejas tú: puedes pagarla en USD antes del cierre o esperar el traspaso a pesos que hace el banco al vencimiento y pagarla en cuotas normales."],
+    ["¿Aceptan tarjetas de empresa o del rubro comercial?",
+     "Se evalúan caso a caso con el titular directo por WhatsApp. Lo esencial es que la emisión esté a nombre del solicitante y el cupo internacional esté activo."],
+    ["¿Operan fuera del horario bancario tradicional?",
+     "Atendemos de lunes a viernes de 9:00 a 18:00 hrs. Fuera de ese rango la cotización llega el siguiente día hábil; la transferencia pactada se ejecuta en el horario acordado."],
+    ["¿Cómo distingo si un comprador de cupo es estafa?",
+     "Fíjate en señales rojas: te piden claves del banco, te piden compartir pantalla o instalar apps, o prometen tasas irreales sobre 90%. Nosotros operamos con comisión fija del 15% y oficina registrada en Vitacura."]
+  ],
+  "particularidades": [
+    ["CuentaMía no aplica y te explicamos por qué", "Si tu relación con el banco es vía CuentaMía, esa tarjeta es débito y no tiene línea de crédito en USD; el cupo internacional se compra desde tarjetas de crédito BCI."],
+    ["Tarjeta Más soportada", "La tarjeta Más de BCI con cupo internacional disponible entra al mismo flujo que las tarjetas de crédito tradicionales del banco."],
+    ["Diseño para movilidad", "No es necesario visitar sucursal ni llamar a la mesa de atención del banco: el flujo se cierra por WhatsApp con transferencia en minutos."]
+  ],
+  "steps": [
+    ["Cotizá", "Envíanos la captura del cupo internacional en USD desde la app de BCI, sección tarjetas."],
+    ["Validación", "Cotejamos el saldo contigo en tiempo real, sin pedir credenciales del banco."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación. Tu deuda en dólares queda a tu cargo directo con el banco."]
+  ],
+  "did": "BCI nació en 1937 y fue pionero en banca digital chilena con CuentaMía. No pedirte claves ni accesos es justamente lo que hace que la venta del cupo sea segura: tu cuenta queda intacta y bajo tu control."
+}

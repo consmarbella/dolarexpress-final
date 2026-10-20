@@ -1,0 +1,30 @@
+{
+  "name": "Ripley",
+  "faqs": [
+    ["¿Sirven las tarjetas de Banco Ripley?",
+     "Sí. Las tarjetas de crédito Visa de Banco Ripley, cuando traen cupo internacional disponible, se procesan con el flujo estándar y la comisión del 15%."],
+    ["¿Dónde veo mi cupo en dólares?",
+     "En la app o portal de Banco Ripley, sección tarjetas: el cupo disponible en USD está visible. Solo requerimos una captura de pantalla para cotizar."],
+    ["¿Tengo que ir a alguna tienda Ripley?",
+     "No. Nada de la operación ocurre en tiendas: es 100% online por WhatsApp, de la cotización hasta la transferencia a tu cuenta."],
+    ["¿Se afectan los cupones o beneficios de tienda?",
+     "No. Los beneficios promocionales de las tiendas del grupo quedan intactos: operamos solamente sobre el cupo disponible de la tarjeta."],
+    ["¿Y la deuda en dólares que queda?",
+     "La manejas tú con el banco: pagas en USD antes del vencimiento o esperas el traspaso a pesos y la pagas en cuotas normales."],
+    ["¿Puedo operar si no vivo en una gran ciudad?",
+     "Sí. Vendemos cupos de Arica a Punta Arenas desde Vitacura; la cuenta receptora debe ser chilena y del titular."],
+    ["¿Cuánto tarda el pago después de confirmar?",
+     "Menos de 15 minutos desde tu confirmación de saldo. La transferencia se hace a nombre del titular."]
+  ],
+  "particularidades": [
+    ["Banco del retail", "Banco Ripley, el banco del grupo de tiendas, emite tarjetas Visa con cupo internacional que se venden igual que las de un banco tradicional."],
+    ["App como fuente de verdad", "El cupo disponible en USD se consulta por la app del banco: nada de estados de cuenta impresos."],
+    ["Beneficios de tienda sin cambios", "El programa de cupones y promociones de las tiendas del grupo no se toca al vender tu cupo."]
+  ],
+  "steps": [
+    ["Cotizá", "Envía por WhatsApp el cupo internacional en USD que muestra la app de Banco Ripley."],
+    ["Validación", "Verificamos el saldo contigo, sin pedir claves ni accesos a tu app."],
+    ["Pago", "Transferencia en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "Banco Ripley nació del grupo de las tiendas Ripley, y por eso su tarjeta Visa se asocia a beneficios promocionales de tienda. Estos beneficios quedan intactos: lo único que vendes es tu cupo internacional disponible."
+}

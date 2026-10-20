@@ -1,0 +1,30 @@
+{
+  "name": "Hites",
+  "faqs": [
+    ["¿Sirve la tarjeta Hites?",
+     "Sí. Si tu tarjeta Hites la emite un banco o institución financiera y tiene cupo internacional disponible, se procesa con el flujo estándar y la comisión del 15%."],
+    ["¿Cómo reviso el cupo disponible en dólares?",
+     "Desde la app o los canales digitales de tu tarjeta: el cupo disponible en USD aparece en línea. Solo pedimos una captura de pantalla; nunca contraseñas."],
+    ["¿Pierdo beneficios de compra en Hites?",
+     "No. Las promociones y descuentos del retailer quedan como están: solo operamos sobre el cupo internacional disponible de la tarjeta."],
+    ["¿Cuánto es el mínimo para operar?",
+     "USD 300 de cupo disponible. Los montos mayores no tienen tope y se coordinan directamente con el titular por WhatsApp."],
+    ["¿Y la deuda en dólares que queda?",
+     "Es tuya: pagas al emisor en USD antes del vencimiento o esperas el traspaso a pesos y la pagas como deuda normal en cuotas."],
+    ["¿Necesito ir a una tienda Hites?",
+     "No. Todo ocurre por WhatsApp: cotización, validación del saldo y transferencia a tu cuenta bancaria, sin visitas."],
+    ["¿Qué rapidez tienen en el pago?",
+     "Transferencia en menos de 15 minutos tras tu confirmación de saldo, si la cuenta receptora es del titular."]
+  ],
+  "particularidades": [
+    ["Retail de tecnología con línea bancaria", "Hites es retail de tecnología y electrodomésticos: sus combinaciones de tarjeta con cupo internacional se venden con el mismo filtro que un banco."],
+    ["Beneficios de compra intactos", "Las promociones de tienda no cambian: lo que se vende es el cupo disponible, no el programa de beneficios."],
+    ["Cotización basada en captura", "La verificación del cupo disponible se hace con una captura de tus canales digitales, sin papeleo."]
+  ],
+  "steps": [
+    ["Cotizá", "Envíanos por WhatsApp el cupo internacional en USD que muestre tu app o portal de tarjeta."],
+    ["Validación", "Cotejamos el saldo contigo, sin acceder a tu cuenta ni pedir credenciales."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "Hites lleva décadas vendiendo tecnología y electrodomésticos en Chile. Su línea de tarjeta con cupo internacional disponible se procesa igual que la de cualquier banco: comisión fija del 15% y transferencia bajo 15 minutos."
+}

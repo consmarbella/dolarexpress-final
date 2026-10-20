@@ -1,0 +1,30 @@
+{
+  "name": "Scotiabank",
+  "faqs": [
+    ["¿Sirven todas las tarjetas Scotiabank Chile?",
+     "Sí. Tarjetas personales Visa o Mastercard con cupo internacional disponible. El requisito es ser el titular y que el cupo esté activo y sin bloqueos."],
+    ["¿Cómo consulto mi cupo USD desde Scotiabank?",
+     "En la app o el sitio del banco, sección tarjetas: el cupo disponible en dólares se muestra al instante. Solo usamos una captura, no accesos ni contraseñas."],
+    ["¿Puedo vender solo una parte del cupo?",
+     "Cotizamos sobre el cupo disponible completo que muestra tu app. Si tienes un caso especial (una compra pendiente o una reserva de viaje), cuéntanoslo por WhatsApp y lo evaluamos."],
+    ["¿Y si la deuda migra al cupo en pesos?",
+     "Scotiabank funciona como el resto del mercado: si la deuda en dólares no se paga al vencimiento, pasa al cupo nacional y se paga en cuotas normales. El camino lo eliges tú."],
+    ["¿Se requiere tarjeta física para operar?",
+     "No. Tarjetas físicas y digitales se procesan por igual; verificamos que el cupo esté disponible y que la operación la gestione el titular."],
+    ["¿Tienen oficina para visitarme?",
+     "Sí, Vitacura 7181, con cita previa agendada por WhatsApp. La mayoría de las operaciones se resuelve 100% remoto, sin que te muevas."],
+    ["¿Qué pasa si mi tarjeta está cerca de su vencimiento?",
+     "Se procesa igual mientras el cupo esté disponible. Coordinamos el cierre rápido por WhatsApp para que la operación complete antes de la fecha límite."]
+  ],
+  "particularidades": [
+    ["Grupo canadiense", "Scotiabank pertenece al Bank of Nova Scotia, fundado en 1832 y uno de los bancos más antiguos de Canadá; su cartera internacional en Chile es parte del flujo cotidiano del mercado."],
+    ["Tarjetas sin plástico, sin problema", "Scotiabank incorpora tarjetas digitales con facilidad y cualquier formato de plástico con cupo USD se procesa de la misma forma."],
+    ["Flujo estandarizado", "Un solo canal de entrada: envías la captura por WhatsApp, validamos juntos y la transferencia queda bajo 15 minutos."]
+  ],
+  "steps": [
+    ["Cotizá", "Pásanos por WhatsApp el cupo internacional en USD visible en tu app de Scotiabank."],
+    ["Validación", "Cotejamos el saldo en vivo contigo, sin pedir credenciales ni permisos."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "Scotiabank Chile forma parte del Bank of Nova Scotia, fundado en 1832 en Canadá. En el mercado chileno su cupo internacional se procesa igual que el de cualquier banco local: comisión fija del 15% y transferencia bajo 15 minutos."
+}

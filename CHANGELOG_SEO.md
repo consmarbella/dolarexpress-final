@@ -94,3 +94,32 @@ _Ejecutado el 2026-10-19 en la rama `seo-fixes-oct-2026`. Los bloques T2–T5 y 
 3. GSC → declarar preferencia de dominio www (donde aplique).
 4. GBP → renombrar a "DolarExpress" y responder reseñas.
 5. Re-revisar en 7 días: impresiones, "excluida por noindex" (debe subir), 404 (debe bajar).
+
+
+## Plan V2 ejecutado - Tandas A/B/C (2026-10-20)
+
+### Tanda B - Anti-doorway (14 paginas revisadas)
+- Medicion Jaccard de vocabulario sobre las 22 paginas comerciales (sim3.py, scripts/anti-doorway/): antes del rebuild los 6 drafts de articulo compartian 44-56% nombre a nombre.
+- Rebuild con datos unicos por marca (aplicaciones donde se consulta la linea, beneficios de tienda, origen del emisor, franquicias) + bloques extra por emisor + side-lists/side-subs reescritos: peor par final **34%** (avance-cupo-dolares ~ vender-cupo-dolar), todos los pares <35%.
+- Metodo: patch2/p4/p4b/p5 (parrafos unicos de monto/casos/requisitos/pasos), patch7-10 (side-cards, leads, metric rows, intros), patch13b (saneamiento de markup anidado por patch8).
+- fix bobo patch8: metrics duplicadas + <p> anidados + encoding corrupto: devueltas a estado limpio (3 paginas).
+
+### Tanda A - Home
+- Title/meta desc/og multi-intent; JSON-LD: +3 FAQs (cuanto pagan $880/$748.000, historial, BancoEstado), HowTo (3 pasos #cotizar), DefinedTermSet (4 terminos).
+- Ticker del dolar observado ($880 inicial + JS fetch mindicador.cl al cargar).
+- Calculadora: rate 880, USD 1.000 x 0,85 = $748.000.
+- Hub "Tarjetas y bancos que aceptamos": hrefs corregidos a slugs reales (/vender-cupo-bci, /vender-cupo-ripley-rapido, /vender-cupo-lider-santiago) + chips Hites y Tarjeta ABC.
+- stats-bar: "Miles de clientes" -> "Vitacura 7181 - direccion real de oficina en Chile" (claim verificable).
+- FAQ on-page: +3 items arriba (monto, historial, BancoEstado).
+
+### Tanda C - 2 paginas nuevas
+- **/vender-cupo-banco-estado.html**: tarjetas VISA Internacional/Dorada/Platinum + MASTERCARD Estandar/Gold/Black, CuentaRUT es debito (no aplica), tabla $264.000/$374.000/$748.000, min USD 300, tel 600 200 6000; JSON-LD valid.
+- **/empresas-altos-montos.html**: tabla USD 5k/10k/25k/50k -> $3,74M/$7,48M/$18,7M/$37,4M; SoB (FAQ mapeado 1:1 en JSON-LD); valid.
+
+### Consistencia de cifras repo-wide
+- Minimo USD 300 en 8 paginas + llms-full.txt (4 ocurrencias) + preguntas-frecuentes (JSON-LD y visible).
+- Ejemplo $880/USD-15% = **$748.000 CLP** consistente en todo el repo.
+
+### Sitemap y validaciones
+- sitemap.xml: 34 URLs (+2 nuevas) con lastmod real por mtime.
+- JSON-LD: 36 paginas parseables (NONE_OK). Balance de tags OK. Mojibake: 0.

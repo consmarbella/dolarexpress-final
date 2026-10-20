@@ -1,0 +1,33 @@
+{
+  "name": "Banco de Chile",
+  "faqs": [
+    ["¿Sirve para la tarjeta Edwards?",
+     "Sí. La línea Edwards la administra Banco de Chile, así que si el plástico tiene cupo internacional disponible se procesa con el mismo flujo y la misma comisión del 15% fija."],
+    ["¿Cómo reviso mi cupo en dólares en Banco de Chile?",
+     "En la app o el sitio del banco, dentro de la sección tarjetas: aparece el cupo disponible en USD. Con una simple captura de pantalla te cotizamos el monto exacto a pesos."],
+    ["¿Aceptan montos altos de cupo Banco de Chile?",
+     "Sí. Desde USD 300 no hay tope superior. Los montos mayores se coordinan directamente con el titular en el mismo chat de WhatsApp, sin trámites adicionales."],
+    ["¿Y la deuda en dólares que queda pendiente?",
+     "Sigue a tu nombre. Puedes pagarla en dólares antes del vencimiento, o esperar a que el banco la traspase a pesos al cierre del ciclo y pagarla en cuotas normales como cualquier deuda."],
+    ["¿Es seguro enviar una captura de la app?",
+     "Solo usamos el saldo visible para cotizar. Nunca pedimos claves, ni accesos a tu cuenta, ni credenciales de seguridad: la validación la haces tú desde tu propia app."],
+    ["¿Necesito ir a una sucursal de Banco de Chile?",
+     "No. El proceso es 100% online por WhatsApp. El banco tiene red de sucursales y cajeros a nivel nacional, pero tu venta se completa sin que tengas que moverte de donde estás."],
+    ["¿La cotización por WhatsApp me compromete?",
+     "No. Es gratuita y sin obligación: recibes la cifra final con el 15% aplicado y decides si sigues o no."]
+  ],
+  "particularidades": [
+    ["Línea Edwards incluida",
+     "Las tarjetas Edwards, administradas por Banco de Chile, se procesan la misma forma siempre que traigan cupo internacional disponible."],
+    ["Trayectoria bancaria compatible",
+     "Banco de Chile es una de las instituciones más tradicionales del país; su cupo en dólares es uno de los que más volumen mueve y nuestro flujo está afinado para ese caso."],
+    ["Cero papeleo",
+     "No hay que imprimir estados de cuenta ni ir a oficina: con la captura del cupo disponible desde la app basta para cotizar y cerrar."]
+  ],
+  "steps": [
+    ["Cotizá", "Mándanos por WhatsApp el cupo internacional en USD que muestra tu app de Banco de Chile (o de la tarjeta Edwards)."],
+    ["Validación", "Confirmamos el saldo en vivo junto a ti, sin pedir claves ni accesos a tu cuenta o tarjeta."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación. La deuda en dólares queda a tu nombre y la resuelves con el banco cuando quieras."]
+  ],
+  "did": "Banco de Chile opera desde 1893 y es uno de los bancos más antiguos del país. La marca Edwards funciona en la práctica como su línea de tarjetas de consumo: con ambas marcas y cupo internacional operamos por WhatsApp."
+}

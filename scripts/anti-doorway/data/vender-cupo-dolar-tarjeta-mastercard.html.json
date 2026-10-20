@@ -1,0 +1,30 @@
+{
+  "name": "Mastercard",
+  "faqs": [
+    ["¿Qué Mastercard aceptan?",
+     "Todas las tarjetas de crédito Mastercard emitidas por bancos o instituciones chilenas (clásicas, Gold, Platinum o Black) con cupo internacional disponible."],
+    ["¿Existe diferencia al vender Mastercard vs Visa?",
+     "En el flujo: ninguno. Se cota el cupo internacional disponible y se aplica la comisión del 15% fija; el emisor puede variar, la mecánica no."],
+    ["¿Dónde consulto mi cupo en dólares?",
+     "En la app o portal del banco emisor, sección tarjetas: el cupo disponible en USD está en línea. Solo necesitamos una captura, nada de credenciales."],
+    ["¿Cómo se calcula el pago exacto para Mastercard?",
+     "Se multiplica tu cupo en USD por la tasa del día y se aplica el 15% de comisión: te entregamos la cifra final por WhatsApp antes de aprobar la venta."],
+    ["¿Se puede vender si la tarjeta de crédito está bloqueada temporalmente?",
+     "Si el banco bloqueó la tarjeta, primero se debe desbloquear para operar. Puedes verificarlo en tu app y de ahi avanzamos."],
+    ["¿Me afecta el seguro de desgravamen u otros protecciones?",
+     "No. Esos seguros permanecen según contrato con el emisor; la venta del cupo disponible no los altera ni los cancela."],
+    ["¿Cuánto tarda llegar el dinero?",
+     "Menos de 15 minutos desde tu confirmación, mediante transferencia a una cuenta bancaria chilena a nombre del titular."]
+  ],
+  "particularidades": [
+    ["Cualquier nivel de tarjeta", "Desde Mastercard clásica hasta Mastercard Black: lo que determina el precio es el cupo internacional disponible, no el nivel del plástico."],
+    ["Emisor varía, flujo constante", "Cada banco chileno emite sus Mastercards con condiciones distintas, pero nuestra mecánica de venta siempre es la misma y con el precio transparente."],
+    ["Cupo bloqueado = pausa", "Si tu Mastercard tiene restricción de uso internacional, se resuelve primero con el emisor; te ayudamos a revisarlo antes de acordar."]
+  ],
+  "steps": [
+    ["Cotizá", "Pásanos por WhatsApp el cupo internacional en USD que muestra la app de tu banco emisor (tarjeta Mastercard)."],
+    ["Validación", "Confirmamos el saldo en vivo contigo, sin pedir claves ni permisos de acceso."],
+    ["Pago", "Transferencia a tu cuenta en menos de 15 minutos tras tu confirmación; la deuda en dólares queda a tu nombre."]
+  ],
+  "did": "Mastercard es una de las redes con mayor presencia en tarjetas chilenas: tanto bancos como tarjetas de tiendas la utilizan. El cupo internacional de cualquier Mastercard se procesa de la misma forma: comisión del 15% y pago bajo 15 minutos."
+}
