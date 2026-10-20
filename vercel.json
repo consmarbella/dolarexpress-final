@@ -660,13 +660,8 @@
       "statusCode": 301
     },
     {
-      "source": "/vender-cupo-banco-estado",
-      "destination": "/vender-cupo-dolar",
-      "statusCode": 301
-    },
-    {
       "source": "/vender-cupo-banco-estado-vitacura",
-      "destination": "/vender-cupo-dolar",
+      "destination": "/vender-cupo-banco-estado",
       "statusCode": 301
     },
     {
