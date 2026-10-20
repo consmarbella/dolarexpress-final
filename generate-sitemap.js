@@ -29,6 +29,16 @@ const urls = [
   { loc: `${baseUrl}/vender-cupo-cmr-falabella`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-cmr-falabella.html' },
   { loc: `${baseUrl}/vender-cupo-ripley-rapido`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-ripley-rapido.html' },
   { loc: `${baseUrl}/vender-cupo-lider-santiago`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-lider-santiago.html' },
+  // Vender cupo - bancos estado / empresas
+  { loc: `${baseUrl}/vender-cupo-banco-estado`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-banco-estado.html' },
+  { loc: `${baseUrl}/empresas-altos-montos`, priority: '0.8', changefreq: 'weekly', src: 'empresas-altos-montos.html' },
+  // Vender cupo - franquicias y retail
+  { loc: `${baseUrl}/vender-cupo-dolar-tarjeta-visa`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-dolar-tarjeta-visa.html' },
+  { loc: `${baseUrl}/vender-cupo-dolar-tarjeta-mastercard`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-dolar-tarjeta-mastercard.html' },
+  { loc: `${baseUrl}/vender-cupo-dolar-tarjeta-amex`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-dolar-tarjeta-amex.html' },
+  { loc: `${baseUrl}/vender-cupo-dolar-tarjeta-paris`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-dolar-tarjeta-paris.html' },
+  { loc: `${baseUrl}/vender-cupo-dolar-tarjeta-hites`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-dolar-tarjeta-hites.html' },
+  { loc: `${baseUrl}/vender-cupo-dolar-tarjeta-abc`, priority: '0.9', changefreq: 'weekly', src: 'vender-cupo-dolar-tarjeta-abc.html' },
   // Institucionales
   { loc: `${baseUrl}/testimonios`, priority: '0.7', changefreq: 'monthly', src: 'testimonios.html' },
   { loc: `${baseUrl}/nosotros`, priority: '0.6', changefreq: 'monthly', src: 'nosotros.html' },
