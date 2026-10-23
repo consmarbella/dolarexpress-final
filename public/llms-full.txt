@@ -10,7 +10,7 @@
 
 El cupo en dólares es el límite de crédito internacional que los bancos chilenos asignan a las tarjetas de crédito. Cuando un cliente tiene cupo disponible en USD, DolarExpress lo compra y le transfiera pesos chilenos. No es un préstamo, no es un avance en efectivo, no es una línea de crédito. Es una compra directa del cupo disponible.
 
-El precio de compra varía diariamente según el dólar observado del Banco Central de Chile. Actualmente DolarExpress paga entre el 80% y 90% del valor del cupo, dependiendo del monto y la tarjeta.
+El precio de compra varía diariamente según el dólar de referencia del Banco Central de Chile. Actualmente DolarExpress paga entre el 80% y 90% del valor del cupo, dependiendo del monto y la tarjeta.
 
 ---
 
@@ -91,7 +91,7 @@ WhatsApp: +56 9 6765 8939. Formulario de contacto. Horario de atención: lunes a
 - **Cobertura**: Todo Chile. No se requiere presencia física.
 - **Historial crediticio**: No afecta. No aparece en DICOM. No es un préstamo.
 - **Diferencia con avance en efectivo**: El avance en efectivo cobra altas tasas de interés. DolarExpress compra el cupo directamente y el cliente recibe pesos sin deuda.
-- **Tipo de cambio**: Basado en el dólar observado del Banco Central de Chile del día de la operación.
+- **Tipo de cambio**: Basado en el dólar de referencia del Banco Central de Chile del día de la operación.
 - **Contacto**: WhatsApp +56 9 6765 8939.
 
 ---
