@@ -123,3 +123,29 @@ _Ejecutado el 2026-10-19 en la rama `seo-fixes-oct-2026`. Los bloques T2–T5 y 
 ### Sitemap y validaciones
 - sitemap.xml: 34 URLs (+2 nuevas) con lastmod real por mtime.
 - JSON-LD: 36 paginas parseables (NONE_OK). Balance de tags OK. Mojibake: 0.
+
+## Fase 4 - Diferenciacion de contenido y limpieza total (2026-10-23)
+
+Commits: 29c5c79e, afa7710f, 1f190bb4, c649013c.
+
+### Contenido
+- 7 paginas reconstruidas con angulo propio y sin plantilla compartida: avance-cupo-dolares (avance vs vender, tabla 1/12 cuotas), vender-cupo-santander (ciclo de facturacion), vender-cupo-itau (100% remoto), cuanto-pagan-por-cupo-dolar (formula + tabla 300-5.000), nosotros (que hace/no hace), preguntas-frecuentes (18 Q), testimonios (6 casos). CSS inline propio, sin Tailwind CDN ni JS bloqueante.
+- Home vs pilar separados por intencion: home = "Cambio de cupo en dolares en Vitacura" (+ seccion de oficina con cita); pilar = "Vender cupo dolar" (duenio unico de la intencion de venta).
+- Banco de Chile, BCI y Scotiabank: +2 secciones H2 unicas cada uno.
+- Aclaracion explicita "DolarExpress no ofrece cuotas ni financiamiento" en avance y cuanto-pagan.
+
+### Voz y metas
+- Voseo eliminado en 34/34 (incluye -as/-is/-es, pronombre vos y encliticos escribinos/decime).
+- 0 titles >60ch, 0 descriptions >155ch, 0 duplicados. og/twitter sincronizados.
+- charset como primer elemento del head en 34/34.
+
+### Tecnico
+- JSON-LD: PostalAddress + openingHoursSpecification en FinancialService (soportando @type en lista), url y @id a www, FAQPage regenerado desde el <dl> visible en 12 paginas -> 0 desalineaciones.
+- Footer unico con NAP (Vitacura 7181, WhatsApp, horario) en 34/34; eliminados footers duplicados.
+- AW-18216577738 en 34/34 (widget excluido a proposito); og:image en 34/34.
+- vercel.json: 146 -> 144 redirects. Corregidos 2 destinos de BancoEstado, eliminado duplicado /cupo-en-dolares, /blog/:path* eliminado (ahora 404 real), /seguridad -> /privacidad, /cupo-dolar-banco-chile ante el catch-all, trailingSlash false.
+- Sitemap regenerado (34 URLs, lastmod por git) y reenviado en GSC; sitemap apex duplicado eliminado (quedaba con 2 warnings).
+
+### Verificado en vivo
+- 200 en las 34; /blog/algo 404; /seguridad 301 /privacidad; /cupo-dolar-banco-estado-* 301 /vender-cupo-banco-estado; .html 301 a limpia.
+- Pendiente de recrawl: GSC seguia mostrando 14/34 indexadas y 4 "Duplicada" con datos de crawls de abril/julio. Revisar a 7-14 dias.
