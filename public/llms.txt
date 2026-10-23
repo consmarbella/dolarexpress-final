@@ -12,7 +12,7 @@
 - Pago: transferencia a la cuenta bancaria chilena del titular, en menos de 15 minutos tras confirmar el saldo
 - Requisitos: ser titular, cupo internacional disponible y cuenta bancaria chilena a nombre del titular; no se piden claves ni acceso a apps
 - Contacto: WhatsApp +56 9 6765 8939 (https://wa.me/56967658939); teléfono +56 9 6765 8939; dirección Av. Vitacura 7181, Las Condes, Santiago
-- Deuda en dólares: queda a nombre del usuario con su banco (pago en USD o traspaso a pesos en cuotas); inteligibilidad legal tratada en /vender-cupo-dolar-sin-dicom
+- Deuda en dólares: queda a nombre del usuario con su banco (pago en USD o traspaso a pesos al cierre del ciclo); inteligibilidad legal tratada en /vender-cupo-dolar-sin-dicom
 - No relation with banks: servicio privado independiente; la tarjeta se verifica en la app del banco del titular
 
 ## Página principal
