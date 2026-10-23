@@ -256,7 +256,7 @@
     },
     {
       "source": "/cupo-dolar-banco-estado-:path*",
-      "destination": "/vender-cupo-banco-chile",
+      "destination": "/vender-cupo-banco-estado",
       "statusCode": 301
     },
     {
@@ -292,6 +292,11 @@
     {
       "source": "/cupo-dolar-lider-:path*",
       "destination": "/vender-cupo-lider-santiago",
+      "statusCode": 301
+    },
+    {
+      "source": "/cupo-dolar-banco-chile",
+      "destination": "/vender-cupo-banco-chile",
       "statusCode": 301
     },
     {
@@ -481,7 +486,7 @@
     },
     {
       "source": "/seguridad",
-      "destination": "/",
+      "destination": "/privacidad",
       "statusCode": 301
     },
     {
@@ -565,16 +570,6 @@
       "statusCode": 301
     },
     {
-      "source": "/blog/:path*",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/cupo-dolar-banco-chile",
-      "destination": "/vender-cupo-banco-chile",
-      "statusCode": 301
-    },
-    {
       "source": "/cupo-en-dolares-:path*",
       "destination": "/que-es-cupo-en-dolares",
       "statusCode": 301
@@ -586,7 +581,7 @@
     },
     {
       "source": "/vender-cupo-dolar-banco-estado-:path*",
-      "destination": "/vender-cupo-dolar",
+      "destination": "/vender-cupo-banco-estado",
       "statusCode": 301
     },
     {
@@ -790,11 +785,6 @@
       "statusCode": 301
     },
     {
-      "source": "/cupo-en-dolares",
-      "destination": "/que-es-cupo-en-dolares",
-      "statusCode": 301
-    },
-    {
       "source": "/es-legal-vender-cupo-dolar",
       "destination": "/preguntas-frecuentes",
       "statusCode": 301
@@ -950,5 +940,6 @@
       "statusCode": 301
     }
   ],
-  "rewrites": []
+  "rewrites": [],
+  "trailingSlash": false
 }
