@@ -19,14 +19,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .container{max-width:860px;margin:0 auto;padding:24px}
 h1{font-size:clamp(24px,4vw,32px);margin-bottom:8px;color:var(--accent)}
 p.sub{color:var(--muted);margin-bottom:20px}
-.frame-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
-.frame-wrap iframe{width:100%;border:none;display:block;background:#fff}
+.frame-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;height:620px}
+.frame-wrap iframe{width:100%;height:100%;border:none;display:block;background:#fff}
 .fallback{text-align:center;margin:20px 0;color:var(--muted);font-size:14px}
-.btn-wa{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:linear-gradient(to right,var(--wa),#128C7E);color:#f9fafb;font-size:15px;font-weight:700;text-decoration:none;margin-top:12px}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;background:linear-gradient(to right,var(--wa),#128C7E);color:#f9fafb;font-size:15px;font-weight:700;text-decoration:none}
 .nav-links{margin-bottom:16px;font-size:13px;color:var(--muted)}
 .nav-links a{color:var(--accent);text-decoration:none}
 footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
 footer a{color:var(--accent);text-decoration:none;margin:0 8px}
+@media (max-width: 640px){
+  .frame-wrap{height:540px}
+}
 </style>
 </head>
 <body>
@@ -35,8 +38,7 @@ footer a{color:var(--accent);text-decoration:none;margin:0 8px}
 <h1>Widget de Cambio</h1>
 <p class="sub">Opera directo en el widget. Si no carga, cotiza por WhatsApp al +56 9 6765 8939.</p>
 <div class="frame-wrap">
-<iframe id="iframe-widget" src="https://changenow.io/embeds/exchange-widget/v2/widget.html?FAQ=true&amount=0.1&amountFiat=1500&backgroundColor=FFFFFF&darkMode=false&from=btc&fromFiat=eur&horizontal=false&isFiat&lang=es-ES&link_id=2dc3dc35fb4212&locales=true&logo=true&primaryColor=00C26F&to=btc&toFiat=eth&toTheMoon=true&topUpAddress=14GjaVeCyQwXLxSmVhMi9tbmXDCFt1G2Zd&topUpCurrency=btc&topUpExtraId&topUpMode=true&topUpNetwork=btc" style="height: 356px; width: 100%; border: none">Tu navegador no puede mostrar el widget. Escríbenos por WhatsApp.</iframe>
-<script defer type="text/javascript" src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"></script>
+<iframe width="100%" height="100%" frameborder='none' allow="camera" src="https://widget.changelly.com?from=usd&to=btc&amount=0&address=14GjaVeCyQwXLxSmVhMi9tbmXDCFt1G2Zd&fromDefault=usd&toDefault=btc&merchant_id=O_zbRc229eHGJZj1&payment_id=&v=3&type=no-rev-share&color=5f41ff&headerId=1&logo=hide&buyButtonTextId=1&readOnlyDestinationAddress=true">Can't load widget</iframe>
 </div>
 <div class="fallback">
 <p>¿El widget no carga? <a href="/contacto" style="color:var(--accent)">Contactanos por WhatsApp</a> y operamos igual en minutos.</p>
