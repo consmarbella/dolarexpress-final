@@ -203,7 +203,7 @@ footer{border-top:1px solid rgba(31,41,55,0.9);background:linear-gradient(to bot
   <!-- Real example -->
   <div class="card">
     <div class="card-inner">
-      <h2 style="margin-top:0;font-size:18px;">Ejemplo real: cuánto recibes por tu cupo</h2>
+      <h2 style="margin-top:0;font-size:18px;">¿Cuánto recibes por tu cupo en dólares? Ejemplo real</h2>
       <p style="font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:16px;">Así se calcula el monto que recibirías. Nuestra comisión del 15% es fija y está incluida en la cotización.</p>
 
       <div style="padding:16px;border-radius:12px;border:1px solid rgba(212,175,55,0.3);background:rgba(212,175,55,0.06);margin-bottom:16px;">
@@ -232,6 +232,45 @@ footer{border-top:1px solid rgba(31,41,55,0.9);background:linear-gradient(to bot
       <p style="font-size:13px;color:var(--muted);margin:0;"><strong style="color:var(--text);">Nota:</strong> El tipo de cambio varía según el día. La cotización que recibas incluirá el tipo de cambio real del momento con la comisión ya aplicada.</p>
     </div>
   </div>
+
+  <!-- Interactive calculator -->
+  <div class="card" id="calculadora">
+    <div class="card-inner">
+      <h2 style="margin-top:0;font-size:18px;">¿Cuánto recibirías? Calcula tu cupo en pesos</h2>
+      <p style="font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:16px;">Ingresa el monto en dólares y el tipo de cambio de referencia. El resultado aplica la comisión fija del 15%, que ya está incluida en la cotización.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;">
+        <label style="font-size:12px;color:var(--muted);">Cupo en USD<br>
+          <input id="calc-usd" type="number" min="300" step="50" value="1000" inputmode="numeric" style="margin-top:6px;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,0.35);background:rgba(2,6,23,0.8);color:var(--text);font-size:15px;width:150px;">
+        </label>
+        <label style="font-size:12px;color:var(--muted);">Tipo de cambio (CLP)<br>
+          <input id="calc-rate" type="number" min="1" step="1" value="995" inputmode="numeric" style="margin-top:6px;padding:10px 12px;border-radius:10px;border:1px solid rgba(148,163,184,0.35);background:rgba(2,6,23,0.8);color:var(--text);font-size:15px;width:150px;">
+        </label>
+        <button id="calc-btn" type="button" style="padding:12px 22px;border-radius:999px;border:none;background:var(--accent);color:#020617;font-weight:700;font-size:14px;cursor:pointer;">Calcular</button>
+      </div>
+      <div style="margin-top:16px;padding:14px 16px;border-radius:12px;border:1px solid rgba(212,175,55,0.3);background:rgba(212,175,55,0.06);">
+        <div class="calc-row"><span class="calc-label">Valor en pesos</span><span class="calc-value" id="calc-gross">$995.000 CLP</span></div>
+        <div class="calc-row"><span class="calc-label">Comisión 15%</span><span class="calc-value" id="calc-fee" style="color:var(--red);">− $149.250</span></div>
+        <div class="calc-row" style="border-bottom:none;"><span class="calc-label"><strong style="color:var(--text);">Recibes</strong></span><span class="calc-result" id="calc-net">$845.750 CLP</span></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:10px 0 0;">Cálculo referencial con el tipo de cambio que ingreses. La cotización exacta del día te la enviamos por <a href="https://wa.me/56967658939?text=Hola%20DolarExpress%2C%20quiero%20cotizar%20mi%20cupo%20en%20d%C3%B3lares">WhatsApp en menos de 15 minutos</a>. Monto mínimo USD 300.</p>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var usd=document.getElementById('calc-usd'), rate=document.getElementById('calc-rate'),
+        btn=document.getElementById('calc-btn'), g=document.getElementById('calc-gross'),
+        f=document.getElementById('calc-fee'), n=document.getElementById('calc-net');
+    function clp(v){ return '$' + Math.round(v).toLocaleString('es-CL'); }
+    function calc(){
+      var u=parseFloat(usd.value)||0, r=parseFloat(rate.value)||0;
+      var gross=u*r, fee=gross*0.15, net=gross-fee;
+      g.textContent=clp(gross)+' CLP';
+      f.textContent='\u2212 '+clp(fee);
+      n.textContent=clp(net)+' CLP';
+    }
+    if(btn){ btn.addEventListener('click', calc); usd.addEventListener('input', calc); rate.addEventListener('input', calc); }
+  })();
+  </script>
 
   <!-- Comparison: vender cupo vs alternatives -->
   <div class="card">
@@ -350,7 +389,7 @@ footer{border-top:1px solid rgba(31,41,55,0.9);background:linear-gradient(to bot
   <!-- How to verify your cupo -->
   <div class="card">
     <div class="card-inner">
-      <h2 style="margin-top:0;font-size:18px;">Cómo verificar tu cupo en dólares antes de cotizar</h2>
+      <h2 style="margin-top:0;font-size:18px;">¿Cómo verificar tu cupo en dólares antes de cotizar?</h2>
       <p style="font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:12px;">Antes de contactarnos, verifica cuánto cupo internacional tienes disponible. Así la cotización será precisa desde el primer momento.</p>
       <ul class="list">
         <li><strong style="color:var(--text);">App bancaria:</strong> Abre la app de tu banco → sección de tarjetas → busca "cupo internacional" o "cupo en dólares"</li>
@@ -364,7 +403,7 @@ footer{border-top:1px solid rgba(31,41,55,0.9);background:linear-gradient(to bot
   <!-- Common mistakes -->
   <div class="card">
     <div class="card-inner">
-      <h2 style="margin-top:0;font-size:18px;">Errores frecuentes al vender cupo en dólares</h2>
+      <h2 style="margin-top:0;font-size:18px;">¿Cuáles son los errores frecuentes al vender cupo en dólares?</h2>
       <p style="font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:16px;">Con más de 7 años en el mercado, vemos los mismos errores repetirse. Evita estos errores para obtener una buena experiencia:</p>
 
       <div class="risk-card">
