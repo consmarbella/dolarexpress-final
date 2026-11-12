@@ -240,6 +240,86 @@
       "statusCode": 301
     },
     {
+      "source": "/vender-cupo-dolar-lider",
+      "destination": "/vender-cupo-lider-santiago",
+      "statusCode": 301
+    },
+    {
+      "source": "/credito-con-dicom-tarjeta-cmr",
+      "destination": "/vender-cupo-dolar-sin-dicom",
+      "statusCode": 301
+    },
+    {
+      "source": "/credito-con-dicom-urgente",
+      "destination": "/vender-cupo-dolar-sin-dicom",
+      "statusCode": 301
+    },
+    {
+      "source": "/tengo-dicom-y-necesito-efectivo",
+      "destination": "/vender-cupo-dolar-sin-dicom",
+      "statusCode": 301
+    },
+    {
+      "source": "/liquidez-cupo-dolar",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-presta-tarjeta-paris",
+      "destination": "/vender-cupo-dolar-tarjeta-paris",
+      "statusCode": 301
+    },
+    {
+      "source": "/cuanto-presta-tarjeta-paris/",
+      "destination": "/vender-cupo-dolar-tarjeta-paris",
+      "statusCode": 301
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-hites",
+      "destination": "/vender-cupo-dolar-tarjeta-hites",
+      "statusCode": 301
+    },
+    {
+      "source": "/sacar-dinero-tarjeta-ripley",
+      "destination": "/vender-cupo-ripley-rapido",
+      "statusCode": 301
+    },
+    {
+      "source": "/tarjeta-hites-sin-avance",
+      "destination": "/vender-cupo-dolar-tarjeta-hites",
+      "statusCode": 301
+    },
+    {
+      "source": "/tarjeta-cmr-sin-avance",
+      "destination": "/vender-cupo-cmr-falabella",
+      "statusCode": 301
+    },
+    {
+      "source": "/avance-efectivo-tarjeta-abc",
+      "destination": "/vender-cupo-dolar-tarjeta-abc",
+      "statusCode": 301
+    },
+    {
+      "source": "/cupo-dolar-mastercard",
+      "destination": "/vender-cupo-dolar-tarjeta-mastercard",
+      "statusCode": 301
+    },
+    {
+      "source": "/liquidar-cupo-cmr-efectivo",
+      "destination": "/vender-cupo-cmr-falabella",
+      "statusCode": 301
+    },
+    {
+      "source": "/liquidar-cupo-hites-transferencia",
+      "destination": "/vender-cupo-dolar-tarjeta-hites",
+      "statusCode": 301
+    },
+    {
+      "source": "/prestamos-santiago/sacar-dinero-hites",
+      "destination": "/vender-cupo-dolar-tarjeta-hites",
+      "statusCode": 301
+    },
+    {
       "source": "/que-es-cupo-dolares",
       "destination": "/que-es-cupo-en-dolares",
       "statusCode": 301
@@ -711,7 +791,7 @@
     },
     {
       "source": "/transferir-cupo-hites-a-cuenta",
-      "destination": "/avance-cupo-dolares",
+      "destination": "/vender-cupo-dolar-tarjeta-hites",
       "statusCode": 301
     },
     {
@@ -911,11 +991,6 @@
     },
     {
       "source": "/cuanto-presta-:path*",
-      "destination": "/vender-cupo-dolar",
-      "statusCode": 301
-    },
-    {
-      "source": "/cuanto-presta-tarjeta-paris/",
       "destination": "/vender-cupo-dolar",
       "statusCode": 301
     },
