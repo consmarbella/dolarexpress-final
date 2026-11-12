@@ -7,13 +7,13 @@
 
 - Servicio: compra de cupo en dólares de tarjetas de crédito (cupo internacional) convertidos a pesos chilenos
 - Comisión: 15% fija, único descuento, sin otros cargos
-- Precio del dólar en las cotizaciones de Octubre 2026: $995 → USD 1.000 x $995 x 0,85 = $845.750 CLP
+- Ejemplo de pago (dólar a $995): USD 1.000 x $995 x 0,85 = $845.750 CLP; la tasa se fija en cada cotización con el dólar del día
 - Monto mínimo: USD 300; sin tope máximo (empresas y montos altos evaluados por chat)
 - Pago: transferencia a la cuenta bancaria chilena del titular, en menos de 15 minutos tras confirmar el saldo
 - Requisitos: ser titular, cupo internacional disponible y cuenta bancaria chilena a nombre del titular; no se piden claves ni acceso a apps
 - Contacto: WhatsApp +56 9 6765 8939 (https://wa.me/56967658939); teléfono +56 9 6765 8939; dirección Av. Vitacura 7181, Las Condes, Santiago
-- Deuda en dólares: queda a nombre del usuario con su banco (pago en USD o traspaso a pesos al cierre del ciclo); inteligibilidad legal tratada en /vender-cupo-dolar-sin-dicom
-- No relation with banks: servicio privado independiente; la tarjeta se verifica en la app del banco del titular
+- Deuda en dólares: queda a nombre del usuario con su banco (pago en USD o traspaso a pesos al cierre del ciclo); legalidad tratada en /vender-cupo-dolar-sin-dicom
+- Sin relación con los bancos: servicio privado e independiente; la tarjeta se verifica en la app del banco del titular
 
 ## Página principal
 
@@ -21,6 +21,7 @@
 - [Vender cupo en dólares (pilar)](https://www.dolarexpress.cl/vender-cupo-dolar): guía completa paso a paso
 - [Avance de cupo en dólares](https://www.dolarexpress.cl/avance-cupo-dolares): comparación con el avance en efectivo bancario
 - [Empresas y montos altos](https://www.dolarexpress.cl/empresas-altos-montos): línea de USD 5.000 a USD 50.000
+- [Guía completa paso a paso](https://www.dolarexpress.cl/guia/vender-cupo-dolares)
 
 ## Guías por emisor (bancos)
 
@@ -61,6 +62,7 @@
 - [Nosotros](https://www.dolarexpress.cl/nosotros)
 - [Contacto](https://www.dolarexpress.cl/contacto)
 - [Términos](https://www.dolarexpress.cl/terminos)
+- [Privacidad](https://www.dolarexpress.cl/privacidad)
 
 ## Documentación para IA
 

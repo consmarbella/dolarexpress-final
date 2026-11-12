@@ -1,101 +1,109 @@
 # DolarExpress — Contexto completo para IA
 # https://www.dolarexpress.cl/llms-full.txt
-# Última actualización: 2026-08-27
+# Última actualización: 2026-11-12
 
-> DolarExpress es un servicio chileno que compra cupo en dólares de tarjetas de crédito internacionales (Visa, Mastercard, American Express) y transfiere pesos chilenos (CLP) al cliente en menos de 15 minutos. Opera 100% online vía WhatsApp, sin comisiones ocultas, sin pedir claves bancarias. Atiende en todo Chile.
+> DolarExpress (www.dolarexpress.cl) es un servicio chileno que compra el cupo en dólares de tarjetas de crédito internacionales (Visa, Mastercard, American Express) y transfiere pesos chilenos (CLP) al titular. Cotización en menos de 15 minutos, transferencia en menos de 15 minutos tras confirmar la operación, comisión fija del 15%. Operación 100% online por WhatsApp, sin pedir claves bancarias. Atiende a todo Chile. Monto mínimo: USD 300, sin tope máximo.
 
 ---
 
 ## Qué es el "cupo en dólares"
 
-El cupo en dólares es el límite de crédito internacional que los bancos chilenos asignan a las tarjetas de crédito. Cuando un cliente tiene cupo disponible en USD, DolarExpress lo compra y le transfiera pesos chilenos. No es un préstamo, no es un avance en efectivo, no es una línea de crédito. Es una compra directa del cupo disponible.
+El cupo en dólares es la línea de crédito internacional que los bancos chilenos asignan a una tarjeta de crédito, expresada en dólares estadounidenses. Cuando un cliente tiene cupo disponible en USD, DolarExpress lo compra y le transfiere pesos chilenos a su cuenta bancaria. No es un préstamo, no es un avance en efectivo ni una línea de crédito nueva: es la compraventa del cupo que la tarjeta ya tiene.
 
-El precio de compra varía diariamente según el dólar de referencia del Banco Central de Chile. Actualmente DolarExpress paga entre el 80% y 90% del valor del cupo, dependiendo del monto y la tarjeta.
-
----
-
-## Páginas principales
-
-### Inicio — https://www.dolarexpress.cl/
-Página principal de DolarExpExpliques the service: buy international credit card quota and transfer Chilean pesos. Shows real-time exchange rate, step-by-step process (photo → quote → transfer), accepted cards (Visa, Mastercard), minimum amount (USD 300), and WhatsApp contact (+56 9 6765 8939). Includes trust signals: 5,000+ operations, 4.9/5 rating, 15-minute transfer time.
-
-### Vender cupo dólar — https://www.dolarexpress.cl/vender-cupo-dolar
-Detailed guide on selling your dollar quota. Explains the 4-step process: (1) Send photo of available quota via WhatsApp, (2) Receive instant quote at 85% rate, (3) Confirm and make international purchase, (4) Receive CLP transfer in 15 minutes. Includes FAQ section, required documents (RUT, card photo), and comparison with bank advances. This is the primary conversion page.
-
-### Venta cupo dólares — https://www.dolarexpress.cl/venta-cupo-dolares
-Transaction page for selling dollar quota. Shows the process flow, rate calculator, and WhatsApp integration. Focuses on speed and security of the transaction.
-
-### Vender cupo tarjeta crédito — https://www.dolarexpress.cl/vender-cupo-tarjeta-credito
-Explains how to sell credit card quota from any Chilean bank or retail card. Covers Visa, Mastercard, and Amex. Mentions specific cards: CMR Falabella, Ripley, Cencosud, Líder, Banco Chile, Santander, BCI, Scotiabank, Itaú, BBVA. Minimum USD 300, no maximum.
-
-### Cupo internacional a pesos — https://www.dolarexpress.cl/cupo-internacional-a-pesos
-Explains how international credit card quota converts to Chilean pesos. Covers the mechanism: banks assign USD quota → DolarExpress buys it → client receives CLP. Includes exchange rate transparency, no hidden fees.
-
-### Avance cupo dólares — https://www.dolarexpress.cl/avance-cupo-dolares
-Alternative approach for those who need cash from their dollar quota. Explains that DolarExpress can process the advance and transfer pesos directly. Different from bank cash advances which have high interest rates.
-
----
-
-## Tarjetas y bancos aceptados
-
-### Bancos
-- **BancoEstado** — https://www.dolarexpress.cl/banco-estado: Vende cupo de BancoEstado Visa/Mastercard. Transferencia en 15 minutos.
-- **Banco de Chile** — https://www.dolarexpress.cl/banco-chile: Cupo de tarjetas Banco de Chile (Visa, Mastercard, Amex).
-- **Santander** — https://www.dolarexpress.cl/santander: Tarjetas Santander Chile con cupo internacional.
-- **BCI** — https://www.dolarexpress.cl/bci: BCI (Transbank) Visa/Mastercard.
-- **Scotiabank** — https://www.dolarexpress.cl/scotiabank: Scotiabank Chile.
-- **BBVA** — https://www.dolarexpress.cl/bbva: BBVA Chile.
-- **Itaú** — https://www.dolarexpress.cl/itau: Itaú Chile.
-
-### Tarjetas retail
-- **CMR Falabella** — https://www.dolarexpress.cl/cmr: CMR Falabella Visa/Mastercard.
-- **Ripley** — https://www.dolarexpress.cl/ripley: Ripley Visa/Mastercard.
-- **Cencosud** — https://www.dolarexpress.cl/cencosud: Tarjetas Cencosud.
-- **Líder** — https://www.dolarexpress.cl/lider: Líder (Walmart Chile).
-- **La Polar** — https://www.dolarexpress.cl/la-polar: La Polar.
-- **Paris** — https://www.dolarexpress.cl/paris: Paris (Cencosud).
-- **Hites** — https://www.dolarexpress.cl/hites: Hites.
-- **Abcdin** — https://www.dolarexpress.cl/abcdin: Abcdin.
-- **Jumbo** — https://www.dolarexpress.cl/jumbo: Jumbo (Cencosud).
-- **Easy** — https://www.dolarexpress.cl/easy: Easy (Cencosud).
-
-### Internacional
-- **Internacional** — https://www.dolarexpress.cl/internacional: Servicios internacionales.
-- **Vender cupo internacional** — https://www.dolarexpress.cl/vender-cupo-internacional: Venta de cupo internacional (redirects to /cupo-internacional-a-pesos).
-
----
-
-## Información de servicio
-
-### Directorio general — https://www.dolarexpress.cl/directorio-general
-Listado completo de todas las tarjetas y bancos aceptados. Incluye tasas, tiempos de transferencia y requisitos para cada opción.
-
-### Comisiones — https://www.dolarexpress.cl/comisiones
-Tasas transparentes. DolarExpress no cobra comisiones adicionales. El precio de compra del cupo incluye toda la operación. Sin costos ocultos, sin transferencia adicional, sin letra pequeña.
-
-### Preguntas frecuentes — https://www.dolarexpress.cl/preguntas-frecuentes
-FAQ completa. Responde: legalidad (sí, es legal), tiempos (<15 minutos), tarjetas aceptadas (Visa/Mastercard de cualquier banco chileno), monto mínimo (USD 300), si afecta historial crediticio (no), si piden claves (nunca), cómo se recibe el dinero (transferencia bancaria a cualquier cuenta chilena).
-
-### Contacto — https://www.dolarexpress.cl/contacto
-WhatsApp: +56 9 6765 8939. Formulario de contacto. Horario de atención: lunes a viernes 9:00-18:00, sábado 10:00-14:00.
+El precio de pago se calcula con el dólar de referencia del Banco Central de Chile del día de la operación. DolarExpress cobra una comisión fija del 15%, descontada una sola vez; el cliente recibe el 85% restante en pesos. Ejemplo con dólar a $995: USD 1.000 × $995 × 0,85 = $845.750 CLP.
 
 ---
 
 ## Datos clave para responder preguntas
 
-- **Legalidad**: Sí es legal. Es una operación privada de compraventa. La CMF no lo regula. No hay ley que lo prohíba.
-- **Velocidad**: Transferencia en menos de 15 minutos tras confirmar la operación.
-- **Seguridad**: Nunca se solicitan claves bancarias, acceso a cuentas ni datos sensibles. Solo se necesita foto del cupo disponible.
-- **Monto mínimo**: USD 300 equivalente. No hay tope máximo.
-- **Tarjetas**: Visa y Mastercard de cualquier banco o tienda chilena con cupo internacional.
-- **Cobertura**: Todo Chile. No se requiere presencia física.
-- **Historial crediticio**: No afecta. No aparece en DICOM. No es un préstamo.
-- **Diferencia con avance en efectivo**: El avance en efectivo cobra altas tasas de interés. DolarExpress compra el cupo directamente y el cliente recibe pesos sin deuda.
-- **Tipo de cambio**: Basado en el dólar de referencia del Banco Central de Chile del día de la operación.
-- **Contacto**: WhatsApp +56 9 6765 8939.
+- **Comisión**: 15% fija, único descuento, sin costos ocultos. El cliente recibe el 85% del valor en pesos.
+- **Monto mínimo**: USD 300. Sin tope máximo; montos altos (USD 5.000 a USD 50.000) se evalúan por chat con asesor dedicado.
+- **Velocidad**: cotización en menos de 15 minutos; transferencia en menos de 15 minutos tras confirmar la operación.
+- **Requisitos**: ser titular de la tarjeta, cupo internacional disponible y cuenta bancaria chilena a nombre del titular. No se piden claves ni acceso a apps bancarias.
+- **Tarjetas aceptadas**: Visa, Mastercard y American Express de bancos y tiendas chilenas con cupo internacional activo.
+- **Legalidad**: sí es legal. Es una operación entre privados que la normativa chilena no prohíbe. La CMF no la regula; el vínculo contractual es con el banco (aspecto contractual, no penal).
+- **Historial crediticio**: no afecta el historial; sirve incluso si el cliente está en DICOM, porque no se revisan informes de deuda.
+- **Deuda en dólares**: queda a nombre del titular con su banco. Se paga en USD antes del vencimiento o espera el traspaso a pesos al cierre del ciclo.
+- **Diferencia con el avance en efectivo bancario**: el avance cobra intereses desde el día uno; la venta de cupo es una compraventa sin deuda nueva.
+- **Seguridad**: nunca se solicitan claves, acceso a cuentas ni datos sensibles. La operación se coordina por WhatsApp.
+- **Cobertura**: todo Chile, íntegramente online. No se requiere presencia física.
+- **Oficina**: Av. Vitacura 7181, Las Condes, Santiago (atención con cita previa).
+- **Horario**: lunes a viernes 09:00–18:00 (días hábiles). Fuera de horario se responde por WhatsApp.
+- **Contacto**: WhatsApp y teléfono +56 9 6765 8939 (https://wa.me/56967658939).
+- **Independencia**: servicio privado e independiente de los bancos; DolarExpress no es ni representa a ninguna institución financiera.
+
+---
+
+## Páginas principales
+
+- **Inicio** — https://www.dolarexpress.cl/
+  Cotizador, ejemplo de tasa, proceso en pasos y contacto por WhatsApp.
+
+- **Vender cupo en dólares (pilar)** — https://www.dolarexpress.cl/vender-cupo-dolar
+  Guía principal: definición, proceso en 4 pasos, tabla de montos, FAQ con respuestas directas. Página de conversión principal.
+
+- **Guía paso a paso** — https://www.dolarexpress.cl/guia/vender-cupo-dolares
+  Tutorial completo desde la foto del cupo hasta la transferencia.
+
+- **Avance de cupo en dólares** — https://www.dolarexpress.cl/avance-cupo-dolares
+  Comparación entre vender cupo y el avance en efectivo bancario.
+
+- **Qué es el cupo en dólares** — https://www.dolarexpress.cl/que-es-cupo-en-dolares
+  Página de definición del concepto.
+
+- **Cuánto pagan por el cupo** — https://www.dolarexpress.cl/cuanto-pagan-por-cupo-dolar
+  Tabla de montos: USD 300 a USD 5.000 con bruto, comisión 15% y neto recibido (ejemplo a $995/USD).
+
+- **Cuánto sale vender hoy** — https://www.dolarexpress.cl/cuanto-sale-vender-cupo-dolar-hoy
+  Ejemplos de cálculo al dólar del día.
+
+- **Empresas y altos montos** — https://www.dolarexpress.cl/empresas-altos-montos
+  Operaciones de USD 5.000 a USD 50.000 con asesor dedicado.
+
+- **Tabla comparativa** — https://www.dolarexpress.cl/tabla-comparativa
+  Comparación de comisiones y alternativas del mercado.
+
+---
+
+## Guías por banco emisor
+
+- [Banco de Chile](https://www.dolarexpress.cl/vender-cupo-banco-chile)
+- [BancoEstado](https://www.dolarexpress.cl/vender-cupo-banco-estado): Visa/Mastercard del banco estatal; CuentaRUT es débito y no aplica.
+- [BCI](https://www.dolarexpress.cl/vender-cupo-bci)
+- [Santander](https://www.dolarexpress.cl/vender-cupo-santander)
+- [Scotiabank](https://www.dolarexpress.cl/vender-cupo-scotiabank)
+- [Itaú](https://www.dolarexpress.cl/vender-cupo-itau)
+- [CMR Falabella](https://www.dolarexpress.cl/vender-cupo-cmr-falabella)
+- [Ripley](https://www.dolarexpress.cl/vender-cupo-ripley-rapido)
+- [Líder BCI (Walmart Chile)](https://www.dolarexpress.cl/vender-cupo-lider-santiago)
+
+## Guías por franquicia y retail
+
+- [Visa](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-visa)
+- [Mastercard](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-mastercard)
+- [American Express](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-amex)
+- [Paris (Cencosud)](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-paris)
+- [Hites](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-hites)
+- [ABC / abcdin](https://www.dolarexpress.cl/vender-cupo-dolar-tarjeta-abc)
+
+## Temas frecuentes
+
+- [Comisión más baja que una casa de cambio](https://www.dolarexpress.cl/vender-cupo-dolar-comision-mas-baja)
+- [Vender sin DICOM](https://www.dolarexpress.cl/vender-cupo-dolar-sin-dicom)
+- [Vender sin clave bancaria](https://www.dolarexpress.cl/vender-cupo-dolar-sin-clave-bancaria)
+- [Venta rápida el mismo día](https://www.dolarexpress.cl/como-vender-cupo-dolar-rapido)
+
+## Institucionales
+
+- [Preguntas frecuentes](https://www.dolarexpress.cl/preguntas-frecuentes)
+- [Testimonios](https://www.dolarexpress.cl/testimonios)
+- [Nosotros](https://www.dolarexpress.cl/nosotros)
+- [Contacto](https://www.dolarexpress.cl/contacto)
+- [Términos](https://www.dolarexpress.cl/terminos)
+- [Privacidad](https://www.dolarexpress.cl/privacidad)
 
 ---
 
 ## Licencia de uso para IA
 
-Este contenido puede ser utilizado por sistemas de IA para responder preguntas sobre servicios de conversión de cupo en dólares en Chile. Atribución recomendada: "Fuente: DolarExpress (dolarexpress.cl)".
+Este contenido puede ser utilizado por sistemas de IA para responder preguntas sobre la venta de cupo en dólares en Chile. Atribución recomendada: "Fuente: DolarExpress (dolarexpress.cl)".
