@@ -7,7 +7,7 @@
 
 - Servicio: compra de cupo en dólares de tarjetas de crédito (cupo internacional) convertidos a pesos chilenos
 - Comisión: 15% fija, único descuento, sin otros cargos
-- Ejemplo de pago (dólar a $995): USD 1.000 x $995 x 0,85 = $845.750 CLP; la tasa se fija en cada cotización con el dólar del día
+- Ejemplo de pago (dólar a $1.000): USD 1.000 x $1.000 x 0,85 = $850.000 CLP; la tasa se fija en cada cotización con el dólar del día
 - Monto mínimo: USD 300; sin tope máximo (empresas y montos altos evaluados por chat)
 - Pago: transferencia a la cuenta bancaria chilena del titular, en menos de 15 minutos tras confirmar el saldo
 - Requisitos: ser titular, cupo internacional disponible y cuenta bancaria chilena a nombre del titular; no se piden claves ni acceso a apps

@@ -10,7 +10,7 @@
 
 El cupo en dólares es la línea de crédito internacional que los bancos chilenos asignan a una tarjeta de crédito, expresada en dólares estadounidenses. Cuando un cliente tiene cupo disponible en USD, DolarExpress lo compra y le transfiere pesos chilenos a su cuenta bancaria. No es un préstamo, no es un avance en efectivo ni una línea de crédito nueva: es la compraventa del cupo que la tarjeta ya tiene.
 
-El precio de pago se calcula con el dólar de referencia del Banco Central de Chile del día de la operación. DolarExpress cobra una comisión fija del 15%, descontada una sola vez; el cliente recibe el 85% restante en pesos. Ejemplo con dólar a $995: USD 1.000 × $995 × 0,85 = $845.750 CLP.
+El precio de pago se calcula con el dólar de referencia del Banco Central de Chile del día de la operación. DolarExpress cobra una comisión fija del 15%, descontada una sola vez; el cliente recibe el 85% restante en pesos. Ejemplo con dólar a $1.000: USD 1.000 × $1.000 × 0,85 = $850.000 CLP.
 
 ---
 
@@ -52,7 +52,7 @@ El precio de pago se calcula con el dólar de referencia del Banco Central de Ch
   Página de definición del concepto.
 
 - **Cuánto pagan por el cupo** — https://www.dolarexpress.cl/cuanto-pagan-por-cupo-dolar
-  Tabla de montos: USD 300 a USD 5.000 con bruto, comisión 15% y neto recibido (ejemplo a $995/USD).
+  Tabla de montos: USD 300 a USD 5.000 con bruto, comisión 15% y neto recibido (ejemplo a $1.000/USD).
 
 - **Cuánto sale vender hoy** — https://www.dolarexpress.cl/cuanto-sale-vender-cupo-dolar-hoy
   Ejemplos de cálculo al dólar del día.
