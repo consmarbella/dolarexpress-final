@@ -1,16 +1,35 @@
 User-agent: *
 Allow: /
-Disallow: /widget
 Disallow: /changenow-widget
 
-# AI retrieval bots — allowed (search visibility: Google AI Overviews, ChatGPT, Perplexity)
-User-agent: GPTBot
-Allow: /
+# /widget no se bloquea aquí: se excluye del índice con X-Robots-Tag: noindex (vercel.json).
+# Si se bloqueara con Disallow, Google no podría leer el noindex.
 
+# ── Buscadores y asistentes de IA (responden con enlace a tu sitio): PERMITIDOS ──
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ── Rastreadores usados también para ENTRENAR modelos: hoy PERMITIDOS ──
+# (según OpenAI y Anthropic, GPTBot y ClaudeBot recopilan datos de entrenamiento;
+#  Google-Extended controla el uso del contenido en Gemini).
+# Si quieres aparecer en las respuestas pero NO servir de entrenamiento,
+# cambia "Allow: /" por "Disallow: /" en estos tres bloques.
+User-agent: GPTBot
 Allow: /
 
 User-agent: ClaudeBot
@@ -19,7 +38,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Training bots — blocked (no training data use)
+# ── Rastreadores de entrenamiento / scraping: BLOQUEADOS ──
 User-agent: CCBot
 Disallow: /
 
