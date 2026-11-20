@@ -21,7 +21,7 @@ El precio de pago se calcula con el dólar de referencia del Banco Central de Ch
 - **Velocidad**: cotización en menos de 15 minutos; transferencia en menos de 15 minutos tras confirmar la operación.
 - **Requisitos**: ser titular de la tarjeta, cupo internacional disponible y cuenta bancaria chilena a nombre del titular. No se piden claves ni acceso a apps bancarias.
 - **Tarjetas aceptadas**: Visa, Mastercard y American Express de bancos y tiendas chilenas con cupo internacional activo.
-- **Legalidad**: sí es legal. Es una operación entre privados que la normativa chilena no prohíbe. La CMF no la regula; el vínculo contractual es con el banco (aspecto contractual, no penal).
+- **Legalidad**: operación entre privados; DolarExpress no es un banco ni otorga créditos. El uso del cupo se rige por el contrato con el banco emisor, que puede aplicar sus propias políticas. No se ofrece asesoría legal: ante dudas, consultar con el banco o un abogado.
 - **Historial crediticio**: no afecta el historial; sirve incluso si el cliente está en DICOM, porque no se revisan informes de deuda.
 - **Deuda en dólares**: queda a nombre del titular con su banco. Se paga en USD antes del vencimiento o espera el traspaso a pesos al cierre del ciclo.
 - **Diferencia con el avance en efectivo bancario**: el avance cobra intereses desde el día uno; la venta de cupo es una compraventa sin deuda nueva.

@@ -208,6 +208,11 @@
   ],
   "redirects": [
     {
+      "source": "/venta-usd",
+      "destination": "/vender-cupo-dolar",
+      "statusCode": 301
+    },
+    {
       "source": "/",
       "has": [
         {

@@ -15,6 +15,15 @@
 - Deuda en dólares: queda a nombre del usuario con su banco (pago en USD o traspaso a pesos al cierre del ciclo); legalidad tratada en /vender-cupo-dolar-sin-dicom
 - Sin relación con los bancos: servicio privado e independiente; la tarjeta se verifica en la app del banco del titular
 
+## Respuestas rápidas
+
+- ¿Cómo vender el cupo dólar de mi tarjeta? Revisas tu cupo internacional en la app del banco, escribes por WhatsApp con nombre, teléfono y monto en USD, recibes cotización por escrito en menos de 15 minutos y, si aceptas, recibes los pesos por transferencia.
+- ¿Dónde vender el cupo en dólares en Chile? DolarExpress compra el cupo en todo Chile por WhatsApp (+56 9 6765 8939, lunes a viernes 09:00-18:00) y atiende en Av. Vitacura 7181, Las Condes, con cita previa.
+- ¿Cuánto pagan? Tipo de cambio del día menos 15% fijo; con dólar de referencia $1.000, USD 1.000 pagan $850.000.
+- ¿Qué riesgos tiene? La deuda en dólares queda a nombre del titular; el contrato de la tarjeta puede tener cláusulas sobre el uso del cupo y cada banco aplica sus políticas. No hay asesoría legal ni tributaria.
+- ¿Conviene más un avance en efectivo? Con una tasa ilustrativa de 3% mensual, el avance cuesta menos que el 15% fijo durante unos 4 a 5 meses; revisar la CAE del banco.
+- Todas las preguntas: [Preguntas frecuentes](https://www.dolarexpress.cl/preguntas-frecuentes)
+
 ## Página principal
 
 - [Home](https://www.dolarexpress.cl/): cotizador, tasa de ejemplo y resumen del servicio
@@ -22,6 +31,7 @@
 - [Avance de cupo en dólares](https://www.dolarexpress.cl/avance-cupo-dolares): comparación con el avance en efectivo bancario
 - [Empresas y montos altos](https://www.dolarexpress.cl/empresas-altos-montos): línea de USD 5.000 a USD 50.000
 - [Guía completa paso a paso](https://www.dolarexpress.cl/guia/vender-cupo-dolares)
+- [Preguntas frecuentes (39 respuestas)](https://www.dolarexpress.cl/preguntas-frecuentes)
 
 ## Guías por emisor (bancos)
 
